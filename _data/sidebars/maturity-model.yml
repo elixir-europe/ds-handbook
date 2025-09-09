@@ -8,14 +8,14 @@ subitems:
         url: /strategy-defined
       - title: Personnel
         url: /strategy-personnel
-      - title: Defined
-        url: /strategy-defined
+      - title: Harmonisation
+        url: /strategy-harmonisation
       - title: Goals & KPIs
         url: /strategy-goals-kpis
       - title: Communication of strategy
         url: /strategy-communication
       - title: Governance and implementation
-        url: /strtaegy-governance-implementation
+        url: /strategy-governance-implementation
       - title: Adherence
         url: /strategy-governance-adherence
       - title: Funding
@@ -45,7 +45,7 @@ subitems:
       - title: Services
         url: /support-services
       - title: Guidelines for researchers
-        url: /ssupport-guidelines-researchers
+        url: /support-guidelines-researchers
       - title: Network
         url: /support-network
       - title: Communication
