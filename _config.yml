@@ -45,7 +45,6 @@ defaults:
       path: "pages/case-studies"
     values:
       sidebar: case-studies
-      type: Case_studies
   -
     scope:
       path: "pages/case-studies/case-studies-uk"
@@ -65,7 +64,6 @@ defaults:
     scope:
       path: "pages/guidelines"
     values:
-      type: Guidelines
       sidebar: guidelines
   -
     scope:
@@ -87,7 +85,6 @@ defaults:
       path: "pages/maturity-model"
     values:
       sidebar: maturity-model
-      type: Maturity_Model
   -
     scope:
       path: "pages/maturity-model/mm-strategy"

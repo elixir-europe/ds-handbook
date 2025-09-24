@@ -3,6 +3,7 @@ title: Legal
 description: coming soon...
 contributors: 
 page_id: g-legal
+type: Guidelines
 related_pages: 
 ---
 

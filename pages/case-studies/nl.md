@@ -3,6 +3,7 @@ title: NL
 description: 
 contributors: 
 page_id: nl
+type: Case_studies
 related_pages: 
   your_tasks: 
   tool_assembly: 
