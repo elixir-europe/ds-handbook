@@ -2,8 +2,9 @@
 title: Flow of RDM communication and responsiveness
 description: coming soon...
 contributors: 
-page_id: 
-related_pages: [support-communication]
+page_id:
+related_pages:
+    maturity-model: [support]
 ---
 
 ## Context
@@ -13,7 +14,7 @@ Many institutions still rely on top-down, one-directional messaging: guidelines 
 
 Responsiveness is a signal of institutional commitment. When RDM teams are visible, trusted, and resourced to answer questions and track feedback, it reflects leadership’s investment in dialogue and continuous improvement. Conversely, delays or silence often point to structural gaps: understaffing, low awareness, or minimal buy-in.
 
-Insights from ELIXIR Node self-assessments reveal a spectrum of practice – from ad hoc or opaque channels to strong feedback loops with helpdesks, open office hours, or community formats like RDM breakfasts. Institutions that enable two-way communication demonstrate that they value not just information delivery, but the relationships and responsiveness that underpin
+Insights from ELIXIR Node self-assessments reveal a spectrum of practice – from ad hoc or opaque channels to strong feedback loops with helpdesks, open office hours, or community formats like RDM breakfasts. Institutions that enable two-way communication demonstrate that they value not just information delivery, but the relationships and responsiveness that underpin effective research data management.
 
 ## Guidelines
 The following tips support data stewards and their institutions in progressing along the maturity indicator for communication and responsiveness. They are organised around five core areas: visibility, accessibility, feedback, responsiveness, and institutional integration, aligned with Node experiences and established support models.
