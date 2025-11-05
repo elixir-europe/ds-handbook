@@ -7,4 +7,4 @@ type: Guidance
 related_pages: 
 ---
 
-{% include section-navigation-tiles.html type="Guidelines_Support" %}
+{% include section-navigation-tiles.html type="Guidance_Support" %}

@@ -2,8 +2,8 @@
 subitems:
   - title: Home
     url: /index
-  - title: Guidelines
-    url: /guidelines
+  - title: Guidance
+    url: /guidance
   - title: Case studies
     url: /case-studies
   - title: Maturity Model

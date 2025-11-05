@@ -1,7 +1,7 @@
 ---
-title: Guidelines
+title: Guidance
 ---
 
-Guidelines go here...
+Guidance go here...
 
-{% include section-navigation-tiles.html type="Guidelines" %}
+{% include section-navigation-tiles.html type="Guidance" %}
