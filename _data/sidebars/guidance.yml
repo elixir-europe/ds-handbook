@@ -1,5 +1,5 @@
-title: Guidelines
-title_url: /guidelines
+title: Guidance
+title_url: /guidance
 subitems:
   - title: Support
     url: /g-support
@@ -14,7 +14,5 @@ subitems:
     description:
     url: /g-rdm-strategy
     subitems:
-      - title: Test topic
-        url: /topic-1
-      - title: Test topic
-        url: /topic-2
+      - title: Writing RDM strategy
+        url: /g-writing-rdm-strategy

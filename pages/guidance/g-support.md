@@ -3,7 +3,7 @@ title: Support
 description: coming soon...
 contributors: 
 page_id: g-support
-type: Guidelines
+type: Guidance
 related_pages: 
 ---
 

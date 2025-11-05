@@ -62,24 +62,24 @@ defaults:
       type: FI
   -
     scope:
-      path: "pages/guidelines"
+      path: "pages/guidance"
     values:
-      sidebar: guidelines
+      sidebar: guidance
   -
     scope:
-      path: "pages/guidelines/guidelines-support"
+      path: "pages/guidance/guidance-support"
     values:
-     type: Guidelines_Support
+     type: Guidance_Support
   -
     scope:
-      path: "pages/guidelines/guidelines-legal"
+      path: "pages/guidance/guidance-legal"
     values:
-     type: Guidelines_Legal
+     type: Guidance_Legal
   -
     scope:
-      path: "pages/guidelines/guidelines-rdm-strategy"
+      path: "pages/guidance/guidance-rdm-strategy"
     values:
-     type: Guidelines_RDM_Strategy
+     type: Guidance_RDM_Strategy
   -
     scope:
       path: "pages/maturity-model"
