@@ -2,9 +2,14 @@
 /*-----General styling-----*/
 $font-family-theme: "Inter", sans-serif;
 
+/*-----Buttons hover style-----*/
+$btn-primary-bg-hover: $primary;
+$btn-primary-color-hover: $dark;
+
 /*-----Top navigation-----*/
 $topnav-bg: $dark;
-$topnav-brand-height: 60px;
+$topnav-brand-height: 4rem;
+$topnav-title-color: $primary;
 
 /*-----More information tiles-----*/
 $info-card-bg: $light;
@@ -13,8 +18,11 @@ $info-card-bg-hover: $primary;
 $info-card-color-hover: $white;
 
 /*-----Sidebar-----*/
-$sidebar-bg: $secondary-light;
-$sidebar-lvl2-bg: $secondary-light;
+
+$sidebar-bg: $light;
+$sidebar-color: $dark;
+$sidebar-bg-active: $primary;
+$sidebar-color-active: $dark;
 
 /*-----Section navigation tiles-----*/
 $nav-card-bg: $light;
@@ -24,7 +32,7 @@ $nav-card-badge-color: $accent-color;
 $nav-card-badge-bg: $dark;
 
 /*-----Footer-----*/
-$footer-bg: $primary;
+$footer-bg: $dark;
 $footer-color: $white;
 $footer-link-color: $white;
 $footer-link-color-hover: $secondary;

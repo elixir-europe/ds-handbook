@@ -6,18 +6,7 @@
     }
 }
 
-.text-secondary {
-  color: $accent-color !important;
-}
-
 /*-----Landing page ----*/
-.landingpage h1 {
-  font-family: 'Caveat', serif;
-  text-align: center;
-  font-size: 80px;
-  transform: rotate(-2deg);
-  padding-bottom: 5px;
-}
 
 .landingpage .highlight {
   margin: 0 -0.4em;
@@ -27,12 +16,19 @@
   background: transparent;
   background-image: linear-gradient(
     to right,
-    rgba($secondary, 0.1),
-    rgba($secondary, 0.7),
-    rgba($secondary, 0.3)
+    rgba($primary, 0.1),
+    rgba($primary, 0.7),
+    rgba($primary, 0.3)
   );
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
+}
+
+.landingpage-title {
+  @include font-size(5rem);
+  font-family: 'Caveat', serif;
+  transform: rotate(-2deg);
+  padding-bottom: 5px;
 }
 
 // Hand-drawn effect for "landmarks" cards only
@@ -62,7 +58,7 @@ section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 {
 
     &::after {
       transform: translate(-1px, -2px) rotate(0.4deg);
-      border-color: $secondary; // lighter second stroke
+      border-color: $primary; // lighter second stroke
     }
 
     &:hover {
@@ -181,14 +177,6 @@ footer .col-6.col-lg-6.d-flex.justify-content-lg-start {
 #side-nav > ul {
     margin-top: $spacer * 0.5;
 }
-
-
-#sidebar > nav > ul > li:not(.sidebar-title) > a {
-  background: transparent !important;
-  color: $dark;           
-}
-
-
 
 /* -----Warning page----- */
 .bg-warning {
@@ -315,7 +303,7 @@ section#search-section {
 
     &::after {
       transform: translate(-1px, -2px) rotate(0.4deg);
-      border-color: $secondary; // lighter 2nd stroke
+      border-color: $primary; // lighter 2nd stroke
     }
 
     &:hover {
@@ -343,6 +331,10 @@ section#search-section {
 
 
 /*-----Top navigation-----*/
+// safari fix. to be removed with non square logo
+header .navbar .navbar-brand img {
+  width: 4rem;
+}
 .navbar-nav {
   .nav-item {
     > a.nav-link {
@@ -359,7 +351,7 @@ section#search-section {
         bottom: 0;
         width: calc(100% + 4px);
         height: 70%;
-        background-color: rgba($secondary, 0.8);
+        background-color: rgba($primary, 0.8);
         transform: rotate(-2deg) scaleX(0);
         transform-origin: left;
         transition: transform 0.4s ease-out;
@@ -377,7 +369,7 @@ section#search-section {
       }
 
       &:focus-visible {
-        outline: 2px solid rgba($secondary, 0.8);
+        outline: 2px solid rgba($primary, 0.8);
         outline-offset: 3px;
       }
     }

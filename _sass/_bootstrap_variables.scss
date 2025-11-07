@@ -1,7 +1,7 @@
 /*-----Theme colors-----*/
-$primary: #0A261C;
-$secondary: #8DF2B9;
-$secondary-light: #9BF2D2;
+$primary: #8DF2B9;
+$secondary: #0A261C;
+$primary-light: #9BF2D2;
 $light: #EEEEEE;
 $dark: #0A261C;
 $white: #ffffff;
@@ -12,26 +12,26 @@ $accent-color: #D96248;
 
 /*-----Custom values for Bootstrap variables-----*/
 $component-active-bg: $accent-color;
-$dark-text: $primary;
+$dark-text: $dark;
 $light-background: $grey-light;
 $light-text: $grey-light;
 $navbar-hover-color: $grey-light;
-$navbar-active: $secondary;
+$navbar-active: $primary;
 $navbar-toggler-border-color: transparent;
 $border-radius: 0.3rem;
 $btn-border-radius-sm: $border-radius;
 $card-border-width: 0;
 $card-bg: transparent;
-$card-cap-bg: $primary;
+$card-cap-bg: $dark;
 $link-color: $accent-color;
-$info: $secondary-light;
+$info: $primary-light;
 $link-decoration: none;
 $body-bg: $white;
-$body-color: $primary;
+$body-color: $dark;
 $font-family-sans-serif: "Inter", sans-serif;
 $alert-border-width: 0;
-$input-group-addon-bg: $secondary;
-$input-bg: $secondary;
+$input-group-addon-bg: $primary;
+$input-bg: $primary;
 $input-border-width: 0;
 $h1-font-size: 1rem * 3.5 !default;
 $h3-font-size: 1rem * 1.5 !default;
