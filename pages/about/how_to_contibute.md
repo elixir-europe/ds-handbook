@@ -45,6 +45,5 @@ Please share your personal knowledge and experiences. The following questions mi
 
 # How to finish the page
 - Please follow the [DS Handbook style guide](TODO). 
-- Add complicated terms and abbreviations to the [Glossary](TODO).
 - Remember to add your name into contributors yaml file (in _data/CONTRIBUTORS.yaml) and put your full name (exactly like in yaml file) into a metadata section of chapter(s) you are creating/modifying.
 - For further info or help, contact [Mijke Jetten](mailto:mijke.jetten@health-ri.nl) (ELIXIR-NL, co-lead ELIXIR RDM Community).
