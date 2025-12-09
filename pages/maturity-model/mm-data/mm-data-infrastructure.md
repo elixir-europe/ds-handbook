@@ -42,3 +42,5 @@ This indicator assesses the availability, integration and reliability of technic
 * **Guided and supported use**: Clear usage guidelines and SOPs are embedded in systems, supported by training and user documentation.
 
 **Impact**: RDM infrastructure is robust, interoperable and FAIR-compliant. Automated processes reduce errors, ensure compliance and enable efficient long-term data stewardship across the organisation. 
+
+{% include back-to-mm.html %}

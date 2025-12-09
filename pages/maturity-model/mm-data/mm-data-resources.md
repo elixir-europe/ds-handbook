@@ -37,3 +37,5 @@ This indicator assesses the extent to which RDM is supported by institutionally 
 * **Ownership:** Each tool or service has a designated responsible owner to ensure maintenance and support.
 
 **Impact:** RDM workflows are efficient, coordinated and sustainable, supporting the production of high-quality and reusable data.
+
+{% include back-to-mm.html %}

@@ -36,3 +36,5 @@ This indicator assesses the organisation's readiness and capacity to provide gui
 * **Quality assurance:** Established review and validation procedures ensure data quality, interoperability (through standard formats and ontologies) and legal compliance. Access types and retention periods are systematically managed.
 
 **Impact:** Research data publication is consistent, reliable and compliant with institutional, legal and FAIR standards. Data are citable, discoverable and reusable, strengthening the organisation’s contribution to open and transparent research.
+
+{% include back-to-mm.html %}

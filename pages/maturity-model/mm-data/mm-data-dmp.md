@@ -37,3 +37,5 @@ This indicator assesses how far the organisation has developed, maintained and e
 * **Machine-actionable DMPs:** Machine-actionable DMP tools and workflows are implemented, widely used and routinely updated.
 
 **Impact:** Researchers have access to comprehensive, coherent and machine-actionable RDM services. Use of these resources is widespread, institutional expectations are clearly communicated and adherence to funder requirements is consistently achieved.
+
+{% include back-to-mm.html %}

@@ -39,3 +39,5 @@ This indicator evaluates the maturity of IT security measures employed to safegu
 * **Continuous improvement:** Regular audits, policy updates, and iterative enhancements ensure evolving threats are mitigated.
 
 **Impact:** IT security is robust, proactive, and trusted. Research data protection is embedded into organisational culture, with ongoing monitoring and continuous enhancement.
+
+{% include back-to-mm.html %}

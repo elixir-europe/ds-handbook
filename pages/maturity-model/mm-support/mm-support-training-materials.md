@@ -41,3 +41,5 @@ This indicator assesses the availability of RDM training materials, including th
 * **Indexed and linked:** Content is registered in community platforms or institutional catalogues.
 
 **Impact:** Training materials are reusable and citable, widely visible, and can be shared across institutions and borders, strengthening both adoption and institutional reputation.
+
+{% include back-to-mm.html %}

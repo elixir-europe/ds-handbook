@@ -40,3 +40,5 @@ This indicator assesses the presence and adoption of data management documentati
 * **Communication**: The existence of the documentation is proactively communicated to the appropriate audiences (e.g., targeted emails to researchers and other relevant parties).  
 * **Awareness**: Target audiences understand both the purpose and relevance of the documentation as well as the challenges, processes and expectations that it is relevant to.  
 * **Live documents**: Documentation is regularly reviewed and  updated in response to user feedback, evolving practices and emerging requirements.
+
+{% include back-to-mm.html %}

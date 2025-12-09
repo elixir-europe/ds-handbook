@@ -29,3 +29,5 @@ This indicator assesses the extent to which RDM services and activities align wi
 * **Collaborative improvement:** Continuous feedback loops established through partnerships and networks to align institutional practices with emerging global developments.
 
 **Impact:** RDM activities become coherent and increasingly standardised, strengthening interoperability and compliance with external developments. The organisation is seen as a credible and connected element in the broader research data ecosystem.
+
+{% include back-to-mm.html %}

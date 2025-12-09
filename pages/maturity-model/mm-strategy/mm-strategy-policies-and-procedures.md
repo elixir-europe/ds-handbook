@@ -39,3 +39,5 @@ This indicator evaluates the extent to which an organisation has clearly defined
 * **Personnel**: Dedicated RDM staff actively assess and ensure the continued effectiveness and relevance of RDM practices.
 
 **Impact**: Regular reviews and strong alignment reduce overlap and risks, keeping research data reusable and in line with FAIR principles in a sustainable way. .
+
+{% include back-to-mm.html %}

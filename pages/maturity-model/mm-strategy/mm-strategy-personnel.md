@@ -40,3 +40,5 @@ This indicator examines how responsibilities for research data management are di
 * **Embedded culture**: RDM responsibilities are part of institutional strategy and professional development pathways.
 
 **Impact**: RDM support is cohesive, sustainable and strategically embedded in the organisation’s research environment. Coordination ensures efficiency, shared learning and long-term institutional growth.
+
+{% include back-to-mm.html %}

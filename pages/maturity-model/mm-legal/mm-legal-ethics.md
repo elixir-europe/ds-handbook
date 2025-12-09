@@ -39,3 +39,5 @@ This indicator assesses the extent to which ELSI (Ethical, Legal, and Social Iss
 * **Continuous improvement:** Feedback loops, monitoring and auditing ensure policies remain relevant and effective.
 
 **Impact:** A mature ethics culture fosters trust, transparency, and responsible innovation. Ethical reflection is an integral part of research planning, execution and data stewardship.
+
+{% include back-to-mm.html %}

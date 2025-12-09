@@ -35,3 +35,5 @@ This indicator assesses the stability, diversity and sustainability of funding t
 * **Cost recovery model**: Service fees or shared-cost models supplement funding, supporting scalability and long-term financial sustainability.
 
 **Impact:** RDM infrastructure is strategically planned, financially sustainable and continuously improved through diversified and resilient funding streams.
+
+{% include back-to-mm.html %}

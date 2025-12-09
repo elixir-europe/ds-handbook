@@ -31,3 +31,5 @@ This indicator assesses how well the organisation’s RDM practices align with r
 * **Clear oversight and feedback**: Basic monitoring (e.g., DMP reviews or repository checks) are in place, and feedback from practice is used to update  supporting materials and guidance.
 
 **Impact***:* RDM practices are coherent, compliant and sustainable. They support reliable data reuse, reduced risk and alignment with FAIR principles.
+
+{% include back-to-mm.html %}

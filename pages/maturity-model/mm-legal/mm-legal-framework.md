@@ -41,3 +41,5 @@ This indicator assesses the availability and use of standardised frameworks, tem
 * **Dedicated support:** Full support mechanisms are provided (e.g., ticket systems with progress tracking and defined reaction times, dedicated personnel).
 
 **Impact:** The legal framework for RDM is improved over time and used consistently across the organisation. This ensures compliance, efficiency, and low risk, supported by well-trained staff.
+
+{% include back-to-mm.html %}
