@@ -13,6 +13,8 @@ subitems:
     url: /g-support-networks
   - title: Creation of a legal framework
     url: /g-legal-framework
+  - title: Data protection compliance
+    url: /g-data-protection
   - title: IT security
     url: /g-security
 
