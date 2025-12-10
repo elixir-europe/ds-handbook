@@ -1,7 +1,7 @@
 ---
 title: RDM personnel
 description: Indicates how well RDM services and activities are supported by dedicated personnel within the organisation
-contributors: [Ingeborg Winge, Brane Leskošek, Nils-Christian Lübke, Vassilios Ioannidis, Niclas Jareborg, Mijke Jetten, Heleri Inno, Hana Marčeti]
+contributors: [Ingeborg Winge, Brane Leskošek, Nils-Christian Lübke, Vassilios Ioannidis, Niclas Jareborg, Mijke Jetten, Heleri Inno, Hana Marčetić]
 page_id: mm-strategy-personnel
 ---
 
