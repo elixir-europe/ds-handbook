@@ -18,46 +18,49 @@ Mature IT security emerges when policies are documented, staff are trained regul
 Data stewards play a pivotal role in bridging the gap between researchers and IT professionals—helping to embed data security concerns into research culture and daily practice. The mission of a data steward is to facilitate adoption of data security practices while still enabling  awareness, practical guidance, and embedding security into workflows.
 Furthermore, data stewards play a vital role in adapting institutional security policies to the realities of the research environment. This input is crucial, as Information Security Officers (ISOs) often come from business-oriented backgrounds that may not align with the unique workflows and openness required in a research institute.
 
-1. Promote awareness and visibility of IT security support and guidance
+**1\. Promote awareness and visibility of IT security support and guidance**
 
-✔ Promote presence at the institutional level
+**✔ Promote presence at the institutional level**
 
-Include references to IT security policies and procedures into institutional RDM and DMP guidelines.
-Include IT security guidance in onboarding and offboarding materials and general training portfolio.
-Share reminders about security practices via newsletters or internal communications.
+* Include references to IT security policies and procedures into institutional RDM and DMP guidelines.  
+* Include IT security guidance in onboarding and offboarding materials and general training portfolio.  
+* Share reminders about security practices via newsletters or internal communications.
 
-2. Foster a Security-Conscious Culture
+**2\. Foster a Security-Conscious Culture**
 
-✔ Make it normal and safe to report potential vulnerabilities or mistakes.
+**✔** Make it normal and safe to report potential vulnerabilities or mistakes.
 
-Encourage staff to ask about risks, reporting incidents, or implementing security measures. As a data steward, researchers are more open to share their IT security questions and doubts in face-to-face meetings, e.g. project planning kick-offs or DMP review.
-✔ Offer simple checklists or templates for common tasks.
+* Encourage staff to ask about risks, reporting incidents, or implementing security measures. As a data steward, researchers are more open to share their IT security questions and doubts in face-to-face meetings, e.g. project planning kick-offs or DMP review.
 
-✔ Track issues and responses
+**✔** Offer simple checklists or templates for common tasks.
 
-Analyse data management help desk questions/requests for potential security gaps or incidents to identify areas for improvement
-Use this information to refine guidance, training, or tools or notify IT security of problems.
-Communicate updates to procedures, templates, or IT tools that result from staff input.
+**✔ Track issues and responses**
 
-3. Integrate IT security into research workflows
+* Analyse data management help desk questions/requests for potential security gaps or incidents to identify areas for improvement  
+* Use this information to refine guidance, training, or tools or notify IT security of problems.  
+* Communicate updates to procedures, templates, or IT tools that result from staff input.
 
-✔ Position security guidance at key research milestones
+**3\. Integrate IT security into research workflows**
 
-Align security checks with research project registration, data collection, storage, sharing, or long-term preservation.
-Ensure access controls, and risk assessments are applied at the right time.
-Translate high-level policies into actionable steps for researchers (e.g., password management, MFA, secure file storage).
+**✔ Position security guidance at key research milestones**
 
-4.  Establish collaboration with your information security office
+* Align security checks with research project registration, data collection, storage, sharing, or long-term preservation.  
+* Ensure access controls, and risk assessments are applied at the right time.  
+* Translate high-level policies into actionable steps for researchers (e.g., password management, MFA, secure file storage).
 
-✔ Clarify roles and expectations in your relationship with information security office
-Share domain specific requirements and standards.
-Assess impact of new security measures on researchers and their activities.
-Contribute to policy development and awareness campaigns.
+**4\.  Establish collaboration with your information security office**
 
-✔Collaborate with IT security  when introducing new tools for research data management
+**✔** Clarify roles and expectations in your relationship with information security office
+
+* Share domain specific requirements and standards.  
+* Assess impact of new security measures on researchers and their activities.  
+* Contribute to policy development and awareness campaigns.
 
 
-✔ Establish a communication channel with information security office, ensuring regular exchanges
-When a data steward notices a possible security issue, they should raise alarms and forward the issue to IT security contact.
-To effectively identify areas for improvement, Data Stewards must collaborate with IT Security on a regular basis (e.g., every 3–6 months). These joint reviews of incident logs and recurring security questions ensure that the Steward is informed of real-world gaps and can adjust guidance accordingly.
-Ensure your collaboration framework is documented and inform management about it.
+**✔**Collaborate with IT security  when introducing new tools for research data management
+
+**✔** Establish a communication channel with information security office, ensuring regular exchanges
+
+* When a data steward notices a possible security issue, they should raise alarms and forward the issue to IT security contact.  
+* To effectively identify areas for improvement, Data Stewards must collaborate with IT Security on a regular basis (e.g., every 3–6 months). These joint reviews of incident logs and recurring security questions ensure that the Steward is informed of real-world gaps and can adjust guidance accordingly.  
+* Ensure your collaboration framework is documented and inform management about it.
