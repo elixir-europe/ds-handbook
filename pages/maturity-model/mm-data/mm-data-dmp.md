@@ -1,7 +1,7 @@
 ---
 title: Data management planning
 description: Indicates the maturity of data management planning support provided by the organisation
-contributors: [Gil Poiares-Oliveira, Miguel Cisneiors, Brane Leskošek, Hana Marčetić, Saliha Zenboudji-Beddek, Aída Moure-Fernández]
+contributors: [Gil Poiares-Oliveira, Miguel Cisneiros, Brane Leskošek, Hana Marčetić, Saliha Zenboudji-Beddek, Aída Moure-Fernández]
 page_id: mm-data-dmp
 ---
 

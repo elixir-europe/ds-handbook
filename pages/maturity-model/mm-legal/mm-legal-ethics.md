@@ -1,7 +1,7 @@
 ---
 title: Ethics
 description: Indicates the level of ethical awareness from minimal considerations to guidelines and standard compliance
-contributors: [Heleri Inno, Hana, Saliha Zenboudji-Beddek, Mijke Jetten, Jana Martínková]
+contributors: [Heleri Inno, Hana Marčetić, Saliha Zenboudji-Beddek, Mijke Jetten, Jana Martínková]
 page_id: mm-legal-ethics
 ---
 

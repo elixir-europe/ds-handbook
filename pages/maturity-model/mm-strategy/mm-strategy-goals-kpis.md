@@ -1,7 +1,7 @@
 ---
 title: RDM goals and KPIs
 description: Indicate to what extent goals and KPIs based on the RDM strategy are used to monitor and guide operational improvement
-contributors: [Riku Riski, Maria Klapa, Jana Martínková, Hana Marčeti, Mijke Jetten]
+contributors: [Riku Riski, Maria Klapa, Jana Martínková, Hana Marčetić, Mijke Jetten]
 page_id: mm-strategy-goals-kpis
 ---
 This indicator assesses the extent to which an organisation uses goals and KPIs from its RDM strategy to monitor progress and support improvement. It looks at whether these metrics are clear, regularly reviewed and linked to daily operations. Higher maturity levels show a move from ad hoc or informal tracking to a structured, data-driven approach. This supports accountability, decision making and supports ongoing development of RDM practices.
