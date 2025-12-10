@@ -10,6 +10,18 @@
 #    affiliation: affiliation
 #    image_url: absolute path to image (default image from github)
 
+Maria Klapa:
+    git:
+    email: 
+    orcid:
+    role: contributor
+    affiliation:
+Riku Riski:
+    git:
+    email: 
+    orcid:
+    role: contributor
+    affiliation:
 Magdalena Utko:
     git:
     email: 
