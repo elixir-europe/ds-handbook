@@ -54,7 +54,7 @@ Share domain specific requirements and standards.
 Assess impact of new security measures on researchers and their activities.
 Contribute to policy development and awareness campaigns.
 
-✔Collaborate with IT security  when introducing new tools for research data management
+✔ Collaborate with IT security  when introducing new tools for research data management
 
 
 ✔ Establish a communication channel with information security office, ensuring regular exchanges
