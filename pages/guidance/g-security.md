@@ -1,7 +1,7 @@
 ---
 title: IT security
 description: How to protect stored data
-contributors: [Aina Jené, Heleri Inno, Hana Marčetić, Jana Martínková, Saliha Zenboudji-Beddek, Diana Pilvar, Vilem Ded, Marina Popleteeva]
+contributors: [Aina Jené, Heleri Inno, Hana Marcetic, Jana Martínková, Saliha Zenboudji-Beddek, Diana Pilvar, Vilem Ded, Marina Popleteeva]
 page_id: g-security
 type: Guidance
 related_pages: mm-legal-security
