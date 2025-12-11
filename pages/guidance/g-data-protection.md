@@ -33,7 +33,7 @@ Data protection in research ensures that personal and sensitive data are process
 
 These actions ensure that the organizational structure, roles, and necessary tools are clearly visible and accessible to researchers and staff. Data stewards facilitate compliance by connecting researchers with the appropriate institutional experts. They are the ones who know when to contact the legal or DPO teams, serving as translators between researchers and these experts.
 
-✔ **Define and Empower the Data Protection Officer (DPO)**
+**Define and Empower the Data Protection Officer (DPO)**
 
 * Map responsibilities for data protection across researchers, data stewards, DPOs, ethics committees, and legal advisors.  
 * Provide a one-page overview of responsibilities, highlighting what tasks belong to the DPO versus the data steward, Principal Investigator and IT staff. Clearly communicate the mandates of the different roles (consultation, monitoring, impact assessment).  
@@ -41,7 +41,7 @@ These actions ensure that the organizational structure, roles, and necessary too
 * Keep contact details for the DPO and related offices (Legal, TTO) visible in onboarding materials, presentations, intranet pages, and RDM pages.  
 * Provide the DPO with executive support to enforce compliance across departments (if that is in the mandate of the DS role).
 
-✔ **Centralize and Standardize Documentation**
+**Centralize and Standardize Documentation**
 
 * Create and maintain a single, easily accessible information resource that collects and/or refers to all mandatory compliance templates and guidance (e.g., Data Protection Impact Assessment (DPIA) forms, Records of Processing Activities (ROPA) documentation, and consent templates).  
 * Ensure templates and documentation are actively reviewed and updated by the DPO and legal counsel.
@@ -50,7 +50,7 @@ These actions ensure that the organizational structure, roles, and necessary too
 
 The focus here is to move from reactive compliance to proactive involvement by making compliance checks mandatory parts of research milestones.
 
-✔ **Mandate DPO Involvement at Project Initiation**
+**Mandate DPO Involvement at Project Initiation**
 
 * Establish a mandatory pre-screening procedure for all new projects or grant applications to identify whether personal or sensitive research data is involved.  
 * If personal/sensitive data is identified, the project must consult with the DPO or Legal Counsel before the final grant submission or ethics review.  
@@ -61,17 +61,17 @@ The focus here is to move from reactive compliance to proactive involvement by m
 
 These steps ensure that compliance is maintained throughout the project lifecycle and that the overall system is regularly audited and optimized.
 
-✔ **Implement Regular Auditing and Evaluation**
+**Implement Regular Auditing and Evaluation**
 
 * Support the DPO in performing ongoing evaluation of compliance procedures and systems, reporting findings to top leadership.  
 * Establish a schedule for conducting regular internal or external audits to assess compliance levels on a sample of ongoing RD projects.
 
-✔ **Formalize Data Subject Rights Exercise**
+**Formalize Data Subject Rights Exercise**
 
 * S.Support the DPO in creating a documented process for Data Subject Rights (e.g., access or erasure). This process should be clearly publicized and include specific steps for receiving, logging, and responding to requests.  
 * Ensure that Data Stewards are trained and prepared to help execute these rights in a timely and compliant manner.
 
-✔ **Use Audit Results to Drive Optimization**
+**Use Audit Results to Drive Optimization**
 
 * Utilize findings from audits and Data Subject Rights requests to identify weaknesses in templates, policies, or training materials.  
 * Regularly communicate system improvements and policy updates, demonstrating that the institutional approach to data protection is evolving based on identified needs.
