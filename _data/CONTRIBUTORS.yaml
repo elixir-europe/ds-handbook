@@ -12,166 +12,165 @@
 
 
 Aída Moure Fernández:
-    git: aidamouref
-    orcid: 0000-0001-8833-5750
-    role: contributor
-    affiliation: Barcelona Supercomputing Center (BSC), Spanish National Bioinformatics Institute (INB/ELIXIR-ES)
+  git: aidamouref
+  orcid: 0000-0001-8833-5750
+  role: contributor
+  affiliation: Barcelona Supercomputing Center (BSC), Spanish National Bioinformatics Institute (INB/ELIXIR-ES)
 Aina Jene:
-    git: ainajene
-    role: contributor
+  git: ainajene
+  role: contributor
 Amir Szitenberg:
-    git: szitenberg
-    orcid: 0000-0002-7309-2845
-    role: contributor
+  git: szitenberg
+  orcid: 0000-0002-7309-2845
+  role: contributor
 Anna Niehues:
-    role: contributor
+  role: contributor
 Anna Strachotova:
-    role: contributor
+  role: contributor
 Bert Droesbeke:
-    git: bedroesb
-    role: contributor
+  git: bedroesb
+  role: contributor
 Bojan Kverh:
-    role: contributor
+  role: contributor
 Brane Leskošek:
-    role: contributor
+  role: contributor
 Carmen Reverté:
-    role: contributor
+  role: contributor
 Dafne Condori:
-    role: contributor
+  role: contributor
 Daniel Faria:
-    role: contributor
+  role: contributor
 Danny Ben-Avraham:
-    role: contributor
+  role: contributor
 Diana Pilvar:
-    git: diana-pilvar
-    email: diana.pilvar@ut.ee
-    orcid: 0000-0002-5788-2687
-    role: contributor
-    affiliation: University of Tartu
+  git: diana-pilvar
+  email: diana.pilvar@ut.ee
+  orcid: 0000-0002-5788-2687
+  role: contributor
+  affiliation: University of Tartu
 Elin Kronander:
-    git: elinkronander
-    email: elin.kronander@nbis.se
-    orcid: 0000-0003-0280-6318
-    role: contributor
+  git: elinkronander
+  email: elin.kronander@nbis.se
+  orcid: 0000-0003-0280-6318
+  role: contributor
 Federico Bianchini:
-    git: bianchini88
-    role: contributor
+  git: bianchini88
+  role: contributor
 Fieke Schoots:
-    role: contributor
+  role: contributor
 Flavio Licciulli:
-    git: flaviolic
-    orcid: 0000-0002-1861-8947
-    role: contributor
-    email: flavio.licciulli@ba.itb.cnr.it
-    affiliation: Institute for Biomedical Technogies, National Research Council (CNR)
+  git: flaviolicorcid: 0000-0002-1861-8947
+  role: contributor
+  email: flavio.licciulli@ba.itb.cnr.it
+  affiliation: Institute for Biomedical Technogies, National Research Council (CNR)
 Flora D'Anna:
-    git: floradanna
-    orcid: 0000-0003-4665-6673
-    role: contributor
-    affiliation: VIB Data Core / ELIXIR-BE
+  git: floradanna
+  orcid: 0000-0003-4665-6673
+  role: contributor
+  affiliation: VIB Data Core / ELIXIR-BE
 Freya Vamberg Delfs Thrane:
-    git: FreyaVDT
-    role: contributor
+  git: FreyaVDT
+  role: contributor
 Gil Poiares-Oliveira:
-    git: GilOliveira
-    orcid: 0000-0003-4638-2879
-    email: gpo@biodata.pt
-    role: contributor
+  git: GilOliveira
+  orcid: 0000-0003-4638-2879
+  email: gpo@biodata.pt
+  role: contributor
 Hana Marčetić:
-    git: hanamarcetic
-    orcid: 0000-0002-3841-0377
-    role: contributor
-    affiliation: Luxembourg Centre of Systems Biomedicine
+  git: hanamarcetic
+  orcid: 0000-0002-3841-0377
+  role: contributor
+  affiliation: Luxembourg Centre of Systems Biomedicine
 Helena Schnitzer:
-    git: HelenaSchnitzer
-    email: h.schnitzer@fz-juelich.de
-    orcid: 0000-0002-6382-9452
-    role: contributor
-    affiliation: Forschungszentrum Jülich GmbH
+  git: HelenaSchnitzer
+  email: h.schnitzer@fz-juelich.de
+  orcid: 0000-0002-6382-9452
+  role: contributor
+  affiliation: Forschungszentrum Jülich GmbH
 Heleri Inno:
-    git: heleriinno
-    orcid: 0000-0003-2043-0772
-    role: contributor
-    affiliation: University of Tartu / ELIXIR-EE
+  git: heleriinno
+  orcid: 0000-0003-2043-0772
+  role: contributor
+  affiliation: University of Tartu / ELIXIR-EE
 Ivan Mičetić:
-    git: ivanmicetic
-    role: contributor
+  git: ivanmicetic
+  role: contributor
 Jana Martínková:
-    git: jmartinkova
-    orcid: 0000-0001-8575-6533
-    role: contributor
+  git: jmartinkova
+  orcid: 0000-0001-8575-6533
+  role: contributor
 Jeanne Wilbrandt:
-    git: RDMJeanne
-    orcid: 0000-0002-0363-3837
-    role: contributor
+  git: RDMJeanne
+  orcid: 0000-0002-0363-3837
+  role: contributor
 John Hancock:
-    role: contributor
+  role: contributor
 Jorge Olivira:
-    role: contributor
+  role: contributor
 Katharina Friedlinde Heil:
-    orcid: 0000-0003-3341-3736
-    role: contributor
+  orcid: 0000-0003-3341-3736
+  role: contributor
 Laura Portell Silva:
-    git: lauportell
-    role: contributor
+  git: lauportell
+  role: contributor
 Magdalena Utko:
-    role: contributor
+  role: contributor
 Marina Popleteeva:
-    git: marikapop
-    role: contributor
-    orcid: 0000-0002-8409-6147
-    affiliation: Luxembourg Institute of Health
+  git: marikapop
+  role: contributor
+  orcid: 0000-0002-8409-6147
+  affiliation: Luxembourg Institute of Health
 Mijke Jetten:
-    git: MijkeJetten
-    role: contributor
+  git: MijkeJetten
+  role: contributor
 Miguel Cisneiros:
-    role: contributor
+  role: contributor
 Minna Ahokas:
-    git: minnami
-    role: contributor
+  git: minnami
+  role: contributor
 Nazeefa Fatima:
-    git: Nazeeefa
-    orcid: 0000-0001-7791-4984
-    role: contributor
+  git: Nazeeefa
+  orcid: 0000-0001-7791-4984
+  role: contributor
 Niclas Jareborg:
-    git: nicjar
-    email: niclas.jareborg@nbis.se
-    orcid: 0000-0002-4520-044X
-    role: contributor
+  git: nicjar
+  email: niclas.jareborg@nbis.se
+  orcid: 0000-0002-4520-044X
+  role: contributor
 Nick Juty:
-    role: contributor
+  role: contributor
 Nils-Christian Lübke:
-    role: contributor
+  role: contributor
 Paulette Lieby:
-    git: froggypaule
-    orcid: 0000-0002-9289-9652
-    email: paulette.lieby@france-bioinformatique.fr
-    role: contributor
+  git: froggypaule
+  orcid: 0000-0002-9289-9652
+  email: paulette.lieby@france-bioinformatique.fr
+  role: contributor
 Pinar Alper:
-    role: contributor
+  role: contributor
 Polonca Ferk:
-    role: contributor
+  role: contributor
 Rudolf Vohnout:
-    orcid: 0000-0002-6809-7377
-    role: contributor
+  orcid: 0000-0002-6809-7377
+  role: contributor
 Saliha Zenboudji-Beddek:
-    git: SalihaZ
-    orcid: 0009-0001-3375-7793
-    role: contributor
-    affiliation: French Institute of Bioinformatics (IFB -UAR 3601 - CNRS)
+  git: SalihaZ
+  orcid: 0009-0001-3375-7793
+  role: contributor
+  affiliation: French Institute of Bioinformatics (IFB -UAR 3601 - CNRS)
 Siiri Fuchs:
-    role: contributor
+  role: contributor
 Teresa D'Altri:
-    git: TeresaDAltri
-    orcid: 0000-0002-8146-5365
-    role: contributor
+  git: TeresaDAltri
+  orcid: 0000-0002-8146-5365
+  role: contributor
 Vilem Ded:
-    git: vildead
-    role: contributor
+  git: vildead
+  role: contributor
 Wolmar Nyberg Åkerström:
-    orcid: 0000-0002-3890-6620
-    role: contributor
+  orcid: 0000-0002-3890-6620
+  role: contributor
 Xenia Perez Sitja:
-    git: sitjart
-    role: contributor
-    affiliation: Earlham Institute, ELIXIR-UK
+  git: sitjart
+  role: contributor
+  affiliation: Earlham Institute, ELIXIR-UK
