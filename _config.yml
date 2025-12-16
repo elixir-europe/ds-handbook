@@ -65,26 +65,6 @@ defaults:
       path: "pages/maturity-model"
     values:
       sidebar: maturity-model
-  -
-    scope:
-      path: "pages/maturity-model/mm-strategy"
-    values:
-      type: Strategy indicators
-  -
-    scope:
-      path: "pages/maturity-model/mm-legal"
-    values:
-      type: Legal indicators
-  -
-    scope:
-      path: "pages/maturity-model/mm-data"
-    values:
-      type: Data indicators
-  -
-    scope:
-      path: "pages/maturity-model/mm-support"
-    values:
-      type: Support indicators
 
 scholar:
   style: _bibliography/nature_custom.csl

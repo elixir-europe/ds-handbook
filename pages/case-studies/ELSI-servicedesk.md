@@ -1,9 +1,7 @@
 ---
 title: ELSI servicedesk
-description: 
-contributors: 
 page_id: ELSI-servicedesk
-type: Case Study
+type: [Case Study]
 ---
 ELIXIR-NL (MM score 4)
 

@@ -11,8 +11,8 @@ layout: none
     {% include topnav.html search=true %}
     <div class="landingpage">
         <section class="container g-lg-5 mb-5">
-            <div>
-                <h1>Data Stewardship <br><span class='highlight'>Handbook</span></h1>
+            <div class="text-center">
+                <div class="landingpage-title">Data Stewardship <br><span class='highlight'>Handbook</span></div>
                 <span class="subtitle"></span>
                 <p class="text-center mt-2">The handbook for the people side of data stewardship</p>
             </div>
@@ -26,7 +26,7 @@ layout: none
                     {% for item in landmarks %}
                     <div class="col">
                             <div class="card bg-white h-100">
-                                <img src="{{ item.image_url | relative_ur l}}" class="card-img-top h-icon-6 mx-auto" alt="{{item.title}} icon">
+                                <img src="{{ item.image_url | relative_url}}" class="card-img-top h-icon-6 mx-auto" alt="{{item.title}} icon">
                                 <div class="card-body text-center">
                                     <a href="{{ item.url | relative_url }}" class="stretched-link">
                                         <h3 class="card-title no-anchor text-dark">{{item.title}}</h3>
@@ -34,7 +34,6 @@ layout: none
                                     <p class="card-text">{{item.description}}</p>
                                 </div>
                             </div>
-                        </a>
                     </div>
                     {%- endfor %}
                 </div>

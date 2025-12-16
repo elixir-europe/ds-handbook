@@ -1,7 +1,7 @@
 ---
 title: How to contribute to Data Steward (DS) Handbook
 description: How to contribure to Data Steward Handbook
-contributors: Helena Schnitzer, Bojan Kverh, Flavio Licciulli, Carmen Reverté, Diana Pilvar, Marina Popleteeva, Amir Szitenberg, Nazeefa Fatima, Niclas Jareborg, Mijke Jetten, Paulette Lieby, Teresa D'Altri, Elin Kronander
+contributors: [Helena Schnitzer, Bojan Kverh, Flavio Licciulli, Carmen Reverté, Diana Pilvar, Marina Popleteeva, Amir Szitenberg, Nazeefa Fatima, Niclas Jareborg, Mijke Jetten, Paulette Lieby, Teresa D'Altri, Elin Kronander]
 page_id: how_to_contribute
 ---
 

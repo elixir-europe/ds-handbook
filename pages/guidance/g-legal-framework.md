@@ -3,8 +3,7 @@ title: Legal framework for research data
 description: How to create a legal framework for research data
 contributors: [Heleri Inno, Rudolf Vohnout, Hana Marčetić, Aina Jene, Wolmar Nyberg Åkerström, Jana Martínková, Aída Moure Fernández, Mijke Jetten]
 page_id: g-legal-framework
-type: Guidance
-related_pages: [support-communication]
+type: [Guidance]
 ---
 ## Context
 [Collins dictionary](https://www.collinsdictionary.com/dictionary/english/legal-framework#google_vignette) defines legal framework as “a particular set of rules, ideas, or beliefs which you use in order to deal with problems or to decide what to do”. In the context of data stewardship and research data management, this topic covers the laws, regulations, national and institutional policies that govern how research data is handled throughout the research project. This includes crucial areas like data protection (e.g., GDPR), intellectual property, data sharing protocols and ethical considerations. Although information security, data protection (e.g., GDPR) and ethics are their own topics in this handbook, this section will briefly cover these since they all fall under the general legal framework. 

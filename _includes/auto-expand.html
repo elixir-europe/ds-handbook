@@ -1,0 +1,62 @@
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const ACCORDION_SELECTOR = ".accordion-collapse";
+
+        // On load with hash
+        if (window.location.hash) {
+            openAndScroll(window.location.hash);
+        }
+
+        // On in-page anchor click
+        document.addEventListener("click", function(e) {
+            const link = e.target.closest("a");
+            if (!link) return;
+
+            const href = link.getAttribute("href");
+
+            // Only handle pure hash links
+            if (!href || !href.startsWith("#")) return;
+
+            const target = document.querySelector(href);
+
+            if (!target) return;
+
+            e.preventDefault();
+            openAndScroll(href, true);
+        });
+
+        function openAndScroll(hash, updateHash = false) {
+            const target = document.querySelector(hash);
+            if (!target) return;
+
+            // Find the accordion panel that contains the target row
+            const collapse = target.closest(ACCORDION_SELECTOR);
+
+            if (collapse) {
+                const bsCollapse = bootstrap.Collapse.getOrCreateInstance(collapse, { toggle: false });
+                // If it's not already visible, expand it
+                if (!collapse.classList.contains("show")) {
+                    collapse.addEventListener("shown.bs.collapse", function onShown() {
+                        collapse.removeEventListener("shown.bs.collapse", onShown);
+                        scrollToTarget(target);
+                    });
+                    bsCollapse.show();
+                } else {
+                    scrollToTarget(target);
+                }
+            } else {
+                scrollToTarget(target);
+            }
+
+            if (updateHash) {
+                history.pushState(null, "", hash);
+            }
+        }
+
+        function scrollToTarget(el) {
+            setTimeout(() => {
+                el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 150);
+        }
+    });
+</script>

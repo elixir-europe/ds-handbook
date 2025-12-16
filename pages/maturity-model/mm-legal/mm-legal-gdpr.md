@@ -39,3 +39,5 @@ This indicator assesses the level of data protection compliance in an organisati
 * **Rights management procedures:** Established systems ensure timely, transparent and well-documented handling of Data Subject Rights requests.
 
 **Impact:** Researchers are familiar with procedures and data protection is embedded in the institutional culture and research workflows. Active DPO engagement lowers risks and demonstrates a mature, accountable organisation.
+
+{% include back-to-mm.html %}

@@ -37,3 +37,5 @@ This indicator assesses the availability, structure and sustainability of RDM tr
 * **Formal recognition:** Participation counts toward certificates, ECTS or career progression.
 
 **Impact:** Training is a well-established, valued component of research culture, supporting widespread and sustained adoption of RDM best practices.
+
+{% include back-to-mm.html %}

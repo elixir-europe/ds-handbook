@@ -38,3 +38,5 @@ This indicator assesses the existence, quality and practical use of guidelines o
 * **Supported by training**: Staff and researchers receive regular refresher training to ensure the consistent application of standards.
 
 **Impact:** Standards are widely adopted and seamlessly integrated into research workflows, increasing interoperability, automation and reproducibility. Data remain well-organised, accessible and reusable over time, ensuring compliance with FAIR principles.
+
+{% include back-to-mm.html %}

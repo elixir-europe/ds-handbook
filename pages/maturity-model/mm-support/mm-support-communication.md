@@ -29,3 +29,5 @@ This indicator assesses how well RDM communication works across an organisation.
 * **Feedback integration:** User input results in updates in guidance, templates, or services.
 
 **Impact:** Communication is open and trusted. RDM becomes part of daily research practice, and feedback helps shape continuous improvement.
+
+{% include back-to-mm.html %}

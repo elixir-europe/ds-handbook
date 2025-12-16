@@ -38,4 +38,6 @@ This indicator assesses the extent to which an organisation uses goals and KPIs 
 * **Continuous improvement**: KPI outcomes are used to refine objectives, allocate resources and update the RDM strategy.  
 * **Evidence-based culture**: Data-driven evaluation supports transparency, accountability, and shared ownership of RDM progress.
 
-**Impact**: A successful RDM culture is developed, progress is monitored and RDM strategy can be appropriately revised. 
+**Impact**: A successful RDM culture is developed, progress is monitored and RDM strategy can be appropriately revised.
+
+{% include back-to-mm.html %}

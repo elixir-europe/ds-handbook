@@ -1,9 +1,7 @@
 ---
 title: CSC RDM Support
-description: 
-contributors: 
 page_id: CSC-RDM-Support
-type: Case Study
+type: [Case Study]
 ---
 ELIXIR-FI (MM score: 4)
 
