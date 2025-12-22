@@ -18,7 +18,7 @@ page_img: "icons/icon-mm.svg"
           <div class="container-fluid">
             <div class="row pb-1">
               <div class="col">
-                <strong>[{{domain.domainLevel}}] {{ domain.domainName }}</strong>
+                <strong>{{ domain.domainName }}</strong>
               </div>
             </div>
             <div class="row">
@@ -42,13 +42,12 @@ page_img: "icons/icon-mm.svg"
           </thead>
           <tbody>
             {% for indicator in domain_indicators %}
-            {% assign indicator_key = indicator.indicatorLevel | append: "" %}
-            {% assign entry_page = site.data.mm_dsh_mapping[indicator_key].page %}
+            {% assign entry_page = indicator.indicatorId %}
             <tr id="{{ entry_page }}">
                 {% if entry_page %}
-                <td><a href="{{ entry_page }}">[{{ indicator.indicatorLevel }}] {{ indicator.indicator }}</a></td>
+                <td><a href="{{ entry_page }}">{{ indicator.indicator }}</a></td>
                 {% else %}
-                <td>[{{ indicator.indicatorLevel }}] {{ indicator.indicator }}</td>
+                <td>{{ indicator.indicator }}</td>
                 {% endif %}
               <td>
                 <ol>

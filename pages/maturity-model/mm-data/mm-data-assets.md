@@ -38,3 +38,5 @@ This indicator assesses the establishment, completeness and interoperability of 
 * **Adoption:** The catalog is widely used by researchers and embedded in institutional RDM workflows and policies.
 
 **Impact:** The catalog operates as a sustainable, interoperable component of organisational RDM strategy. It drives FAIR data implementation and seamless integration across research infrastructures.
+
+{% include back-to-mm.html %}
