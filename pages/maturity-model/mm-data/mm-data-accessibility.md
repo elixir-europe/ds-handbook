@@ -37,3 +37,5 @@ This indicator assesses how effectively the organisation ensures secure, transpa
 * **Automation and APIs:** Access to non-sensitive or approved datasets is facilitated through automated retrieval mechanisms. Authentication and authorisation may be federated through systems such as AAI, eduGAIN or Passport, and metadata is indexed to support advanced discovery.
 
 **Impact:** Data accessibility is seamless, efficient and scalable. Researchers and authorised users can retrieve data quickly and securely, while automation and interoperability ensure compliance, reusability and long-term sustainability.
+
+{% include back-to-mm.html %}
