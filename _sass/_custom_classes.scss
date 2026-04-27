@@ -1244,114 +1244,666 @@ section#search-section {
 
 
 /*========================================================================
+  The magpie's nest — bookmark button, sidebar counter, notebook page.
+  All persistence is localStorage; logic lives in assets/js/notebook.js.
+========================================================================*/
+
+/*=== Bookmark toggle button ============================================*/
+// Sits under the page H1. Visible, editorial, with the magpie inline.
+// On click, the magpie does a "pickup" beak motion.
+.notebook-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 1.1rem 0.55rem 0.45rem;
+    margin: 0.25rem 0 1.25rem;
+    background-color: $brand-paper;
+    border: 1.5px solid $brand-rule;
+    border-radius: 999px;
+    font-family: $font-family-monospace;
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: $dark;
+    cursor: pointer;
+    box-shadow: 0 4px 12px -8px rgba($dark, 0.20);
+    transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+
+    .notebook-toggle-magpie {
+        width: 2rem;
+        height: 2rem;
+        display: block;
+        transform: rotate(-3deg);
+        transform-origin: 60% 80%;
+        transition: transform 0.2s ease;
+    }
+
+    .notebook-toggle-icon {
+        font-family: $font-family-monospace;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 0.8;
+        color: $brand-amber-text;
+        margin-left: 0.05rem;
+        transition: color 0.18s ease;
+    }
+
+    .notebook-toggle-label {
+        line-height: 1;
+    }
+
+    &:hover {
+        border-color: $brand-amber;
+        background-color: rgba($brand-amber, 0.10);
+        transform: translateY(-1px);
+        box-shadow: 0 8px 18px -8px rgba($dark, 0.25);
+
+        .notebook-toggle-magpie {
+            transform: rotate(3deg);
+        }
+    }
+
+    &:focus-visible {
+        outline: 2px solid $brand-amber;
+        outline-offset: 3px;
+    }
+
+    // Saved state — quiet brick wash, filled checkmark
+    &.is-saved {
+        background-color: rgba($brand-brick, 0.08);
+        border-color: $brand-brick;
+        color: $brand-brick-text;
+
+        .notebook-toggle-icon { color: $brand-brick; }
+
+        &:hover {
+            background-color: rgba($brand-brick, 0.14);
+        }
+    }
+
+    // The "collecting" animation: magpie tips forward to peck the page,
+    // then pops back up with a tiny lift.
+    &.collecting .notebook-toggle-magpie {
+        animation: magpie-pickup 0.7s cubic-bezier(.4, 0, .2, 1);
+    }
+}
+
+@keyframes magpie-pickup {
+    0%   { transform: rotate(-3deg) translateY(0); }
+    20%  { transform: rotate(20deg) translateY(2px); }
+    35%  { transform: rotate(28deg) translateY(5px) scale(1.05); }
+    50%  { transform: rotate(20deg) translateY(2px); }
+    70%  { transform: rotate(-12deg) translateY(-4px); }
+    100% { transform: rotate(-3deg) translateY(0); }
+}
+
+
+/*=== Notebook page (/notebook) =========================================*/
+.notebook-greeting {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    margin: 1rem 0 2.5rem;
+    padding: 1.5rem 1.5rem 1.5rem 1.25rem;
+    background-color: rgba($brand-amber, 0.10);
+    border-left: 3px solid $brand-amber;
+    border-radius: 0 0.6rem 0.6rem 0;
+
+    @include media-breakpoint-down(sm) {
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+    }
+}
+
+.notebook-greeting-magpie {
+    width: 110px;
+    height: auto;
+    transform: rotate(-4deg);
+    filter: drop-shadow(0 6px 14px rgba($dark, 0.10));
+}
+
+.notebook-greeting-text { line-height: 1.55; }
+
+.notebook-greeting-hi {
+    font-family: $font-family-display;
+    font-size: 2.2rem;
+    line-height: 1;
+    color: $brand-amber-text;
+    margin: 0 0 0.5rem;
+    transform: rotate(-2deg);
+    transform-origin: left center;
+    display: inline-block;
+}
+
+.notebook-greeting-body {
+    font-family: $font-family-sans-serif;
+    font-size: 1.02rem;
+    color: rgba($dark, 0.88);
+    margin: 0 0 0.5rem;
+    max-width: 56ch;
+}
+
+.notebook-greeting-sign {
+    font-family: $font-family-display;
+    font-size: 1.2rem;
+    color: $brand-amber-text;
+    margin: 0;
+    transform: rotate(-1.5deg);
+    display: inline-block;
+}
+
+.notebook-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.notebook-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1rem;
+    background-color: $brand-paper;
+    border: 1.5px solid $brand-rule;
+    border-radius: 999px;
+    font-family: $font-family-monospace;
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: $dark;
+    cursor: pointer;
+    transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+
+    &:hover {
+        background-color: rgba($brand-amber, 0.10);
+        border-color: $brand-amber;
+        transform: translateY(-1px);
+    }
+
+    &--quiet {
+        background-color: transparent;
+        border-color: rgba($dark, 0.15);
+        color: rgba($dark, 0.65);
+
+        &:hover {
+            background-color: rgba($brand-brick, 0.06);
+            border-color: $brand-brick;
+            color: $brand-brick-text;
+        }
+    }
+}
+
+.notebook-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 3rem;
+}
+
+.notebook-item {
+    --tone: #{$brand-amber-text};
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    padding: 1.1rem 1.25rem;
+    background-color: $brand-paper;
+    border: 1px solid $brand-rule;
+    border-left: 4px solid var(--tone);
+    border-radius: 0 0.4rem 0.4rem 0;
+    margin-bottom: 0.6rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-left-color 0.15s ease;
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 18px -10px rgba($dark, 0.15);
+    }
+
+    &.tone--guidance      { --tone: #{$brand-sage-text}; }
+    &.tone--case-studies  { --tone: #{$brand-brick-text}; }
+    &.tone--maturity-model { --tone: #{$brand-sage-text}; }
+}
+
+.notebook-item-link {
+    display: grid;
+    gap: 0.25rem;
+    text-decoration: none !important;
+    color: $dark !important;
+    background: none !important;
+    padding: 0 !important;
+
+    &::before { content: none !important; }
+    &::after { content: none !important; }
+}
+
+.notebook-item-section {
+    font-family: $font-family-monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--tone);
+}
+
+.notebook-item-title {
+    font-family: $font-family-theme;
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-variation-settings: "opsz" 24, "wdth" 92;
+    line-height: 1.2;
+    color: $dark;
+}
+
+.notebook-item-meta {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 0.2rem;
+    font-size: 0.78rem;
+    color: rgba($dark, 0.6);
+}
+
+.notebook-item-url {
+    font-family: $font-family-monospace;
+    font-size: 0.78rem;
+    word-break: break-all;
+}
+
+.notebook-item-date {
+    font-family: $font-family-display;
+    font-size: 1rem;
+    color: $brand-amber-text;
+    line-height: 1;
+}
+
+.notebook-item-remove {
+    align-self: start;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: 1px solid $brand-rule;
+    border-radius: 50%;
+    color: rgba($dark, 0.55);
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+
+    &:hover {
+        background-color: rgba($brand-brick, 0.10);
+        border-color: $brand-brick;
+        color: $brand-brick;
+    }
+}
+
+.notebook-empty {
+    text-align: center;
+    margin: 3rem auto;
+    max-width: 50ch;
+
+    .notebook-empty-line {
+        font-family: $font-family-display;
+        font-size: 2rem;
+        color: $brand-sage-text;
+        margin: 0 0 0.75rem;
+        transform: rotate(-1deg);
+        display: inline-block;
+    }
+
+    .notebook-empty-hint {
+        font-family: $font-family-sans-serif;
+        font-size: 1rem;
+        color: rgba($dark, 0.78);
+        line-height: 1.55;
+    }
+
+    .notebook-empty-button {
+        display: inline-block;
+        font-family: $font-family-monospace;
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        background-color: rgba($brand-amber, 0.18);
+        padding: 0.1em 0.5em;
+        border-radius: 0.3em;
+        color: $brand-amber-text;
+    }
+}
+
+
+/*=== Print bundle (built dynamically by notebook.js) ==================*/
+// On screen, the print bundle is hidden. On print, everything else is
+// hidden and only the bundle prints — assembled by JS from each saved
+// page's content.
+
+.notebook-print-bundle {
+    display: none;
+}
+
+@media print {
+    @page { margin: 18mm 16mm; }
+
+    html, body {
+        background: $white !important;
+        color: #000 !important;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 11pt;
+        line-height: 1.5;
+    }
+
+    // Hide everything except the bundle
+    body * { visibility: hidden; }
+    .notebook-print-bundle,
+    .notebook-print-bundle * { visibility: visible; }
+
+    .notebook-print-bundle {
+        display: block !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .notebook-print-page {
+        page-break-after: always;
+        padding: 0;
+
+        &:last-child { page-break-after: auto; }
+    }
+
+    // ---- Cover ----
+    .notebook-print-cover {
+        text-align: center;
+        padding: 4rem 1rem 2rem;
+
+        .notebook-print-magpie {
+            width: 120px;
+            height: auto;
+            display: block;
+            margin: 0 auto 1.5rem;
+        }
+        .notebook-print-cover-eyebrow {
+            font-family: "Courier New", monospace;
+            font-size: 9pt;
+            letter-spacing: 0.18em;
+            color: #555;
+            margin: 0 0 1rem;
+        }
+        .notebook-print-cover-title {
+            font-family: Georgia, serif;
+            font-size: 36pt;
+            font-weight: 700;
+            line-height: 1.05;
+            color: #000;
+            margin: 0 0 1.5rem;
+        }
+        .notebook-print-cover-meta {
+            font-family: Georgia, serif;
+            font-size: 11pt;
+            color: #333;
+            margin: 0 0 0.4rem;
+        }
+        .notebook-print-cover-source {
+            font-family: "Courier New", monospace;
+            font-size: 9pt;
+            color: #777;
+            margin: 0;
+        }
+    }
+
+    // ---- Per-page header ----
+    .notebook-print-page-header {
+        border-top: 1.5pt solid #000;
+        border-bottom: 1pt solid #999;
+        padding: 0.6rem 0 0.5rem;
+        margin: 0 0 1rem;
+        page-break-after: avoid;
+
+        .notebook-print-section {
+            font-family: "Courier New", monospace;
+            font-size: 9pt;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            color: #555;
+            margin: 0 0 0.3rem;
+            text-transform: uppercase;
+        }
+        .notebook-print-title {
+            font-family: Georgia, serif;
+            font-size: 22pt;
+            font-weight: 700;
+            line-height: 1.1;
+            color: #000;
+            margin: 0 0 0.3rem;
+        }
+        .notebook-print-source {
+            font-family: "Courier New", monospace;
+            font-size: 8.5pt;
+            color: #777;
+            margin: 0;
+            word-break: break-all;
+        }
+    }
+
+    // ---- Per-page body ----
+    .notebook-print-body {
+        font-size: 11pt;
+        line-height: 1.55;
+        color: #000;
+
+        h1, h2, h3, h4 {
+            font-family: Georgia, serif;
+            color: #000;
+            page-break-after: avoid;
+        }
+        h1 { display: none; } // already shown in the per-page header
+        h2 { font-size: 16pt; margin: 1.2rem 0 0.4rem; }
+        h3 { font-size: 13pt; margin: 1rem 0 0.3rem; }
+        h4 { font-size: 11pt; margin: 0.8rem 0 0.2rem; }
+
+        p, li {
+            font-family: Georgia, serif;
+            font-size: 11pt;
+            color: #000;
+        }
+
+        a {
+            color: #000;
+            text-decoration: underline;
+            background: none !important;
+
+            &::after {
+                content: " (" attr(href) ")";
+                font-size: 0.85em;
+                color: #777;
+                font-family: "Courier New", monospace;
+                font-weight: normal;
+            }
+        }
+
+        // Don't print URLs of internal anchors or the magpie images
+        a[href^="#"]::after,
+        img + a::after { content: none !important; }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            page-break-inside: avoid;
+        }
+
+        // Body callouts — keep a printable shape
+        .alert {
+            border: 1pt solid #999 !important;
+            border-left: 3pt solid #000 !important;
+            background: none !important;
+            padding: 0.5rem 0.75rem !important;
+            margin: 0.75rem 0 !important;
+            page-break-inside: avoid;
+
+            b { color: #000 !important; font-family: Georgia, serif; }
+            i { display: none; }
+        }
+
+        // Tables — readable on paper
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1rem 0;
+            page-break-inside: avoid;
+
+            th, td {
+                border: 1pt solid #999;
+                padding: 6pt 8pt;
+                text-align: left;
+                font-size: 10pt;
+            }
+            th {
+                background: #f0f0f0 !important;
+                font-weight: 700;
+            }
+        }
+
+        blockquote {
+            border-left: 3pt solid #999;
+            padding-left: 1rem;
+            margin: 0.75rem 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        code, pre {
+            font-family: "Courier New", monospace;
+            font-size: 9.5pt;
+        }
+        pre {
+            border: 1pt solid #ccc;
+            padding: 6pt;
+            white-space: pre-wrap;
+            word-break: break-all;
+            page-break-inside: avoid;
+        }
+
+        // Hide editorial chrome that doesn't belong on paper
+        .scribble-divider, .footer-magpie, .magpie-mark,
+        .door-arrow, .has-underline, .door-handle,
+        .trail-magpie, .summary-marker { display: none !important; }
+    }
+
+    .notebook-print-body-error {
+        font-style: italic;
+        color: #777;
+        padding: 1rem;
+        border: 1pt dashed #999;
+    }
+}
+
+
+/*========================================================================
   Content components — reusable theme includes styled editorially.
   Callouts, breadcrumb, body tables, page-metadata tabs, citation,
   more-information-tiles.
 ========================================================================*/
 
-/*=== Callouts (theme: alert-success/info/warning/danger) ===============*/
-// Theme markup: <div class="alert alert-XXX"><i class="fa-..."></i> <b>Type:</b> content</div>
-// Editorial reskin: no big colour block, just a left rule + soft tint, with
-// a Caveat type label and a tinted icon.
+/*=== Callouts — every type spoken by the magpie =========================*/
+// Five types: tip · note · important · warning · magpie
+// Same grid layout for all (bird left, body right). Type-specific colour
+// for the rule + tint + label. The magpie tilts at a different angle per
+// type so the bird reads as a different pose for each piece of advice.
 #main #content .alert {
+    display: grid;
+    grid-template-columns: 3.25rem 1fr;
+    column-gap: 1rem;
+    align-items: center;
     background-color: transparent;
     border: 0;
     border-left: 3px solid;
     border-radius: 0;
-    padding: 0.85rem 1rem 0.85rem 1.15rem;
-    margin: 1.25rem 0;
+    padding: 0.95rem 1.1rem 0.95rem 1.15rem;
+    margin: 1.5rem 0;
     color: $dark;
     font-family: $font-family-sans-serif;
     font-size: 0.97rem;
     line-height: 1.55;
 
-    i {
-        margin-right: 0.4rem;
-        font-size: 0.95rem;
-        vertical-align: 0;
+    // The bird, posed per type via subclass tilt
+    .alert-magpie {
+        grid-column: 1;
+        width: 3.25rem;
+        height: auto;
+        align-self: center;
+        transform: rotate(-4deg);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease;
     }
 
-    // The "Tip:" / "Note:" / "Important:" / "Warning:" prefix
+    // Speaking body
+    .alert-body {
+        grid-column: 2;
+        font-family: $font-family-sans-serif;
+        line-height: 1.55;
+    }
+
+    // Caveat type label
     b {
+        display: block;
         font-family: $font-family-display;
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         font-weight: 700;
         line-height: 1;
-        margin-right: 0.45rem;
-        vertical-align: -0.05em;
+        margin-bottom: 0.35rem;
+
+        &::after {
+            content: " —";
+            color: rgba($dark, 0.4);
+            font-weight: 400;
+        }
     }
 
     a { color: inherit; text-decoration: underline; }
 
-    &.alert-success { // tip
+    // ----- Per type: colour + magpie pose --------------------------------
+    &.alert-tip {
         border-left-color: $brand-sage;
-        background: rgba($brand-sage, 0.07);
+        background: rgba($brand-sage, 0.08);
         b { color: $brand-sage-text; }
-        i { color: $brand-sage-text; }
+        // upright + slight forward lean — encouraging
+        .alert-magpie { transform: rotate(-2deg); }
     }
 
-    &.alert-info { // note
+    &.alert-note {
         border-left-color: $brand-amber;
         background: rgba($brand-amber, 0.10);
         b { color: $brand-amber-text; }
-        i { color: $brand-amber-text; }
+        // tilted head — curious, attentive
+        .alert-magpie { transform: rotate(-8deg); }
     }
 
-    &.alert-warning { // important
+    &.alert-important {
         border-left-color: $brand-amber;
         background: rgba($brand-amber, 0.16);
         b { color: $brand-amber-text; }
-        i { color: $brand-amber-text; }
+        // leaning forward — insistent
+        .alert-magpie { transform: rotate(8deg) translateY(1px); }
     }
 
-    &.alert-danger { // warning
+    &.alert-warning {
         border-left-color: $brand-brick;
         background: rgba($brand-brick, 0.08);
         b { color: $brand-brick-text; }
-        i { color: $brand-brick-text; }
+        // alarmed: head up, looking back
+        .alert-magpie { transform: rotate(-14deg) translateY(-2px); }
     }
 
-    // Magpie callout — the mascot speaks
     &.alert-magpie {
-        position: relative;
-        display: grid;
-        grid-template-columns: 3.5rem 1fr;
-        column-gap: 1rem;
-        align-items: center;
-        background: rgba($brand-amber, 0.10);
         border-left-color: $brand-amber;
-        padding: 1rem 1rem 1rem 1.15rem;
-
-        .magpie-mark {
-            grid-column: 1;
-            width: 3.5rem;
-            height: auto;
-            transform: rotate(-4deg);
-            transform-origin: bottom right;
-            // Tilted slightly so the bird looks "about to speak"
-        }
-
-        .alert-body {
-            grid-column: 2;
-            font-family: $font-family-sans-serif;
-            line-height: 1.55;
-        }
-
-        b {
-            display: block;
-            color: $brand-amber-text;
-            font-family: $font-family-display;
-            font-size: 1.25rem;
-            line-height: 1;
-            margin-bottom: 0.35rem;
-            font-weight: 700;
-
-            &::after {
-                content: " —";
-                color: rgba($dark, 0.4);
-                font-weight: 400;
-            }
-        }
+        background: rgba($brand-amber, 0.10);
+        b { color: $brand-amber-text; }
+        // mid-conversation pose
+        .alert-magpie { transform: rotate(-4deg); }
     }
 }
 
@@ -1422,11 +1974,14 @@ section#search-section {
     }
 }
 
-// Sidebar trail magpie — observer at the end of the path
+// Sidebar trail magpie — observer at the end of the path, links to /notebook
 .trail-magpie {
+    display: block;
     margin-top: 0.5rem;
     padding: 0.5rem 0 0;
     text-align: center;
+    text-decoration: none !important;
+    color: inherit !important;
 
     img {
         width: 4.5rem;
@@ -1435,19 +1990,34 @@ section#search-section {
         display: block;
         opacity: 0.92;
         transform: rotate(-4deg);
+        transform-origin: center bottom;
         transition: transform 0.25s ease;
-
-        &:hover { transform: rotate(2deg) translateY(-1px); }
     }
 
-    .trail-magpie-note {
+    &:hover img { transform: rotate(2deg) translateY(-1px); }
+
+    .trail-magpie-count {
         font-family: $font-family-display;
         font-size: 1.05rem;
         color: $brand-sage-text;
-        margin: 0.25rem 0 0;
-        line-height: 1;
+        margin: 0.35rem 0 0;
+        line-height: 1.1;
         transform: rotate(-3deg);
+        transition: color 0.2s ease;
+
+        &.has-items { color: $brand-amber-text; }
     }
+}
+
+// Bobbing animation triggered when a page gets saved elsewhere on the site
+@keyframes magpie-bob {
+    0%   { transform: rotate(-4deg) translateY(0); }
+    30%  { transform: rotate(-18deg) translateY(-6px); }
+    60%  { transform: rotate(2deg) translateY(2px); }
+    100% { transform: rotate(-4deg) translateY(0); }
+}
+.trail-magpie img.bobbing {
+    animation: magpie-bob 0.65s cubic-bezier(.4,0,.2,1);
 }
 
 // Footer magpie — perched alongside the masthead, with Caveat caption
