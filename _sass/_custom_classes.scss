@@ -1,6 +1,6 @@
 /*========================================================================
   Data Stewardship Handbook — Trailhead identity
-  Voices:
+  Fonts:
     Bricolage Grotesque (display + headings)
     Inter               (body, UI)
     JetBrains Mono      (data accents — page IDs, codes, levels, numbers)
@@ -61,7 +61,17 @@ body {
     }
 
     p, li { font-family: $font-family-sans-serif; }
+
+    // Theme paints list markers in $brand-spring (mint) which has no contrast
+    // on cream. Force ink so bullets and ordered-list numbers stay readable.
+    ul li::marker,
+    ol li::marker { color: $dark; font-weight: 600; }
 }
+
+// Theme sets selection to white-on-mint, which is unreadable. Keep the mint
+// background (it matches the backlight highlight) but use ink for the text.
+::selection      { color: $dark; background: $brand-spring; }
+::-moz-selection { color: $dark; background: $brand-spring; }
 
 .ff-display { font-family: $font-family-display !important; }
 .ff-mono    { font-family: $font-family-monospace !important; }
@@ -167,12 +177,20 @@ header .navbar {
 .landingpage {
     .hero {
         padding-top: 4rem;
-        padding-bottom: 5rem;
+        padding-bottom: 2.5rem;
 
         @include media-breakpoint-up(lg) {
             padding-top: 6rem;
-            padding-bottom: 6rem;
+            padding-bottom: 3rem;
         }
+    }
+
+    // Centred + a touch quieter on the landing — anchors each beat
+    // without competing with the Caveat lead lines below.
+    .section-eyebrow {
+        text-align: center;
+        color: rgba($dark, 0.55);
+        margin-bottom: 1.25rem;
     }
 
     .hero-inner {
@@ -223,13 +241,16 @@ $squiggle-amber: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
 $squiggle-sage:  "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 12' preserveAspectRatio='none'><path d='M 2 8 Q 20 4 40 7 T 80 6 T 120 7 T 160 6 T 200 7 T 238 6' stroke='%236B9E7E' stroke-width='3.5' stroke-linecap='round' fill='none'/></svg>";
 $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 12' preserveAspectRatio='none'><path d='M 2 8 Q 20 4 40 7 T 80 6 T 120 7 T 160 6 T 200 7 T 238 6' stroke='%23C44536' stroke-width='3.5' stroke-linecap='round' fill='none'/></svg>";
 
-// Editorial divider used between sections in body content + footer
+// Editorial divider used between sections in body content + footer.
+// Works on a <div> or <hr>; the border/opacity resets handle the latter.
 .scribble-divider {
     display: block;
     width: 100%;
     max-width: 14rem;
     height: 0.75rem;
     margin: 2.5rem auto;
+    border: 0;
+    opacity: 1;
     background-image: url("#{$squiggle-sage}");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -686,7 +707,10 @@ section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
         margin: 0 0 0.5rem;
     }
 
-    // The clickable title — big Bricolage with a squiggle that draws on hover
+    // The clickable title — big Bricolage. A tone-coloured backlight
+    // (same motif as .color-highlight + the hero "Handbook" wash) sweeps
+    // in from the left on card hover. Flat rectangle, so no shape
+    // distortion at any tile width.
     a.section-title,
     .card-title {
         font-family: $font-family-theme !important;
@@ -697,19 +721,19 @@ section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
         line-height: 1.15;
         color: $dark !important;
         margin: 0.15rem 0 0.4rem;
-        display: inline-block;
-        background-image: var(--squiggle-img);
+        display: inline;
+        background-image: linear-gradient(to right, rgba($brand-spring, 0.85), rgba($brand-spring, 0.85));
         background-repeat: no-repeat;
-        background-position: 0 100%;
-        background-size: 0% 0.36em;
-        padding-bottom: 0.18em;
-        transition: background-size 0.45s cubic-bezier(0.55, 0.06, 0.18, 1.0);
+        background-position: 0 88%;
+        background-size: 0% 0.32em;
+        padding: 0 0.05em;
+        transition: background-size 0.3s ease-out;
 
         b { font-weight: inherit; }
     }
 
     &:hover a.section-title,
-    &:hover .card-title { background-size: 100% 0.36em; }
+    &:hover .card-title { background-size: 100% 0.32em; }
 
     .card-text {
         margin: 0.25rem 0 0;
@@ -718,9 +742,6 @@ section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
         font-size: 0.95rem;
         line-height: 1.5;
     }
-
-    // Default squiggle if no landmark tone is set on the row
-    --squiggle-img: url("#{$squiggle-amber}");
 }
 
 // Per-landmark tone classes (set by the local section-navigation-tiles include)
@@ -728,19 +749,16 @@ section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
 .card.tone--signposts {
     --tone: #{$brand-sage-text};
     --tone-soft: #{rgba($brand-sage, 0.10)};
-    --squiggle-img: url("#{$squiggle-sage}");
 }
 .navigation-tiles.tone--campfires .card,
 .card.tone--campfires {
     --tone: #{$brand-brick-text};
     --tone-soft: #{rgba($brand-brick, 0.08)};
-    --squiggle-img: url("#{$squiggle-brick}");
 }
 .navigation-tiles.tone--waypoints .card,
 .card.tone--waypoints {
     --tone: #{$brand-sage-text};
     --tone-soft: #{rgba($brand-sage, 0.10)};
-    --squiggle-img: url("#{$squiggle-sage}");
 }
 
 // .card-type wrapper from the local include
@@ -1915,7 +1933,8 @@ section#search-section {
 
 // Magpie intro — the moment the bird gets introduced as a character
 .magpie-intro {
-    padding-bottom: 3.5rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
 
     .magpie-intro-inner {
         max-width: 720px;
@@ -2217,6 +2236,118 @@ nav#breadcrumb {
         text-decoration: underline;
         background: none !important;
         padding: 0 !important;
+    }
+}
+
+
+/*=== Contributors roster ==============================================*/
+// Editorial replacement for the theme's contributor-tiles include. No
+// card surface — avatars + names sit directly on the cream page, with a
+// small mono affiliation when present. Filter pills above the grid hide
+// themselves until the YAML carries more than one role.
+
+.contributor-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0 0 2rem;
+
+    .contributor-filter {
+        font-family: $font-family-monospace;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba($dark, 0.65);
+        background: transparent;
+        border: 1px solid $brand-rule;
+        border-radius: 999px;
+        padding: 0.4rem 0.95rem;
+        cursor: pointer;
+        transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+
+        &:hover {
+            color: $dark;
+            border-color: rgba($brand-amber, 0.5);
+        }
+
+        &.is-active {
+            color: $dark;
+            background-color: rgba($brand-amber, 0.18);
+            border-color: $brand-amber;
+        }
+    }
+}
+
+.contributor-roster {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.75rem 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem;
+
+    &__item {
+        text-align: center;
+
+        &[hidden] { display: none; }
+    }
+
+    &__link {
+        display: block;
+        text-decoration: none !important;
+        color: $dark !important;
+
+        &:hover .contributor-roster__avatar { transform: scale(1.04); }
+        &:hover .contributor-roster__name    { color: $accent-color; }
+    }
+
+    &__link--static { cursor: default; }
+
+    &__avatar {
+        display: block;
+        width: 4.5rem;
+        height: 4.5rem;
+        margin: 0 auto 0.6rem;
+        border-radius: 50%;
+        background-color: rgba($dark, 0.06);
+        object-fit: cover;
+        transition: transform 0.2s ease;
+    }
+
+    &__avatar--initial {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $font-family-monospace;
+        font-size: 0.95rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: rgba($dark, 0.65);
+    }
+
+    &__name {
+        display: block;
+        font-family: $font-family-theme;
+        font-size: 0.95rem;
+        font-weight: 500;
+        line-height: 1.25;
+        color: $dark;
+        transition: color 0.15s ease;
+    }
+
+    &__affiliation {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-family: $font-family-monospace;
+        font-size: 0.65rem;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        line-height: 1.35;
+        color: rgba($dark, 0.55);
+        margin: 0.35rem 0 0;
     }
 }
 

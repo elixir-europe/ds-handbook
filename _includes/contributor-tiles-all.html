@@ -1,0 +1,72 @@
+{%- comment -%}
+Local override of the theme include. Renders contributors from
+_data/CONTRIBUTORS.yaml as an editorial roster (no card surface), with
+optional role-filter pills above the grid. Pills only render when more
+than one distinct role exists in the data — drop "role: maintainer" /
+"role: reviewer" entries into the YAML and the pills appear.
+{%- endcomment -%}
+
+{%- assign all_roles = "" | split: "" -%}
+{%- for entry in site.data.CONTRIBUTORS -%}
+  {%- assign role = entry[1].role | default: "contributor" -%}
+  {%- assign all_roles = all_roles | push: role -%}
+{%- endfor -%}
+{%- assign unique_roles = all_roles | uniq | sort -%}
+
+{%- if unique_roles.size > 1 -%}
+<div class="contributor-filters" role="group" aria-label="Filter contributors by role">
+  <button type="button" class="contributor-filter is-active" data-filter="all">All</button>
+  {%- for role in unique_roles -%}
+  <button type="button" class="contributor-filter" data-filter="{{ role }}">{{ role | capitalize }}</button>
+  {%- endfor -%}
+</div>
+{%- endif -%}
+
+<ul class="contributor-roster" role="list">
+  {%- for entry in site.data.CONTRIBUTORS -%}
+  {%- assign name = entry[0] -%}
+  {%- assign data = entry[1] -%}
+  {%- assign role = data.role | default: "contributor" -%}
+  {%- assign words = name | split: " " -%}
+  {%- assign initials = "" -%}
+  {%- for w in words limit: 3 -%}
+    {%- assign first = w | slice: 0, 1 | upcase -%}
+    {%- assign initials = initials | append: first -%}
+  {%- endfor -%}
+  <li class="contributor-roster__item" data-role="{{ role }}">
+    {%- if data.git -%}
+    <a class="contributor-roster__link" href="https://github.com/{{ data.git }}" rel="noopener">
+      <img class="contributor-roster__avatar" src="https://avatars.githubusercontent.com/{{ data.git }}" alt="" loading="lazy">
+      <span class="contributor-roster__name">{{ name }}</span>
+    </a>
+    {%- else -%}
+    <div class="contributor-roster__link contributor-roster__link--static">
+      <span class="contributor-roster__avatar contributor-roster__avatar--initial" aria-hidden="true">{{ initials }}</span>
+      <span class="contributor-roster__name">{{ name }}</span>
+    </div>
+    {%- endif -%}
+    {%- if data.affiliation -%}
+    <span class="contributor-roster__affiliation">{{ data.affiliation }}</span>
+    {%- endif -%}
+  </li>
+  {%- endfor -%}
+</ul>
+
+{%- if unique_roles.size > 1 -%}
+<script>
+(function () {
+  var filters = document.querySelectorAll('.contributor-filter');
+  var items = document.querySelectorAll('.contributor-roster__item');
+  filters.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = btn.dataset.filter;
+      filters.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+      items.forEach(function (it) {
+        var match = f === 'all' || it.dataset.role === f;
+        it.hidden = !match;
+      });
+    });
+  });
+})();
+</script>
+{%- endif -%}
