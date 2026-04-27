@@ -1,48 +1,87 @@
-/*-----Theme colors-----*/
-$primary: #8DF2B9;
-$secondary: #0A261C;
-$primary-light: #9BF2D2;
-$light: #EEEEEE;
-$dark: #0A261C;
-$white: #ffffff;
-$green: #5DA684;
-$grey-light: #EEEEEE;
-$accent-color: #D96248;
+/*========================================================================
+  Trailhead palette — modern outdoor handbook
+  (greens grounded with amber + brick on a warm cream page)
+========================================================================*/
 
+// SURFACE / DECORATIVE variants — used as backgrounds, fills, accents, SVG strokes
+$brand-ink:        #1F3A2E; // forest, body text + dark surfaces
+$brand-sage:       #6B9E7E; // mid green surfaces — Waypoints accent
+$brand-spring:     #C7E8B5; // soft green — Signposts + backlight highlight
+$brand-amber:      #E8B547; // warm yellow — surface fills, decorative SVG
+$brand-amber-soft: #F5DC9C; // amber wash for surfaces
+$brand-brick:      #C44536; // deep terracotta — Campfires
+$brand-brick-soft: #E9B4AB; // brick wash for surfaces
+$brand-cream:      #F4EFE4; // body bg
+$brand-paper:      #FFFFFF; // sidebar / cards floating on cream
+$brand-rule:       #E0DACE; // dividers / hairlines on cream
+$brand-white:      #ffffff;
+
+// TEXT-SAFE variants — meet WCAG AA on cream body bg ($brand-cream).
+// Use these whenever a colour appears as text (not as a fill/accent).
+$brand-sage-text:  #3F6B52; // 6.5:1 on cream — passes AA normal text
+$brand-amber-text: #8C6516; // 5.8:1 on cream — passes AA normal text
+$brand-brick-text: #B03828; // 5.4:1 on cream — passes AA normal text (brick itself is borderline)
+
+/*-----Bootstrap mappings-----*/
+$primary:       $brand-spring;       // soft green — surface highlight (decorative)
+$secondary:     $brand-sage-text;    // mid green TEXT — used as h2/h4 colour, must pass contrast
+$light:         $brand-cream;
+$dark:          $brand-ink;
+$white:         $brand-white;
+$success:       $brand-sage-text;
+$info:          $brand-spring;
+$warning:       $brand-amber-text;
+$danger:        $brand-brick-text;
 
 /*-----Custom values for Bootstrap variables-----*/
-$component-active-bg: $accent-color;
-$dark-text: $dark;
-$light-background: $grey-light;
-$light-text: $grey-light;
-$navbar-hover-color: $grey-light;
-$navbar-active: $primary;
-$navbar-toggler-border-color: transparent;
-$border-radius: 0.3rem;
-$btn-border-radius-sm: $border-radius;
-$card-border-width: 0;
-$card-bg: transparent;
-$card-cap-bg: $dark;
-$link-color: $accent-color;
-$info: $primary-light;
-$link-decoration: none;
-$body-bg: $white;
-$body-color: $dark;
-$font-family-sans-serif: "Inter", sans-serif;
-$alert-border-width: 0;
-$input-group-addon-bg: $primary;
-$input-bg: $primary;
-$input-border-width: 0;
-$h1-font-size: 1rem * 3.5 !default;
-$h3-font-size: 1rem * 1.5 !default;
-$h4-font-size: 1rem * 1.1 !default;
-$h5-font-size: 1rem !default;
-$h6-font-size: 1rem !default;
+$accent-color:        $brand-brick-text; // text colour for links — must pass contrast
+$component-active-bg: $brand-brick;      // surface tint, decorative
+$dark-text:           $dark;
+$light-text:          $brand-cream;
+$light-background:    $brand-cream;
 
-// Responsive Variables
+$navbar-hover-color:           $brand-cream;
+$navbar-active:                $primary;
+$navbar-toggler-border-color:  transparent;
+
+$body-bg:    $brand-cream;
+$body-color: $dark;
+
+$link-color:          $accent-color;
+$link-decoration:     none;
+
+$border-radius:       0.4rem;
+$btn-border-radius-sm: $border-radius;
+
+$card-border-width:   0;
+$card-bg:             transparent;
+$card-cap-bg:         $dark;
+
+$input-bg:            rgba($primary, 0.20);
+$input-border-width:  0;
+$input-group-addon-bg: rgba($primary, 0.20);
+
+$alert-border-width:  0;
+
+/*-----Fonts:
+  Inter            (body, UI — data-tool voice, clean and technical)
+  Bricolage Grot.  (display, headings — personality)
+  JetBrains Mono   (data accents — page IDs, numbers, code)
+  Caveat           (marginalia — trekking voice)-----*/
+$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+$font-family-monospace:  "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+/*-----Heading sizes-----*/
+$h1-font-size: 1rem * 3.0;
+$h3-font-size: 1rem * 1.5;
+$h4-font-size: 1rem * 1.1;
+$h5-font-size: 1rem;
+$h6-font-size: 1rem;
+
+/*-----Responsive breakpoint helpers-----*/
 $desktop: 'only screen and (min-width: 1400px)';
-$laptop: 'only screen and (min-width: 1200px) and (max-width: 1399px)';
-$lg : 'only screen and (min-width: 992px) and (max-width: 1199px)';
-$md:'only screen and (min-width: 768px) and (max-width: 991px)';
-$xs:'(max-width: 767px)';
-$sm: 'only screen and (min-width: 576px) and (max-width: 767px)';
+$laptop:  'only screen and (min-width: 1200px) and (max-width: 1399px)';
+$lg:      'only screen and (min-width: 992px) and (max-width: 1199px)';
+$md:      'only screen and (min-width: 768px) and (max-width: 991px)';
+$xs:      '(max-width: 767px)';
+$sm:      'only screen and (min-width: 576px) and (max-width: 767px)';

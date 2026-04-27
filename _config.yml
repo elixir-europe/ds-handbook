@@ -13,10 +13,10 @@ sass:
 
 theme_variables:
   topnav:
-    brand_logo: assets/img/main-logo-right.svg
-    theme: dark
+    brand_logo: assets/img/magpie-dark.svg
+    theme: light
   fonts:
-    - https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap
+    - https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Caveat:wght@400..700&family=Inter:opsz,wght@14..32,100..900&family=JetBrains+Mono:wght@400..700&display=swap
 
 topnav_banner: "The Handbook is currently under development and may change at any point - it is not meant for production use"
 # Optional: a banner message to display to users on all pages

@@ -6,46 +6,65 @@ layout: none
 <!doctype html>
 <html lang="en">
 {% include head.html %}
-<body>
+<body class="landingpage-body">
     {% if jekyll.environment == "development" %}{% include dev-info.html %}{% endif %}
     {% include topnav.html search=true %}
+
     <div class="landingpage">
-        <section class="container g-lg-5 mb-5">
-            <div class="text-center">
-                <div class="landingpage-title">Data Stewardship <br><span class='highlight'>Handbook</span></div>
-                <span class="subtitle"></span>
-                <p class="text-center mt-2">The handbook for the people side of data stewardship</p>
+        <!-- Hero -->
+        <section class="container g-lg-5 hero">
+            <div class="hero-inner">
+                <p class="hero-eyebrow">A field handbook for</p>
+                <h1 class="landingpage-title">
+                    Data Stewardship<br>
+                    <span class="highlight">Handbook</span>
+                </h1>
+                <p class="tagline">the people side of data stewardship</p>
             </div>
         </section>
-    
-        <section class="pb-5">
-            <div class="container g-lg-5">
-                <h2 class="no-anchor text-center mb-3">You can explore the content on this site through three main landmarks...</h2>
-                {% assign landmarks = site.data.landmarks %}
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
-                    {% for item in landmarks %}
-                    <div class="col">
-                            <div class="card bg-white h-100">
-                                <img src="{{ item.image_url | relative_url}}" class="card-img-top h-icon-6 mx-auto" alt="{{item.title}} icon">
-                                <div class="card-body text-center">
-                                    <a href="{{ item.url | relative_url }}" class="stretched-link">
-                                        <h3 class="card-title no-anchor text-dark">{{item.title}}</h3>
-                                    </a>
-                                    <p class="card-text">{{item.description}}</p>
-                                </div>
-                            </div>
-                    </div>
-                    {%- endfor %}
+
+        <!-- Meet the magpie -->
+        <section class="container g-lg-5 magpie-intro">
+            <div class="magpie-intro-inner">
+                <img class="magpie-intro-img" src="{{ 'assets/img/magpie-dark.svg' | relative_url }}" alt="An illustration of a magpie carrying a book">
+                <div class="magpie-intro-text">
+                    <p class="magpie-intro-lead">say hi to the magpie</p>
+                    <p class="magpie-intro-body">Curious, observant, a careful collector — your guide through the handbook. Watch for them along the trail; they'll have tips and asides where they're needed.</p>
                 </div>
             </div>
         </section>
-        
+
+        <!-- Three doors -->
+        <section class="container g-lg-5 doors">
+            <p class="doors-intro">Three landmarks to find your way</p>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                {% assign landmarks = site.data.landmarks %}
+                {%- assign tones = "signposts,campfires,waypoints" | split: "," %}
+                {%- assign handles = "follow the path,gather around,plan the climb" | split: "," %}
+                {% for item in landmarks %}
+                {%- assign idx = forloop.index0 %}
+                <div class="col">
+                    <a href="{{ item.url | relative_url }}" class="door door--{{ tones[idx] }}">
+                        <div class="door-icon">
+                            <img src="{{ item.image_url | relative_url }}" alt="{{ item.title }} icon">
+                        </div>
+                        <div class="door-body">
+                            <h2 class="door-title">{{ item.title }}</h2>
+                            <p class="door-handle">{{ handles[idx] }}</p>
+                            <p class="door-desc">{{ item.description }}</p>
+                            <span class="door-cta">Head this way <span class="door-arrow" aria-hidden="true"></span></span>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
     </div>
+
     {%- if site.theme_variables.back_to_top or site.theme_variables.back_to_top == nil %}
-    {% include scroll-top.html  %}
+    {% include scroll-top.html %}
     {%- endif %}
     {% include footer.html %}
     {% include cookie-popup.html %}
 </body>
-
 </html>
