@@ -2609,6 +2609,53 @@ nav#breadcrumb {
 }
 
 
+/*=== Topnav magpie nest ==============================================*/
+// Small "Nest" link in the topnav pointing at /notebook. The ✦ matches
+// the home-page "say hi to the magpie" sparkle. When localStorage has
+// saved items the parent gets `.has-items` (set by notebook.js): the ✦
+// twinkles on a slow loop and a small amber count badge appears.
+.nav-item--magpie .nav-link {
+    .nav-shine {
+        display: inline-block;
+        font-size: 0.95rem;
+        line-height: 1;
+        color: $brand-amber-text;
+        transition: transform 0.25s ease, color 0.2s ease;
+    }
+
+    .nav-shine-count {
+        display: none;
+        font-family: $font-family-monospace;
+        font-size: 0.65rem;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: 0.04em;
+        background: $brand-amber;
+        color: $dark;
+        border-radius: 999px;
+        padding: 0.18rem 0.45rem;
+        min-width: 1.25rem;
+        text-align: center;
+    }
+
+    &:hover .nav-shine,
+    &.active .nav-shine {
+        color: $brand-amber;
+        transform: rotate(45deg) scale(1.1);
+    }
+}
+
+.nav-item--magpie.has-items {
+    .nav-shine { animation: nav-shine-twinkle 2.4s ease-in-out infinite; }
+    .nav-shine-count { display: inline-block; }
+}
+
+@keyframes nav-shine-twinkle {
+    0%, 100% { transform: rotate(0deg)  scale(1);    color: $brand-amber-text; }
+    50%      { transform: rotate(45deg) scale(1.18); color: $brand-amber; }
+}
+
+
 /*=== Dev-build banner ================================================*/
 // The theme's dev-info banner uses .bg-warning (dark amber) which sets
 // text to white. Bootstrap's default link colour is brick-red, which is

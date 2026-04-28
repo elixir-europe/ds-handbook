@@ -70,6 +70,20 @@
         }
     }
 
+    function updateNavCounter() {
+        var item = document.querySelector('.nav-item--magpie');
+        if (!item) return;
+        var badge = item.querySelector('.nav-shine-count');
+        var count = read().length;
+        if (count > 0) {
+            if (badge) badge.textContent = count;
+            item.classList.add('has-items');
+        } else {
+            if (badge) badge.textContent = '';
+            item.classList.remove('has-items');
+        }
+    }
+
     function updateToggleButton() {
         var button = document.querySelector('.notebook-toggle');
         if (!button) return;
@@ -311,12 +325,14 @@
         setupPrintButton();
         setupClearButton();
         updateSidebarCounter();
+        updateNavCounter();
         updateToggleButton();
         renderNotebookPage();
     });
 
     document.addEventListener('notebook:updated', function () {
         updateSidebarCounter();
+        updateNavCounter();
         updateToggleButton();
         renderNotebookPage();
     });
