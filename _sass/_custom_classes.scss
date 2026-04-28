@@ -2607,3 +2607,18 @@ nav#breadcrumb {
         }
     }
 }
+
+
+/*=== Dev-build banner ================================================*/
+// The theme's dev-info banner uses .bg-warning (dark amber) which sets
+// text to white. Bootstrap's default link colour is brick-red, which is
+// nearly invisible against amber. Force links to inherit + underline.
+.dev-banner {
+    a, a:hover, a:focus {
+        color: inherit !important;
+        text-decoration: underline;
+        text-underline-offset: 0.18em;
+        text-decoration-thickness: 1.5px;
+    }
+    a:hover { text-decoration-thickness: 2px; }
+}
