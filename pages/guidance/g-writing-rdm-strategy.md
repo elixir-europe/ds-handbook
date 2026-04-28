@@ -3,7 +3,7 @@ title: Writing an RDM strategy
 description: How to write a strategy to have a structured framework to guide the RDM activities of the organisation
 contributors: [Maria Klapa, Xenia Perez Sitja, Riku Riski, Niclas Jareborg, Vassilios Ioannidis]
 page_id: g-writing-rdm-strategy
-type: [Guidance]
+type: Guidance
 ---
 
 ## Context

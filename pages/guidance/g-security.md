@@ -3,7 +3,7 @@ title: IT security
 description: How to protect stored data
 contributors: [Aina Jené, Heleri Inno, Hana Marčetić, Jana Martínková, Saliha Zenboudji-Beddek, Diana Pilvar, Vilem Ded, Marina Popleteeva]
 page_id: g-security
-type: [Guidance]
+type: Guidance
 ---
 
 ## Context

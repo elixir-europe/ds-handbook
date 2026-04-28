@@ -3,7 +3,7 @@ title: Data protection compliance
 description: How to be compliant with data protection legislation
 contributors: [Hana Marčetić, Heleri Inno, Aída Moure Fernández, Mijke Jetten, Jana Martínková, Diana Pilvar, Niclas Jareborg]
 page_id: g-data-protection
-type: [Guidance]
+type: Guidance
 related_pages: [mm-data-gdpr]
 ---
 
