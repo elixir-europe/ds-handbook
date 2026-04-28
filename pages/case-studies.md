@@ -1,6 +1,6 @@
 ---
 title: Case studies
-page_img: "icons/icon-campfire.svg" 
+page_img: # none it doesnt't work 
 ---
 
 Case studies go here ...
