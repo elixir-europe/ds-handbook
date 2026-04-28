@@ -7,12 +7,16 @@ they can be re-added when needed.
 
 {%- assign tone_class = "" %}
 {%- assign type_label_class = "" %}
+{%- assign flourish = "" %}
 {%- if include.type contains "Guidance" %}
 {%- assign tone_class = "tone--signposts" %}
+{%- assign flourish = "guidance" %}
 {%- elsif include.type contains "Case" %}
 {%- assign tone_class = "tone--campfires" %}
+{%- assign flourish = "campfire" %}
 {%- elsif include.type contains "Maturity" %}
 {%- assign tone_class = "tone--waypoints" %}
+{%- assign flourish = "maturity" %}
 {%- endif %}
 
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-{{ include.col | default: 2 }} g-4 mb-5 navigation-tiles {{ tone_class }}">
@@ -56,6 +60,13 @@ they can be re-added when needed.
                 <p class="card-text">{{ current_page.description }}</p>
                 {%- endif %}
             </div>
+            {%- if flourish == "campfire" %}
+            <span class="tile-flourish" aria-hidden="true">{% include icons/tile-campfire.svg %}</span>
+            {%- elsif flourish == "guidance" %}
+            <span class="tile-flourish" aria-hidden="true">{% include icons/tile-guidance.svg %}</span>
+            {%- elsif flourish == "maturity" %}
+            <span class="tile-flourish" aria-hidden="true">{% include icons/tile-maturity.svg %}</span>
+            {%- endif %}
         </div>
     </div>
     {% endunless %}

@@ -51,8 +51,13 @@ layout: none
                 {%- assign idx = forloop.index0 %}
                 <div class="col">
                     <a href="{{ item.url | relative_url }}" class="door door--{{ tones[idx] }}">
-                        <div class="door-icon">
-                            <img src="{{ item.image_url | relative_url }}" alt="{{ item.title }} icon">
+                        <div class="door-icon" aria-hidden="true">
+                            {%- case tones[idx] -%}
+                            {%- when "signposts" %}{% include icons/tile-guidance.svg %}
+                            {%- when "campfires" %}{% include icons/tile-campfire.svg %}
+                            {%- when "waypoints" %}{% include icons/tile-maturity.svg %}
+                            {%- else %}<img src="{{ item.image_url | relative_url }}" alt="{{ item.title }} icon">
+                            {%- endcase -%}
                         </div>
                         <div class="door-body">
                             <h2 class="door-title">{{ item.title }}</h2>

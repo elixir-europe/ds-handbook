@@ -324,11 +324,50 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
         border-radius: 0;
         transition: background-color 0.3s ease;
 
-        img {
+        img, svg {
             position: relative;
             max-height: 150px;
             width: auto;
         }
+
+        // The inline tile-* SVGs are 200×200 viewBox squares; constrain
+        // explicitly so the door slot keeps its rhythm.
+        svg { height: 150px; width: 150px; overflow: visible; }
+    }
+
+    // Per-tone hover animations — same vocabulary as the navigation-tile
+    // flourishes (campfire flame lights + flickers, hiker tips forward,
+    // waypoint marker bobs). Keyframes are shared across both surfaces.
+    &.door--campfires .flame {
+        opacity: 0;
+        transform-box: fill-box;
+        transform-origin: 50% 100%;
+        transform: scaleY(0.25);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    &.door--campfires:hover .flame,
+    &.door--campfires:focus-visible .flame {
+        opacity: 1;
+        transform: scaleY(1);
+        animation: tile-flame-flicker 0.7s ease-in-out 0.4s infinite alternate;
+    }
+
+    &.door--signposts .figure {
+        transform-box: fill-box;
+        transform-origin: 50% 100%;
+    }
+    &.door--signposts:hover .figure,
+    &.door--signposts:focus-visible .figure {
+        animation: tile-hiker-step 0.85s ease-in-out infinite alternate;
+    }
+
+    &.door--waypoints .figure {
+        transform-box: fill-box;
+        transform-origin: 50% 100%;
+    }
+    &.door--waypoints:hover .figure,
+    &.door--waypoints:focus-visible .figure {
+        animation: tile-waypoint-bob 1.4s ease-in-out infinite alternate;
     }
 
     .door-body {
@@ -760,6 +799,85 @@ section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
     --tone: #{$brand-sage-text};
     --tone-soft: #{rgba($brand-sage, 0.10)};
 }
+
+// Landmark flourish — small inline SVG tucked next to the bottom-right
+// arrow. Per-tone hover animations: campfire flame lights + flickers,
+// guidance hiker tips forward / takes a step, waypoints marker bobs.
+// transform-box: fill-box anchors transforms to each element's bounds
+// rather than the SVG viewport.
+.tile-flourish {
+    position: absolute;
+    right: 3.6rem;
+    bottom: 0.95rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    pointer-events: none;
+    line-height: 0;
+
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+    }
+}
+
+.card.tone--campfires {
+    .tile-flourish .flame {
+        opacity: 0;
+        transform-box: fill-box;
+        transform-origin: 50% 100%;
+        transform: scaleY(0.25);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    &:hover .tile-flourish .flame {
+        opacity: 1;
+        transform: scaleY(1);
+        animation: tile-flame-flicker 0.7s ease-in-out 0.35s infinite alternate;
+    }
+}
+
+.card.tone--signposts {
+    .tile-flourish .figure {
+        transform-box: fill-box;
+        transform-origin: 50% 100%;
+        transition: transform 0.3s ease;
+    }
+
+    &:hover .tile-flourish .figure {
+        animation: tile-hiker-step 0.85s ease-in-out infinite alternate;
+    }
+}
+
+.card.tone--waypoints {
+    .tile-flourish .figure {
+        transform-box: fill-box;
+        transform-origin: 50% 100%;
+        transition: transform 0.3s ease;
+    }
+
+    &:hover .tile-flourish .figure {
+        animation: tile-waypoint-bob 1.4s ease-in-out infinite alternate;
+    }
+}
+
+@keyframes tile-flame-flicker {
+    0%   { transform: scaleY(1)    scaleX(1)    translate(0, 0); }
+    50%  { transform: scaleY(1.06) scaleX(0.93) translate(1px, 0); }
+    100% { transform: scaleY(0.97) scaleX(1.05) translate(-1px, 0); }
+}
+
+@keyframes tile-hiker-step {
+    0%   { transform: translateX(0)   rotate(-1.5deg); }
+    100% { transform: translateX(8px) rotate(2deg); }
+}
+
+@keyframes tile-waypoint-bob {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-6px); }
+}
+
 
 // .card-type wrapper from the local include
 .navigation-tiles .card .card-type {
