@@ -1,9 +1,9 @@
 /*========================================================================
-  Data Stewardship Handbook — Trailhead identity
+  Data Stewardship Handbook – Trailhead identity
   Fonts:
     Bricolage Grotesque (display + headings)
     Inter               (body, UI)
-    JetBrains Mono      (data accents — page IDs, codes, levels, numbers)
+    JetBrains Mono      (data accents – page IDs, codes, levels, numbers)
     Caveat              (marginalia)
   Palette: ink, sage, spring, amber, brick on cream + paper
 ========================================================================*/
@@ -77,7 +77,7 @@ body {
 .ff-mono    { font-family: $font-family-monospace !important; }
 
 
-/*=== Mono — JetBrains Mono for data moments =============================*/
+/*=== Mono – JetBrains Mono for data moments =============================*/
 // Code, page IDs, version chips, level numbers, breadcrumbs.
 code, pre, kbd, samp,
 .page-id, .level-num, .data-chip {
@@ -185,7 +185,7 @@ header .navbar {
         }
     }
 
-    // Centred + a touch quieter on the landing — anchors each beat
+    // Centred + a touch quieter on the landing – anchors each beat
     // without competing with the Caveat lead lines below.
     .section-eyebrow {
         text-align: center;
@@ -271,7 +271,7 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
 .has-underline--brick { background-image: url("#{$squiggle-brick}"); }
 
 
-/*=== Three "doors" — editorial, borderless, slightly tilted ============*/
+/*=== Three "doors" – editorial, borderless, slightly tilted ============*/
 .doors {
     padding-bottom: 6rem;
 }
@@ -335,7 +335,7 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
         svg { height: 150px; width: 150px; overflow: visible; }
     }
 
-    // Per-tone hover animations — same vocabulary as the navigation-tile
+    // Per-tone hover animations – same vocabulary as the navigation-tile
     // flourishes (campfire flame lights + flickers, hiker tips forward,
     // waypoint marker bobs). Keyframes are shared across both surfaces.
     &.door--campfires .flame {
@@ -485,7 +485,7 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
 }
 
 
-/*=== Sidebar — knowledge-base block + trail nav =========================*/
+/*=== Sidebar – knowledge-base block + trail nav =========================*/
 @media (min-width: 992px) {
     body:not(:has(.landingpage)) {
         #layout {
@@ -507,7 +507,7 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
             align-self: flex-start;
             position: sticky;
             top: $spacer * 2;
-            // No internal scroll — sidebar moves with page when it overflows
+            // No internal scroll – sidebar moves with page when it overflows
             overflow: visible;
         }
 
@@ -664,7 +664,7 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
     background: transparent !important;
 }
 
-// Submenu — nested subitems under a top-level trail-stop. Indented,
+// Submenu – nested subitems under a top-level trail-stop. Indented,
 // quieter type, no trail-dot, hooked into the trail's vertical line.
 .trail-sub {
     margin: 0.1rem 0 0.5rem 0.05rem;
@@ -702,7 +702,7 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
 }
 
 
-/*=== Inner nav cards — editorial numbered tile =========================*/
+/*=== Inner nav cards – editorial numbered tile =========================*/
 // Used by: related-pages, section-navigation-tiles, info-tiles.
 // Each card is a numbered chapter-card: mono "01" top-right (auto from CSS
 // counter), mono type label, big Bricolage title with squiggle that draws
@@ -780,7 +780,7 @@ section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
         padding: 0;
     }
 
-    // Type label row at top — mono uppercase, landmark colour
+    // Type label row at top – mono uppercase, landmark colour
     .card-body > div:first-child {
         font-family: $font-family-monospace;
         font-size: 0.72rem;
@@ -800,7 +800,7 @@ section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
         margin: 0 0 0.5rem;
     }
 
-    // The clickable title — big Bricolage. A tone-coloured backlight
+    // The clickable title – big Bricolage. A tone-coloured backlight
     // (same motif as .color-highlight + the hero "Handbook" wash) sweeps
     // in from the left on card hover. Flat rectangle, so no shape
     // distortion at any tile width.
@@ -859,7 +859,7 @@ section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
     --tone-wash: #{rgba($brand-amber-soft, 0.9)};
 }
 
-// Landmark flourish — small inline SVG tucked next to the bottom-right
+// Landmark flourish – small inline SVG tucked next to the bottom-right
 // arrow. Per-tone hover animations: campfire flame lights + flickers,
 // guidance hiker tips forward / takes a step, waypoints marker bobs.
 // transform-box: fill-box anchors transforms to each element's bounds
@@ -897,7 +897,7 @@ section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
     }
 }
 
-// Signpost — each "arm" is a group containing the spring blob + the
+// Signpost – each "arm" is a group containing the spring blob + the
 // matching black plank, so they swing together (and the black line
 // keeps the motion visible against the pale tile background). The two
 // arms swing in opposite phases, like the post is changing direction.
@@ -917,7 +917,7 @@ section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
     }
 }
 
-// Waypoint — flag at the top waves on hover, hinged at the pole side.
+// Waypoint – flag at the top waves on hover, hinged at the pole side.
 .card.tone--waypoints {
     .tile-flourish .flag {
         transform-box: fill-box;
@@ -1002,7 +1002,7 @@ section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
 
 
 /*=== Right-hand TOC ("On this page") ===================================*/
-// Theme defaults route through $primary which is now the soft mint — fails
+// Theme defaults route through $primary which is now the soft mint – fails
 // contrast both for resting and active state. Override completely.
 
 #toc {
@@ -1057,7 +1057,7 @@ section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
 }
 
 
-/*=== Page TOC / page image — fix the sticky glitch ======================*/
+/*=== Page TOC / page image – fix the sticky glitch ======================*/
 // On pages where #page-img is set but the page has no headings, the theme's
 // add-grid keeps a sticky right column, and #page-img scrolls weirdly over
 // content. Hide the right column when the TOC contents are empty, and
@@ -1085,7 +1085,7 @@ section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
 }
 
 
-/*=== Footer — editorial-quiet ===========================================*/
+/*=== Footer – editorial-quiet ===========================================*/
 // One masthead block: eyebrow → big tilted Caveat headline → paragraph
 // → scribble divider → inline nav. Then a thin copyright strip.
 
@@ -1272,7 +1272,7 @@ section#search-section {
 
 
 /*========================================================================
-  Editorial layer — leans the site harder into "field handbook"
+  Editorial layer – leans the site harder into "field handbook"
   Body links, lede, H2 squiggles, drop caps, margin notes, pull-quotes,
   section eyebrows, trailhead refinements.
 ========================================================================*/
@@ -1308,7 +1308,7 @@ section#search-section {
 
 /*=== Italic / em emphasis =============================================*/
 // In body, em/i feel like the author's voice. Render in Bricolage italic
-// (synthesised slope is fine — Bricolage doesn't ship a true italic).
+// (synthesised slope is fine – Bricolage doesn't ship a true italic).
 #main em, #main i {
     font-style: italic;
     color: rgba($dark, 0.92);
@@ -1442,7 +1442,7 @@ section#search-section {
 
 
 /*========================================================================
-  The magpie's nest — bookmark button, sidebar counter, notebook page.
+  The magpie's nest – bookmark button, sidebar counter, notebook page.
   All persistence is localStorage; logic lives in assets/js/notebook.js.
 ========================================================================*/
 
@@ -1507,7 +1507,7 @@ section#search-section {
         outline-offset: 3px;
     }
 
-    // Saved state — quiet brick wash, filled checkmark
+    // Saved state – quiet brick wash, filled checkmark
     &.is-saved {
         background-color: rgba($brand-brick, 0.08);
         border-color: $brand-brick;
@@ -1775,7 +1775,7 @@ section#search-section {
 
 /*=== Print bundle (built dynamically by notebook.js) ==================*/
 // On screen, the print bundle is hidden. On print, everything else is
-// hidden and only the bundle prints — assembled by JS from each saved
+// hidden and only the bundle prints – assembled by JS from each saved
 // page's content.
 
 .notebook-print-bundle {
@@ -1933,7 +1933,7 @@ section#search-section {
             page-break-inside: avoid;
         }
 
-        // Body callouts — keep a printable shape
+        // Body callouts – keep a printable shape
         .alert {
             border: 1pt solid #999 !important;
             border-left: 3pt solid #000 !important;
@@ -1946,7 +1946,7 @@ section#search-section {
             i { display: none; }
         }
 
-        // Tables — readable on paper
+        // Tables – readable on paper
         table {
             border-collapse: collapse;
             width: 100%;
@@ -2001,12 +2001,12 @@ section#search-section {
 
 
 /*========================================================================
-  Content components — reusable theme includes styled editorially.
+  Content components – reusable theme includes styled editorially.
   Callouts, breadcrumb, body tables, page-metadata tabs, citation,
   more-information-tiles.
 ========================================================================*/
 
-/*=== Callouts — every type spoken by the magpie =========================*/
+/*=== Callouts – every type spoken by the magpie =========================*/
 // Five types: tip · note · important · warning · magpie
 // Same grid layout for all (bird left, body right). Type-specific colour
 // for the rule + tint + label. The magpie tilts at a different angle per
@@ -2068,7 +2068,7 @@ section#search-section {
         border-left-color: $brand-sage;
         background: rgba($brand-sage, 0.08);
         b { color: $brand-sage-text; }
-        // upright + slight forward lean — encouraging
+        // upright + slight forward lean – encouraging
         .alert-magpie { transform: rotate(-2deg); }
     }
 
@@ -2076,7 +2076,7 @@ section#search-section {
         border-left-color: $brand-amber;
         background: rgba($brand-amber, 0.10);
         b { color: $brand-amber-text; }
-        // tilted head — curious, attentive
+        // tilted head – curious, attentive
         .alert-magpie { transform: rotate(-8deg); }
     }
 
@@ -2084,7 +2084,7 @@ section#search-section {
         border-left-color: $brand-amber;
         background: rgba($brand-amber, 0.16);
         b { color: $brand-amber-text; }
-        // leaning forward — insistent
+        // leaning forward – insistent
         .alert-magpie { transform: rotate(8deg) translateY(1px); }
     }
 
@@ -2106,12 +2106,12 @@ section#search-section {
 }
 
 
-/*=== Magpie mascot — guides + companions ==============================*/
+/*=== Magpie mascot – guides + companions ==============================*/
 // Three placements ride the same asset. The bird is
 // detailed enough to read at small sizes; we use a slight tilt and tinted
 // drop-shadow at each placement so it feels like a different pose.
 
-// Magpie intro — the moment the bird gets introduced as a character
+// Magpie intro – the moment the bird gets introduced as a character
 .magpie-intro {
     padding-top: 1rem;
     padding-bottom: 2rem;
@@ -2173,7 +2173,7 @@ section#search-section {
     }
 }
 
-// Sidebar trail magpie — observer at the end of the path, links to /notebook
+// Sidebar trail magpie – observer at the end of the path, links to /notebook
 .trail-magpie {
     display: block;
     margin-top: 0.5rem;
@@ -2219,7 +2219,7 @@ section#search-section {
     animation: magpie-bob 0.65s cubic-bezier(.4,0,.2,1);
 }
 
-// Footer magpie — perched alongside the masthead, with Caveat caption
+// Footer magpie – perched alongside the masthead, with Caveat caption
 .footer-magpie-wrap {
     display: inline-flex;
     flex-direction: column;
@@ -2422,7 +2422,7 @@ nav#breadcrumb {
 
 /*=== Contributors roster ==============================================*/
 // Editorial replacement for the theme's contributor-tiles include. No
-// card surface — avatars + names sit directly on the cream page, with a
+// card surface – avatars + names sit directly on the cream page, with a
 // small mono affiliation when present. Filter pills above the grid hide
 // themselves until the YAML carries more than one role.
 

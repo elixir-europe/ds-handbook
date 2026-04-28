@@ -1,4 +1,4 @@
-// The magpie's nest — localStorage-backed bookmarking
+// The magpie's nest – localStorage-backed bookmarking
 // Stores saved pages as { url, title, section, savedAt } in localStorage
 // under the key "dsh-notebook". Updates the bookmark button on the current
 // page, the sidebar magpie counter, and the notebook page list.
@@ -15,7 +15,7 @@
     }
     function write(items) {
         try { localStorage.setItem(KEY, JSON.stringify(items)); }
-        catch (e) { /* quota or private mode — silently fail */ }
+        catch (e) { /* quota or private mode – silently fail */ }
         document.dispatchEvent(new CustomEvent('notebook:updated'));
     }
     function isSaved(url) {
@@ -222,7 +222,7 @@
             // Wait one frame so the DOM settles before opening the print dialog
             requestAnimationFrame(function () {
                 window.print();
-                // Re-enable the button — the print dialog may stay open for a while,
+                // Re-enable the button – the print dialog may stay open for a while,
                 // but the bundle stays in the DOM so re-prints work.
                 btn.disabled = false;
                 btn.innerHTML = originalLabel;
@@ -266,7 +266,7 @@
             '<p class="notebook-print-source">' + escapeHtml(item.url) + '</p>';
         article.appendChild(header);
 
-        // Body — extract from fetched HTML
+        // Body – extract from fetched HTML
         var body = document.createElement('div');
         body.className = 'notebook-print-body';
 
@@ -293,7 +293,7 @@
                 }
             }
         } else {
-            body.innerHTML = '<p class="notebook-print-body-error">(could not load this page — visit ' + escapeHtml(item.url) + ' to read it online)</p>';
+            body.innerHTML = '<p class="notebook-print-body-error">(could not load this page – visit ' + escapeHtml(item.url) + ' to read it online)</p>';
         }
 
         article.appendChild(body);

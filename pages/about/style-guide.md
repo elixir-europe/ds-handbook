@@ -1,19 +1,19 @@
 ---
 title: Style guide
-description: How the Data Stewardship Handbook reads, looks, and behaves — voice, typography, palette, components, accessibility.
+description: How the Data Stewardship Handbook reads, looks, and behaves – voice, typography, palette, components, accessibility.
 contributors: [Xenia Perez Sitja, Marina Popleteeva, Helena Schnitzer, Bojan Kverh, Flavio Licciulli, Carmen Reverté, Diana Pilvar]
 page_id: style_guide
 ---
 
 <p class="section-eyebrow">§ STYLE GUIDE</p>
 
-<p class="drop-cap">This is how the handbook reads and looks. The voice rules apply to everyone writing content; the visual rules apply to anyone touching the design system. Most of it is practical — short rules with examples — and there's a copy-pasteable kit of components for contributors.</p>
+<p class="drop-cap">This is how the handbook reads and looks. The voice rules apply to everyone writing content; the visual rules apply to anyone touching the design system. Most of it is practical – short rules with examples – and there's a copy-pasteable kit of components for contributors.</p>
 
 This guide is built on top of the [RDMkit style guide](https://rdmkit.elixir-europe.org/style_guide), the European Commission's [Web Writing Style Guide](https://wikis.ec.europa.eu/display/WEBGUIDE/02.+Web+writing+guidelines), and the [English Style Guide](https://commission.europa.eu/system/files/2023-01/styleguide_english_dgt_en.pdf). When in doubt, defer to those.
 
 ## Voice and tone
 
-The handbook sounds like a colleague who's done the work before — friendly, plain, practical. Not a policy document, not a research paper, not a marketing site.
+The handbook sounds like a colleague who's done the work before – friendly, plain, practical. Not a policy document, not a research paper, not a marketing site.
 
 Five rules of thumb:
 
@@ -29,7 +29,7 @@ Five rules of thumb:
 
 - **British English.** Colour, organise, behaviour, programme.
 - **Short sentences and short paragraphs.** 3–4 sentences per paragraph as a rule of thumb.
-- **Active voice.** *"We send the consent form to the PI"* — not *"The consent form is sent to the PI"*.
+- **Active voice.** *"We send the consent form to the PI"* – not *"The consent form is sent to the PI"*.
 - **No jargon without unpacking.** First mention of a term gets a quick definition or a link. *"…the [DMP (data management plan)](https://rdmkit.elixir-europe.org/data_management_plan) we wrote in 2023…"*.
 - **Don't capitalise role titles** unless they're proper nouns. *"data steward"*, not *"Data Steward"*.
 
@@ -37,12 +37,12 @@ Five rules of thumb:
 
 Every chapter follows the same skeleton:
 
-1. **Title** (H1) — one per page, set in the front matter as `title:`.
+1. **Title** (H1) – one per page, set in the front matter as `title:`.
 2. **Front matter:** description, contributors, page_id, type.
-3. **Lede paragraph** — what this page is about, in one or two sentences. Optionally with a `.drop-cap` for chapter-opener feel.
+3. **Lede paragraph** – what this page is about, in one or two sentences. Optionally with a `.drop-cap` for chapter-opener feel.
 4. **Body** broken into H2 sections for the major moves, H3 for sub-points.
-5. **Don't use H1 inside the body** — Jekyll renders the front-matter `title:` as the H1.
-6. **Internal links** — use full paths from the site root, e.g. `[case studies](/case-studies)`.
+5. **Don't use H1 inside the body** – Jekyll renders the front-matter `title:` as the H1.
+6. **Internal links** – use full paths from the site root, e.g. `[case studies](/case-studies)`.
 
 ## Typography
 
@@ -55,11 +55,11 @@ The handbook runs on four fonts. Each one earns its keep:
 | **JetBrains Mono** | Data accents | Code, page IDs, mono labels, eyebrows, breadcrumbs |
 | **Caveat** | Marginalia | Taglines, callout type labels, the magpie's voice, footer headline |
 
-You don't choose the font as a writer — pages render in the right font automatically. But understanding the system helps when you write copy *for* a specific role (e.g. a Caveat-style aside reads as the magpie's voice; mono labels read as data).
+You don't choose the font as a writer – pages render in the right font automatically. But understanding the system helps when you write copy *for* a specific role (e.g. a Caveat-style aside reads as the magpie's voice; mono labels read as data).
 
 ## Colour palette
 
-Trailhead — modern outdoor handbook, greens grounded with amber and brick.
+Trailhead – modern outdoor handbook, greens grounded with amber and brick.
 
 | Token | Hex | Role |
 |---|---|---|
@@ -82,7 +82,7 @@ Surface colours (sage, amber, brick at full saturation) **don't pass WCAG AA con
 | `#E8B547` Amber | `#8C6516` Amber-text | 5.8:1 ✓ AA |
 | `#C44536` Brick | `#B03828` Brick-text | 5.4:1 ✓ AA |
 
-{% include callout.html type="important" content="If you're adding new components, never use the surface variant as a text colour. The compiled CSS already routes text through the safe variants — don't override that." %}
+{% include callout.html type="important" content="If you're adding new components, never use the surface variant as a text colour. The compiled CSS already routes text through the safe variants – don't override that." %}
 
 ## The three landmarks
 
@@ -96,13 +96,13 @@ The handbook is organised into three landmarks. Each has its own colour identity
 
 ## The magpie's voice
 
-The magpie is the handbook's mascot — observant, curious, a careful collector. Writing in the magpie's voice means short, friendly, slightly informal asides. Use callouts to give the magpie a turn:
+The magpie is the handbook's mascot – observant, curious, a careful collector. Writing in the magpie's voice means short, friendly, slightly informal asides. Use callouts to give the magpie a turn:
 
-- **`tip`** — encouraging suggestion
-- **`note`** — context, an aside
-- **`important`** — needs attention
-- **`warning`** — actual harm risk
-- **`magpie`** — generic mascot voice
+- **`tip`** – encouraging suggestion
+- **`note`** – context, an aside
+- **`important`** – needs attention
+- **`warning`** – actual harm risk
+- **`magpie`** – generic mascot voice
 
 {% include callout.html type="magpie" content="The magpie should appear when an aside genuinely helps. A page with one callout reads like a chapter; a page with eight reads like an alarm system." %}
 
@@ -111,10 +111,10 @@ The magpie is the handbook's mascot — observant, curious, a careful collector.
 **Always**:
 
 - **Add alt text** to images. Decorative ones get `alt=""` and `aria-hidden="true"`. Meaningful ones get a real description.
-- **Use descriptive link text.** "Read the [DMP guidance](/g-writing-rdm-strategy)" — not "[click here](/g-writing-rdm-strategy)".
+- **Use descriptive link text.** "Read the [DMP guidance](/g-writing-rdm-strategy)" – not "[click here](/g-writing-rdm-strategy)".
 - **Don't rely on colour alone** to convey meaning. The landmark colour is a hint; the icon and the label do the work.
 - **Headings in order.** Don't skip levels (H2 → H4). Screen readers use them as a table of contents.
-- **Test the contrast.** All text uses the safe colour variants — if you add a new component, run it through a contrast checker.
+- **Test the contrast.** All text uses the safe colour variants – if you add a new component, run it through a contrast checker.
 
 ## Reusable components
 
@@ -122,7 +122,7 @@ For the full kit of editorial components (callouts, drop-cap, section-eyebrow, m
 
 ## Images and figures
 
-- **Diagrams** are encouraged — they often communicate faster than prose. Save them as SVG when possible.
+- **Diagrams** are encouraged – they often communicate faster than prose. Save them as SVG when possible.
 - **Screenshots** belong in case studies more than in signposts. Crop tight; don't include browser chrome unless it matters.
 - **No stock photography.** The handbook's identity is illustration + typography + the magpie. Stock photos break the voice.
 
@@ -130,17 +130,17 @@ For the full kit of editorial components (callouts, drop-cap, section-eyebrow, m
 
 Be generous with links to sister projects:
 
-- [RDMkit](https://rdmkit.elixir-europe.org/) — researcher-facing RDM
-- [FAIR Cookbook](https://faircookbook.elixir-europe.org/) — FAIR principle recipes
-- [DSW](https://ds-wizard.org/) — data management plan tool
-- [FAIRsharing](https://fairsharing.org/) — standards / databases / policies
-- [TeSS](https://tess.elixir-europe.org/) — training resources
-- [Turing Way](https://book.the-turing-way.org/) — handbook for reproducible research
+- [RDMkit](https://rdmkit.elixir-europe.org/) – researcher-facing RDM
+- [FAIR Cookbook](https://faircookbook.elixir-europe.org/) – FAIR principle recipes
+- [DSW](https://ds-wizard.org/) – data management plan tool
+- [FAIRsharing](https://fairsharing.org/) – standards / databases / policies
+- [TeSS](https://tess.elixir-europe.org/) – training resources
+- [Turing Way](https://book.the-turing-way.org/) – handbook for reproducible research
 
 Always link to the most specific page, not just the homepage. Don't duplicate their content here.
 
 ## When in doubt
 
 - Read three or four existing chapters before writing yours. The voice will rub off.
-- Open a draft PR early — feedback is faster on a half-written page than on a polished one.
+- Open a draft PR early – feedback is faster on a half-written page than on a polished one.
 - Ask in a [GitHub issue](https://github.com/elixir-europe/ds-handbook/issues) if you're not sure where something belongs.

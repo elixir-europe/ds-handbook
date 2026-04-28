@@ -7,19 +7,19 @@ page_id: how_to_contribute
 
 <p class="section-eyebrow">§ FOR CONTRIBUTORS</p>
 
-<p class="drop-cap">The handbook is built by data stewards, for data stewards. Every signpost, campfire, and waypoint comes from someone who's done the work and decided to write it down. If you've got a story, a pattern, or a hard-won lesson — we'd love to add it.</p>
+<p class="drop-cap">The handbook is built by data stewards, for data stewards. Every signpost, campfire, and waypoint comes from someone who's done the work and decided to write it down. If you've got a story, a pattern, or a hard-won lesson – we'd love to add it.</p>
 
 This page walks you through what we're looking for, how to write in the handbook's voice, and how to actually get your contribution on the site.
 
-{% include callout.html type="magpie" content="The handbook is open. There's no editorial board approving topics top-down — if a chapter is missing or thin, you're invited to fill it in." %}
+{% include callout.html type="magpie" content="The handbook is open. There's no editorial board approving topics top-down – if a chapter is missing or thin, you're invited to fill it in." %}
 
 ## Who we're looking for
 
 Three kinds of help, all welcome:
 
-- **Writers** — data stewards (any level) with experience to share. You don't need to be senior to contribute. Often the most useful pages come from people who learned something the hard way last week.
-- **Reviewers** — people who can read draft pages and tell us what's missing, unclear, or wrong. You don't have to write to help.
-- **Designers and developers** — anyone who can improve the look-and-feel, accessibility, or tooling of the site itself.
+- **Writers** – data stewards (any level) with experience to share. You don't need to be senior to contribute. Often the most useful pages come from people who learned something the hard way last week.
+- **Reviewers** – people who can read draft pages and tell us what's missing, unclear, or wrong. You don't have to write to help.
+- **Designers and developers** – anyone who can improve the look-and-feel, accessibility, or tooling of the site itself.
 
 ## Pick your contribution
 
@@ -27,15 +27,15 @@ You can write in any of the three landmarks (or all of them, over time):
 
 ### 🪶 Write a Signpost
 
-Step-by-step practical guidance on something you do — *"how to set up an institutional DMP service"*, *"how to run an RDM intake meeting"*. Signposts are the most-read content because they're often what data stewards open Google for. If you've solved a recurring problem, please write it down.
+Step-by-step practical guidance on something you do – *"how to set up an institutional DMP service"*, *"how to run an RDM intake meeting"*. Signposts are the most-read content because they're often what data stewards open Google for. If you've solved a recurring problem, please write it down.
 
 ### 🪶 Light a Campfire
 
-A case study from your institution. **Be specific** — readers want to know what your institution looks like, what you tried, what didn't work, and what you'd do differently. Generic advice goes in Signposts; **lived experience** goes here.
+A case study from your institution. **Be specific** – readers want to know what your institution looks like, what you tried, what didn't work, and what you'd do differently. Generic advice goes in Signposts; **lived experience** goes here.
 
 ### 🪶 Plant a Waypoint
 
-Propose or refine a maturity indicator. The maturity model lives in the [rdm-maturity-model](https://github.com/elixir-europe/rdm-maturity-model) repository — contributions there flow into this handbook automatically.
+Propose or refine a maturity indicator. The maturity model lives in the [rdm-maturity-model](https://github.com/elixir-europe/rdm-maturity-model) repository – contributions there flow into this handbook automatically.
 
 ### 🪶 Just review
 
@@ -43,7 +43,7 @@ Open any page, hit the GitHub edit link in the metadata block at the bottom, and
 
 ## Write in the handbook's voice
 
-The handbook tries to sound like a colleague who's done this before — friendly, plain, practical. Not a policy document, not a research paper. Three rules of thumb:
+The handbook tries to sound like a colleague who's done this before – friendly, plain, practical. Not a policy document, not a research paper. Three rules of thumb:
 
 {% include callout.html type="tip" content="Talk to your future self after a long week. Would the version of you on Friday-at-5pm find this useful, or would you skim past?" %}
 
@@ -89,7 +89,7 @@ Five flavours, all spoken by the magpie. Pick the type that matches the *intensi
 
 ### Drop cap
 
-Open a chapter intro with a Bricolage drop cap — gives the page weight and editorial character.
+Open a chapter intro with a Bricolage drop cap – gives the page weight and editorial character.
 
 ```html
 <p class="drop-cap">First paragraph of your chapter goes here. The first letter renders large in the brand's amber-brick.</p>
@@ -97,11 +97,11 @@ Open a chapter intro with a Bricolage drop cap — gives the page weight and edi
 
 **Renders as:**
 
-<p class="drop-cap">First paragraph of your chapter goes here. The first letter renders large in the brand's amber-brick. Use this only on the lede paragraph of a chapter — it loses meaning if every section opens with one.</p>
+<p class="drop-cap">First paragraph of your chapter goes here. The first letter renders large in the brand's amber-brick. Use this only on the lede paragraph of a chapter – it loses meaning if every section opens with one.</p>
 
 ### Section eyebrow
 
-A small mono uppercase eyebrow above a heading — useful for chapter labels and section markers. Tone variants pick up landmark colour: `tone--signposts`, `tone--campfires`, `tone--waypoints`, `tone--amber`.
+A small mono uppercase eyebrow above a heading – useful for chapter labels and section markers. Tone variants pick up landmark colour: `tone--signposts`, `tone--campfires`, `tone--waypoints`, `tone--amber`.
 
 ```html
 <p class="section-eyebrow">§ TRAIL NOTES</p>
@@ -133,11 +133,11 @@ A handwritten Caveat aside that sits in the margin. Useful for a tiny detail tha
 
 ### Pull quote
 
-For when something a colleague said deserves to stand on its own. Don't use it for your own copy — it's for *quoting*.
+For when something a colleague said deserves to stand on its own. Don't use it for your own copy – it's for *quoting*.
 
 ```html
 <blockquote class="pull-quote">
-  <p>The hardest part of data stewardship isn't the data — it's the conversations around the data.</p>
+  <p>The hardest part of data stewardship isn't the data – it's the conversations around the data.</p>
   <cite>A senior data steward, somewhere in Europe</cite>
 </blockquote>
 ```
@@ -145,13 +145,13 @@ For when something a colleague said deserves to stand on its own. Don't use it f
 **Renders as:**
 
 <blockquote class="pull-quote">
-  <p>The hardest part of data stewardship isn't the data — it's the conversations around the data.</p>
+  <p>The hardest part of data stewardship isn't the data – it's the conversations around the data.</p>
   <cite>A senior data steward, somewhere in Europe</cite>
 </blockquote>
 
 ### Saving and printing
 
-Your readers can save any page to **the magpie's nest** (a browser-side reading list), and print the lot as a PDF. You don't need to do anything to enable it — every published chapter gets the bookmark button automatically.
+Your readers can save any page to **the magpie's nest** (a browser-side reading list), and print the lot as a PDF. You don't need to do anything to enable it – every published chapter gets the bookmark button automatically.
 
 ## Submitting a contribution
 
@@ -164,7 +164,7 @@ We work on GitHub. The flow is the standard fork-and-PR:
    - Signposts → `pages/guidance/`
    - Campfires → `pages/case-studies/`
    - About / meta → `pages/about/`
-5. **Add the right front matter** at the top of the file (see existing pages for examples — `title`, `type`, `description`, `contributors`, `page_id` are the minimum).
+5. **Add the right front matter** at the top of the file (see existing pages for examples – `title`, `type`, `description`, `contributors`, `page_id` are the minimum).
 6. **Open a Pull Request** against `main`. The site builds a preview automatically; you'll get a link in the PR comments.
 7. **Reviewers** will give feedback. Once two contributors approve, we merge.
 
@@ -191,4 +191,4 @@ Stuck on the GitHub flow, the editorial voice, or the scope of your contribution
 - **GitHub issues:** [github.com/elixir-europe/ds-handbook/issues](https://github.com/elixir-europe/ds-handbook/issues)
 - **Editorial style guide:** [Style guide](/style-guide)
 
-{% include callout.html type="magpie" content="The handbook only works because people keep adding to it. Thank you in advance — yours is the next chapter." %}
+{% include callout.html type="magpie" content="The handbook only works because people keep adding to it. Thank you in advance – yours is the next chapter." %}
