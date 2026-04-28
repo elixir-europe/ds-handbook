@@ -12,7 +12,18 @@
     {%- endif %}
     <ul class="trail list-unstyled mb-4{%- unless sidebar.title or sidebar.version %} pt-2{%- endunless %}">
         {%- for folder in sidebar.subitems %}
-        <li class="trail-stop{%- if folder.hr %} trail-stop--break{% endif %}">
+        {%- comment -%}
+        Only render the submenu when the current page is the folder root
+        or one of the folder's children. Sidebar stays compact otherwise.
+        {%- endcomment -%}
+        {%- assign in_folder = false -%}
+        {%- if folder.subitems %}
+            {%- if page.url == folder.url %}{%- assign in_folder = true -%}{%- endif %}
+            {%- for sub in folder.subitems %}
+                {%- if page.url == sub.url %}{%- assign in_folder = true -%}{%- endif %}
+            {%- endfor %}
+        {%- endif %}
+        <li class="trail-stop{%- if folder.hr %} trail-stop--break{% endif %}{%- if in_folder %} is-open{% endif %}">
             {%- if folder.external_url %}
             <a class="trail-link" href="{{folder.external_url}}" target="_blank" rel="noopener">
                 <span class="trail-dot" aria-hidden="true"></span>
@@ -23,6 +34,24 @@
                 <span class="trail-dot" aria-hidden="true"></span>
                 <span class="trail-label">{{ folder.title }}</span>
             </a>
+            {%- endif %}
+
+            {%- if folder.subitems and in_folder %}
+            <ul class="trail-sub list-unstyled">
+                {%- for sub in folder.subitems %}
+                <li class="trail-stop trail-stop--sub">
+                    {%- if sub.external_url %}
+                    <a class="trail-link trail-link--sub" href="{{sub.external_url}}" target="_blank" rel="noopener">
+                        <span class="trail-label">{{ sub.title }}</span>
+                    </a>
+                    {%- else %}
+                    <a class="trail-link trail-link--sub{%- if page.url == sub.url %} is-here{% endif %}" href="{{sub.url | relative_url }}">
+                        <span class="trail-label">{{ sub.title }}</span>
+                    </a>
+                    {%- endif %}
+                </li>
+                {%- endfor %}
+            </ul>
             {%- endif %}
         </li>
         {%- endfor %}

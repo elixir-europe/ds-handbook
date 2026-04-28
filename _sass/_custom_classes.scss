@@ -597,10 +597,11 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
 }
 
 .trail-link {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 0.65rem;
-    padding: 0.45rem 0.5rem 0.45rem 0;
+    padding: 0.45rem 0.6rem 0.45rem 0.5rem;
     color: rgba($dark, 0.78) !important;
     text-decoration: none !important;
     border-radius: 0.4rem;
@@ -622,10 +623,11 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
         transition: all 0.18s ease;
     }
 
-    .trail-label { flex: 1; }
+    .trail-label { flex: 1; position: relative; z-index: 1; }
 
     &:hover {
         color: $dark !important;
+        background-color: rgba($brand-spring, 0.45);
 
         .trail-dot {
             background: $brand-sage;
@@ -648,6 +650,49 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
             box-shadow: 0 0 0 4px rgba($brand-amber, 0.25);
             animation: trail-pin-pulse 2.4s ease-in-out infinite;
         }
+    }
+}
+
+// The remote theme paints a translucent spring overlay on hover via
+// `#sidebar > nav > ul li a::after`. That pseudo sits *on top* of the
+// text and washes out the contrast. Neutralise the bg; the link's own
+// hover bg above gives the same affordance with the text reading
+// clearly on top.
+#sidebar > nav > ul li a::after,
+#sidebar > nav > ul li a:hover::after,
+#sidebar > nav > ul li a.active::after {
+    background: transparent !important;
+}
+
+// Submenu — nested subitems under a top-level trail-stop. Indented,
+// quieter type, no trail-dot, hooked into the trail's vertical line.
+.trail-sub {
+    margin: 0.1rem 0 0.5rem 0.05rem;
+    padding-left: 0.95rem;
+    border-left: 1px solid $brand-rule;
+
+    .trail-stop--sub { margin: 0; padding: 0; }
+}
+
+.trail-link--sub {
+    padding: 0.3rem 0.55rem;
+    font-size: 0.86rem;
+    color: rgba($dark, 0.65) !important;
+    line-height: 1.3;
+
+    &:hover {
+        color: $dark !important;
+        background-color: rgba($brand-spring, 0.35);
+    }
+
+    &.is-here {
+        color: $dark !important;
+        font-weight: 600;
+        background-color: rgba($brand-amber, 0.18);
+
+        // Sub-items don't carry the dot, so suppress the "you are here"
+        // pin animation + the trailing Caveat tag (set elsewhere).
+        &::after { content: none !important; }
     }
 }
 
@@ -1367,17 +1412,6 @@ section#search-section {
     display: inline-block;
 }
 
-.trail-link.is-here::after {
-    content: "you are here";
-    font-family: $font-family-display;
-    font-size: 0.95rem;
-    color: $brand-amber-text; // contrast-safe
-    margin-left: 0.5rem;
-    transform: rotate(-3deg);
-    display: inline-block;
-    line-height: 1;
-    flex-shrink: 0;
-}
 
 
 /*=== Hero refinements (landing page) =================================*/
