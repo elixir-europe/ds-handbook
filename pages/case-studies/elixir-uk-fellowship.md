@@ -35,13 +35,33 @@ external_url_label: Visit the Fellowship programme page
 lead_quote: 
 
 # Cross-references -------------------------------------------------------
-related_guidance:
-  - g-support-networks
-  - g-support-rdm-information
-  - g-support-communication
-related_indicators:
-  - mm-support-training
-  - mm-support-network
+related_pages:
+  Guidance:
+    - g-support-networks
+    - g-support-rdm-information
+    - g-support-communication
+  Maturity_Indicator:
+    - mm-support-training
+    - mm-support-network
+
+resources:
+  - name: ELIXIR-UK Fellowship programme page
+    url: https://elixiruknode.org/activities/fellowship/
+    description: Current cohort, application process, Fellow profiles.
+  - name: ELIXIR-UK DaSH project page
+    url: https://elixiruknode.org/project/elixir-uk-dash/
+    description: Original grant scope, partners, deliverables.
+  - name: Software Sustainability Institute
+    url: https://www.software.ac.uk/
+    description: Mentors on how to host the Fellowship.
+  - name: RDMkit
+    url: https://rdmkit.elixir-europe.org/
+    description: The training resource Fellows embed locally.
+  - name: FAIR Cookbook
+    url: https://faircookbook.elixir-europe.org/
+    description: FAIR-principle recipes referenced in the training materials.
+  - name: "UKRI Innovation Scholars grant MR/V038966/1"
+    description: "£687,857 · 14 Feb 2021 – 30 Jun 2024."
 ---
 
 
@@ -98,9 +118,3 @@ The pattern – *fund Fellows with an honorarium, give them a baseline training 
 The original UKRI grant ended in June 2024. Funders granted the project extra funding to produce additional pieces of work such as case studies, data management plan examples and templates, and training materials. Long-term funding for new cohorts is the open question; without renewed grant support, the programme cannot run on community goodwill alone – it needs dedicated FTE.
 
 
-## Resources
-
-- [ELIXIR-UK Fellowship programme page](https://elixiruknode.org/activities/fellowship/) – current cohort, application process, Fellow profiles.
-- [ELIXIR-UK DaSH project page](https://elixiruknode.org/project/elixir-uk-dash/) – original grant scope, partners, deliverables.
-- [Software Sustainability Institute](https://www.software.ac.uk/) – mentors on how to host the Fellowship.
-- UKRI Innovation Scholars grant **MR/V038966/1**

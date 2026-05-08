@@ -1,0 +1,77 @@
+{%- comment -%}
+Local override of the theme include. Uses the same nested frontmatter
+convention as upstream:
+
+    related_pages:
+      Guidance:
+        - g-writing-rdm-strategy
+      Case_Study:
+        - other-case-shortname
+      Maturity_Indicator:
+        - mm-strategy-defined
+
+…but renders slim `.related-tile` cards (per-landmark tone + Font
+Awesome icon) instead of the upstream `.navigation-tiles` cards. The
+section key drives the tone — keys are matched case-insensitively
+against {Guidance, Case, Campfire, Maturity, Indicator, Waypoint} so
+both spellings (e.g. `Case_Study` and `Campfire`) work.
+{%- endcomment -%}
+
+{%- assign actual_related = nil -%}
+{%- for section in page.related_pages -%}
+  {%- unless section[1].size == 0 -%}
+    {%- assign actual_related = 1 -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+{%- if actual_related != nil -%}
+<hr class="scribble-divider" aria-hidden="true">
+<section class="case-study-relations" aria-labelledby="related-pages-title">
+    <h2 id="related-pages-title">{{ site.theme_variables.headings.related-pages | default: 'Related pages' }}</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 related-tiles">
+        {%- for section in page.related_pages -%}
+        {%- unless section[1].size == 0 -%}
+
+        {%- assign key = section[0] -%}
+        {%- assign tone = "" -%}
+        {%- assign icon_file = "" -%}
+        {%- assign single_label = key | replace: "_", " " -%}
+        {%- if key contains "Guidance" or key contains "Signpost" -%}
+          {%- assign tone = "signposts" -%}
+          {%- assign icon_file = "icons/tile-guidance.svg" -%}
+          {%- assign single_label = "Signpost" -%}
+        {%- elsif key contains "Case" or key contains "Campfire" -%}
+          {%- assign tone = "campfires" -%}
+          {%- assign icon_file = "icons/tile-campfire.svg" -%}
+          {%- assign single_label = "Campfire" -%}
+        {%- elsif key contains "Maturity" or key contains "Indicator" or key contains "Waypoint" -%}
+          {%- assign tone = "waypoints" -%}
+          {%- assign icon_file = "icons/tile-maturity.svg" -%}
+          {%- assign single_label = "Waypoint" -%}
+        {%- endif -%}
+
+        {%- for pid in section[1] -%}
+          {%- assign target = site.pages | where: "page_id", pid | first -%}
+          {%- if target -%}
+          <div class="col">
+              <a class="related-tile related-tile--{{ tone }}" href="{{ target.url | relative_url }}">
+                  <span class="related-tile__type">
+                      {%- if icon_file == "icons/tile-guidance.svg" -%}{% include icons/tile-guidance.svg %}{%- endif -%}
+                      {%- if icon_file == "icons/tile-campfire.svg" -%}{% include icons/tile-campfire.svg %}{%- endif -%}
+                      {%- if icon_file == "icons/tile-maturity.svg" -%}{% include icons/tile-maturity.svg %}{%- endif -%}
+                      {{ single_label }}
+                  </span>
+                  <span class="related-tile__title">{{ target.title }}</span>
+                  {%- if target.description -%}
+                  <span class="related-tile__desc">{{ target.description }}</span>
+                  {%- endif -%}
+              </a>
+          </div>
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- endunless -%}
+        {%- endfor -%}
+    </div>
+</section>
+{%- endif -%}

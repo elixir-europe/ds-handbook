@@ -77,11 +77,26 @@ lead_quote: The single most useful thing we learned, in one sentence.
 # pages and maturity indicators. Both render as a "Related" block at the
 # bottom of the page.
 # ---------------------------------------------------------------------------
-related_guidance:                  # page_ids of guidance pages behind this case
-  - g-writing-rdm-strategy
+# Cross-references — rendered as a "Related pages" block at the bottom.
+# Nested by type; each section becomes a row of slim tone-aware tiles.
+# Type keys recognised: Guidance, Case_Study, Maturity_Indicator.
+related_pages:
+  Guidance:
+    - g-writing-rdm-strategy
+  Case_Study:
+    - other-case-shortname
+  Maturity_Indicator:
+    - mm-strategy-defined
 
-related_indicators:                # page_ids of maturity indicators this advances
-  - mm-strategy-defined
+# ---------------------------------------------------------------------------
+# Resources — external links worth keeping handy. Render as a structured
+# table at the end of the page (no need for a `## Resources` section in
+# the body). Keep the list short and specific.
+# ---------------------------------------------------------------------------
+resources:
+  - name: "Resource title"
+    url: https://example.org/resource
+    description: One-line context — why this resource matters here.
 ---
 
 
@@ -156,11 +171,8 @@ happens next — bundled because they overlap in practice.
   so.
 
 
-## Resources (optional)
-
-External links worth keeping handy — the SOP, the training repo, the
-publication, the policy document, the talk. Keep this list short and
-specific; don't turn it into a generic RDM reading list.
-
-- [Resource title](https://example.org/resource) — one-line context.
-- ...
+<!--
+  Don't add a `## Resources` heading here — the layout renders the
+  `resources:` frontmatter list automatically as a table at the bottom
+  of the page.
+-->

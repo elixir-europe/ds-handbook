@@ -1309,7 +1309,10 @@ section#search-section {
 /*=== Italic / em emphasis =============================================*/
 // In body, em/i feel like the author's voice. Render in Bricolage italic
 // (synthesised slope is fine – Bricolage doesn't ship a true italic).
-#main em, #main i {
+// Excludes Font Awesome icons (`<i class="fa-*">`), which need to keep
+// their own font-family and `font-style: normal`.
+#main em,
+#main i:not([class*="fa-"]) {
     font-style: italic;
     color: rgba($dark, 0.92);
 }
@@ -2671,79 +2674,111 @@ nav#breadcrumb {
 }
 
 
-/*=== Case study (campfire) context card ==============================*/
-// Sits between the H1 and the body of every case-study layout. Frontmatter
-// drives the content (see _layouts/case-study.html). Vocab in
-// _data/case_study/{themes,scales,domains,outcome_status}.yml.
-.case-study-card {
-    background-color: rgba($brand-amber-soft, 0.35);
-    border: 1px solid rgba($brand-amber, 0.45);
-    border-radius: 0.5rem;
-    padding: 1.25rem 1.4rem;
-    margin: 0.5rem 0 2rem;
+/*=== Case study (campfire) — tabbed metadata header ==================*/
+// Adapted from the ELITMa training-module pattern. Two tabs:
+//   • "At a glance" — fact fields with vertical rules + mono labels.
+//   • "Summary"     — description + lead_quote.
+// The bottom of the page has a resources table and related-pages tiles
+// (see further down). Vocab in _data/case_study/*.yml.
+.case-study-meta {
+    margin: 0.75rem 0 2.25rem;
 
-    &__summary {
-        font-family: $font-family-theme;
-        font-size: 1.1rem;
-        font-weight: 500;
-        line-height: 1.4;
-        color: $dark;
-        margin: 0 0 0.9rem;
-        font-variation-settings: "opsz" 24, "wdth" 100;
-    }
+    &__nav.nav-tabs {
+        --bs-nav-tabs-border-color: #{$brand-rule};
+        --bs-nav-tabs-link-active-color: #{$dark};
+        --bs-nav-tabs-link-active-bg: #{$brand-paper};
+        --bs-nav-tabs-link-active-border-color: #{$brand-rule} #{$brand-rule} #{$brand-paper};
+        border-bottom-color: $brand-rule;
 
-    &__facts {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 0.4rem 1.5rem;
-        margin: 0;
-
-        @include media-breakpoint-down(md) {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    &__fact {
-        margin: 0;
-
-        dt {
+        .nav-link {
             font-family: $font-family-monospace;
-            font-size: 0.66rem;
+            font-size: 0.75rem;
             font-weight: 500;
             letter-spacing: 0.14em;
             text-transform: uppercase;
-            color: rgba($dark, 0.6);
-            margin: 0 0 0.1rem;
-        }
+            color: rgba($dark, 0.6) !important;
+            background: transparent;
+            border: 1px solid transparent;
+            border-bottom-color: $brand-rule;
+            border-radius: 0.4rem 0.4rem 0 0;
+            padding: 0.5rem 1rem !important;
+            transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
 
-        dd {
-            font-family: $font-family-sans-serif;
-            font-size: 0.95rem;
-            color: $dark;
-            margin: 0;
+            &:hover {
+                color: $dark !important;
+                background-color: rgba($brand-amber, 0.10);
+                border-bottom-color: rgba($brand-amber, 0.4);
+            }
+
+            &.active {
+                color: $dark !important;
+                background-color: $brand-paper;
+                border-color: $brand-rule $brand-rule $brand-paper;
+                font-weight: 600;
+            }
         }
     }
 
+    &__content {
+        background-color: $brand-paper;
+        border: 1px solid $brand-rule;
+        border-top: 0;
+        border-radius: 0 0.5rem 0.5rem 0.5rem;
+        padding: 1.4rem 1.5rem;
+    }
+
+    &__fields {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem 2rem;
+    }
+
+    &__field {
+        border-left: 2px solid $brand-rule;
+        padding-left: 0.9rem;
+        min-width: 0;
+    }
+
+    &__label {
+        font-family: $font-family-monospace;
+        font-size: 0.66rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba($dark, 0.65);
+        margin-bottom: 0.2rem;
+
+        i { color: $brand-amber-text; }
+    }
+
+    &__value {
+        font-family: $font-family-sans-serif;
+        font-size: 0.95rem;
+        color: $dark;
+        line-height: 1.4;
+    }
+
     &__partners {
-        display: block;
+        font-family: $font-family-sans-serif;
         font-size: 0.8rem;
         color: rgba($dark, 0.65);
-        margin-top: 0.1rem;
+        line-height: 1.4;
+        margin-top: 0.15rem;
     }
 
     &__themes {
         list-style: none;
         padding: 0;
-        margin: 1rem 0 0;
+        margin: 1.25rem 0 0;
         display: flex;
         flex-wrap: wrap;
         gap: 0.4rem;
     }
 
     &__link {
-        margin: 0.9rem 0 0;
+        margin: 1.25rem 0 0;
         font-family: $font-family-monospace;
-        font-size: 0.78rem;
+        font-size: 0.8rem;
         letter-spacing: 0.04em;
 
         a {
@@ -2755,6 +2790,20 @@ nav#breadcrumb {
 
             &:hover { border-bottom-color: $accent-color; }
         }
+    }
+
+    &__summary {
+        font-family: $font-family-theme;
+        font-size: 1.15rem;
+        font-weight: 500;
+        line-height: 1.45;
+        color: $dark;
+        margin: 0;
+        font-variation-settings: "opsz" 24, "wdth" 100;
+    }
+
+    &__quote {
+        margin: 1.25rem 0 0;
     }
 }
 
@@ -2774,7 +2823,7 @@ nav#breadcrumb {
 
 .case-study-status {
     display: inline-block;
-    vertical-align: 0.08em;          // nudge the pill up so its centre lines up with the text x-height
+    vertical-align: 0.08em;
     font-family: $font-family-monospace;
     font-size: 0.7rem;
     font-weight: 600;
@@ -2792,74 +2841,119 @@ nav#breadcrumb {
     &--archived { background-color: $brand-rule; color: rgba($dark, 0.75); }
 }
 
-// Pull-quote at the top of a case study (the `lead_quote` frontmatter).
-.case-study-lead-quote {
-    margin: 1.5rem 0 2.25rem;
-}
+/*=== Case study — resources table =====================================*/
+// Auto-rendered at the end of every case study where `resources:` is set
+// in frontmatter. Editorial table on cream — no heavy borders, mono
+// header eyebrow, brick links, paper row shading on hover.
+.case-study-resources {
+    margin: 0.5rem 0 2.5rem;
 
-// Related-pages block at the bottom (related_guidance + related_indicators).
-// Editorial layout — no tinted card, just a scribble-divider + two columns
-// of pointers using the same eyebrow + section motif as the rest of the
-// site. Each link is a title + short description, styled like a trailhead.
-.case-study-relations {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem 2.5rem;
-    margin: 0.5rem 0 2rem;
-
-    @include media-breakpoint-down(md) {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    &__eyebrow {
-        font-family: $font-family-monospace;
-        font-size: 0.72rem;
-        font-weight: 500;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: rgba($dark, 0.7);
-        margin: 0 0 0.85rem;
-    }
-
-    &__group ul {
-        list-style: none;
-        padding: 0;
+    table.table {
+        --bs-table-bg: transparent;
+        --bs-table-border-color: #{$brand-rule};
+        --bs-table-hover-bg: #{rgba($brand-amber, 0.06)};
         margin: 0;
 
-        li {
-            margin: 0 0 0.85rem;
-            line-height: 1.4;
-
-            &:last-child { margin-bottom: 0; }
+        thead th {
+            font-family: $font-family-monospace;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba($dark, 0.65);
+            border-bottom: 2px solid $brand-rule;
+            padding: 0.6rem 0.85rem;
         }
 
-        a {
-            display: block;
-            text-decoration: none;
+        tbody td {
+            font-family: $font-family-sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.45;
             color: $dark;
-            padding: 0.35rem 0 0.4rem 0.9rem;
-            border-left: 2px solid $brand-rule;
-            transition: border-left-color 0.15s ease, padding-left 0.15s ease;
+            padding: 0.65rem 0.85rem;
+            border-bottom: 1px solid $brand-rule;
+            vertical-align: top;
 
-            &:hover {
-                border-left-color: $brand-amber;
-                padding-left: 1.1rem;
+            a {
+                color: $accent-color;
+                text-decoration: none;
+                border-bottom: 1px solid rgba($accent-color, 0.35);
+                transition: border-bottom-color 0.15s ease;
 
-                .case-study-relations__title { color: $accent-color; }
+                &:hover { border-bottom-color: $accent-color; }
             }
+
+            p { margin: 0; }
+        }
+
+        tbody tr:last-child td { border-bottom: 0; }
+    }
+}
+
+/*=== Case study — related pages (slim tone-aware tiles) ===============*/
+// Distinct from .navigation-tiles — these are reading-context pointers,
+// not landing-page jumps. Smaller type, tighter padding, no flourish
+// animations, no counter, no backlight. Each tile carries a tone-coloured
+// type label (Signpost / Campfire / Waypoint) with the matching FA icon.
+.case-study-relations {
+    margin: 0.5rem 0 2rem;
+}
+
+.related-tile {
+    --tile-tone:       #{$brand-amber-text};
+    --tile-tone-soft:  #{rgba($brand-amber, 0.08)};
+    --tile-tone-rule:  #{rgba($brand-amber, 0.45)};
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    height: 100%;
+    padding: 0.85rem 1rem 0.95rem;
+    background-color: $brand-paper;
+    border: 1px solid $brand-rule;
+    border-top: 3px solid var(--tile-tone-rule);
+    border-radius: 0.4rem;
+    text-decoration: none !important;
+    color: $dark !important;
+    transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+
+    &:hover {
+        background-color: var(--tile-tone-soft);
+        border-color: $brand-rule var(--tile-tone-rule) var(--tile-tone-rule) var(--tile-tone-rule);
+        border-top-color: var(--tile-tone);
+        transform: translateY(-1px);
+        color: $dark !important;
+    }
+
+    &__type {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-family: $font-family-monospace;
+        font-size: 0.66rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--tile-tone);
+        line-height: 1;
+
+        svg {
+            width: 1.1rem;
+            height: 1.1rem;
+            flex-shrink: 0;
+            display: block;
         }
     }
 
     &__title {
         display: block;
         font-family: $font-family-theme;
-        font-size: 1.02rem;
-        font-weight: 500;
+        font-size: 1rem;
+        font-weight: 600;
         line-height: 1.25;
         color: $dark;
-        font-variation-settings: "opsz" 24, "wdth" 100;
-        transition: color 0.15s ease;
+        font-variation-settings: "opsz" 24, "wdth" 95;
+        margin-top: 0.15rem;
     }
 
     &__desc {
@@ -2867,13 +2961,25 @@ nav#breadcrumb {
         font-family: $font-family-sans-serif;
         font-size: 0.85rem;
         line-height: 1.4;
-        color: rgba($dark, 0.65);
-        margin-top: 0.15rem;
+        color: rgba($dark, 0.7);
     }
 
-    &__missing {
-        font-family: $font-family-monospace;
-        font-size: 0.85rem;
-        color: rgba($dark, 0.45);
+    // Per-landmark tones — match the door + tile-flourish vocabulary
+    &--signposts {
+        --tile-tone:      #{$brand-sage-text};
+        --tile-tone-soft: #{rgba($brand-spring, 0.30)};
+        --tile-tone-rule: #{rgba($brand-sage, 0.55)};
+    }
+
+    &--campfires {
+        --tile-tone:      #{$brand-brick-text};
+        --tile-tone-soft: #{rgba($brand-brick-soft, 0.45)};
+        --tile-tone-rule: #{rgba($brand-brick, 0.55)};
+    }
+
+    &--waypoints {
+        --tile-tone:      #{$brand-amber-text};
+        --tile-tone-soft: #{rgba($brand-amber-soft, 0.45)};
+        --tile-tone-rule: #{rgba($brand-amber, 0.6)};
     }
 }
