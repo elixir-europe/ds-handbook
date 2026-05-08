@@ -5,7 +5,7 @@ contributors: [Xenia Perez Sitja]
 page_id: how-to-contribute
 ---
 
-<p class="section-eyebrow">§ FOR CONTRIBUTORS</p>
+<p class="section-eyebrow"> FOR CONTRIBUTORS</p>
 
 <p class="drop-cap">The handbook is built by data stewards, for data stewards. Every signpost, campfire, and waypoint comes from someone who's done the work and decided to write it down. If you've got a story, a pattern, or a hard-won lesson – we'd love to add it.</p>
 
@@ -104,20 +104,20 @@ Open a chapter intro with a Bricolage drop cap – gives the page weight and edi
 A small mono uppercase eyebrow above a heading – useful for chapter labels and section markers. Tone variants pick up landmark colour: `tone--signposts`, `tone--campfires`, `tone--waypoints`, `tone--amber`.
 
 ```html
-<p class="section-eyebrow">§ TRAIL NOTES</p>
-<p class="section-eyebrow tone--signposts">§ SIGNPOSTS</p>
-<p class="section-eyebrow tone--campfires">§ CAMPFIRES</p>
-<p class="section-eyebrow tone--waypoints">§ WAYPOINTS</p>
-<p class="section-eyebrow tone--amber">§ AMBER</p>
+<p class="section-eyebrow"> TRAIL NOTES</p>
+<p class="section-eyebrow tone--signposts"> SIGNPOSTS</p>
+<p class="section-eyebrow tone--campfires"> CAMPFIRES</p>
+<p class="section-eyebrow tone--waypoints"> WAYPOINTS</p>
+<p class="section-eyebrow tone--amber"> AMBER</p>
 ```
 
 **Renders as:**
 
-<p class="section-eyebrow">§ TRAIL NOTES</p>
-<p class="section-eyebrow tone--signposts">§ SIGNPOSTS</p>
-<p class="section-eyebrow tone--campfires">§ CAMPFIRES</p>
-<p class="section-eyebrow tone--waypoints">§ WAYPOINTS</p>
-<p class="section-eyebrow tone--amber">§ AMBER</p>
+<p class="section-eyebrow"> TRAIL NOTES</p>
+<p class="section-eyebrow tone--signposts"> SIGNPOSTS</p>
+<p class="section-eyebrow tone--campfires"> CAMPFIRES</p>
+<p class="section-eyebrow tone--waypoints"> WAYPOINTS</p>
+<p class="section-eyebrow tone--amber"> AMBER</p>
 
 ### Margin note
 

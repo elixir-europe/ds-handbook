@@ -5,7 +5,7 @@ contributors: [Xenia Perez Sitja]
 page_id: about
 ---
 
-<p class="section-eyebrow">§ ABOUT THIS HANDBOOK</p>
+<p class="section-eyebrow">ABOUT THIS HANDBOOK</p>
 
 <p class="drop-cap">Welcome. This is the <strong>Data Stewardship Handbook</strong> – a community-built field handbook from the <a href="https://elixir-europe.org/communities/research-data-management">ELIXIR Research Data Management Community</a>. It exists for one reason: data stewardship is a job people do, not just a methodology, and the people side of it is rarely written down.</p>
 
