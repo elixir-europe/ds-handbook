@@ -12,30 +12,21 @@ Welcome to the Data Steward Handbook, an ELIXIR Research Data Management (RDM) C
 
 ## Target audience 
 
-Data stewards dealing with life science data, regardless of their level of proficiency. 
+Data stewards, regardless of their level of proficiency. 
 
 Note: some people may not have “data steward” as their job title, but are still responsible for support in data management, curation and coordinating. For a definition of this role, see the[ RDMkit Data Steward page](https://rdmkit.elixir-europe.org/data_steward).
 
 
 ## Goals
-
-
-
 * To offer practical guidance to data stewards on relevant topics in their daily job.
 * To facilitate knowledge exchange on implementing good data management practices. 
 
-Out of scope
-
-
-
+## Out of scope
 * The handbook does not provide legal advice and users must assess if its content is applicable to their institution, ELIXIR node, and/or country. 
 * The handbook does not address how an individual can manage their own research data nor is it a registry of resources (training materials, tools, standards etc.) as this is addressed by other ELIXIR resources such as [RDMkit](https://rdmkit.elixir-europe.org/), [DSW](https://ds-wizard.org/), [FAIR Cookbook](https://faircookbook.elixir-europe.org/content/home.html), [FAIRsharing](https://fairsharing.org/) and [TeSS](https://tess.elixir-europe.org/).
 
 
 ## What to get out of this Handbook
-
-
-
 * Real-world examples of how other data stewards run data management activities in their institute, with tips and ideas that help others.
 * Existing data management know-how, as well as exchange on the practical implementation of these in a specific institute as a best practice. 
 * Good practices in training and community building, to stimulate data stewardship skills, local peer-to-peer learning and knowledge sharing in your institute.

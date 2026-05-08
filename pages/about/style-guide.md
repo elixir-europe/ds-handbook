@@ -53,7 +53,7 @@ The handbook runs on four fonts. Each one earns its keep:
 | **Bricolage Grotesque** | Display + headings | H1, H2, H3, door titles, sidebar trailhead title |
 | **Inter** | Body, UI | All body paragraphs, list items, the topnav, buttons |
 | **JetBrains Mono** | Data accents | Code, page IDs, mono labels, eyebrows, breadcrumbs |
-| **Caveat** | Marginalia | Taglines, callout type labels, the magpie's voice, footer headline |
+| **Caveat** | Marginalia | Taglines, callout type labels, the magpie's voice, door handles |
 
 You don't choose the font as a writer – pages render in the right font automatically. But understanding the system helps when you write copy for a specific role (e.g. a Caveat-style aside reads as the magpie's voice; mono labels read as data).
 
@@ -64,10 +64,12 @@ Trailhead – modern outdoor handbook, greens grounded with amber and brick.
 | Token | Hex | Role |
 |---|---|---|
 | **Ink** | `#1F3A2E` | Body text, dark surfaces, footer |
-| **Sage** | `#6B9E7E` | Surface accents, Waypoints landmark |
+| **Sage** | `#6B9E7E` | Surface accents, mid-green highlights |
 | **Spring** | `#C7E8B5` | Highlights, the backlight effect, Signposts landmark |
-| **Amber** | `#E8B547` | Surface fills, decorative accents |
-| **Brick** | `#C44536` | Campfires landmark, link colour |
+| **Amber** | `#E8B547` | Surface fills, decorative accents, Campfires hover |
+| **Amber-soft** | `#F5DC9C` | Soft amber wash – Waypoints landmark, door-icon blocks |
+| **Brick** | `#C44536` | Brand red, link colour |
+| **Brick-soft** | `#E9B4AB` | Soft brick wash – Campfires landmark, door-icon blocks |
 | **Cream** | `#F4EFE4` | Body background |
 | **Paper** | `#FFFFFF` | Cards, sidebars floating on cream |
 | **Rule** | `#E0DACE` | Hairlines, dividers |
@@ -86,13 +88,15 @@ Surface colours (sage, amber, brick at full saturation) **don't pass WCAG AA con
 
 ## The three landmarks
 
-The handbook is organised into three landmarks. Each has its own colour identity. We use the matching tone when writing about that section. This is automatically embedded in the tempaltes but you may consider this for images and other items. 
+The handbook is organised into three landmarks. Each has its own colour identity. Templates apply the tone automatically; consider it when picking images or accents.
+
+The three landmark tones rotate around a warm trio – on the home-page doors, hovering one previews the next:
 
 | Landmark | Section | Tone colour | Where you'd write |
 |---|---|---|---|
-| **🪶 Signposts** | Guidance | Sage | `pages/guidance/` |
-| **🪶 Campfires** | Case studies | Brick / Amber | `pages/case-studies/` |
-| **🪶 Waypoints** | Maturity model | Sage | (in the maturity-model submodule) |
+| **🪶 Signposts** | Guidance | Spring (green) | `pages/guidance/` |
+| **🪶 Campfires** | Case studies | Brick-soft (red) | `pages/case-studies/` |
+| **🪶 Waypoints** | Maturity model | Amber-soft (yellow) | (in the maturity-model submodule) |
 
 ## The magpie's voice
 
