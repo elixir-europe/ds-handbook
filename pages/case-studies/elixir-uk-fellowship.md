@@ -45,23 +45,23 @@ related_pages:
     - mm-support-network
 
 resources:
+  # Shared registry references
+  - rdmkit
+  - fair-cookbook
+  - ssi
+  - galaxy-training
+  # One-off entries unique to this case
   - name: ELIXIR-UK Fellowship programme page
     url: https://elixiruknode.org/activities/fellowship/
     description: Current cohort, application process, Fellow profiles.
+    category: external_resource
   - name: ELIXIR-UK DaSH project page
     url: https://elixiruknode.org/project/elixir-uk-dash/
     description: Original grant scope, partners, deliverables.
-  - name: Software Sustainability Institute
-    url: https://www.software.ac.uk/
-    description: Mentors on how to host the Fellowship.
-  - name: RDMkit
-    url: https://rdmkit.elixir-europe.org/
-    description: The training resource Fellows embed locally.
-  - name: FAIR Cookbook
-    url: https://faircookbook.elixir-europe.org/
-    description: FAIR-principle recipes referenced in the training materials.
+    category: external_resource
   - name: "UKRI Innovation Scholars grant MR/V038966/1"
     description: "£687,857 · 14 Feb 2021 – 30 Jun 2024."
+    category: external_resource
 ---
 
 

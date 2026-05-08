@@ -4,6 +4,36 @@ search_exclude: true
 description: <!---REPLACE THIS with a one sentence description of the chapter--->
 contributors: [<!---REPLACE THIS with comma separated list of contributors--->]
 page_id: <!---REPLACE THIS with a shortened page name. The shortened page name should be in lowercase and separated by underscore(s) if needed. For example, page_id of Community building will be community-building, replicate this in the name of the file -->
+
+# Cross-references — render at the bottom as a "Related pages" block of
+# slim tone-aware tiles. Nested by type; each section is one row of tiles.
+# Recognised type keys: Guidance, Case_Study, Maturity_Indicator.
+# Drop the whole block (or any inner section) if not relevant.
+related_pages:
+  Case_Study:
+    - case-study-shortname
+  Maturity_Indicator:
+    - mm-indicator-shortname
+
+# Resources — render at the bottom as ELITMA-style tables grouped by
+# category (Templates / Internal / External). Two ways to add an entry:
+#
+# 1. Reference an ID from the central registry _data/tool_and_resource_list.yml
+#    (preferred for shared resources like RDMkit, FAIR Cookbook, DSW…):
+#
+#        resources: [rdmkit, fair-cookbook, dsw]
+#
+# 2. Add an inline entry for one-off resources (preferred for case studies
+#    or anything specific to this page):
+#
+#        resources:
+#          - name: "Resource title"
+#            url: https://example.org/resource
+#            description: One-line context.
+#            category: external_resource   # or template, internal_resource
+#
+# Both forms can be mixed in the same list.
+resources: [rdmkit, fair-cookbook]
 ---
 
 <!-- Summary of the topic

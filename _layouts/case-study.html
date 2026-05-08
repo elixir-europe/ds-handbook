@@ -50,7 +50,7 @@ human-readable labels via Liquid `where` lookups.
                     <div class="case-study-meta__label"><i class="fa-solid fa-building me-1" aria-hidden="true"></i>Organisation</div>
                     <div class="case-study-meta__value">
                         {%- if page.lead_org %}{{ page.lead_org }}{%- endif -%}
-                        {%- if country %}{%- if page.lead_org %} · {%- endif -%}{{ country.label }}{%- endif -%}
+                        {%- if country %}{%- if page.lead_org %}<span class="case-study-meta__sep" aria-hidden="true">·</span>{%- endif -%}{{ country.label }}{%- endif -%}
                     </div>
                     {%- if page.partners -%}
                     <div class="case-study-meta__partners">with {{ page.partners | join: ", " }}</div>
@@ -77,7 +77,7 @@ human-readable labels via Liquid `where` lookups.
                     <div class="case-study-meta__label"><i class="fa-solid fa-circle-check me-1" aria-hidden="true"></i>Status</div>
                     <div class="case-study-meta__value">
                         {%- if page.start %}Since {{ page.start }}{%- endif -%}
-                        {%- if page.start and status %} · {%- endif -%}
+                        {%- if page.start and status -%}<span class="case-study-meta__sep" aria-hidden="true">·</span>{%- endif -%}
                         {%- if status -%}<span class="case-study-status case-study-status--{{ page.status }}">{{ status.label }}</span>{%- endif -%}
                     </div>
                 </div>
@@ -123,36 +123,11 @@ human-readable labels via Liquid `where` lookups.
 
 {{ content }}
 
-{%- if page.resources -%}
-<hr class="scribble-divider" aria-hidden="true">
-<section class="case-study-resources" aria-labelledby="case-study-resources-title">
-    <h2 id="case-study-resources-title">Resources</h2>
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Resource</th>
-                    <th scope="col">Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                {%- for r in page.resources -%}
-                <tr>
-                    <td>
-                        {%- if r.url -%}
-                        <a href="{{ r.url }}" {% unless r.url contains site.url %}target="_blank" rel="noopener"{% endunless %}>{{ r.name }}</a>
-                        {%- else -%}
-                        {{ r.name }}
-                        {%- endif -%}
-                    </td>
-                    <td>{{ r.description | markdownify }}</td>
-                </tr>
-                {%- endfor -%}
-            </tbody>
-        </table>
-    </div>
-</section>
-{%- endif -%}
+{%- comment -%}
+Resources table — rendered automatically by `_includes/resource-table-page.html`
+(local override) which the parent `page` layout calls after {{content}}.
+Drives off the `page.resources` frontmatter list.
+{%- endcomment -%}
 
 {%- comment -%}
 Related pages — rendered automatically by `_includes/related-pages.html`

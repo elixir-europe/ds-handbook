@@ -89,11 +89,26 @@ related_pages:
     - mm-strategy-defined
 
 # ---------------------------------------------------------------------------
-# Resources — external links worth keeping handy. Render as a structured
-# table at the end of the page (no need for a `## Resources` section in
-# the body). Keep the list short and specific.
+# Resources — render as ELITMA-style tables (Templates / Internal /
+# External) at the end of the page. Two ways to add an entry:
+#
+# 1. Reference an ID from _data/tool_and_resource_list.yml (preferred
+#    for shared resources like RDMkit, FAIR Cookbook, DSW…):
+#
+#        resources: [rdmkit, fair-cookbook, ssi]
+#
+# 2. Add an inline entry for one-off resources unique to this case study
+#    (the SOP, the grant reference, the institutional URL):
+#
+#        - name: "Resource title"
+#          url: https://example.org/resource
+#          description: One-line context.
+#          category: external_resource   # or template, internal_resource
+#
+# Both forms can be mixed in the same list.
 # ---------------------------------------------------------------------------
 resources:
+  - rdmkit
   - name: "Resource title"
     url: https://example.org/resource
     description: One-line context — why this resource matters here.
