@@ -70,7 +70,9 @@ We try to stay in our lane. The handbook is **not**:
 
 ## How it's made
 
-The handbook is built openly on GitHub by a group of data stewards (and a few designers and developers) volunteering their time. Every page lists its contributors. Want to add yours? Have a look at [how to contribute](/how_to_contibute).
+The handbook is built openly on GitHub by a group of data stewards (and a few designers and developers) volunteering their time. Every page lists its contributors. Want to add yours? Have a look at [how to contribute](/how-to-contribute).
+
+Visual refinement and theme customisation were iterated on in collaboration with [Claude Code](https://claude.com/claude-code) (Anthropic's CLI for Claude), under human direction.
 
 ## Licence and citation
 

@@ -43,3 +43,7 @@ To cite:
 
 > *Data Stewardship Handbook. A deliverable from the ELIXIR-funded DATAREX implementation study.*
 > *URL: <https://elixir-europe.org/internal-projects/commissioned-services/datarex>*
+
+## Acknowledgements
+
+The handbook's visual identity, custom layouts, and Liquid extensions were iterated on in collaboration with [Claude Code](https://claude.com/claude-code) — Anthropic's CLI for Claude — alongside human design and editorial judgement.
