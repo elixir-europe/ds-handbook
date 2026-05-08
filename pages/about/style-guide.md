@@ -5,7 +5,7 @@ contributors: [Xenia Perez Sitja]
 page_id: style_guide
 ---
 
-<p class="section-eyebrow">§ STYLE GUIDE</p>
+<p class="section-eyebrow"> STYLE GUIDE</p>
 
 <p class="drop-cap">This is how the handbook reads and looks. The voice rules apply to everyone writing content; the visual rules apply to anyone touching the design system. Most of it is practical – short rules with examples – and there's a copy-pasteable kit of components for contributors.</p>
 
