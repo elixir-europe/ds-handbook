@@ -1,0 +1,27 @@
+# Lifecycle status of the work being described. Drives the small
+# coloured badge in the case-study card; the `tone` value maps to a
+# colour token in _custom_classes.scss (.case-study-status--<key>).
+- key: active
+  label: Active
+  description: The work is currently running and supported.
+  tone: spring
+
+- key: evolved
+  label: Evolved
+  description: Merged into or replaced by a successor effort.
+  tone: amber
+
+- key: paused
+  label: Paused
+  description: Suspended pending resources or context change.
+  tone: amber-soft
+
+- key: ended
+  label: Ended
+  description: Funded project complete; legacy may live on through partners.
+  tone: brick-soft
+
+- key: archived
+  label: Archived
+  description: Concluded; lessons available for reference.
+  tone: rule

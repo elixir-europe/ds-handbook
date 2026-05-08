@@ -1,0 +1,20 @@
+# How big is the work? Used in the context card + as a filter.
+- key: individual
+  label: Individual
+  description: One person's practice or workflow.
+
+- key: team
+  label: Team
+  description: A single team, lab, or service unit.
+
+- key: institutional
+  label: Institutional
+  description: One institution (university, RI, hospital, funder).
+
+- key: national
+  label: National / Regional
+  description: A national node, regional consortium, or government programme.
+
+- key: international
+  label: International
+  description: Cross-border collaboration or pan-European initiative.

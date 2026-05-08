@@ -1,0 +1,59 @@
+# CRediT (Contributor Roles Taxonomy) – https://credit.niso.org/
+# Used in two places:
+#
+# 1. _data/CONTRIBUTORS.yaml – `roles:` declares a person's
+#    project-level contributions (e.g. project administration, funding).
+#
+# 2. Page frontmatter – `contributors:` maps a role key to the names
+#    who took that role on that specific page. Each person may appear
+#    under at most ONE role per page.
+#
+# We use a curated subset of the 14 CRediT roles – the ones that
+# actually map to handbook contributions. The remaining six are valid
+# CRediT keys and can be added here if the handbook ever needs them.
+#
+# - key       : the CRediT key, used in YAML
+# - label     : the official CRediT label (rendered to the reader)
+# - short     : a single-word version used on the global roster (e.g.
+#               the two writing keys both render as "Writing" there)
+# - url       : credit.niso.org/role/<key>, surfaced on chip hover/click
+
+- key:   conceptualization
+  label: Conceptualization
+  short: Concept
+  url:   https://credit.niso.org/contributor-roles/conceptualization/
+
+- key:   writing-original-draft
+  label: "Writing – original draft"
+  short: Writing
+  url:   https://credit.niso.org/contributor-roles/writing-original-draft/
+
+- key:   writing-review-editing
+  label: "Writing – review & editing"
+  short: Writing
+  url:   https://credit.niso.org/contributor-roles/writing-review-editing/
+
+- key:   visualization
+  label: Visualization
+  short: Visualization
+  url:   https://credit.niso.org/contributor-roles/visualization/
+
+- key:   software
+  label: Software
+  short: Software
+  url:   https://credit.niso.org/contributor-roles/software/
+
+- key:   project-administration
+  label: Project administration
+  short: Admin
+  url:   https://credit.niso.org/contributor-roles/project-administration/
+
+- key:   funding-acquisition
+  label: Funding acquisition
+  short: Funding
+  url:   https://credit.niso.org/contributor-roles/funding-acquisition/
+
+- key:   supervision
+  label: Supervision
+  short: Supervision
+  url:   https://credit.niso.org/contributor-roles/supervision/

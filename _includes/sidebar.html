@@ -1,0 +1,64 @@
+{%- assign sidebar = site.data.sidebars[page.sidebar] %}
+
+<button class="btn text-start d-lg-none hover-primary collapsed sidebar-collapse w-100 mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#side-nav" aria-controls="side-nav" aria-expanded="true" aria-label="Toggle navigation">
+    {{ page.sidebar | capitalize | replace: "_", " " | replace: "-", " " }} menu <i title="navbar-toggler" class="fa-solid fa-bars ms-2"></i>
+</button>
+<nav class="trail-nav collapse text-muted" id="side-nav" aria-label="Side navigation">
+    {%- if sidebar.title or sidebar.version %}
+    <div class="trailhead pb-1 pt-2">
+        <span class="trailhead-eyebrow">Trailhead</span>
+        <a class="trailhead-title{% if page.url == sidebar.title_url %} active{%- endif %}{% unless sidebar.title_url %} disabled{%- endunless %}" {%- if sidebar.title_url %}href="{{ sidebar.title_url | relative_url }}"{%- endif %}>{{sidebar.title}} {{sidebar.version}}</a>
+    </div>
+    {%- endif %}
+    <ul class="trail list-unstyled mb-4{%- unless sidebar.title or sidebar.version %} pt-2{%- endunless %}">
+        {%- for folder in sidebar.subitems %}
+        {%- comment -%}
+        Only render the submenu when the current page is the folder root
+        or one of the folder's children. Sidebar stays compact otherwise.
+        {%- endcomment -%}
+        {%- assign in_folder = false -%}
+        {%- if folder.subitems %}
+            {%- if page.url == folder.url %}{%- assign in_folder = true -%}{%- endif %}
+            {%- for sub in folder.subitems %}
+                {%- if page.url == sub.url %}{%- assign in_folder = true -%}{%- endif %}
+            {%- endfor %}
+        {%- endif %}
+        <li class="trail-stop{%- if folder.hr %} trail-stop--break{% endif %}{%- if in_folder %} is-open{% endif %}">
+            {%- if folder.external_url %}
+            <a class="trail-link" href="{{folder.external_url}}" target="_blank" rel="noopener">
+                <span class="trail-dot" aria-hidden="true"></span>
+                <span class="trail-label">{{folder.title}}</span>
+            </a>
+            {%- else %}
+            <a class="trail-link{%- if page.url == folder.url %} is-here{% endif %}" href="{{folder.url | relative_url }}">
+                <span class="trail-dot" aria-hidden="true"></span>
+                <span class="trail-label">{{ folder.title }}</span>
+            </a>
+            {%- endif %}
+
+            {%- if folder.subitems and in_folder %}
+            <ul class="trail-sub list-unstyled">
+                {%- for sub in folder.subitems %}
+                <li class="trail-stop trail-stop--sub">
+                    {%- if sub.external_url %}
+                    <a class="trail-link trail-link--sub" href="{{sub.external_url}}" target="_blank" rel="noopener">
+                        <span class="trail-label">{{ sub.title }}</span>
+                    </a>
+                    {%- else %}
+                    <a class="trail-link trail-link--sub{%- if page.url == sub.url %} is-here{% endif %}" href="{{sub.url | relative_url }}">
+                        <span class="trail-label">{{ sub.title }}</span>
+                    </a>
+                    {%- endif %}
+                </li>
+                {%- endfor %}
+            </ul>
+            {%- endif %}
+        </li>
+        {%- endfor %}
+    </ul>
+
+    <a class="trail-magpie" href="{{ '/notebook' | relative_url }}" aria-label="The magpie's nest – saved pages">
+        <img src="{{ 'assets/img/magpie-dark.svg' | relative_url }}" alt="">
+        <p class="trail-magpie-count">your guide</p>
+    </a>
+</nav>

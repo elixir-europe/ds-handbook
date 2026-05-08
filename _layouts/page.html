@@ -1,0 +1,73 @@
+---
+layout: default
+---
+<main id="main" class="min-vh-100{%- if page.toc or page.toc == nil or page.page_img %} add-grid{% endif %}">
+    <div id="intro">
+        {%- if site.theme_variables.breadcrumb %}
+        {% include breadcrumb.html %}
+        {%- endif %}
+        {%- if page.title %}
+        {%- if page.type and site.theme_variables.breadcrumb != true %}
+        {%- assign subtitle = page.type | replace: "_", " " %}
+        <h1 class="has-subtitle order-1 order-md-0"><span class="d-block text-secondary fs-4 ff-body">{{subtitle}}</span><span class="visually-hidden">:</span> {{ page.title }}
+        {%- else %}
+        <h1>{{ page.title }}
+        {%- endif %}
+        {%- if site.theme_variables.github_buttons.position == "top" or site.theme_variables.github_buttons.position == nil %}
+        {% include github-buttons.html %}
+        {%- endif %}
+        </h1>
+        {%- endif %}
+
+        {%- comment -%}
+        Magpie's nest bookmark button – visible, prominent, sits right under the H1.
+        Hidden on the notebook page itself, landing-style pages, and the
+        section-index pages (Guidance / Case studies – these are listing
+        pages, not the content worth saving).
+        {%- endcomment -%}
+        {%- assign is_section_index = false %}
+        {%- if page.url == "/guidance" or page.url == "/case-studies" %}{%- assign is_section_index = true %}{%- endif %}
+        {%- unless page.permalink == "/notebook" or page.layout == "none" or page.notebook_button == false or is_section_index %}
+        {%- if page.title %}
+        <button type="button"
+                class="notebook-toggle"
+                aria-pressed="false"
+                data-url="{{ page.url | relative_url }}"
+                data-title="{{ page.title | escape }}"
+                data-section="{{ page.sidebar }}">
+            <img class="notebook-toggle-magpie" src="{{ 'assets/img/magpie-dark.svg' | relative_url }}" alt="" aria-hidden="true">
+            <span class="notebook-toggle-icon" aria-hidden="true">+</span>
+            <span class="notebook-toggle-label">add to the magpie's nest</span>
+        </button>
+        {%- endif %}
+        {%- endunless %}
+
+        {%- if page.summary %}
+        <div class="summary">{{page.summary}}</div>
+        {%- endif %}
+    </div>
+    {%- if page.toc or page.toc == nil or page.page_img %}
+    <div id="toc" class="text-muted sticky-xl-top">
+        {%- include toc.html %}
+    </div>
+    {%- endif %}
+    <div id="content" class="mb-5">
+        {{content}}
+        {% include resource-table-page.html %}
+        {% include related-pages.html %}
+        {% include more-information-tiles.html %}
+        {%- if page.page_id %}
+        {% include resource-table-all.html tag=page.page_id %}
+        {%- endif %}
+
+        {% include page-metadata-tabs.html %}
+
+        {%- if site.theme_variables.github_buttons.position == "bottom" %}
+        <div id="github-buttons-wrapper" class="d-flex mt-5">
+            {% include github-buttons.html %}
+        </div>
+        {%- endif %}
+    </div>
+</main>
+
+<script src="{{ 'assets/js/notebook.js' | relative_url }}" defer></script>

@@ -1,0 +1,46 @@
+{%- assign footer_copyright = site.data.footer.copyright %}
+
+<footer id="footer">
+    <div class="container py-5 py-lg-6 g-lg-5">
+        <div class="footer-masthead">
+            <div class="footer-magpie-wrap">
+                <img class="footer-magpie" src="{{ 'assets/img/main-logo-left.svg' | relative_url }}" alt="" aria-hidden="true">
+                <span class="footer-magpie-note">your guide along the trail</span>
+            </div>
+            <p class="footer-eyebrow">– a field handbook for the people side of –</p>
+            <div class="footer-title-display">Data Stewardship</div>
+            <p class="footer-boilerplate">Supported by the ELIXIR Research Data Management Community. Practical guidance, real case studies, and maturity indicators to help data stewards do their job – and grow into it.</p>
+
+            <div class="scribble-divider scribble-divider--dark" aria-hidden="true"></div>
+
+            <nav class="footer-links" aria-label="Footer">
+                <a href="{{ '/about'         | relative_url }}">About</a>
+                <span class="footer-sep" aria-hidden="true">·</span>
+                <a href="{{ '/guidance'      | relative_url }}">Signposts</a>
+                <span class="footer-sep" aria-hidden="true">·</span>
+                <a href="{{ '/case-studies'  | relative_url }}">Campfires</a>
+                <span class="footer-sep" aria-hidden="true">·</span>
+                <a href="{{ '/maturity-model' | relative_url }}">Waypoints</a>
+                <span class="footer-sep" aria-hidden="true">·</span>
+                <a href="{{ '/contributors'  | relative_url }}">Contributors</a>
+                <span class="footer-sep" aria-hidden="true">·</span>
+                <a href="{{ '/accessibility' | relative_url }}">Accessibility</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="copyright py-3">
+        <div class="container g-lg-5 d-flex justify-content-between flex-column flex-lg-row align-items-center gap-3">
+            {%- if footer_copyright %}
+            <div class="footer-copyright-text">{{ footer_copyright | markdownify }}</div>
+            {%- endif %}
+            <a id="ett-logo" class="footer-ett text-nowrap" href="https://elixir-belgium.github.io/elixir-toolkit-theme">
+                Built with
+                <svg data-name="ETT logo" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 77.2 77.12" aria-hidden="true">
+                    <circle class="cls-1" cx="38.56" cy="38.56" r="38.56" />
+                    <path class="cls-3" d="M54,20.52H13.64a.85.85,0,0,0-.84.85v34a.84.84,0,0,0,.84.84H30a.84.84,0,0,0,.85-.84V51.16a.85.85,0,0,0-.85-.85H20.07a.85.85,0,0,1-.85-.85V42a.85.85,0,0,1,.85-.84h8.66a.85.85,0,0,0,.85-.85V36.06a.85.85,0,0,0-.85-.85H20.07a.85.85,0,0,1-.85-.84V27.29a.85.85,0,0,1,.85-.85H38.26a.85.85,0,0,1,.85.85V55.38a.84.84,0,0,0,.85.84h4.73a.84.84,0,0,0,.85-.84V27.29a.85.85,0,0,1,.84-.85H61.27a.85.85,0,0,1,.84.85V55.38a.84.84,0,0,0,.85.84h4.73a.84.84,0,0,0,.85-.84V27.29a.85.85,0,0,1,.85-.85h6.77a.84.84,0,0,0,.84-.85V21.37a.84.84,0,0,0-.84-.85Z" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>

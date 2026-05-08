@@ -1,0 +1,49 @@
+# Where the work happened. Used to render the country line in the
+# case-study card and (later) to filter on the index page. Keep entries
+# alphabetical and use the English short name. Add new entries as needed.
+- key: BE
+  label: Belgium
+- key: CH
+  label: Switzerland
+- key: CZ
+  label: Czech Republic
+- key: DE
+  label: Germany
+- key: DK
+  label: Denmark
+- key: EE
+  label: Estonia
+- key: ES
+  label: Spain
+- key: FI
+  label: Finland
+- key: FR
+  label: France
+- key: GR
+  label: Greece
+- key: HU
+  label: Hungary
+- key: IE
+  label: Ireland
+- key: IL
+  label: Israel
+- key: IT
+  label: Italy
+- key: LT
+  label: Lithuania
+- key: LU
+  label: Luxembourg
+- key: NL
+  label: Netherlands
+- key: NO
+  label: Norway
+- key: PL
+  label: Poland
+- key: PT
+  label: Portugal
+- key: SE
+  label: Sweden
+- key: SI
+  label: Slovenia
+- key: UK
+  label: United Kingdom

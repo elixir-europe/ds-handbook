@@ -1,0 +1,70 @@
+{%- comment -%}
+Local override of the theme include. Renders `page.resources` as
+ELITMA-style category tables (Templates / Internal resources / External
+resources), auto-rendered at the bottom of the page by the parent
+`page` layout.
+
+Two forms are accepted in the frontmatter:
+
+  resources: [rdmkit, fair-cookbook]                # IDs from
+                                                    # _data/tool_and_resource_list.yml
+
+  resources:                                        # inline hashes
+    - name: "Resource title"                        # for one-off entries
+      url: https://example.org/...
+      description: One-line context.
+      category: external_resource
+
+If `category` is not set on an inline entry, it defaults to
+`external_resource`. Only categories with rows render their table.
+{%- endcomment -%}
+
+{%- if page.resources -%}
+
+  {%- comment -%}Resolve every entry into a hash (look up IDs in the registry).{%- endcomment -%}
+  {%- assign resolved = "" | split: "" -%}
+  {%- for entry in page.resources -%}
+    {%- if entry.name -%}
+      {%- assign resolved = resolved | push: entry -%}
+    {%- else -%}
+      {%- assign hit = site.data.tool_and_resource_list | where: "id", entry | first -%}
+      {%- if hit -%}{%- assign resolved = resolved | push: hit -%}{%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- comment -%}Group by category. Default uncategorised → external_resource.{%- endcomment -%}
+  {%- assign templates = resolved | where: "category", "template" -%}
+  {%- assign internals = resolved | where: "category", "internal_resource" -%}
+  {%- assign externals_explicit = resolved | where: "category", "external_resource" -%}
+  {%- assign externals_default = "" | split: "" -%}
+  {%- for r in resolved -%}
+    {%- unless r.category -%}{%- assign externals_default = externals_default | push: r -%}{%- endunless -%}
+  {%- endfor -%}
+  {%- assign externals = externals_explicit | concat: externals_default -%}
+
+  {%- if templates.size > 0 or internals.size > 0 or externals.size > 0 -%}
+  <hr class="scribble-divider" aria-hidden="true">
+
+  {%- if templates.size > 0 -%}
+  <section class="case-study-resources" aria-labelledby="resources-templates">
+    <h2 id="resources-templates">Templates</h2>
+    {%- include resources-table-rows.html rows=templates badge_class="resource-badge--template" badge_label="Template" -%}
+  </section>
+  {%- endif -%}
+
+  {%- if internals.size > 0 -%}
+  <section class="case-study-resources" aria-labelledby="resources-internal">
+    <h2 id="resources-internal">Internal resources</h2>
+    {%- include resources-table-rows.html rows=internals badge_class="resource-badge--internal" badge_label="Internal" -%}
+  </section>
+  {%- endif -%}
+
+  {%- if externals.size > 0 -%}
+  <section class="case-study-resources" aria-labelledby="resources-external">
+    <h2 id="resources-external">External resources</h2>
+    {%- include resources-table-rows.html rows=externals badge_class="resource-badge--external" badge_label="External" -%}
+  </section>
+  {%- endif -%}
+
+  {%- endif -%}
+{%- endif -%}

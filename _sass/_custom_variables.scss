@@ -1,42 +1,73 @@
+/*-----Fonts-----*/
+// Four voices:
+//   theme   = Bricolage Grotesque (display + headings) – personality, has shape
+//   body    = Inter                (body, UI) – clean, technical, data-tool voice
+//   mono    = JetBrains Mono       (data accents – page IDs, numbers, code)
+//   display = Caveat               (taglines, marginalia, field-notes voice)
+$font-family-theme:    "Bricolage Grotesque", -apple-system, "Segoe UI", Roboto, sans-serif;
+$font-family-display:  "Caveat", "Bricolage Grotesque", cursive;
+$font-family-data:     "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-/*-----General styling-----*/
-$font-family-theme: "Inter", sans-serif;
+/*-----Headings-----*/
+$h2-color: $secondary;
 
 /*-----Buttons hover style-----*/
-$btn-primary-bg-hover: $primary;
-$btn-primary-color-hover: $dark;
+$btn-primary-bg-hover:    $secondary;
+$btn-primary-color-hover: $white;
 
 /*-----Top navigation-----*/
-$topnav-bg: $dark;
-$topnav-brand-height: 4rem;
-$topnav-title-color: $primary;
+$topnav-bg:              $brand-paper;
+$topnav-brand-height:    3.5rem;
+$topnav-title-color:     $dark;
+$topnav-searchbar:       $brand-cream;
 
-/*-----More information tiles-----*/
-$info-card-bg: $light;
-$info-card-color: $dark;
-$info-card-bg-hover: $primary;
-$info-card-color-hover: $white;
+/*-----Search-----*/
+$search-result-color: $accent-color;
 
 /*-----Sidebar-----*/
-
-$sidebar-bg: $light;
-$sidebar-color: $dark;
-$sidebar-bg-active: $primary;
-$sidebar-color-active: $dark;
+$sidebar-title-bg:        $brand-paper;
+$sidebar-link-color-active: $dark;
+$sidebar-link-bg-active:    rgba($primary, 0.55);
 
 /*-----Section navigation tiles-----*/
-$nav-card-bg: $light;
-$nav-card-header-bg: $dark;
-$nav-card-header-color: $secondary;
-$nav-card-badge-color: $accent-color;
-$nav-card-badge-bg: $dark;
+$nav-card-bg:           $white;
+$nav-card-color:        $dark;
+$nav-card-bg-hover:     rgba($primary, 0.30);
+$nav-card-color-hover:  $dark;
+$nav-card-header-bg:    $dark;
+$nav-card-header-color: $primary;
+$nav-card-badge-color:  $accent-color;
+$nav-card-badge-bg:     $dark;
 
-/*-----Footer-----*/
-$footer-bg: $dark;
-$footer-color: $white;
-$footer-link-color: $white;
-$footer-link-color-hover: $secondary;
-$footer-copyright-bg: #00000033;
+/*-----More information tiles-----*/
+$info-card-bg:           $light-background;
+$info-card-color:        $dark;
+$info-card-bg-hover:     $primary;
+$info-card-color-hover:  $dark;
+
+/*-----Contributors cards-----*/
+$contr-card-bg: $light-background;
+
+/*-----Page metadata-----*/
+$page-metadata-bg:       rgba($primary, 0.30);
+$page-metadata-link-bg:  $white;
+$contr-popover-bg:       $white;
 
 /*-----Events & news-----*/
-$news-border-color: $primary;
+$news-border-color:  $brand-amber;
+$news-title-bg:      $brand-amber;
+$news-title-color:   $dark;
+
+/*-----Default badge-----*/
+$badge-color:        $dark;
+$badge-bg:           $brand-rule;
+$badge-color-hover:  $dark;
+$badge-bg-hover:     $primary;
+
+/*-----Footer-----*/
+$footer-bg:             $dark;
+$footer-color:          $brand-cream;
+$footer-link-color:     $brand-cream;
+$footer-link-color-hover: $brand-amber;
+$footer-copyright-bg:   rgba($white, 0.06);
+$footer-ett:            $brand-amber;

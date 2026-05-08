@@ -1,44 +1,49 @@
-[![Jekyll site CI](https://github.com/elixir-europe/rdmkit/workflows/Jekyll%20site%20CI/badge.svg)](https://github.com/elixir-europe/rdmkit/actions?query=workflow%3A%22Jekyll+site+CI%22) [![theme badge](https://img.shields.io/badge/ELIXIR%20toolkit%20theme-jekyll-blue?color=0d6efd)](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme)
+[![theme badge](https://img.shields.io/badge/ELIXIR%20toolkit%20theme-jekyll-blue?color=0d6efd)](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme)
 
-# ELIXIR Data Steward Handbook
-Welcome to the Data Steward Handbook, an ELIXIR Research Data Management (RDM) Community resource that offers practical guidance to data stewards on relevant topics in their daily job, encouraging the use of existing resources and best practices to improve local data management.
+# Data Stewardship Handbook
 
-## Why a Data Steward Handbook?
+A community-built field handbook from the [ELIXIR Research Data Management Community](https://elixir-europe.org/communities/research-data-management) **for the people who help researchers manage their data** – data stewards, RDM officers, research librarians, lab data champions, anyone who does the work with or without the title.
 
-* In many organisations the data steward position is a new, often *solo* activity. Beyond the silos of local organisations and from the perspective of data stewards’ experiences, this Handbook aims to make their knowledge more accessible. 
+> Live site: <https://elixir-europe.github.io/ds-handbook/>
+> Full intro: see the [About page](https://elixir-europe.github.io/ds-handbook/about) for what this is, who it's for, and the trail metaphor.
 
-* A Data Steward Handbook was raised by the community as a missing element in the RDM ecosystem. In contrast to other resources that provides guidelines and best practices, Data Steward Handbook provides examples on how to actually perform your tasks.
+## What this is (and isn't)
 
+Most RDM resources tell **researchers** how to manage their own data. This one is different – it's about the **people side** of data stewardship: what stewards actually do day-to-day, how to build the role into an institution, and what's worked elsewhere.
 
-## Target audience 
+| | We do | We don't |
+|---|---|---|
+| **Audience** | Data stewards & adjacent roles | Researchers managing their own data |
+| **Content** | Real-world examples, tips, pitfalls, maturity indicators | Tool registries, standards databases, training catalogues |
+| **Voice** | Practical, plain, opinionated | Policy or legal advice |
 
-Data stewards dealing with life science data, regardless of their level of proficiency. 
+If you're a researcher, you want **[RDMkit](https://rdmkit.elixir-europe.org/)**. If you're after training, see **[TeSS](https://tess.elixir-europe.org/)**,after tools, specific guidance or standards see **[FAIRsharing](https://fairsharing.org/)**, **[FAIR Cookbook](https://faircookbook.elixir-europe.org/)** or data management plans in **[DSW](https://ds-wizard.org/)**. We link to them where relevant; we don't replace them.
 
-Note: some people may not have “data steward” as their job title, but are still responsible for support in data management, curation and coordinating. For a definition of this role, see the[ RDMkit Data Steward page](https://rdmkit.elixir-europe.org/data_steward).
+## The three landmarks
 
+The handbook is organised around three sections, each with its own colour identity:
 
-## Goals
+- **🪶 [Signposts](https://elixir-europe.github.io/ds-handbook/guidance) – Guidance.** Practical step-by-step advice (writing an RDM strategy, building support networks, navigating data protection).
+- **🪶 [Campfires](https://elixir-europe.github.io/ds-handbook/case-studies) – Case studies.** Real institutional stories: *"here's what we did, here's what worked, here's what we'd do differently"*.
+- **🪶 [Waypoints](https://elixir-europe.github.io/ds-handbook/maturity-model) – Maturity indicators.** A self-assessment framework for benchmarking your institution's RDM maturity.
 
+## Contributing
 
+The handbook is built openly by data stewards (plus a few designers and developers) on a volunteer basis. Every page lists its contributors. To add yours:
 
-* To offer practical guidance to data stewards on relevant topics in their daily job.
-* To facilitate knowledge exchange on implementing good data management practices. 
+- Read **[How to contribute](https://elixir-europe.github.io/ds-handbook/how-to-contribute)** for the process, conventions, and how to preview your changes (with or without a local setup).
+- Skim the **[Style guide](https://elixir-europe.github.io/ds-handbook/style-guide)** for voice, palette, components.
+- File an [issue](https://github.com/elixir-europe/ds-handbook/issues) or open a draft PR – feedback is faster on a half-written page than a polished one.
 
-Out of scope
+## Licence and citation
 
+Content under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/). Site framework under the [ELIXIR Toolkit Theme MIT licence](https://opensource.org/license/mit).
 
+To cite:
 
-* The handbook does not provide legal advice and users must assess if its content is applicable to their institution, ELIXIR node, and/or country. 
-* The handbook does not address how an individual can manage their own research data nor is it a registry of resources (training materials, tools, standards etc.) as this is addressed by other ELIXIR resources such as [RDMkit](https://rdmkit.elixir-europe.org/), [DSW](https://ds-wizard.org/), [FAIR Cookbook](https://faircookbook.elixir-europe.org/content/home.html), [FAIRsharing](https://fairsharing.org/) and [TeSS](https://tess.elixir-europe.org/).
+> *Data Stewardship Handbook. A deliverable from the ELIXIR-funded DATAREX implementation study.*
+> *URL: <https://elixir-europe.org/internal-projects/commissioned-services/datarex>*
 
+## Acknowledgements
 
-## What to get out of this Handbook
-
-
-
-* Real-world examples of how other data stewards run data management activities in their institute, with tips and ideas that help others.
-* Existing data management know-how, as well as exchange on the practical implementation of these in a specific institute as a best practice. 
-* Good practices in training and community building, to stimulate data stewardship skills, local peer-to-peer learning and knowledge sharing in your institute.
-* Information on how to assess data management practices and apply these assessments to (further) develop your institute’s data management strategy.
-* Guidelines around data steward competencies, job profiles and career paths.
-* Link lists (i.e., where to find all the resources) 
+The handbook's visual identity, custom layouts, and Liquid extensions were iterated on in collaboration with [Claude Code](https://claude.com/claude-code) – Anthropic's CLI for Claude – alongside human design and editorial judgement.

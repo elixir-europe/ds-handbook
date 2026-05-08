@@ -1,0 +1,126 @@
+{%- comment -%}
+Local override of the theme include. Two outer tabs only –
+Contributors / Citation. Drops coordinators / editors / affiliations
+(unused, and CRediT covers them anyway).
+
+Inside the Contributors tab, sub-tabs render one per CRediT role used
+on this page. Each contributor appears under exactly one role per page
+(by convention). Two frontmatter shapes are supported:
+
+  contributors:
+    writing-original-draft: [Aida]
+    writing-review-editing: [Jane, Bob]
+    visualization: [Sam]
+
+…or the flat-list shorthand (treated as writing-original-draft):
+
+  contributors: [Aida]
+
+CRediT vocab in _data/credit_roles.yml.
+{%- endcomment -%}
+
+{%- assign credit_roles = site.data.credit_roles -%}
+
+{%- comment -%}Detect role-keyed (hash) vs flat-list form.{%- endcomment -%}
+{%- assign is_role_keyed = false -%}
+{%- if page.contributors -%}
+  {%- for role in credit_roles -%}
+    {%- if page.contributors[role.key] and page.contributors[role.key].size > 0 -%}
+      {%- assign is_role_keyed = true -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- comment -%}Build a list of {role, names} pairs that actually have people on this page.{%- endcomment -%}
+{%- assign roles_used = "" | split: "" -%}
+{%- if is_role_keyed -%}
+  {%- for role in credit_roles -%}
+    {%- assign names = page.contributors[role.key] -%}
+    {%- if names and names.size > 0 -%}
+      {%- assign roles_used = roles_used | push: role -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- elsif page.contributors and page.contributors.size > 0 -%}
+  {%- assign default_role = credit_roles | where: "key", "writing-original-draft" | first -%}
+  {%- if default_role -%}{%- assign roles_used = roles_used | push: default_role -%}{%- endif -%}
+{%- endif -%}
+
+{%- assign has_contributors = false -%}
+{%- if roles_used.size > 0 -%}{%- assign has_contributors = true -%}{%- endif -%}
+
+{%- assign has_citations = false -%}
+{%- if page.page_citation -%}{%- assign has_citations = true -%}{%- endif -%}
+
+{%- if has_contributors or has_citations -%}
+
+{%- assign first_outer = nil -%}
+{%- if has_contributors -%}{%- assign first_outer = "contributors" -%}{%- elsif has_citations -%}{%- assign first_outer = "citations" -%}{%- endif -%}
+
+<div class="page-metadata p-4 mt-5 rounded">
+    <nav>
+        <div class="nav nav-tabs mb-3" id="nav-credits" role="tablist">
+            {%- if has_contributors %}
+            <button class="nav-link {% if first_outer == 'contributors' %}active{% endif %}" id="credits-contributors-tab" data-bs-toggle="tab" data-bs-target="#credits-contributors" type="button" role="tab" aria-controls="credits-contributors" aria-selected="{% if first_outer == 'contributors' %}true{% else %}false{% endif %}">
+                <i class="fa-solid fa-users me-2"></i>Contributors
+            </button>
+            {%- endif %}
+            {%- if has_citations %}
+            <button class="nav-link {% if first_outer == 'citations' %}active{% endif %}" id="credits-cite-tab" data-bs-toggle="tab" data-bs-target="#credits-citations" type="button" role="tab" aria-controls="credits-citations" aria-selected="{% if first_outer == 'citations' %}true{% else %}false{% endif %}">
+                <i class="fa-solid fa-quote-left me-2"></i>Citation
+            </button>
+            {%- endif %}
+        </div>
+    </nav>
+
+    <div class="tab-content" id="nav-creditsContent">
+        {%- if has_contributors -%}
+        <div class="tab-pane {% if first_outer == 'contributors' %}show active{% endif %}" id="credits-contributors" role="tabpanel">
+
+            {%- comment -%}If only one role has people, skip the sub-tab nav and just render the names.{%- endcomment -%}
+            {%- if roles_used.size == 1 -%}
+                {%- assign role = roles_used | first -%}
+                <p class="page-credit-role-label" title="{{ role.label }}">
+                    <a href="{{ role.url }}" target="_blank" rel="noopener">{{ role.label }}</a>
+                </p>
+                {%- if is_role_keyed -%}
+                    {%- assign names = page.contributors[role.key] -%}
+                {%- else -%}
+                    {%- assign names = page.contributors -%}
+                {%- endif -%}
+                {% include contributor-minitiles-page.html contributors_list=names sort=site.theme_variables.page_metadata.contributors_sort %}
+            {%- else -%}
+                <nav>
+                    <div class="nav nav-tabs nav-tabs--credit-roles mb-3" id="nav-credit-roles" role="tablist">
+                        {%- for role in roles_used -%}
+                        {%- assign safe_id = role.key | replace: "_", "-" -%}
+                        <button class="nav-link {% if forloop.first %}active{% endif %}" id="credit-role-tab-{{ safe_id }}" data-bs-toggle="tab" data-bs-target="#credit-role-{{ safe_id }}" type="button" role="tab" aria-controls="credit-role-{{ safe_id }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" title="{{ role.label }}">
+                            {{ role.label }}
+                        </button>
+                        {%- endfor -%}
+                    </div>
+                </nav>
+                <div class="tab-content">
+                    {%- for role in roles_used -%}
+                    {%- assign safe_id = role.key | replace: "_", "-" -%}
+                    <div class="tab-pane {% if forloop.first %}show active{% endif %}" id="credit-role-{{ safe_id }}" role="tabpanel">
+                        <p class="page-credit-role-link">
+                            <a href="{{ role.url }}" target="_blank" rel="noopener">What does <em>{{ role.label }}</em> mean? <i class="fa-solid fa-arrow-up-right-from-square ms-1" aria-hidden="true"></i></a>
+                        </p>
+                        {%- assign names = page.contributors[role.key] -%}
+                        {% include contributor-minitiles-page.html contributors_list=names sort=site.theme_variables.page_metadata.contributors_sort %}
+                    </div>
+                    {%- endfor -%}
+                </div>
+            {%- endif -%}
+        </div>
+        {%- endif -%}
+
+        {%- if has_citations -%}
+        <div class="tab-pane {% if first_outer == 'citations' %}show active{% endif %}" id="credits-citations" role="tabpanel">
+            {% include citation-page.html contributors_list=page.contributors sort=site.theme_variables.page_metadata.contributors_sort %}
+        </div>
+        {%- endif -%}
+    </div>
+</div>
+
+{%- endif -%}

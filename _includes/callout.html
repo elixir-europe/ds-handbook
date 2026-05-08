@@ -1,0 +1,21 @@
+{%- comment -%}
+Local override of theme callout. The magpie speaks every type – different
+tilt per pose, type-specific colour + Caveat label.
+Types: tip · note · important · warning · magpie (generic aside).
+{%- endcomment -%}
+
+{%- assign type = include.type | default: "magpie" %}
+
+{%- assign label = "" %}
+{%- if type == "tip" %}{%- assign label = "a tip" %}{%- endif %}
+{%- if type == "note" %}{%- assign label = "note this" %}{%- endif %}
+{%- if type == "important" %}{%- assign label = "heads up" %}{%- endif %}
+{%- if type == "warning" %}{%- assign label = "watch out" %}{%- endif %}
+{%- if type == "magpie" %}{%- assign label = "the magpie says" %}{%- endif %}
+
+<aside class="alert alert-{{ type }}" role="note">
+    <img class="alert-magpie" src="{{ 'assets/img/magpie-dark.svg' | relative_url }}" alt="" aria-hidden="true">
+    <div class="alert-body" markdown="span">
+        <b>{{ label }}</b>{{ include.content }}
+    </div>
+</aside>

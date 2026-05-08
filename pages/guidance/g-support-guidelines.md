@@ -1,7 +1,7 @@
 ---
 title: "RDM information or guidelines for researchers"
 description: coming soon...
-type: [Guidance]
+type: Guidance
 page_id: g-support-guidelines
 ---
 

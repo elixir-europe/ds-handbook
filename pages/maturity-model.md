@@ -1,6 +1,6 @@
 ---
 title: Maturity model
-page_img: "icons/icon-mm.svg"
+page_img: # none it doesnt't work
 ---
 {% include auto-expand.html %}
 

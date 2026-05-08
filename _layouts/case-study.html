@@ -1,0 +1,142 @@
+---
+layout: page
+---
+
+{%- comment -%}
+Case-study layout – adapted from the ELITMa training-module pattern.
+
+  1. A tabbed metadata header at the top:
+     • "At a glance" tab – facts (org, country, scale, domain, status,
+       theme chips, link to the activity page).
+     • "Summary" tab – the description + lead_quote.
+  2. The page body ({{ content }}).
+  3. A resources table built from the `resources:` frontmatter list.
+  4. Related-pages navigation tiles built from `related_guidance:` and
+     `related_indicators:` (page_id arrays).
+
+Vocabularies live in _data/case_study/{themes,scales,domains,
+countries,outcome_status}.yml – keys in the frontmatter resolve to
+human-readable labels via Liquid `where` lookups.
+{%- endcomment -%}
+
+{%- comment -%}
+Breadcrumbs are rendered by `_includes/breadcrumb.html` (local override),
+which the parent `page` layout inserts above the H1 when
+`site.theme_variables.breadcrumb` is true.
+{%- endcomment -%}
+
+{%- assign cs = site.data.case_study -%}
+
+{%- assign has_card = false -%}
+{%- if page.description or page.lead_org or page.scale or page.domain or page.start or page.themes or page.country or page.external_url or page.lead_quote -%}
+  {%- assign has_card = true -%}
+{%- endif -%}
+
+{%- if has_card -%}
+{%- assign country = cs.countries | where: "key", page.country | first -%}
+{%- assign scale = cs.scales | where: "key", page.scale | first -%}
+{%- assign domain = cs.domains | where: "key", page.domain | first -%}
+{%- assign status = cs.outcome_status | where: "key", page.status | first -%}
+<div class="case-study-meta">
+    <nav>
+        <div class="nav nav-tabs case-study-meta__nav" role="tablist">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#cs-glance" type="button" role="tab" aria-controls="cs-glance" aria-selected="true">At a glance</button>
+            {%- if page.description or page.lead_quote -%}
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#cs-summary" type="button" role="tab" aria-controls="cs-summary" aria-selected="false">Summary</button>
+            {%- endif -%}
+        </div>
+    </nav>
+
+    <div class="tab-content case-study-meta__content">
+        <!-- At a glance ----------------------------------------------- -->
+        <div class="tab-pane fade show active" id="cs-glance" role="tabpanel">
+            <div class="case-study-meta__fields">
+                {%- if page.lead_org or country -%}
+                <div class="case-study-meta__field">
+                    <div class="case-study-meta__label"><i class="fa-solid fa-building me-1" aria-hidden="true"></i>Organisation</div>
+                    <div class="case-study-meta__value">
+                        {%- if page.lead_org %}{{ page.lead_org }}{%- endif -%}
+                        {%- if country %}{%- if page.lead_org %}<span class="case-study-meta__sep" aria-hidden="true">·</span>{%- endif -%}{{ country.label }}{%- endif -%}
+                    </div>
+                    {%- if page.partners -%}
+                    <div class="case-study-meta__partners">with {{ page.partners | join: ", " }}</div>
+                    {%- endif -%}
+                </div>
+                {%- endif -%}
+
+                {%- if scale -%}
+                <div class="case-study-meta__field">
+                    <div class="case-study-meta__label"><i class="fa-solid fa-arrows-up-down-left-right me-1" aria-hidden="true"></i>Scale</div>
+                    <div class="case-study-meta__value">{{ scale.label }}</div>
+                </div>
+                {%- endif -%}
+
+                {%- if domain -%}
+                <div class="case-study-meta__field">
+                    <div class="case-study-meta__label"><i class="fa-solid fa-flask me-1" aria-hidden="true"></i>Domain</div>
+                    <div class="case-study-meta__value">{{ domain.label }}</div>
+                </div>
+                {%- endif -%}
+
+                {%- if page.start or status -%}
+                <div class="case-study-meta__field">
+                    <div class="case-study-meta__label"><i class="fa-solid fa-circle-check me-1" aria-hidden="true"></i>Status</div>
+                    <div class="case-study-meta__value">
+                        {%- if page.start %}Since {{ page.start }}{%- endif -%}
+                        {%- if page.start and status -%}<span class="case-study-meta__sep" aria-hidden="true">·</span>{%- endif -%}
+                        {%- if status -%}<span class="case-study-status case-study-status--{{ page.status }}">{{ status.label }}</span>{%- endif -%}
+                    </div>
+                </div>
+                {%- endif -%}
+            </div>
+
+            {%- if page.themes -%}
+            <ul class="case-study-meta__themes" aria-label="Themes">
+                {%- for t in page.themes -%}
+                {%- assign theme = cs.themes | where: "key", t | first -%}
+                {%- if theme -%}
+                <li class="case-study-chip" title="{{ theme.description | escape }}">{{ theme.label }}</li>
+                {%- endif -%}
+                {%- endfor -%}
+            </ul>
+            {%- endif -%}
+
+            {%- if page.external_url -%}
+            <p class="case-study-meta__link">
+                <a href="{{ page.external_url }}" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-arrow-up-right-from-square me-1" aria-hidden="true"></i>{{ page.external_url_label | default: "Visit the activity page" }}
+                </a>
+            </p>
+            {%- endif -%}
+        </div>
+
+        <!-- Summary --------------------------------------------------- -->
+        {%- if page.description or page.lead_quote -%}
+        <div class="tab-pane fade" id="cs-summary" role="tabpanel">
+            {%- if page.description -%}
+            <p class="case-study-meta__summary">{{ page.description }}</p>
+            {%- endif -%}
+            {%- if page.lead_quote -%}
+            <blockquote class="pull-quote case-study-meta__quote">
+                <p>{{ page.lead_quote }}</p>
+            </blockquote>
+            {%- endif -%}
+        </div>
+        {%- endif -%}
+    </div>
+</div>
+{%- endif -%}
+
+{{ content }}
+
+{%- comment -%}
+Resources table – rendered automatically by `_includes/resource-table-page.html`
+(local override) which the parent `page` layout calls after {{content}}.
+Drives off the `page.resources` frontmatter list.
+{%- endcomment -%}
+
+{%- comment -%}
+Related pages – rendered automatically by `_includes/related-pages.html`
+(local override) which the parent `page` layout calls after {{content}}.
+Drives off the `related_pages:` nested frontmatter (see template).
+{%- endcomment -%}

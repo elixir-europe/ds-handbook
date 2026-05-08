@@ -3,7 +3,7 @@ title: Writing an RDM strategy
 description: How to write a strategy to have a structured framework to guide the RDM activities of the organisation
 contributors: [Maria Klapa, Xenia Perez Sitja, Riku Riski, Niclas Jareborg, Vassilios Ioannidis]
 page_id: g-writing-rdm-strategy
-type: [Guidance]
+type: Guidance
 ---
 
 ## Context
@@ -22,7 +22,7 @@ To be effective in guiding RDM activities, the strategy needs to be **communicat
 
    Determine what the target user-base(s) for your RDM activities are. Who do you serve? 
 
-   Determining the intended demographic for your data management practices is crucial. The scope outlines who the services will directly benefit — for example, are you targeting researchers within a specific institute or nationwide researchers? Understanding your scope gives you a definitive audience and subsequently paves the way to align your strategies to meet their specific needs.
+   Determining the intended demographic for your data management practices is crucial. The scope outlines who the services will directly benefit – for example, are you targeting researchers within a specific institute or nationwide researchers? Understanding your scope gives you a definitive audience and subsequently paves the way to align your strategies to meet their specific needs.
 
 2. Determine existing policies and guidelines that govern the organisation's activities
 

@@ -1,7 +1,11 @@
 title: About
 title_url: /about
 subitems:
+  - title: Style guide
+    url: /style-guide
+  - title: How to contribute
+    url: /how-to-contribute
+  - title: Contributors
+    url: /contributors
   - title: Accessibility
     url: /accessibility
-  - title: Privacy
-    url: /privacy

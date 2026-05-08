@@ -1,433 +1,1265 @@
-/*-----General styling-----*/
-@media (min-width: 992px) {
-    main h1:not(.has-subtitle):not(.blurb-title),
-    main .h1:not(.has-subtitle) {
-        margin-top: 3rem;
+/*========================================================================
+  Data Stewardship Handbook – Trailhead identity
+  Fonts:
+    Bricolage Grotesque (display + headings)
+    Inter               (body, UI)
+    JetBrains Mono      (data accents – page IDs, codes, levels, numbers)
+    Caveat              (marginalia)
+  Palette: ink, sage, spring, amber, brick on cream + paper
+========================================================================*/
+
+/*-----Tone tokens per landmark-----*/
+$tone-signposts:   $brand-spring;     // soft green
+$tone-campfires:   $brand-brick;      // deep terracotta
+$tone-waypoints:   $brand-sage;       // mid green
+
+
+/*=== Body / global typography ===========================================*/
+body {
+    font-family: $font-family-sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $brand-cream;
+    color: $dark;
+    line-height: 1.6;
+    font-size: 1rem;
+    font-feature-settings: "ss01", "cv11"; // Inter: alt single-storey a, alt 1
+}
+
+#main h1, #main h2, #main h3, #main h4,
+.h-bricolage {
+    font-family: $font-family-theme;
+    font-optical-sizing: auto;
+    letter-spacing: -0.015em;
+}
+
+#main {
+    h1 {
+        font-weight: 600;
+        color: $dark;
+        font-variation-settings: "opsz" 96, "wdth" 92;
+        line-height: 1.05;
+    }
+    h2 {
+        font-weight: 600;
+        color: $secondary;
+        margin-top: $spacer * 2.5;
+        margin-bottom: $spacer * 0.5;
+        font-variation-settings: "opsz" 48, "wdth" 95;
+        line-height: 1.15;
+    }
+    h3 {
+        font-weight: 600;
+        color: $accent-color;
+        font-variation-settings: "opsz" 24, "wdth" 100;
+        line-height: 1.25;
+    }
+    h4 {
+        font-weight: 500;
+        color: $secondary;
+        font-variation-settings: "opsz" 18, "wdth" 100;
+    }
+
+    p, li { font-family: $font-family-sans-serif; }
+
+    // Theme paints list markers in $brand-spring (mint) which has no contrast
+    // on cream. Force ink so bullets and ordered-list numbers stay readable.
+    ul li::marker,
+    ol li::marker { color: $dark; font-weight: 600; }
+}
+
+// Theme sets selection to white-on-mint, which is unreadable. Keep the mint
+// background (it matches the backlight highlight) but use ink for the text.
+::selection      { color: $dark; background: $brand-spring; }
+::-moz-selection { color: $dark; background: $brand-spring; }
+
+.ff-display { font-family: $font-family-display !important; }
+.ff-mono    { font-family: $font-family-monospace !important; }
+
+
+/*=== Mono – JetBrains Mono for data moments =============================*/
+// Code, page IDs, version chips, level numbers, breadcrumbs.
+code, pre, kbd, samp,
+.page-id, .level-num, .data-chip {
+    font-family: $font-family-monospace;
+    font-feature-settings: "ss01", "ss02";
+}
+
+code {
+    background-color: rgba($brand-amber, 0.18);
+    color: $dark;
+    border-radius: 0.25rem;
+    padding: 0.05em 0.35em;
+    font-size: 0.9em;
+}
+
+.data-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    padding: 0.18em 0.55em;
+    border-radius: 0.25rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    background: rgba($brand-amber, 0.20);
+    color: $dark;
+    letter-spacing: 0.02em;
+}
+
+
+/*=== Backlight highlight (per brief) =====================================*/
+.color-highlight {
+    text-decoration: none;
+    box-shadow: inset 0 -.5em 0 rgba($brand-spring, 0.85);
+    color: inherit;
+    padding: 0 .05em;
+}
+
+
+/*=== Topnav (light, paper bg) ==========================================*/
+header .navbar {
+    border-bottom: 1px solid $brand-rule;
+    box-shadow: none !important;
+
+    .navbar-brand img {
+        max-height: 2.5rem;
+        width: auto;
     }
 }
 
-/*-----Landing page ----*/
-
-.landingpage .highlight {
-  margin: 0 -0.4em;
-  transform: rotate(+2deg);
-  padding: 0.1em 0.3em;
-  border-radius: 0.8em 0.3em;
-  background: transparent;
-  background-image: linear-gradient(
-    to right,
-    rgba($primary, 0.1),
-    rgba($primary, 0.7),
-    rgba($primary, 0.3)
-  );
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
-
-.landingpage-title {
-  @include font-size(5rem);
-  font-family: 'Caveat', serif;
-  transform: rotate(-2deg);
-  padding-bottom: 5px;
-}
-
-// Hand-drawn effect for "landmarks" cards only
-section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 {
-  .card {
+// Marker-swipe hover: rotated mint stripe scaling left→right (the original
+// move, kept light and rotated so it reads as a marker pen, not a CSS bar).
+.navbar-light .navbar-nav .nav-item > a.nav-link,
+.navbar-nav .nav-item > a.nav-link {
     position: relative;
-    background: none !important;
-    border: none;
-    padding: 1rem;
-    transition: box-shadow 0.3s ease, transform 0.2s ease;
-
-    // sketchy border layers
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border: 2px solid $dark; // main stroke
-      pointer-events: none;
-      border-radius: 8px;
-      transition: transform 0.25s ease-out, border-color 0.3s ease;
-    }
+    display: inline-block;
+    color: $dark !important;
+    font-family: $font-family-theme;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.45rem 0.7rem !important;
+    z-index: 1;
 
     &::before {
-      transform: translate(2px, 1px) rotate(-0.3deg);
+        content: "";
+        position: absolute;
+        left: -2px;
+        right: -2px;
+        bottom: 4px;
+        height: 55%;
+        background-color: rgba($brand-spring, 0.65);
+        transform: rotate(-2deg) scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.4s cubic-bezier(0.55, 0.06, 0.18, 1.0);
+        z-index: -1;
+        border-radius: 2px;
+        pointer-events: none;
     }
 
-    &::after {
-      transform: translate(-1px, -2px) rotate(0.4deg);
-      border-color: $primary; // lighter second stroke
+    &:hover::before,
+    &:focus::before,
+    &.active::before {
+        transform: rotate(-2deg) scaleX(1);
     }
 
-    &:hover {
-      box-shadow: $box-shadow;
-      transform: translateY(-2px);
+    &:focus-visible {
+        outline: 2px solid rgba($primary, 0.8);
+        outline-offset: 3px;
+    }
+}
 
-      &::before,
-      &::after {
-        border-color: $accent-color;
-        transform: translate(0, 0) rotate(0deg);
-      }
+.navbar-light .navbar-toggler { border: none; color: $dark; }
+
+
+/*=== Landing page hero ===================================================*/
+.landingpage-body { background-color: $brand-cream; }
+
+.landingpage {
+    .hero {
+        padding-top: 4rem;
+        padding-bottom: 2.5rem;
+
+        @include media-breakpoint-up(lg) {
+            padding-top: 6rem;
+            padding-bottom: 3rem;
+        }
     }
 
-    .card-img-top {
-      max-width: 6rem;
-      margin-top: 0.5rem;
+    // Centred + a touch quieter on the landing – anchors each beat
+    // without competing with the Caveat lead lines below.
+    .section-eyebrow {
+        text-align: center;
+        color: rgba($dark, 0.55);
+        margin-bottom: 1.25rem;
     }
 
-    .card-title {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
+    .hero-inner {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
     }
 
-    .card-text {
-      margin-bottom: 0;
+    .hero-eyebrow {
+        font-family: $font-family-display;
+        font-size: 1.85rem;
+        color: $secondary;
+        margin-bottom: 0.4rem;
+        line-height: 1;
     }
-  }
+
+    .landingpage-title {
+        font-family: $font-family-theme;
+        font-weight: 600;
+        font-size: clamp(3rem, 7vw, 6rem);
+        line-height: 1.0;
+        letter-spacing: -0.025em;
+        font-variation-settings: "opsz" 96, "wdth" 88;
+        color: $dark;
+        margin-bottom: 0.75rem;
+    }
+
+    .highlight {
+        background: transparent;
+        box-shadow: inset 0 -0.4em 0 rgba($primary, 0.85);
+        padding: 0 0.15em;
+        border-radius: 0;
+        color: $dark;
+    }
+
+    .tagline {
+        font-family: $font-family-display;
+        font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+        color: $secondary;
+        margin: 0;
+    }
 }
 
 
-/*-----Footer-----*/
-.footer-title {
-  font-family: 'Inter', sans-serif;
-  font-weight: thin;
-  font-size: 13px;
+/*=== Editorial "rough mark" utilities ===================================*/
+// A wobbly underline used under titles. Inline SVG, scaled to element width.
+$squiggle-amber: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 12' preserveAspectRatio='none'><path d='M 2 8 Q 20 4 40 7 T 80 6 T 120 7 T 160 6 T 200 7 T 238 6' stroke='%23E8B547' stroke-width='3.5' stroke-linecap='round' fill='none'/></svg>";
+$squiggle-sage:  "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 12' preserveAspectRatio='none'><path d='M 2 8 Q 20 4 40 7 T 80 6 T 120 7 T 160 6 T 200 7 T 238 6' stroke='%236B9E7E' stroke-width='3.5' stroke-linecap='round' fill='none'/></svg>";
+$squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 12' preserveAspectRatio='none'><path d='M 2 8 Q 20 4 40 7 T 80 6 T 120 7 T 160 6 T 200 7 T 238 6' stroke='%23C44536' stroke-width='3.5' stroke-linecap='round' fill='none'/></svg>";
+
+// Editorial divider used between sections in body content + footer.
+// Works on a <div> or <hr>; the border/opacity resets handle the latter.
+.scribble-divider {
+    display: block;
+    width: 100%;
+    max-width: 14rem;
+    height: 0.75rem;
+    margin: 2.5rem auto;
+    border: 0;
+    opacity: 1;
+    background-image: url("#{$squiggle-sage}");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
 }
 
-footer .list-unstyled a {
-  font-size: 13px;
-  font-weight: normal;
-  text-decoration: none;
+// Underline for use under any heading
+.has-underline {
+    display: inline-block;
+    padding-bottom: 0.55em;
+    background-image: url("#{$squiggle-amber}");
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% 0.45em;
 }
 
-footer .col-6.col-lg-6.d-flex.justify-content-lg-start {
-  color: $white;
-  font-family: 'Caveat', serif;
-  font-size: 3.125rem;
-  line-height: 110%;
+.has-underline--sage  { background-image: url("#{$squiggle-sage}"); }
+.has-underline--brick { background-image: url("#{$squiggle-brick}"); }
 
+
+/*=== Three "doors" – editorial, borderless, slightly tilted ============*/
+.doors {
+    padding-bottom: 6rem;
 }
 
-// Light gray background on the left
+.doors-intro {
+    text-align: center;
+    font-family: $font-family-display;
+    font-size: 1.85rem;
+    color: $secondary;
+    margin-bottom: 3rem;
+}
+
+.door {
+    --tone: #{$brand-sage};
+    --tone-block: #{rgba($brand-sage, 0.22)};
+    --tone-block-strong: #{rgba($brand-sage, 0.42)};
+    --tilt: 0deg;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    text-decoration: none;
+    color: $dark;
+    padding: 1.25rem 1rem;
+    transform: rotate(var(--tilt));
+    transition: transform 0.35s ease, color 0.2s ease;
+
+    &:hover, &:focus-visible {
+        transform: rotate(0deg) translateY(-4px);
+        text-decoration: none;
+        color: $dark;
+
+        .door-icon { background-color: var(--tone-block-strong); }
+        .door-cta { color: var(--tone); }
+        .door-arrow { transform: translateX(0.45rem); }
+    }
+
+    .door-icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 220px;
+        margin-bottom: 1.25rem;
+        background-color: var(--tone-block);
+        border-radius: 0;
+        transition: background-color 0.3s ease;
+
+        img, svg {
+            position: relative;
+            max-height: 150px;
+            width: auto;
+        }
+
+        // The inline tile-* SVGs are 200×200 viewBox squares; constrain
+        // explicitly so the door slot keeps its rhythm.
+        svg { height: 150px; width: 150px; overflow: visible; }
+    }
+
+    // Per-tone hover animations – same vocabulary as the navigation-tile
+    // flourishes (campfire flame lights + flickers, hiker tips forward,
+    // waypoint marker bobs). Keyframes are shared across both surfaces.
+    &.door--campfires .flame {
+        opacity: 0;
+        transform-box: fill-box;
+        transform-origin: 50% 100%;
+        transform: scaleY(0.25);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    &.door--campfires:hover .flame,
+    &.door--campfires:focus-visible .flame {
+        opacity: 1;
+        transform: scaleY(1);
+        animation: tile-flame-flicker 0.7s ease-in-out 0.4s infinite alternate;
+    }
+
+    &.door--signposts {
+        .arm { transform-box: fill-box; }
+        .arm-1 { transform-origin: 0% 50%; }
+        .arm-2 { transform-origin: 100% 50%; }
+    }
+    &.door--signposts:hover .arm-1,
+    &.door--signposts:focus-visible .arm-1 {
+        animation: tile-plank-swing 1.1s ease-in-out infinite alternate;
+    }
+    &.door--signposts:hover .arm-2,
+    &.door--signposts:focus-visible .arm-2 {
+        animation: tile-plank-swing-reverse 1.1s ease-in-out infinite alternate;
+    }
+
+    &.door--waypoints .flag {
+        transform-box: fill-box;
+        transform-origin: 0% 100%;
+    }
+    &.door--waypoints:hover .flag,
+    &.door--waypoints:focus-visible .flag {
+        animation: tile-flag-wave 0.85s ease-in-out infinite alternate;
+    }
+
+    .door-body {
+        padding: 0 0.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .door-title {
+        font-family: $font-family-theme;
+        font-size: 2rem;
+        font-weight: 600;
+        margin: 0;
+        color: $dark;
+        font-variation-settings: "opsz" 48, "wdth" 90;
+        letter-spacing: -0.02em;
+        line-height: 1;
+
+        // Hand-drawn underline tinted to landmark
+        display: inline-block;
+        padding-bottom: 0.4em;
+        background-image: var(--door-underline);
+        background-repeat: no-repeat;
+        background-position: 0 100%;
+        background-size: 100% 0.4em;
+    }
+
+    .door-handle {
+        font-family: $font-family-display;
+        font-size: 1.4rem;
+        color: $secondary;
+        line-height: 1;
+        margin: 0.4rem 0 0;
+        transform: rotate(-2deg);
+        transform-origin: left center;
+        display: inline-block;
+    }
+
+    .door-desc {
+        margin: 0.6rem 0 0;
+        color: rgba($dark, 0.78);
+        font-family: $font-family-sans-serif;
+        font-size: 0.97rem;
+        line-height: 1.55;
+    }
+
+    .door-cta {
+        margin-top: auto;
+        padding-top: 1.25rem;
+        font-family: $font-family-monospace;
+        font-weight: 500;
+        font-size: 0.78rem;
+        letter-spacing: 0.10em;
+        text-transform: uppercase;
+        color: rgba($dark, 0.65);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: color 0.2s ease;
+    }
+
+    .door-arrow {
+        display: inline-block;
+        width: 1.6rem;
+        height: 0.7rem;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 14' fill='none'><path d='M 1 7.5 Q 8 5.6 16 7.2 T 28 6.8' stroke='currentColor' stroke-width='1.6' stroke-linecap='round'/><path d='M 22 2.5 L 28.5 7 L 22 11.5' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>");
+        background-repeat: no-repeat;
+        background-position: 0 50%;
+        background-size: 100% 100%;
+        // Tinted via mask + currentColor
+        -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 14' fill='none'><path d='M 1 7.5 Q 8 5.6 16 7.2 T 28 6.8' stroke='black' stroke-width='1.6' stroke-linecap='round'/><path d='M 22 2.5 L 28.5 7 L 22 11.5' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>");
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: 0 50%;
+        -webkit-mask-size: 100% 100%;
+        mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 14' fill='none'><path d='M 1 7.5 Q 8 5.6 16 7.2 T 28 6.8' stroke='black' stroke-width='1.6' stroke-linecap='round'/><path d='M 22 2.5 L 28.5 7 L 22 11.5' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>");
+        mask-repeat: no-repeat;
+        mask-position: 0 50%;
+        mask-size: 100% 100%;
+        background-color: currentColor;
+        background-image: none;
+        transition: transform 0.25s ease, width 0.25s ease;
+    }
+
+    // Per-landmark tone + intentionally-irregular tilts.
+    // Bg block colours rotate on hover: green → red → yellow → green,
+    // so each door previews the warmth of the next landmark when you
+    // mouse over it.
+    &--signposts {
+        --tone: #{$brand-sage};
+        --tone-block: #{rgba($brand-spring, 0.6)};         // green default
+        --tone-block-strong: #{rgba($brand-brick-soft, 0.75)}; // → red on hover
+        --tilt: -0.7deg;
+        --door-underline: url("#{$squiggle-sage}");
+    }
+    &--campfires {
+        --tone: #{$brand-brick};
+        --tone-block: #{rgba($brand-brick-soft, 0.55)};        // red default
+        --tone-block-strong: #{rgba($brand-amber-soft, 0.9)};  // → yellow on hover
+        --tilt: 0.4deg;
+        --door-underline: url("#{$squiggle-brick}");
+    }
+    &--waypoints {
+        --tone: #{$brand-sage};
+        --tone-block: #{rgba($brand-amber-soft, 0.7)};     // yellow default
+        --tone-block-strong: #{rgba($brand-spring, 0.85)}; // → green on hover
+        --tilt: -0.3deg;
+        --door-underline: url("#{$squiggle-amber}");
+    }
+}
+
+
+/*=== Sidebar – knowledge-base block + trail nav =========================*/
 @media (min-width: 992px) {
     body:not(:has(.landingpage)) {
-        .anchorjs-link {
-            font-size: 0.7em !important;
-            padding-top: 0.3em;
+        #layout {
+            gap: 2.5rem !important;
         }
 
-        #layout {
-            gap: 0 !important;
-        }
-        header nav.navbar {
-            margin-bottom: 0 !important;
-        }
+        header nav.navbar { margin-bottom: 0 !important; }
+
+        // Sidebar = paper panel that scrolls with the page (no internal scroll).
+        // Sticky from the top until the page scrolls past it, then it releases.
         aside#sidebar {
-            padding-top: $spacer * 3;
-            padding-right: 0.9rem;
+            background-color: $brand-paper;
+            border: 1px solid $brand-rule;
+            border-radius: 0.85rem;
+            padding: 1.5rem 1.5rem 2rem;
+            margin-top: $spacer * 2.5;
+            margin-bottom: $spacer * 4;
+            box-shadow: 0 8px 28px -12px rgba($dark, 0.10);
+            align-self: flex-start;
+            position: sticky;
+            top: $spacer * 2;
+            // No internal scroll – sidebar moves with page when it overflows
+            overflow: visible;
         }
+
         main#main {
-            padding-top: $spacer * 3;
-            padding-left: 2.1rem;
-            background-color: $white;
+            padding-top: $spacer * 2.5;
+            background-color: $brand-cream;
         }
-        background-image: url("../img/background.svg"); /* The image used */
-        background-position: center; /* Center the image */
-        background-repeat: no-repeat; /* Do not repeat the image */
-        background-size: cover; /* Resize the background image to cover the entire container */
     }
 }
 
 @media (max-width: 992px) {
-    .sidebar-collapse {
-        background-color: $light;
+    .sidebar-collapse { background-color: $brand-paper; }
+}
+
+// Defeat the theme's internal scroll on #sidebar > nav at lg+
+@include media-breakpoint-up(lg) {
+    #sidebar > nav {
+        position: static !important;
+        height: auto !important;
+        overflow: visible !important;
     }
 }
 
-#main {
-    min-height: 100vh;
+// Trailhead title block at top of sidebar
+.trailhead {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $brand-rule;
+}
 
-    h2,
-    .h2-like {
+.trailhead-eyebrow {
+    display: block;
+    font-family: $font-family-monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba($dark, 0.7); // contrast-safe on cream
+    margin-bottom: 0.25rem;
+}
+
+.trailhead-title {
+    display: block;
+    font-family: $font-family-theme;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: $dark !important;
+    text-decoration: none;
+    font-variation-settings: "opsz" 24, "wdth" 95;
+
+    &:hover { color: $brand-sage-text !important; }
+    &.disabled { pointer-events: none; }
+}
+
+// Trail: a vertical line connecting all stops.
+// Each stop is a dot. Hover fills the dot. Active is a larger amber pin.
+// The line is rendered as an irregular SVG dash (varied gap lengths)
+// so it reads hand-drawn rather than CSS-uniform.
+.trail {
+    position: relative;
+    margin-left: 0;
+    padding-left: 1.4rem;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0.45rem;
+        top: 0.85rem;
+        bottom: 0.85rem;
+        width: 3px;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='3' height='80' viewBox='0 0 3 80'><path d='M 1.5 2 L 1.5 8 M 1.5 13 L 1.5 22 M 1.5 26 L 1.5 33 M 1.5 38 L 1.5 49 M 1.5 53 L 1.5 60 M 1.5 64 L 1.5 78' stroke='%23E0DACE' stroke-width='2.5' stroke-linecap='round' fill='none'/></svg>");
+        background-repeat: repeat-y;
+        background-size: 3px 80px;
+    }
+}
+
+.trail-stop {
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    &--break {
+        margin-top: 0.85rem;
+        padding-top: 0.85rem;
+        border-top: 1px solid $brand-rule;
+    }
+}
+
+.trail-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.45rem 0.6rem 0.45rem 0.5rem;
+    color: rgba($dark, 0.78) !important;
+    text-decoration: none !important;
+    border-radius: 0.4rem;
+    transition: color 0.18s ease, background-color 0.18s ease;
+    font-family: $font-family-sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.3;
+
+    .trail-dot {
+        position: relative;
+        flex-shrink: 0;
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 50%;
+        background: $brand-paper;
+        border: 2px solid $brand-rule;
+        margin-left: -1.1rem;
+        z-index: 1;
+        transition: all 0.18s ease;
+    }
+
+    .trail-label { flex: 1; position: relative; z-index: 1; }
+
+    &:hover {
+        color: $dark !important;
+        background-color: rgba($brand-spring, 0.45);
+
+        .trail-dot {
+            background: $brand-sage;
+            border-color: $brand-sage;
+            transform: scale(1.15);
+        }
+    }
+
+    &.is-here {
+        color: $dark !important;
         font-weight: 600;
-        margin-top: $spacer * 2.5;
-        margin-bottom: $spacer * 0.5;
+
+        // The "you are here" amber pin
+        .trail-dot {
+            width: 0.95rem;
+            height: 0.95rem;
+            background: $brand-amber;
+            border: 3px solid $brand-ink;
+            margin-left: -1.27rem;
+            box-shadow: 0 0 0 4px rgba($brand-amber, 0.25);
+            animation: trail-pin-pulse 2.4s ease-in-out infinite;
+        }
+    }
+}
+
+// The remote theme paints a translucent spring overlay on hover via
+// `#sidebar > nav > ul li a::after`. That pseudo sits *on top* of the
+// text and washes out the contrast. Neutralise the bg; the link's own
+// hover bg above gives the same affordance with the text reading
+// clearly on top.
+#sidebar > nav > ul li a::after,
+#sidebar > nav > ul li a:hover::after,
+#sidebar > nav > ul li a.active::after {
+    background: transparent !important;
+}
+
+// Submenu – nested subitems under a top-level trail-stop. Indented,
+// quieter type, no trail-dot, hooked into the trail's vertical line.
+.trail-sub {
+    margin: 0.1rem 0 0.5rem 0.05rem;
+    padding-left: 0.95rem;
+    border-left: 1px solid $brand-rule;
+
+    .trail-stop--sub { margin: 0; padding: 0; }
+}
+
+.trail-link--sub {
+    padding: 0.3rem 0.55rem;
+    font-size: 0.86rem;
+    color: rgba($dark, 0.65) !important;
+    line-height: 1.3;
+
+    &:hover {
+        color: $dark !important;
+        background-color: rgba($brand-spring, 0.35);
     }
 
-    h3 {
+    &.is-here {
+        color: $dark !important;
         font-weight: 600;
+        background-color: rgba($brand-amber, 0.18);
+
+        // Sub-items don't carry the dot, so suppress the "you are here"
+        // pin animation + the trailing Caveat tag (set elsewhere).
+        &::after { content: none !important; }
     }
 }
 
-.octicon {
-    margin-right: 0.25em;
+@keyframes trail-pin-pulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba($brand-amber, 0.25); }
+    50%      { box-shadow: 0 0 0 7px rgba($brand-amber, 0.10); }
 }
 
 
-/*-----Sidebar-----*/
+/*=== Inner nav cards – editorial numbered tile =========================*/
+// Used by: related-pages, section-navigation-tiles, info-tiles.
+// Each card is a numbered chapter-card: mono "01" top-right (auto from CSS
+// counter), mono type label, big Bricolage title with squiggle that draws
+// on hover, description, hand-drawn arrow at bottom-right.
+// No outer outline; a thin bottom rule separates rows.
 
-.sidebar-title {
-    border-bottom: 0.2rem solid $dark-text;
-    font-weight: bold;
-    padding-bottom: $input-btn-padding-y - 0.2rem;
+// SVG arrow used as mask so it picks up currentColor
+$arrow-mask-svg: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 14' fill='none'><path d='M 1 7.5 Q 8 5.6 16 7.2 T 28 6.8' stroke='black' stroke-width='1.6' stroke-linecap='round'/><path d='M 22 2.5 L 28.5 7 L 22 11.5' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>";
+
+.navigation-tiles {
+    counter-reset: card-num;
+    --bs-card-bg: transparent;
 }
 
-#side-nav > ul {
-    margin-top: $spacer * 0.5;
+.navigation-tiles .card,
+section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
+    --tone: #{$brand-brick-text};
+    --tone-soft: #{rgba($brand-brick, 0.10)};
+    --tone-wash: #{rgba($brand-spring, 0.85)};
+    counter-increment: card-num;
+    position: relative;
+    background: $brand-paper !important;
+    border: 0 !important;
+    border-radius: 0.5rem !important;
+    padding: 1.75rem 1.75rem 4rem 1.75rem;  // bottom padding leaves room for the arrow
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    overflow: visible;
+
+    // Mono numeral, top-right
+    &::before {
+        content: counter(card-num, decimal-leading-zero);
+        position: absolute;
+        top: 1.2rem;
+        right: 1.5rem;
+        font-family: $font-family-monospace;
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        color: rgba($dark, 0.4);
+    }
+
+    // Hand-drawn arrow CTA, bottom-right (masked SVG, picks up tone)
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 1.6rem;
+        height: 0.7rem;
+        background-color: var(--tone);
+        -webkit-mask-image: url("#{$arrow-mask-svg}");
+                mask-image: url("#{$arrow-mask-svg}");
+        -webkit-mask-repeat: no-repeat;
+                mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+                mask-position: center;
+        -webkit-mask-size: contain;
+                mask-size: contain;
+        transition: transform 0.25s ease;
+    }
+
+    &:hover {
+        background-color: var(--tone-soft) !important;
+        box-shadow: 0 14px 32px -10px rgba($dark, 0.12);
+        transform: translateY(-3px);
+
+        &::after { transform: translateX(0.45rem); }
+    }
+
+    // The body laid out cleanly
+    .card-body {
+        display: flex !important;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 0;
+    }
+
+    // Type label row at top – mono uppercase, landmark colour
+    .card-body > div:first-child {
+        font-family: $font-family-monospace;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--tone);
+        margin-bottom: 0.3rem;
+        gap: 0.45rem;
+
+        small { font-size: inherit; letter-spacing: inherit; }
+        .type-icon { height: 0.95rem !important; width: auto !important; opacity: 0.85; }
+    }
+
+    .card-img-top {
+        max-width: 3rem;
+        margin: 0 0 0.5rem;
+    }
+
+    // The clickable title – big Bricolage. A tone-coloured backlight
+    // (same motif as .color-highlight + the hero "Handbook" wash) sweeps
+    // in from the left on card hover. Flat rectangle, so no shape
+    // distortion at any tile width.
+    a.section-title,
+    .card-title {
+        font-family: $font-family-theme !important;
+        font-weight: 600 !important;
+        font-size: 1.55rem !important;
+        font-variation-settings: "opsz" 36, "wdth" 90;
+        letter-spacing: -0.018em;
+        line-height: 1.15;
+        color: $dark !important;
+        margin: 0.15rem 0 0.4rem;
+        display: inline;
+        background-image: linear-gradient(to right, var(--tone-wash), var(--tone-wash));
+        background-repeat: no-repeat;
+        background-position: 0 88%;
+        background-size: 0% 0.32em;
+        padding: 0 0.05em;
+        transition: background-size 0.3s ease-out;
+
+        b { font-weight: inherit; }
+    }
+
+    &:hover a.section-title,
+    &:hover .card-title { background-size: 100% 0.32em; }
+
+    .card-text {
+        margin: 0.25rem 0 0;
+        color: rgba($dark, 0.78);
+        font-family: $font-family-sans-serif;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
 }
 
-/* -----Warning page----- */
+// Per-landmark tone classes (set by the local section-navigation-tiles include)
+// --tone-wash sets the title backlight wash so it harmonises with the
+// rest of the landmark's identity (green / red / yellow).
+.navigation-tiles.tone--signposts .card,
+.card.tone--signposts {
+    --tone: #{$brand-sage-text};
+    --tone-soft: #{rgba($brand-sage, 0.10)};
+    --tone-wash: #{rgba($brand-spring, 0.85)};
+}
+.navigation-tiles.tone--campfires .card,
+.card.tone--campfires {
+    --tone: #{$brand-brick-text};
+    --tone-soft: #{rgba($brand-brick, 0.08)};
+    --tone-wash: #{rgba($brand-brick-soft, 0.85)};
+}
+.navigation-tiles.tone--waypoints .card,
+.card.tone--waypoints {
+    --tone: #{$brand-sage-text};
+    --tone-soft: #{rgba($brand-sage, 0.10)};
+    --tone-wash: #{rgba($brand-amber-soft, 0.9)};
+}
+
+// Landmark flourish – small inline SVG tucked next to the bottom-right
+// arrow. Per-tone hover animations: campfire flame lights + flickers,
+// guidance hiker tips forward / takes a step, waypoints marker bobs.
+// transform-box: fill-box anchors transforms to each element's bounds
+// rather than the SVG viewport.
+.tile-flourish {
+    position: absolute;
+    right: 3.6rem;
+    bottom: 0.95rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    pointer-events: none;
+    line-height: 0;
+
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+    }
+}
+
+.card.tone--campfires {
+    .tile-flourish .flame {
+        opacity: 0;
+        transform-box: fill-box;
+        transform-origin: 50% 100%;
+        transform: scaleY(0.25);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    &:hover .tile-flourish .flame {
+        opacity: 1;
+        transform: scaleY(1);
+        animation: tile-flame-flicker 0.7s ease-in-out 0.35s infinite alternate;
+    }
+}
+
+// Signpost – each "arm" is a group containing the spring blob + the
+// matching black plank, so they swing together (and the black line
+// keeps the motion visible against the pale tile background). The two
+// arms swing in opposite phases, like the post is changing direction.
+.card.tone--signposts {
+    .tile-flourish .arm {
+        transform-box: fill-box;
+        transition: transform 0.3s ease;
+    }
+    .tile-flourish .arm-1 { transform-origin: 0% 50%; }   // upper-right, hinged on post side
+    .tile-flourish .arm-2 { transform-origin: 100% 50%; } // lower-left, hinged on post side
+
+    &:hover .tile-flourish .arm-1 {
+        animation: tile-plank-swing 1.1s ease-in-out infinite alternate;
+    }
+    &:hover .tile-flourish .arm-2 {
+        animation: tile-plank-swing-reverse 1.1s ease-in-out infinite alternate;
+    }
+}
+
+// Waypoint – flag at the top waves on hover, hinged at the pole side.
+.card.tone--waypoints {
+    .tile-flourish .flag {
+        transform-box: fill-box;
+        transform-origin: 0% 100%;
+        transition: transform 0.3s ease;
+    }
+
+    &:hover .tile-flourish .flag {
+        animation: tile-flag-wave 0.85s ease-in-out infinite alternate;
+    }
+}
+
+@keyframes tile-flame-flicker {
+    0%   { transform: scaleY(1)    scaleX(1)    translate(0, 0); }
+    50%  { transform: scaleY(1.06) scaleX(0.93) translate(1px, 0); }
+    100% { transform: scaleY(0.97) scaleX(1.05) translate(-1px, 0); }
+}
+
+@keyframes tile-plank-swing {
+    0%   { transform: rotate(-7deg); }
+    100% { transform: rotate(6deg); }
+}
+
+@keyframes tile-plank-swing-reverse {
+    0%   { transform: rotate(6deg); }
+    100% { transform: rotate(-7deg); }
+}
+
+@keyframes tile-flag-wave {
+    0%   { transform: rotate(-4deg); }
+    100% { transform: rotate(9deg); }
+}
+
+
+// .card-type wrapper from the local include
+.navigation-tiles .card .card-type {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: $font-family-monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--tone);
+    margin-bottom: 0.3rem;
+
+    small { font-size: inherit; letter-spacing: inherit; }
+    .type-icon { height: 0.95rem !important; width: auto !important; opacity: 0.85; }
+}
+
+.navigation-tiles {
+    .card {
+        color: $dark;
+
+        a, a:hover, a:focus, a:active {
+            color: inherit !important;
+            text-decoration: none;
+        }
+
+        .card-title, .card-text { color: $dark !important; }
+    }
+
+    // Theme card-header → quieter mono label (no heavy colour block)
+    .card-header {
+        background-color: transparent !important;
+        border: 0 !important;
+        padding: 0 0 0.4rem 0 !important;
+
+        a:hover { text-decoration: none; }
+        h3 {
+            font-family: $font-family-monospace !important;
+            font-size: 0.72rem !important;
+            font-weight: 500;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--tone) !important;
+            margin: 0;
+        }
+    }
+}
+
+
+/*=== Right-hand TOC ("On this page") ===================================*/
+// Theme defaults route through $primary which is now the soft mint – fails
+// contrast both for resting and active state. Override completely.
+
+#toc {
+    color: rgba($dark, 0.78) !important;
+    font-family: $font-family-sans-serif;
+
+    // Theme renders "On this page" as <strong> in the TOC heading
+    > strong, strong.my-0, strong.my-xl-2 {
+        display: block;
+        font-family: $font-family-monospace !important;
+        font-size: 0.7rem !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba($dark, 0.7) !important;
+        margin-bottom: 0.5rem;
+    }
+
+    hr {
+        border-color: $brand-rule;
+        opacity: 1;
+        margin-top: 0.4rem !important;
+        margin-bottom: 0.6rem;
+    }
+}
+
+#toc-contents {
+    ul {
+        a {
+            color: rgba($dark, 0.78) !important;
+            font-family: $font-family-sans-serif;
+            font-size: 0.92rem;
+            line-height: 1.4;
+            padding: 0.18rem 0.6rem !important;
+            border-left: 2px solid $brand-rule !important;
+            transition: color 0.15s ease, border-left-color 0.15s ease;
+
+            &.active,
+            &:hover {
+                color: $dark !important;
+                border-left-color: $brand-amber-text !important;
+                text-decoration: none !important;
+            }
+        }
+
+        // Sub-bullets a touch quieter
+        ul a {
+            font-size: 0.86rem;
+            color: rgba($dark, 0.7) !important;
+        }
+    }
+}
+
+
+/*=== Page TOC / page image – fix the sticky glitch ======================*/
+// On pages where #page-img is set but the page has no headings, the theme's
+// add-grid keeps a sticky right column, and #page-img scrolls weirdly over
+// content. Hide the right column when the TOC contents are empty, and
+// collapse the grid back to single-column.
+#main.add-grid:has(#toc-contents:empty) {
+    grid-template-areas: "intro" "content" !important;
+    grid-template-columns: 1fr !important;
+}
+#main.add-grid:has(#toc-contents:empty) #toc { display: none; }
+
+// When TOC IS rendered, contain page-img more cleanly so it doesn't drift
+// past the visible area.
+#toc {
+    #page-img {
+        position: relative;
+        margin-bottom: 1.25rem;
+
+        img {
+            display: block;
+            max-height: 9rem;
+            width: auto;
+            margin: 0 auto;
+        }
+    }
+}
+
+
+/*=== Footer – editorial-quiet ===========================================*/
+// One masthead block: eyebrow → big tilted Caveat headline → paragraph
+// → scribble divider → inline nav. Then a thin copyright strip.
+
+footer#footer {
+    background-color: $dark !important;
+    color: $brand-cream !important;
+
+    a { color: $brand-cream !important; }
+
+    .footer-masthead {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto;
+    }
+
+    .footer-eyebrow {
+        font-family: $font-family-monospace;
+        font-size: 0.72rem;
+        line-height: 1;
+        color: rgba($brand-cream, 0.55);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        margin: 0 0 1rem;
+    }
+
+    .footer-title-display {
+        font-family: $font-family-display;
+        font-size: clamp(3.5rem, 7vw, 6rem);
+        line-height: 0.95;
+        color: $brand-amber;
+        margin: 0 0 1.5rem;
+        font-weight: 700;
+        transform: rotate(-1.5deg);
+        display: inline-block;
+    }
+
+    .footer-boilerplate {
+        font-family: $font-family-sans-serif;
+        font-size: 1.02rem;
+        line-height: 1.6;
+        color: rgba($brand-cream, 0.78);
+        margin: 0 auto;
+        max-width: 56ch;
+    }
+
+    .footer-links {
+        font-family: $font-family-monospace;
+        font-size: 0.78rem;
+        letter-spacing: 0.10em;
+        text-transform: uppercase;
+        margin-top: 0.5rem;
+        color: rgba($brand-cream, 0.85);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem 0.75rem;
+
+        a {
+            color: rgba($brand-cream, 0.85) !important;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.15rem 0;
+            border-bottom: 1px solid transparent;
+            transition: color 0.18s ease, border-color 0.18s ease;
+
+            &:hover {
+                color: $brand-amber !important;
+                border-bottom-color: $brand-amber;
+            }
+        }
+
+        .footer-sep { color: rgba($brand-cream, 0.35); user-select: none; }
+    }
+
+    .copyright {
+        background-color: rgba($white, 0.04) !important;
+        margin-top: 3.5rem;
+        border-top: 1px solid rgba($brand-cream, 0.08);
+    }
+
+    .footer-copyright-text {
+        font-family: $font-family-sans-serif;
+        font-size: 0.78rem;
+        color: rgba($brand-cream, 0.65);
+
+        a { color: rgba($brand-cream, 0.65) !important; text-decoration: underline; }
+        p { margin: 0; }
+        img { vertical-align: middle; opacity: 0.65; height: 16px; width: auto; }
+    }
+
+    .footer-ett {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-family: $font-family-monospace;
+        font-size: 0.72rem;
+        color: rgba($brand-cream, 0.5) !important;
+        text-decoration: none;
+
+        svg circle.cls-1 { fill: rgba($brand-cream, 0.12); }
+        svg path.cls-3   { fill: rgba($brand-cream, 0.7); }
+
+        &:hover {
+            color: $brand-amber !important;
+            svg path.cls-3 { fill: $brand-amber; }
+        }
+    }
+}
+
+// Scribble divider variant for the dark footer
+.scribble-divider--dark {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 12' preserveAspectRatio='none'><path d='M 2 8 Q 20 4 40 7 T 80 6 T 120 7 T 160 6 T 200 7 T 238 6' stroke='%23E8B547' stroke-width='3' stroke-linecap='round' fill='none' opacity='0.55'/></svg>");
+    margin: 2rem auto 1.5rem;
+    max-width: 7rem;
+}
+
+
+/*=== Misc ===============================================================*/
+#main { min-height: 100vh; }
+
+.octicon { margin-right: 0.25em; }
+
 .bg-warning {
     background-color: $accent-color !important;
     color: $white;
 }
 
-/* -----Homepage----- */
-
-.landingpage .ways-to-contribute {
-    .card {
-            &:hover {
-                box-shadow: $box-shadow;
-            }
-
-            .card-img-top {
-                width: unset;
-                padding: $card-spacer-x $card-spacer-x 0 $card-spacer-x;
-            }
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            font-weight: 200;
-            text-align: center;
-        }
-
-        h2 {
-            font-weight: 700;
-            font-family: $font-family-theme;
-        }
-
-        h3 {
-            font-weight: 600;
-            font-family: $font-family-theme;
-        }
-}
-
-// Icon sizing
-
-.h-icon-8 {
-    height: 8em;
-}
-.h-icon-6 {
-    height: 6em;
-}
-.h-icon-5 {
-    height: 5em;
-}
-.h-icon-4 {
-    height: 4em;
-}
-
-// Search box
+.h-icon-8 { height: 8em; }
+.h-icon-6 { height: 6em; }
+.h-icon-5 { height: 5em; }
+.h-icon-4 { height: 4em; }
 
 section#search-section {
-    form {
-        max-width: 600px;
-    }
-
-    #search-results {
-        right: unset;
-    }
-    .input-group-text {
-        font-size: 1.5rem;
-    }
-
-    
+    form { max-width: 600px; }
+    #search-results { right: unset; }
+    .input-group-text { font-size: 1.5rem; }
 }
 
-
-/*-----Section navigation tiles-----*/
-.navigation-tiles {
-  --bs-card-bg: transparent;
-
-  .card {
-    background: none !important;
-    color: $dark; // base text colour
-    transition: box-shadow 0.3s ease, transform 0.2s ease;
-
-    &:hover {
-      color: $dark; // keep text colour fixed
-    }
-
-    // lock link and title colours
-    a,
-    a:hover,
-    a:focus,
-    a:active {
-      color: inherit !important;
-      text-decoration: none;
-    }
-
-    .card-title,
-    .card-text {
-      color: $dark !important;
-    }
-  }
-}
-
-.navigation-tiles {
-  .card {
-    position: relative;
-    background: none !important;
-    border: none; // remove default card border
-    padding: 1rem;
-    transition: box-shadow 0.3s ease, transform 0.2s ease;
-
-    // base sketchy borders
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0; // top:0 right:0 bottom:0 left:0
-      border: 2px solid $dark; // main stroke (#46b96c)
-      pointer-events: none;
-      border-radius: 8px; // optional
-      transition: transform 0.25s ease-out, border-color 0.3s ease;
-    }
-
-    &::before {
-      transform: translate(2px, 1px) rotate(-0.3deg);
-    }
-
-    &::after {
-      transform: translate(-1px, -2px) rotate(0.4deg);
-      border-color: $primary; // lighter 2nd stroke
-    }
-
-    &:hover {
-      box-shadow: $box-shadow;
-      transform: translateY(-2px);
-
-      &::before,
-      &::after {
-        border-color: $accent-color;
-        transform: translate(0, 0) rotate(0deg); // tighten sketch slightly
-      }
-    }
-  }
-
-  .card-header {
-    a:hover { text-decoration: none; }
-    h3 { font-size: 1.2rem; }
-  }
-}
+#search-label-tiles { background-color: $brand-paper; }
 
 
-#search-label-tiles {
-    background-color: $light-background;
-}
-
-
-/*-----Top navigation-----*/
-// safari fix. to be removed with non square logo
-header .navbar .navbar-brand img {
-  width: 4rem;
-}
-.navbar-nav {
-  .nav-item {
-    > a.nav-link {
-      position: relative;
-      display: inline-block;
-      color: $white;
-      text-decoration: none;
-      z-index: 1; // keep text above the marker
-
-      &::before {
-        content: "";
-        position: absolute;
-        left: -2px;
-        bottom: 0;
-        width: calc(100% + 4px);
-        height: 70%;
-        background-color: rgba($primary, 0.8);
-        transform: rotate(-2deg) scaleX(0);
-        transform-origin: left;
-        transition: transform 0.4s ease-out;
-        z-index: -1; // sits behind the text
-        border-radius: 2px; // optional soft edges
-      }
-
-      &:hover::before,
-      &:focus::before {
-        transform: rotate(-2deg) scaleX(1); // animate "marker swipe"
-      }
-
-      &.active::before {
-        transform: rotate(-2deg) scaleX(1); // keep filled when active
-      }
-
-      &:focus-visible {
-        outline: 2px solid rgba($primary, 0.8);
-        outline-offset: 3px;
-      }
-    }
-  }
-}
-
-
-/*----- Buttons -----*/
+/*-----Buttons-----*/
 .home-button {
-    display: block;
-    float: left;
-    margin: 10px auto;
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     background-color: $accent-color;
-    color: #fff;
-    border:none;
+    color: $white;
+    border: none;
     border-radius: 10px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: 0 8px 24px rgba($dark, 0.2);
     text-decoration: none;
     padding: 10px;
-    position: fixed; /* Added for back-to-top button positioning */
-    bottom: 20px; /* Added for back-to-top button positioning */
-    right: 20px; /* Added for back-to-top button positioning */
-    display: none; /* Ensure it is hidden initially */
-    z-index: 100; /* Ensure it appears on top of other elements */
-    
+    z-index: 100;
 }
+.home-button:hover { background-color: $secondary; transition: 0.4s; }
 
-.home-button:hover {
-    background-color: $navbar-hover-color;
-    transition: 0.7s;
-}
+.home a, .stretched-link a { text-decoration: none; }
+.undefined a { text-decoration: none; color: $accent-color; }
 
-.home a{
-    text-decoration: none;
-}
-
-.stretched-link a{
-    text-decoration: none;
-}
-
-.undefined a{
-    text-decoration: none;
-    color: $accent-color;
-}
-
-/* paddin/margin for back-to-top button */
 #back-to-top span {
     display: inline-block;
     vertical-align: middle;
 }
 
-/*----- Youtube containers -----*/
+
+/*-----YouTube containers-----*/
 .embed-container {
     position: relative;
     width: 60%;
-    padding-bottom: 30%; 
+    padding-bottom: 30%;
     height: 0;
-  }
+}
 .embed-container iframe,
 .embed-container object,
 .embed-container embed {
@@ -436,4 +1268,2093 @@ header .navbar .navbar-brand img {
     left: 0;
     width: 100%;
     height: 100%;
-  }
+}
+
+
+/*========================================================================
+  Editorial layer – leans the site harder into "field handbook"
+  Body links, lede, H2 squiggles, drop caps, margin notes, pull-quotes,
+  section eyebrows, trailhead refinements.
+========================================================================*/
+
+/*=== Body links: clean editorial underline (body text only) ===========*/
+// Scoped strictly to running text. Solid underline at rest in muted
+// brick-text; thickens and saturates on hover.  No squiggle.
+#main #content :is(p, li, td, dd) > a:not(.btn):not(.no-underline):not(.stretched-link):not([class*="card"]):not([class*="dropdown"]) {
+    color: $brand-brick-text;
+    text-decoration: underline;
+    text-decoration-color: rgba($brand-brick-text, 0.45);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.18em;
+    background: none;
+    padding: 0;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease, text-decoration-thickness 0.15s ease;
+
+    &:hover {
+        color: $brand-brick;
+        text-decoration-color: $brand-brick;
+        text-decoration-thickness: 2.5px;
+    }
+}
+
+/*=== Lede paragraph ===================================================*/
+// The first paragraph in #content reads bigger, like a magazine standfirst.
+#main #content > p:first-of-type {
+    font-size: 1.18rem;
+    line-height: 1.55;
+    color: rgba($dark, 0.88);
+    margin-bottom: 1.5rem;
+}
+
+/*=== Italic / em emphasis =============================================*/
+// In body, em/i feel like the author's voice. Render in Bricolage italic
+// (synthesised slope is fine – Bricolage doesn't ship a true italic).
+// Excludes Font Awesome icons (`<i class="fa-*">`), which need to keep
+// their own font-family and `font-style: normal`.
+#main em,
+#main i:not([class*="fa-"]) {
+    font-style: italic;
+    color: rgba($dark, 0.92);
+}
+
+/*=== Drop cap utility ================================================*/
+// Apply on a paragraph (e.g., chapter intro): <p class="drop-cap">…
+.drop-cap::first-letter {
+    font-family: $font-family-theme;
+    font-size: 4em;
+    line-height: 0.85;
+    float: left;
+    margin: 0.05em 0.12em 0 0;
+    color: $brand-brick-text; // contrast-safe, warm
+    font-weight: 700;
+    font-variation-settings: "opsz" 96, "wdth" 88;
+}
+
+/*=== Margin note / aside in Caveat ====================================*/
+// <aside class="margin-note">a small handwritten aside</aside>
+.margin-note {
+    font-family: $font-family-display;
+    font-size: 1.2rem;
+    line-height: 1.25;
+    color: $secondary;
+    transform: rotate(-1.5deg);
+    transform-origin: left center;
+    margin: 1.25rem 0;
+    padding: 0.25rem 0 0.25rem 1rem;
+    border-left: 2px dashed $brand-amber;
+    max-width: 28ch;
+}
+
+/*=== Pull quote =======================================================*/
+// <blockquote class="pull-quote"><p>…</p><cite>…</cite></blockquote>
+.pull-quote {
+    margin: 2rem 0;
+    padding: 0 1.5rem;
+    border-left: 0;
+    border-radius: 0;
+    background: none;
+    color: $dark;
+
+    p {
+        font-family: $font-family-theme;
+        font-size: 1.65rem;
+        line-height: 1.25;
+        font-weight: 500;
+        font-variation-settings: "opsz" 36, "wdth" 92;
+        color: $dark;
+        margin: 0 0 0.5rem;
+        position: relative;
+
+        &::before {
+            content: "\201C";
+            position: absolute;
+            font-family: $font-family-display;
+            font-size: 4rem;
+            line-height: 1;
+            color: $brand-amber-text; // contrast-safe deep amber
+            left: -2rem;
+            top: -0.5rem;
+        }
+    }
+
+    cite {
+        font-family: $font-family-display;
+        font-size: 1.2rem;
+        font-style: normal;
+        color: $secondary;
+        display: block;
+        margin-top: 0.4rem;
+
+        &::before { content: "– "; }
+    }
+}
+
+/*=== Section eyebrow ==================================================*/
+// <p class="section-eyebrow tone--signposts"> Trail notes</p>
+.section-eyebrow {
+    font-family: $font-family-monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba($dark, 0.7); // contrast-safe on cream
+    margin: 0 0 0.4rem;
+
+    &.tone--signposts { color: $brand-sage-text; }
+    &.tone--campfires { color: $brand-brick-text; }
+    &.tone--waypoints { color: $brand-sage-text; }
+    &.tone--amber     { color: $brand-amber-text; }
+}
+
+/*=== Trailhead refinement =============================================*/
+// Slight tilt on the trailhead title + Caveat "you are here" annotation
+// next to the active item.
+.trailhead-title {
+    transform: rotate(-0.6deg);
+    transform-origin: left center;
+    display: inline-block;
+}
+
+
+
+/*=== Hero refinements (landing page) =================================*/
+.landingpage .landingpage-title {
+    // Tilt the highlight word (which is wrapped in .highlight) so the
+    // backlight reads as a hand-drawn marker.
+    .highlight { display: inline-block; transform: rotate(-1.5deg); }
+}
+
+// A small hand-drawn arrow scribble pointing FROM the eyebrow toward the title
+.landingpage .hero-eyebrow {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 2rem;
+        height: 1rem;
+        margin-left: 0.5rem;
+        vertical-align: middle;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 20' fill='none'><path d='M 2 10 Q 12 4 22 10 T 36 12' stroke='%233F6B52' stroke-width='1.6' stroke-linecap='round'/><path d='M 30 6 L 36 12 L 30 16' stroke='%233F6B52' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>");
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: rotate(8deg);
+    }
+}
+
+
+/*========================================================================
+  The magpie's nest – bookmark button, sidebar counter, notebook page.
+  All persistence is localStorage; logic lives in assets/js/notebook.js.
+========================================================================*/
+
+/*=== Bookmark toggle button ============================================*/
+// Sits under the page H1. Visible, editorial, with the magpie inline.
+// On click, the magpie does a "pickup" beak motion.
+.notebook-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 1.1rem 0.55rem 0.45rem;
+    margin: 0.25rem 0 1.25rem;
+    background-color: $brand-paper;
+    border: 1.5px solid $brand-rule;
+    border-radius: 999px;
+    font-family: $font-family-monospace;
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: $dark;
+    cursor: pointer;
+    box-shadow: 0 4px 12px -8px rgba($dark, 0.20);
+    transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+
+    .notebook-toggle-magpie {
+        width: 2rem;
+        height: 2rem;
+        display: block;
+        transform: rotate(-3deg);
+        transform-origin: 60% 80%;
+        transition: transform 0.2s ease;
+    }
+
+    .notebook-toggle-icon {
+        font-family: $font-family-monospace;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 0.8;
+        color: $brand-amber-text;
+        margin-left: 0.05rem;
+        transition: color 0.18s ease;
+    }
+
+    .notebook-toggle-label {
+        line-height: 1;
+    }
+
+    &:hover {
+        border-color: $brand-amber;
+        background-color: rgba($brand-amber, 0.10);
+        transform: translateY(-1px);
+        box-shadow: 0 8px 18px -8px rgba($dark, 0.25);
+
+        .notebook-toggle-magpie {
+            transform: rotate(3deg);
+        }
+    }
+
+    &:focus-visible {
+        outline: 2px solid $brand-amber;
+        outline-offset: 3px;
+    }
+
+    // Saved state – quiet brick wash, filled checkmark
+    &.is-saved {
+        background-color: rgba($brand-brick, 0.08);
+        border-color: $brand-brick;
+        color: $brand-brick-text;
+
+        .notebook-toggle-icon { color: $brand-brick; }
+
+        &:hover {
+            background-color: rgba($brand-brick, 0.14);
+        }
+    }
+
+    // The "collecting" animation: magpie tips forward to peck the page,
+    // then pops back up with a tiny lift.
+    &.collecting .notebook-toggle-magpie {
+        animation: magpie-pickup 0.7s cubic-bezier(.4, 0, .2, 1);
+    }
+}
+
+@keyframes magpie-pickup {
+    0%   { transform: rotate(-3deg) translateY(0); }
+    20%  { transform: rotate(20deg) translateY(2px); }
+    35%  { transform: rotate(28deg) translateY(5px) scale(1.05); }
+    50%  { transform: rotate(20deg) translateY(2px); }
+    70%  { transform: rotate(-12deg) translateY(-4px); }
+    100% { transform: rotate(-3deg) translateY(0); }
+}
+
+
+/*=== Notebook page (/notebook) =========================================*/
+.notebook-greeting {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    margin: 1rem 0 2.5rem;
+    padding: 1.5rem 1.5rem 1.5rem 1.25rem;
+    background-color: rgba($brand-amber, 0.10);
+    border-left: 3px solid $brand-amber;
+    border-radius: 0 0.6rem 0.6rem 0;
+
+    @include media-breakpoint-down(sm) {
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+    }
+}
+
+.notebook-greeting-magpie {
+    width: 110px;
+    height: auto;
+    transform: rotate(-4deg);
+    filter: drop-shadow(0 6px 14px rgba($dark, 0.10));
+}
+
+.notebook-greeting-text { line-height: 1.55; }
+
+.notebook-greeting-hi {
+    font-family: $font-family-display;
+    font-size: 2.2rem;
+    line-height: 1;
+    color: $brand-amber-text;
+    margin: 0 0 0.5rem;
+    transform: rotate(-2deg);
+    transform-origin: left center;
+    display: inline-block;
+}
+
+.notebook-greeting-body {
+    font-family: $font-family-sans-serif;
+    font-size: 1.02rem;
+    color: rgba($dark, 0.88);
+    margin: 0 0 0.5rem;
+    max-width: 56ch;
+}
+
+.notebook-greeting-sign {
+    font-family: $font-family-display;
+    font-size: 1.2rem;
+    color: $brand-amber-text;
+    margin: 0;
+    transform: rotate(-1.5deg);
+    display: inline-block;
+}
+
+.notebook-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.notebook-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1rem;
+    background-color: $brand-paper;
+    border: 1.5px solid $brand-rule;
+    border-radius: 999px;
+    font-family: $font-family-monospace;
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: $dark;
+    cursor: pointer;
+    transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+
+    &:hover {
+        background-color: rgba($brand-amber, 0.10);
+        border-color: $brand-amber;
+        transform: translateY(-1px);
+    }
+
+    &--quiet {
+        background-color: transparent;
+        border-color: rgba($dark, 0.15);
+        color: rgba($dark, 0.65);
+
+        &:hover {
+            background-color: rgba($brand-brick, 0.06);
+            border-color: $brand-brick;
+            color: $brand-brick-text;
+        }
+    }
+}
+
+.notebook-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 3rem;
+}
+
+.notebook-item {
+    --tone: #{$brand-amber-text};
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    padding: 1.1rem 1.25rem;
+    background-color: $brand-paper;
+    border: 1px solid $brand-rule;
+    border-left: 4px solid var(--tone);
+    border-radius: 0 0.4rem 0.4rem 0;
+    margin-bottom: 0.6rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-left-color 0.15s ease;
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 18px -10px rgba($dark, 0.15);
+    }
+
+    &.tone--guidance      { --tone: #{$brand-sage-text}; }
+    &.tone--case-studies  { --tone: #{$brand-brick-text}; }
+    &.tone--maturity-model { --tone: #{$brand-sage-text}; }
+}
+
+.notebook-item-link {
+    display: grid;
+    gap: 0.25rem;
+    text-decoration: none !important;
+    color: $dark !important;
+    background: none !important;
+    padding: 0 !important;
+
+    &::before { content: none !important; }
+    &::after { content: none !important; }
+}
+
+.notebook-item-section {
+    font-family: $font-family-monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--tone);
+}
+
+.notebook-item-title {
+    font-family: $font-family-theme;
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-variation-settings: "opsz" 24, "wdth" 92;
+    line-height: 1.2;
+    color: $dark;
+}
+
+.notebook-item-meta {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 0.2rem;
+    font-size: 0.78rem;
+    color: rgba($dark, 0.6);
+}
+
+.notebook-item-url {
+    font-family: $font-family-monospace;
+    font-size: 0.78rem;
+    word-break: break-all;
+}
+
+.notebook-item-date {
+    font-family: $font-family-display;
+    font-size: 1rem;
+    color: $brand-amber-text;
+    line-height: 1;
+}
+
+.notebook-item-remove {
+    align-self: start;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: 1px solid $brand-rule;
+    border-radius: 50%;
+    color: rgba($dark, 0.55);
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+
+    &:hover {
+        background-color: rgba($brand-brick, 0.10);
+        border-color: $brand-brick;
+        color: $brand-brick;
+    }
+}
+
+.notebook-empty {
+    text-align: center;
+    margin: 3rem auto;
+    max-width: 50ch;
+
+    .notebook-empty-line {
+        font-family: $font-family-display;
+        font-size: 2rem;
+        color: $brand-sage-text;
+        margin: 0 0 0.75rem;
+        transform: rotate(-1deg);
+        display: inline-block;
+    }
+
+    .notebook-empty-hint {
+        font-family: $font-family-sans-serif;
+        font-size: 1rem;
+        color: rgba($dark, 0.78);
+        line-height: 1.55;
+    }
+
+    .notebook-empty-button {
+        display: inline-block;
+        font-family: $font-family-monospace;
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        background-color: rgba($brand-amber, 0.18);
+        padding: 0.1em 0.5em;
+        border-radius: 0.3em;
+        color: $brand-amber-text;
+    }
+}
+
+
+/*=== Print bundle (built dynamically by notebook.js) ==================*/
+// On screen, the print bundle is hidden. On print, everything else is
+// hidden and only the bundle prints – assembled by JS from each saved
+// page's content.
+
+.notebook-print-bundle {
+    display: none;
+}
+
+@media print {
+    @page { margin: 18mm 16mm; }
+
+    html, body {
+        background: $white !important;
+        color: #000 !important;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 11pt;
+        line-height: 1.5;
+    }
+
+    // Hide everything except the bundle
+    body * { visibility: hidden; }
+    .notebook-print-bundle,
+    .notebook-print-bundle * { visibility: visible; }
+
+    .notebook-print-bundle {
+        display: block !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .notebook-print-page {
+        page-break-after: always;
+        padding: 0;
+
+        &:last-child { page-break-after: auto; }
+    }
+
+    // ---- Cover ----
+    .notebook-print-cover {
+        text-align: center;
+        padding: 4rem 1rem 2rem;
+
+        .notebook-print-magpie {
+            width: 120px;
+            height: auto;
+            display: block;
+            margin: 0 auto 1.5rem;
+        }
+        .notebook-print-cover-eyebrow {
+            font-family: "Courier New", monospace;
+            font-size: 9pt;
+            letter-spacing: 0.18em;
+            color: #555;
+            margin: 0 0 1rem;
+        }
+        .notebook-print-cover-title {
+            font-family: Georgia, serif;
+            font-size: 36pt;
+            font-weight: 700;
+            line-height: 1.05;
+            color: #000;
+            margin: 0 0 1.5rem;
+        }
+        .notebook-print-cover-meta {
+            font-family: Georgia, serif;
+            font-size: 11pt;
+            color: #333;
+            margin: 0 0 0.4rem;
+        }
+        .notebook-print-cover-source {
+            font-family: "Courier New", monospace;
+            font-size: 9pt;
+            color: #777;
+            margin: 0;
+        }
+    }
+
+    // ---- Per-page header ----
+    .notebook-print-page-header {
+        border-top: 1.5pt solid #000;
+        border-bottom: 1pt solid #999;
+        padding: 0.6rem 0 0.5rem;
+        margin: 0 0 1rem;
+        page-break-after: avoid;
+
+        .notebook-print-section {
+            font-family: "Courier New", monospace;
+            font-size: 9pt;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            color: #555;
+            margin: 0 0 0.3rem;
+            text-transform: uppercase;
+        }
+        .notebook-print-title {
+            font-family: Georgia, serif;
+            font-size: 22pt;
+            font-weight: 700;
+            line-height: 1.1;
+            color: #000;
+            margin: 0 0 0.3rem;
+        }
+        .notebook-print-source {
+            font-family: "Courier New", monospace;
+            font-size: 8.5pt;
+            color: #777;
+            margin: 0;
+            word-break: break-all;
+        }
+    }
+
+    // ---- Per-page body ----
+    .notebook-print-body {
+        font-size: 11pt;
+        line-height: 1.55;
+        color: #000;
+
+        h1, h2, h3, h4 {
+            font-family: Georgia, serif;
+            color: #000;
+            page-break-after: avoid;
+        }
+        h1 { display: none; } // already shown in the per-page header
+        h2 { font-size: 16pt; margin: 1.2rem 0 0.4rem; }
+        h3 { font-size: 13pt; margin: 1rem 0 0.3rem; }
+        h4 { font-size: 11pt; margin: 0.8rem 0 0.2rem; }
+
+        p, li {
+            font-family: Georgia, serif;
+            font-size: 11pt;
+            color: #000;
+        }
+
+        a {
+            color: #000;
+            text-decoration: underline;
+            background: none !important;
+
+            &::after {
+                content: " (" attr(href) ")";
+                font-size: 0.85em;
+                color: #777;
+                font-family: "Courier New", monospace;
+                font-weight: normal;
+            }
+        }
+
+        // Don't print URLs of internal anchors or the magpie images
+        a[href^="#"]::after,
+        img + a::after { content: none !important; }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            page-break-inside: avoid;
+        }
+
+        // Body callouts – keep a printable shape
+        .alert {
+            border: 1pt solid #999 !important;
+            border-left: 3pt solid #000 !important;
+            background: none !important;
+            padding: 0.5rem 0.75rem !important;
+            margin: 0.75rem 0 !important;
+            page-break-inside: avoid;
+
+            b { color: #000 !important; font-family: Georgia, serif; }
+            i { display: none; }
+        }
+
+        // Tables – readable on paper
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1rem 0;
+            page-break-inside: avoid;
+
+            th, td {
+                border: 1pt solid #999;
+                padding: 6pt 8pt;
+                text-align: left;
+                font-size: 10pt;
+            }
+            th {
+                background: #f0f0f0 !important;
+                font-weight: 700;
+            }
+        }
+
+        blockquote {
+            border-left: 3pt solid #999;
+            padding-left: 1rem;
+            margin: 0.75rem 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        code, pre {
+            font-family: "Courier New", monospace;
+            font-size: 9.5pt;
+        }
+        pre {
+            border: 1pt solid #ccc;
+            padding: 6pt;
+            white-space: pre-wrap;
+            word-break: break-all;
+            page-break-inside: avoid;
+        }
+
+        // Hide editorial chrome that doesn't belong on paper
+        .scribble-divider, .footer-magpie, .magpie-mark,
+        .door-arrow, .has-underline, .door-handle,
+        .trail-magpie, .summary-marker { display: none !important; }
+    }
+
+    .notebook-print-body-error {
+        font-style: italic;
+        color: #777;
+        padding: 1rem;
+        border: 1pt dashed #999;
+    }
+}
+
+
+/*========================================================================
+  Content components – reusable theme includes styled editorially.
+  Callouts, breadcrumb, body tables, page-metadata tabs, citation,
+  more-information-tiles.
+========================================================================*/
+
+/*=== Callouts – every type spoken by the magpie =========================*/
+// Five types: tip · note · important · warning · magpie
+// Same grid layout for all (bird left, body right). Type-specific colour
+// for the rule + tint + label. The magpie tilts at a different angle per
+// type so the bird reads as a different pose for each piece of advice.
+#main #content .alert {
+    display: grid;
+    grid-template-columns: 3.25rem 1fr;
+    column-gap: 1rem;
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    border-left: 3px solid;
+    border-radius: 0;
+    padding: 0.95rem 1.1rem 0.95rem 1.15rem;
+    margin: 1.5rem 0;
+    color: $dark;
+    font-family: $font-family-sans-serif;
+    font-size: 0.97rem;
+    line-height: 1.55;
+
+    // The bird, posed per type via subclass tilt
+    .alert-magpie {
+        grid-column: 1;
+        width: 3.25rem;
+        height: auto;
+        align-self: center;
+        transform: rotate(-4deg);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease;
+    }
+
+    // Speaking body
+    .alert-body {
+        grid-column: 2;
+        font-family: $font-family-sans-serif;
+        line-height: 1.55;
+    }
+
+    // Caveat type label
+    b {
+        display: block;
+        font-family: $font-family-display;
+        font-size: 1.3rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 0.35rem;
+
+        &::after {
+            content: " –";
+            color: rgba($dark, 0.4);
+            font-weight: 400;
+        }
+    }
+
+    a { color: inherit; text-decoration: underline; }
+
+    // ----- Per type: colour + magpie pose --------------------------------
+    &.alert-tip {
+        border-left-color: $brand-sage;
+        background: rgba($brand-sage, 0.08);
+        b { color: $brand-sage-text; }
+        // upright + slight forward lean – encouraging
+        .alert-magpie { transform: rotate(-2deg); }
+    }
+
+    &.alert-note {
+        border-left-color: $brand-amber;
+        background: rgba($brand-amber, 0.10);
+        b { color: $brand-amber-text; }
+        // tilted head – curious, attentive
+        .alert-magpie { transform: rotate(-8deg); }
+    }
+
+    &.alert-important {
+        border-left-color: $brand-amber;
+        background: rgba($brand-amber, 0.16);
+        b { color: $brand-amber-text; }
+        // leaning forward – insistent
+        .alert-magpie { transform: rotate(8deg) translateY(1px); }
+    }
+
+    &.alert-warning {
+        border-left-color: $brand-brick;
+        background: rgba($brand-brick, 0.08);
+        b { color: $brand-brick-text; }
+        // alarmed: head up, looking back
+        .alert-magpie { transform: rotate(-14deg) translateY(-2px); }
+    }
+
+    &.alert-magpie {
+        border-left-color: $brand-amber;
+        background: rgba($brand-amber, 0.10);
+        b { color: $brand-amber-text; }
+        // mid-conversation pose
+        .alert-magpie { transform: rotate(-4deg); }
+    }
+}
+
+
+/*=== Magpie mascot – guides + companions ==============================*/
+// Three placements ride the same asset. The bird is
+// detailed enough to read at small sizes; we use a slight tilt and tinted
+// drop-shadow at each placement so it feels like a different pose.
+
+// Magpie intro – the moment the bird gets introduced as a character
+.magpie-intro {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+
+    .magpie-intro-inner {
+        max-width: 720px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: 1.5rem;
+
+        @include media-breakpoint-down(sm) {
+            grid-template-columns: 1fr;
+            text-align: center;
+            justify-items: center;
+        }
+    }
+
+    .magpie-intro-img {
+        width: clamp(110px, 13vw, 170px);
+        height: auto;
+        transform: rotate(-3deg);
+        filter: drop-shadow(0 6px 18px rgba($dark, 0.10));
+
+        @include media-breakpoint-down(sm) {
+            transform: rotate(-3deg);
+        }
+    }
+
+    .magpie-intro-text {
+        max-width: 44ch;
+    }
+
+    .magpie-intro-lead {
+        font-family: $font-family-display;
+        font-size: clamp(1.7rem, 3vw, 2.4rem);
+        line-height: 1;
+        color: $brand-amber-text;
+        margin: 0 0 0.5rem;
+        transform: rotate(-1.5deg);
+        transform-origin: left center;
+        display: inline-block;
+
+        &::before, &::after {
+            content: " ✦ ";
+            color: $brand-amber;
+            font-size: 0.8em;
+            vertical-align: 0.1em;
+        }
+    }
+
+    .magpie-intro-body {
+        font-family: $font-family-sans-serif;
+        font-size: 1rem;
+        line-height: 1.55;
+        color: rgba($dark, 0.85);
+        margin: 0;
+    }
+}
+
+// Sidebar trail magpie – observer at the end of the path, links to /notebook
+.trail-magpie {
+    display: block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0 0;
+    text-align: center;
+    text-decoration: none !important;
+    color: inherit !important;
+
+    img {
+        width: 4.5rem;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+        opacity: 0.92;
+        transform: rotate(-4deg);
+        transform-origin: center bottom;
+        transition: transform 0.25s ease;
+    }
+
+    &:hover img { transform: rotate(2deg) translateY(-1px); }
+
+    .trail-magpie-count {
+        font-family: $font-family-display;
+        font-size: 1.05rem;
+        color: $brand-sage-text;
+        margin: 0.35rem 0 0;
+        line-height: 1.1;
+        transform: rotate(-3deg);
+        transition: color 0.2s ease;
+
+        &.has-items { color: $brand-amber-text; }
+    }
+}
+
+// Bobbing animation triggered when a page gets saved elsewhere on the site
+@keyframes magpie-bob {
+    0%   { transform: rotate(-4deg) translateY(0); }
+    30%  { transform: rotate(-18deg) translateY(-6px); }
+    60%  { transform: rotate(2deg) translateY(2px); }
+    100% { transform: rotate(-4deg) translateY(0); }
+}
+.trail-magpie img.bobbing {
+    animation: magpie-bob 0.65s cubic-bezier(.4,0,.2,1);
+}
+
+// Footer magpie – perched alongside the masthead, with Caveat caption
+.footer-magpie-wrap {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    margin: 0 auto 1rem;
+}
+
+.footer-magpie {
+    display: block;
+    width: 80px;
+    height: auto;
+    transform: rotate(-6deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 4px 14px rgba($brand-amber, 0.18));
+}
+
+.footer-magpie-note {
+    font-family: $font-family-display;
+    font-size: 1.05rem;
+    color: rgba($brand-cream, 0.7);
+    margin: 0;
+    line-height: 1;
+    transform: rotate(-2deg);
+}
+
+
+/*=== Breadcrumb =======================================================*/
+nav#breadcrumb {
+    margin-bottom: 1.5rem;
+
+    .breadcrumb {
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        font-family: $font-family-monospace;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+
+        .breadcrumb-item {
+            color: rgba($dark, 0.6);
+
+            a {
+                color: rgba($dark, 0.7);
+                text-decoration: none;
+
+                i { font-size: 0.85em; vertical-align: -0.05em; }
+
+                &:hover { color: $dark; }
+            }
+
+            + .breadcrumb-item::before {
+                content: "·";
+                color: rgba($dark, 0.4);
+                padding: 0 0.5rem 0 0.4rem;
+            }
+
+            &.last {
+                color: $dark;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+
+/*=== Body tables =====================================================*/
+// Replace Bootstrap default table chrome with editorial: top rule double,
+// row rules below, mono small-caps headers, soft hover wash.
+#main #content table {
+    width: 100%;
+    margin: 1.5rem 0 2rem;
+    border-collapse: collapse;
+    font-family: $font-family-sans-serif;
+    font-size: 0.95rem;
+
+    thead {
+        border-bottom: 2px solid $dark;
+
+        th {
+            font-family: $font-family-monospace;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba($dark, 0.72);
+            text-align: left;
+            padding: 0.65rem 0.9rem;
+            vertical-align: bottom;
+        }
+    }
+
+    tbody {
+        tr {
+            border-bottom: 1px solid $brand-rule;
+            transition: background-color 0.15s ease;
+
+            &:hover { background-color: rgba($brand-amber, 0.07); }
+            &:last-child { border-bottom: 1px solid $dark; }
+        }
+
+        td {
+            padding: 0.7rem 0.9rem;
+            color: rgba($dark, 0.85);
+            line-height: 1.55;
+            vertical-align: top;
+
+            // Body link styling already handled by global rule
+        }
+    }
+
+    caption {
+        caption-side: top;
+        font-family: $font-family-display;
+        font-size: 1.2rem;
+        color: $brand-sage-text;
+        padding: 0 0 0.4rem;
+    }
+}
+
+
+/*=== Page metadata tabs (Contributors / Citation / etc.) ==============*/
+.page-metadata {
+    // Editorial-quiet: no card, no fill. A scribble-divider above marks
+    // the break from the related-pages block; the tab-row border below
+    // anchors the tab labels.
+    position: relative;
+    background-color: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    padding: 1.5rem 0 0 !important;
+    margin-top: 4rem !important;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -2.25rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 14rem;
+        height: 0.75rem;
+        background-image: url("#{$squiggle-sage}");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+    }
+
+    .nav-tabs {
+        border-bottom: 1px solid rgba($dark, 0.25);
+        margin-bottom: 1.25rem !important;
+        gap: 0.25rem;
+
+        .nav-link {
+            border: 0 !important;
+            border-bottom: 2px solid transparent !important;
+            border-radius: 0;
+            background: transparent !important;
+            font-family: $font-family-monospace;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba($dark, 0.55) !important;
+            padding: 0.45rem 0.5rem !important;
+            transition: color 0.15s ease, border-bottom-color 0.15s ease;
+
+            i { margin-right: 0.35rem; font-size: 0.85rem; }
+
+            &:hover {
+                color: $dark !important;
+                border-bottom-color: rgba($brand-amber, 0.4) !important;
+            }
+
+            &.active {
+                color: $dark !important;
+                border-bottom-color: $brand-amber !important;
+                background: transparent !important;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .tab-pane {
+        font-family: $font-family-sans-serif;
+        font-size: 0.92rem;
+        color: rgba($dark, 0.85);
+    }
+}
+
+
+/*=== Citation block ==================================================*/
+#credits-citations p {
+    font-family: $font-family-monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: rgba($dark, 0.85);
+    background-color: rgba($brand-amber, 0.10);
+    border-left: 3px solid $brand-amber;
+    padding: 0.85rem 1rem;
+    border-radius: 0 0.4rem 0.4rem 0;
+    margin: 0;
+
+    em {
+        font-family: $font-family-theme;
+        font-style: italic;
+        color: $dark;
+    }
+
+    a {
+        color: $brand-brick-text;
+        text-decoration: underline;
+        background: none !important;
+        padding: 0 !important;
+    }
+}
+
+
+/*=== Contributors roster – list layout, CRediT chips ==================*/
+// Renders /contributors as one row per person. Avatar on the left,
+// name + affiliation in the middle, links on the right. Each person's
+// row carries small mono-uppercase chips for every CRediT role they
+// hold (project-level + page-level, aggregated). Filter pills at the
+// top filter on those role chips.
+
+.contributor-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0 0 2rem;
+
+    .contributor-filter {
+        font-family: $font-family-monospace;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        line-height: 1.4;
+        color: $dark;
+        background-color: $brand-paper;
+        border: 1px solid rgba($dark, 0.35);
+        border-radius: 999px;
+        padding: 0.32rem 0.85rem;
+        cursor: pointer;
+        transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+
+        &:hover {
+            background-color: rgba($brand-amber, 0.10);
+            border-color: rgba($brand-amber, 0.7);
+        }
+
+        &.is-active {
+            color: $dark;
+            background-color: rgba($brand-amber, 0.30);
+            border-color: $brand-amber;
+            font-weight: 600;
+        }
+    }
+}
+
+.contributor-roster {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 2.5rem;
+    row-gap: 1.75rem;
+
+    @include media-breakpoint-up(sm) { grid-template-columns: repeat(2, 1fr); }
+    @include media-breakpoint-up(lg) { grid-template-columns: repeat(3, 1fr); }
+    @include media-breakpoint-up(xl) { grid-template-columns: repeat(4, 1fr); }
+
+    // Each card is a tight vertical stack: avatar → name → affiliation
+    // → links. Affiliation is line-clamped to two lines so card heights
+    // stay consistent across the grid. A thin top rule anchors each
+    // card visually without making it feel like a box.
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 1rem 0 0;
+        border-top: 1px solid rgba($dark, 0.5) !important;
+
+        &[hidden] { display: none; }
+    }
+
+    &__avatar-slot {
+        display: block;
+        line-height: 0;
+        text-decoration: none;
+        margin-bottom: 0.5rem;
+        transition: transform 0.25s ease;
+
+        &:hover {
+            transform: rotate(-2deg) translateY(-1px);
+        }
+    }
+
+    &__avatar {
+        display: block;
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 50%;
+        background-color: rgba($dark, 0.06);
+        object-fit: cover;
+    }
+
+    &__avatar--initial {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $font-family-monospace;
+        font-size: 0.82rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: rgba($dark, 0.65);
+    }
+
+    &__name {
+        font-family: $font-family-theme;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.25;
+        color: $dark;
+        margin: 0;
+    }
+
+    &__affiliation {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-family: $font-family-sans-serif;
+        font-size: 0.82rem;
+        font-weight: 400;
+        line-height: 1.4;
+        color: rgba($dark, 0.78);
+        margin: 0;
+        min-height: 2.3em;       // reserve 2 lines so empty cards still align
+    }
+
+    &__links {
+        display: flex;
+        gap: 0.55rem;
+        font-size: 0.85rem;
+        margin: 0.15rem 0 0;
+        line-height: 1;
+
+        a {
+            color: rgba($dark, 0.45);
+            transition: color 0.15s ease;
+
+            &:hover { color: $accent-color; }
+        }
+    }
+}
+
+
+/*=== Per-page CRediT role sub-tabs (inside Contributors metadata tab) ==*/
+// Inside the page-metadata "Contributors" outer tab, sub-tabs split the
+// people by CRediT role. Quieter than the outer tab nav: smaller type,
+// no underline rule (we keep the outer tab's line as the section anchor).
+.nav-tabs--credit-roles {
+    border-bottom: 0;
+    gap: 0.15rem;
+    margin-bottom: 0.85rem !important;
+
+    .nav-link {
+        border: 0 !important;
+        border-bottom: 2px solid transparent !important;
+        background: transparent !important;
+        font-family: $font-family-monospace;
+        font-size: 0.66rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba($dark, 0.55) !important;
+        padding: 0.35rem 0.55rem !important;
+
+        &:hover {
+            color: $dark !important;
+            border-bottom-color: rgba($brand-amber, 0.4) !important;
+        }
+
+        &.active {
+            color: $dark !important;
+            border-bottom-color: $brand-amber !important;
+            background: transparent !important;
+            font-weight: 600;
+        }
+    }
+}
+
+.page-credit-role-label,
+.page-credit-role-link {
+    font-family: $font-family-monospace;
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: rgba($dark, 0.55);
+    margin: 0 0 0.6rem;
+
+    a {
+        color: rgba($dark, 0.55);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: color 0.15s ease, border-bottom-color 0.15s ease;
+
+        &:hover {
+            color: $dark;
+            border-bottom-color: rgba($brand-amber, 0.5);
+        }
+    }
+}
+
+.page-credit-role-link {
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: $font-family-sans-serif;
+    font-size: 0.78rem;
+    color: rgba($dark, 0.55);
+    margin-top: -0.25rem;
+
+    em { font-family: $font-family-theme; font-style: italic; }
+    i { font-size: 0.7rem; }
+}
+
+
+/*=== More information tiles (collapsible accordions) =================*/
+// Theme markup: <a class="info-collapse" data-bs-toggle="collapse">
+//   <h3>Links to FAIRsharing</h3><i class="chevron"></i>
+// </a>
+// <div class="collapse info-card"><img logo><p>...</p><div class="info-links">…</div></div>
+// Editorial: paper card with mono uppercase title, amber chevron, clean rows.
+#main #content .info-collapse {
+    border-top: 1px solid $brand-rule !important;
+    border-bottom: 0;
+    padding: 1rem 0;
+    text-decoration: none;
+    color: $dark;
+
+    h3 {
+        font-family: $font-family-theme !important;
+        font-size: 1.15rem !important;
+        font-weight: 600 !important;
+        font-variation-settings: "opsz" 24, "wdth" 92;
+        color: $dark !important;
+        margin: 0 !important;
+    }
+
+    i {
+        color: $brand-amber-text;
+        font-size: 0.9rem !important;
+    }
+
+    &:hover h3 { color: $brand-sage-text !important; }
+    &:hover i { color: $brand-amber !important; }
+}
+
+#main #content .info-card {
+    background: $brand-paper;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem !important;
+    margin-bottom: 1rem;
+
+    .info-logo {
+        max-height: 32px !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    p {
+        color: rgba($dark, 0.85);
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+
+    .info-links {
+        a.btn {
+            background-color: $brand-cream !important;
+            color: $dark !important;
+            border: 1px solid $brand-rule !important;
+            border-radius: 0.4rem !important;
+            font-family: $font-family-sans-serif;
+            font-size: 0.92rem;
+            font-weight: 500;
+            transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+
+            i {
+                color: $brand-brick-text !important;
+                margin-right: 0.4rem;
+            }
+
+            &:hover {
+                background-color: rgba($brand-amber, 0.18) !important;
+                border-color: $brand-amber !important;
+                color: $dark !important;
+                transform: translateY(-1px);
+
+                i { color: $brand-brick !important; }
+            }
+        }
+    }
+}
+
+
+/*=== Topnav magpie nest ==============================================*/
+// Small "Nest" link in the topnav pointing at /notebook. The ✦ matches
+// the home-page "say hi to the magpie" sparkle. When localStorage has
+// saved items the parent gets `.has-items` (set by notebook.js): the ✦
+// twinkles on a slow loop and a small amber count badge appears.
+.nav-item--magpie .nav-link {
+    .nav-shine {
+        display: inline-block;
+        font-size: 0.95rem;
+        line-height: 1;
+        color: $brand-amber-text;
+        transition: transform 0.25s ease, color 0.2s ease;
+    }
+
+    .nav-shine-count {
+        display: none;
+        font-family: $font-family-monospace;
+        font-size: 0.65rem;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: 0.04em;
+        background: $brand-amber;
+        color: $dark;
+        border-radius: 999px;
+        padding: 0.18rem 0.45rem;
+        min-width: 1.25rem;
+        text-align: center;
+    }
+
+    &:hover .nav-shine,
+    &.active .nav-shine {
+        color: $brand-amber;
+        transform: rotate(45deg) scale(1.1);
+    }
+}
+
+.nav-item--magpie.has-items {
+    .nav-shine { animation: nav-shine-twinkle 2.4s ease-in-out infinite; }
+    .nav-shine-count { display: inline-block; }
+}
+
+@keyframes nav-shine-twinkle {
+    0%, 100% { transform: rotate(0deg)  scale(1);    color: $brand-amber-text; }
+    50%      { transform: rotate(45deg) scale(1.18); color: $brand-amber; }
+}
+
+
+/*=== Dev-build banner ================================================*/
+// The theme's dev-info banner uses .bg-warning (dark amber) which sets
+// text to white. Bootstrap's default link colour is brick-red, which is
+// nearly invisible against amber. Force links to inherit + underline.
+.dev-banner {
+    a, a:hover, a:focus {
+        color: inherit !important;
+        text-decoration: underline;
+        text-underline-offset: 0.18em;
+        text-decoration-thickness: 1.5px;
+    }
+    a:hover { text-decoration-thickness: 2px; }
+}
+
+
+/*=== Case study (campfire) – tabbed metadata header ==================*/
+// Adapted from the ELITMa training-module pattern. Two tabs:
+//   • "At a glance" – fact fields with vertical rules + mono labels.
+//   • "Summary"     – description + lead_quote.
+// The bottom of the page has a resources table and related-pages tiles
+// (see further down). Vocab in _data/case_study/*.yml.
+.case-study-meta {
+    margin: 0.75rem 0 2.25rem;
+
+    &__nav.nav-tabs {
+        --bs-nav-tabs-border-color: #{$brand-rule};
+        --bs-nav-tabs-link-active-color: #{$dark};
+        --bs-nav-tabs-link-active-bg: #{$brand-paper};
+        --bs-nav-tabs-link-active-border-color: #{$brand-rule} #{$brand-rule} #{$brand-paper};
+        border-bottom-color: $brand-rule;
+
+        .nav-link {
+            font-family: $font-family-monospace;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba($dark, 0.6) !important;
+            background: transparent;
+            border: 1px solid transparent;
+            border-bottom-color: $brand-rule;
+            border-radius: 0.4rem 0.4rem 0 0;
+            padding: 0.5rem 1rem !important;
+            transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+
+            &:hover {
+                color: $dark !important;
+                background-color: rgba($brand-amber, 0.10);
+                border-bottom-color: rgba($brand-amber, 0.4);
+            }
+
+            &.active {
+                color: $dark !important;
+                background-color: $brand-paper;
+                border-color: $brand-rule $brand-rule $brand-paper;
+                font-weight: 600;
+            }
+        }
+    }
+
+    &__content {
+        background-color: $brand-paper;
+        border: 1px solid $brand-rule;
+        border-top: 0;
+        border-radius: 0 0.5rem 0.5rem 0.5rem;
+        padding: 1.4rem 1.5rem;
+    }
+
+    &__fields {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem 2rem;
+    }
+
+    &__field {
+        border-left: 2px solid $brand-rule;
+        padding-left: 0.9rem;
+        min-width: 0;
+    }
+
+    &__label {
+        font-family: $font-family-monospace;
+        font-size: 0.66rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba($dark, 0.65);
+        margin-bottom: 0.2rem;
+
+        i { color: $brand-amber-text; }
+    }
+
+    &__value {
+        font-family: $font-family-sans-serif;
+        font-size: 0.95rem;
+        color: $dark;
+        line-height: 1.4;
+    }
+
+    &__sep {
+        display: inline-block;
+        margin: 0 0.55rem;
+        color: rgba($dark, 0.4);
+    }
+
+    &__partners {
+        font-family: $font-family-sans-serif;
+        font-size: 0.8rem;
+        color: rgba($dark, 0.65);
+        line-height: 1.4;
+        margin-top: 0.15rem;
+    }
+
+    &__themes {
+        list-style: none;
+        padding: 0;
+        margin: 1.25rem 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+
+    &__link {
+        margin: 1.25rem 0 0;
+        font-family: $font-family-monospace;
+        font-size: 0.8rem;
+        letter-spacing: 0.04em;
+
+        a {
+            color: $accent-color;
+            text-decoration: none;
+            border-bottom: 1px solid rgba($accent-color, 0.4);
+            transition: border-bottom-color 0.15s ease;
+            padding-bottom: 0.05em;
+
+            &:hover { border-bottom-color: $accent-color; }
+        }
+    }
+
+    &__summary {
+        font-family: $font-family-theme;
+        font-size: 1.15rem;
+        font-weight: 500;
+        line-height: 1.45;
+        color: $dark;
+        margin: 0;
+        font-variation-settings: "opsz" 24, "wdth" 100;
+    }
+
+    &__quote {
+        margin: 1.25rem 0 0;
+    }
+}
+
+.case-study-chip {
+    display: inline-block;
+    font-family: $font-family-monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: $dark;
+    background-color: rgba($brand-amber, 0.22);
+    border: 1px solid rgba($brand-amber, 0.45);
+    border-radius: 999px;
+    padding: 0.18rem 0.7rem;
+    cursor: default;
+}
+
+.case-study-status {
+    display: inline-block;
+    vertical-align: 0.08em;
+    font-family: $font-family-monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    padding: 0.1rem 0.55rem;
+    line-height: 1.2;
+    color: $dark;
+
+    &--active   { background-color: rgba($brand-spring, 0.85); }
+    &--evolved  { background-color: rgba($brand-amber, 0.65); }
+    &--paused   { background-color: rgba($brand-amber-soft, 0.85); }
+    &--ended    { background-color: rgba($brand-brick-soft, 0.8); }
+    &--archived { background-color: $brand-rule; color: rgba($dark, 0.75); }
+}
+
+/*=== Case study – resources table =====================================*/
+// Auto-rendered at the end of every case study where `resources:` is set
+// in frontmatter. Editorial table on cream – no heavy borders, mono
+// header eyebrow, brick links, paper row shading on hover.
+.case-study-resources {
+    margin: 0.5rem 0 2.5rem;
+
+    table.table {
+        --bs-table-bg: transparent;
+        --bs-table-border-color: #{$brand-rule};
+        --bs-table-hover-bg: #{rgba($brand-amber, 0.06)};
+        margin: 0;
+
+        thead th {
+            font-family: $font-family-monospace;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba($dark, 0.65);
+            border-bottom: 2px solid $brand-rule;
+            padding: 0.6rem 0.85rem;
+        }
+
+        tbody td {
+            font-family: $font-family-sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.45;
+            color: $dark;
+            padding: 0.65rem 0.85rem;
+            border-bottom: 1px solid $brand-rule;
+            vertical-align: top;
+
+            a {
+                color: $accent-color;
+                text-decoration: none;
+                border-bottom: 1px solid rgba($accent-color, 0.35);
+                transition: border-bottom-color 0.15s ease;
+
+                &:hover { border-bottom-color: $accent-color; }
+            }
+
+            p { margin: 0; }
+        }
+
+        tbody tr:last-child td { border-bottom: 0; }
+    }
+
+    // Stack three sibling tables tightly when they appear back-to-back
+    // (Templates → Internal → External) under one resources header.
+    & + & { margin-top: 0; }
+
+    &:not(:first-of-type) h2 {
+        margin-top: 1.75rem;
+    }
+}
+
+.resource-table__cat-col {
+    width: 8rem;
+    white-space: nowrap;
+}
+
+.resource-badge {
+    display: inline-block;
+    font-family: $font-family-monospace;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    padding: 0.18rem 0.65rem;
+    line-height: 1.3;
+    color: $dark;
+
+    &--template { background-color: rgba($brand-amber, 0.55);     color: $dark; }
+    &--internal { background-color: rgba($brand-spring, 0.7);     color: $dark; }
+    &--external { background-color: $brand-rule;                  color: rgba($dark, 0.8); }
+}
+
+/*=== Case study – related pages (slim tone-aware tiles) ===============*/
+// Distinct from .navigation-tiles – these are reading-context pointers,
+// not landing-page jumps. Smaller type, tighter padding, no flourish
+// animations, no counter, no backlight. Each tile carries a tone-coloured
+// type label (Signpost / Campfire / Waypoint) with the matching FA icon.
+.case-study-relations {
+    margin: 0.5rem 0 2rem;
+}
+
+.related-tile {
+    --tile-tone:       #{$brand-amber-text};
+    --tile-tone-soft:  #{rgba($brand-amber, 0.08)};
+    --tile-tone-rule:  #{rgba($brand-amber, 0.45)};
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    height: 100%;
+    padding: 0.85rem 1rem 0.95rem;
+    background-color: $brand-paper;
+    border: 1px solid $brand-rule;
+    border-top: 3px solid var(--tile-tone-rule);
+    border-radius: 0.4rem;
+    text-decoration: none !important;
+    color: $dark !important;
+    transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+
+    &:hover {
+        background-color: var(--tile-tone-soft);
+        border-color: $brand-rule var(--tile-tone-rule) var(--tile-tone-rule) var(--tile-tone-rule);
+        border-top-color: var(--tile-tone);
+        transform: translateY(-1px);
+        color: $dark !important;
+    }
+
+    &__type {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-family: $font-family-monospace;
+        font-size: 0.66rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--tile-tone);
+        line-height: 1;
+
+        svg {
+            width: 1.1rem;
+            height: 1.1rem;
+            flex-shrink: 0;
+            display: block;
+        }
+    }
+
+    &__title {
+        display: block;
+        font-family: $font-family-theme;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.25;
+        color: $dark;
+        font-variation-settings: "opsz" 24, "wdth" 95;
+        margin-top: 0.15rem;
+    }
+
+    &__desc {
+        display: block;
+        font-family: $font-family-sans-serif;
+        font-size: 0.85rem;
+        line-height: 1.4;
+        color: rgba($dark, 0.7);
+    }
+
+    // Per-landmark tones – match the door + tile-flourish vocabulary
+    &--signposts {
+        --tile-tone:      #{$brand-sage-text};
+        --tile-tone-soft: #{rgba($brand-spring, 0.30)};
+        --tile-tone-rule: #{rgba($brand-sage, 0.55)};
+    }
+
+    &--campfires {
+        --tile-tone:      #{$brand-brick-text};
+        --tile-tone-soft: #{rgba($brand-brick-soft, 0.45)};
+        --tile-tone-rule: #{rgba($brand-brick, 0.55)};
+    }
+
+    &--waypoints {
+        --tile-tone:      #{$brand-amber-text};
+        --tile-tone-soft: #{rgba($brand-amber-soft, 0.45)};
+        --tile-tone-rule: #{rgba($brand-amber, 0.6)};
+    }
+}
+
+
+/*=== Case study – breadcrumbs above the H1 ===========================*/
+// Rendered by _includes/breadcrumb.html (local override) inside the
+// theme's #intro div, BEFORE the page H1. Replaces the missing left
+// sidebar on case-study pages. Slim mono-uppercase row with a home icon
+// in slot 1.
+/*=== Page edit / report-issue / history buttons ======================*/
+// The theme's github-buttons.html include uses Bootstrap's `text-primary`
+// utility, which maps to $brand-spring (mint) – invisible on cream.
+// Override with the dark ink + amber hover so the icons read clearly.
+#edit-me {
+    .btn.text-primary,
+    a.text-primary {
+        color: rgba($dark, 0.65) !important;
+        border: 1px solid transparent;
+        transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+
+        &:hover, &:focus {
+            color: $dark !important;
+            background-color: rgba($brand-amber, 0.15) !important;
+            border-color: rgba($brand-amber, 0.45) !important;
+        }
+    }
+}
+
+
+.case-study-breadcrumbs {
+    margin: 0 0 0.75rem;
+    font-family: $font-family-monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba($dark, 0.55);
+
+    ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.45rem;
+
+        li + li::before {
+            content: "›";
+            margin-right: 0.45rem;
+            color: rgba($dark, 0.35);
+        }
+
+        li[aria-current="page"] {
+            color: $dark;
+            font-weight: 600;
+            text-transform: none;     // case-study title reads as proper-cased
+            letter-spacing: 0;
+            font-family: $font-family-sans-serif;
+        }
+    }
+
+    a {
+        color: rgba($dark, 0.55);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: color 0.15s ease, border-bottom-color 0.15s ease;
+        display: inline-flex;
+        align-items: center;
+
+        &:hover {
+            color: $dark;
+            border-bottom-color: rgba($brand-amber, 0.5);
+        }
+
+        i {
+            font-size: 0.95rem;       // FA icon a touch larger than caps height
+        }
+    }
+}
+
+
+/*=== Case studies index – search + theme chips above the tile grid ====*/
+// Renders on /case-studies above a `.navigation-tiles` grid (same
+// component as the guidance index, so the cards stay visually consistent
+// across sections). The JS handler in the include reads data-* attributes
+// on each .col wrapper to show/hide tiles.
+.cs-index {
+    margin: 0.5rem 0 3rem;
+
+    &__controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    &__search {
+        position: relative;
+        flex: 1 1 280px;
+        max-width: 420px;
+
+        &-icon {
+            position: absolute;
+            left: 0.85rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba($dark, 0.5);
+            pointer-events: none;
+        }
+
+        &-input {
+            width: 100%;
+            padding: 0.55rem 1rem 0.55rem 2.4rem;
+            font-family: $font-family-sans-serif;
+            font-size: 0.95rem;
+            color: $dark;
+            background: $brand-paper;
+            border: 1px solid $brand-rule;
+            border-radius: 0.5rem;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+            &:focus {
+                outline: 0;
+                border-color: $brand-amber;
+                box-shadow: 0 0 0 3px rgba($brand-amber, 0.18);
+            }
+        }
+    }
+
+    &__reset {
+        font-family: $font-family-monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: $brand-brick-text;
+        background: transparent;
+        border: 1px solid rgba($brand-brick, 0.4);
+        border-radius: 999px;
+        padding: 0.4rem 0.85rem;
+        cursor: pointer;
+        transition: background-color 0.15s ease, border-color 0.15s ease;
+
+        &:hover {
+            background-color: rgba($brand-brick, 0.08);
+            border-color: $brand-brick;
+        }
+    }
+
+    &__chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        margin-bottom: 1rem;
+    }
+
+    &__count {
+        font-family: $font-family-monospace;
+        font-size: 0.78rem;
+        letter-spacing: 0.06em;
+        color: rgba($dark, 0.65);
+        margin: 0 0 1rem;
+
+        [data-cs-count] {
+            color: $dark;
+            font-weight: 600;
+        }
+    }
+
+    &__empty {
+        font-family: $font-family-sans-serif;
+        color: rgba($dark, 0.7);
+        background-color: rgba($brand-amber, 0.10);
+        border-radius: 0.5rem;
+        padding: 1rem 1.25rem;
+        margin: 1rem 0;
+    }
+
+    &__link-button {
+        background: transparent;
+        border: 0;
+        padding: 0;
+        color: $accent-color;
+        text-decoration: underline;
+        cursor: pointer;
+        font: inherit;
+
+        &:hover { color: $brand-brick; }
+    }
+
+    // Hide filtered tiles – Bootstrap's .col has display:flex on grids,
+    // which can override the [hidden] default. Be explicit.
+    &__grid > .col[hidden] { display: none !important; }
+}
+
+.cs-chip {
+    font-family: $font-family-monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+    color: $dark;
+    background-color: $brand-paper;
+    border: 1px solid rgba($dark, 0.25);
+    border-radius: 999px;
+    padding: 0.32rem 0.85rem;
+    cursor: pointer;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+
+    &:hover {
+        background-color: rgba($brand-amber, 0.10);
+        border-color: rgba($brand-amber, 0.7);
+    }
+
+    &.is-active {
+        color: $dark;
+        background-color: rgba($brand-amber, 0.30);
+        border-color: $brand-amber;
+        font-weight: 600;
+    }
+}

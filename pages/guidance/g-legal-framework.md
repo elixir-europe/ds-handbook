@@ -3,7 +3,7 @@ title: Legal framework for research data
 description: How to create a legal framework for research data
 contributors: [Heleri Inno, Rudolf Vohnout, Hana Marčetić, Aina Jene, Wolmar Nyberg Åkerström, Jana Martínková, Aída Moure Fernández, Mijke Jetten]
 page_id: g-legal-framework
-type: [Guidance]
+type: Guidance
 ---
 ## Context
 [Collins dictionary](https://www.collinsdictionary.com/dictionary/english/legal-framework#google_vignette) defines legal framework as “a particular set of rules, ideas, or beliefs which you use in order to deal with problems or to decide what to do”. In the context of data stewardship and research data management, this topic covers the laws, regulations, national and institutional policies that govern how research data is handled throughout the research project. This includes crucial areas like data protection (e.g., GDPR), intellectual property, data sharing protocols and ethical considerations. Although information security, data protection (e.g., GDPR) and ethics are their own topics in this handbook, this section will briefly cover these since they all fall under the general legal framework. 
@@ -21,7 +21,7 @@ Awareness of these legal obligations, covering data protection, intellectual pro
 
 **✔ Clarify the data steward’s role in relation to legal topics**
 
-Data stewards play a supporting role — not as legal experts, but as facilitators who help researchers identify risks and connect them with the appropriate institutional experts. Data stewards bridge the gap between legal experts and researchers, translating between different vocabularies, workflows and expectations. Their role is to describe the legal process to researchers, in collaboration with the legal department, and facilitate a two-way exchange of information. Ensure that these responsibilities are documented within institutional RDM policies and communicated consistently across departments.
+Data stewards play a supporting role – not as legal experts, but as facilitators who help researchers identify risks and connect them with the appropriate institutional experts. Data stewards bridge the gap between legal experts and researchers, translating between different vocabularies, workflows and expectations. Their role is to describe the legal process to researchers, in collaboration with the legal department, and facilitate a two-way exchange of information. Ensure that these responsibilities are documented within institutional RDM policies and communicated consistently across departments.
 
 * Introduce the data steward role during researcher onboarding or department meetings: explain that you are (in most cases) the *first point of contact* for general RDM-related legal questions.  
 * Publish a one-page overview of what the data steward can help with (e.g. general awareness, referrals, compliance checks).  
@@ -32,7 +32,7 @@ Data stewards play a supporting role — not as legal experts, but as facilitato
 
 Relevant links: 
 
-* EOSC-Pillar: Legal Compliance Guidelines for Researchers — Checklist [https://doi.org/10.5281/zenodo.6327668](https://doi.org/10.5281/zenodo.6327668)  
+* EOSC-Pillar: Legal Compliance Guidelines for Researchers – Checklist [https://doi.org/10.5281/zenodo.6327668](https://doi.org/10.5281/zenodo.6327668)  
 * EU Commission: GDPR Decision Tree (Ethics / Data Protection) [https://ec.europa.eu/assets/rtd/ethics-data-protection-decision-tree/index.html](https://ec.europa.eu/assets/rtd/ethics-data-protection-decision-tree/index.html) 
 
 **2. Provide accessible and consistent procedures**
@@ -49,7 +49,7 @@ Simplify legal decision-making with structured and visual resources to help rese
 
 Relevant links: 
 
-* EOSC-Pillar: Legal Compliance Guidelines for Researchers — Checklist [https://doi.org/10.5281/zenodo.6327668](https://doi.org/10.5281/zenodo.6327668) 
+* EOSC-Pillar: Legal Compliance Guidelines for Researchers – Checklist [https://doi.org/10.5281/zenodo.6327668](https://doi.org/10.5281/zenodo.6327668) 
 * EU Commission: GDPR Decision Tree (Ethics / Data Protection) [https://ec.europa.eu/assets/rtd/ethics-data-protection-decision-tree/index.html](https://ec.europa.eu/assets/rtd/ethics-data-protection-decision-tree/index.html)   
 * Research Data Management Decision Tree [https://doi.org/10.5281/zenodo.7190005](https://doi.org/10.5281/zenodo.7190005) 
 
@@ -63,7 +63,7 @@ Develop transparent, predictable systems for managing and tracking legal queries
 * Document these workflows institutionally and make them visible on the institution’s intranet or RDM pages.  
 * Use aggregated ticket data to identify recurring issues, update FAQs and improve future guidance.  
 * Schedule periodic coordination meetings between data stewards and legal representatives to review processes and address systemic bottlenecks.  
-* Use review outcomes to inform the next cycle of updates to policies, templates and training — closing the feedback loop.
+* Use review outcomes to inform the next cycle of updates to policies, templates and training – closing the feedback loop.
 
 **3. Tailor support to data types and disciplines**  
 Familiarise researchers with relevant legal requirements and recommend setting up dedicated task forces or work packages to address legal aspects of data management. Help research teams describe their data flows and system setups to early identify potential compliance gaps.

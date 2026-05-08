@@ -1,6 +1,6 @@
 ---
 title: Guidance
-page_img: "icons/icon-guidance.svg" 
+page_img: # none it doesnt't work
 ---
 
 

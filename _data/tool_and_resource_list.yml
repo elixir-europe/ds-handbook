@@ -1,0 +1,65 @@
+# Central registry of tools, templates, and external resources cited
+# across the handbook. Reference an entry from a page's frontmatter by
+# its `id`:
+#
+#     resources: [rdmkit, fair-cookbook, dsw]
+#
+# The page can also include inline (hash-form) entries for one-off
+# resources – see _TEMPLATE_case_study.md.
+#
+# Categories
+#   template          – downloadable artefact you'd reuse (DMP, SOP, slides)
+#   internal_resource – another page or asset inside this handbook
+#   external_resource – anything hosted outside the handbook
+#
+# Add new entries via PR. Keep descriptions one line.
+
+# --- ELIXIR resources -------------------------------------------------------
+- id: rdmkit
+  name: RDMkit
+  url: https://rdmkit.elixir-europe.org/
+  description: ELIXIR's researcher-facing research-data-management resource.
+  category: external_resource
+
+- id: fair-cookbook
+  name: FAIR Cookbook
+  url: https://faircookbook.elixir-europe.org/
+  description: Recipes for applying the FAIR principles in practice.
+  category: external_resource
+
+- id: dsw
+  name: Data Stewardship Wizard
+  url: https://ds-wizard.org/
+  description: Tool for creating data management plans.
+  category: external_resource
+
+- id: fairsharing
+  name: FAIRsharing
+  url: https://fairsharing.org/
+  description: Registry of standards, databases, and policies for research data.
+  category: external_resource
+
+- id: tess
+  name: TeSS
+  url: https://tess.elixir-europe.org/
+  description: ELIXIR's training portal – courses, materials, events.
+  category: external_resource
+
+# --- Sustainability + community partners -----------------------------------
+- id: ssi
+  name: Software Sustainability Institute
+  url: https://www.software.ac.uk/
+  description: UK national institute for research-software sustainability and community building.
+  category: external_resource
+
+- id: turing-way
+  name: The Turing Way
+  url: https://book.the-turing-way.org/
+  description: Open, community-driven handbook for reproducible, ethical, collaborative research.
+  category: external_resource
+
+- id: galaxy-training
+  name: Galaxy Training Network
+  url: https://training.galaxyproject.org/
+  description: Bioinformatics training resource hosting and disseminating community-built courses.
+  category: external_resource

@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/xeniaperezsitja/**)",
+      "Bash(bundle info *)",
+      "Read(//private/tmp/**)",
+      "Bash(bundle exec *)",
+      "Read(//private/var/folders/**)",
+      "Read(//tmp/etk-theme-inspect/_includes/**)",
+      "Read(//private/tmp/etk-theme-inspect/_includes/**)",
+      "Bash(grep -vE \"\\(deprecation|Sass @import|^\\\\s|^DEPRECATION|@import|/Users|^$|csv was loaded|To use retry|repetitive\\)\")",
+      "WebFetch(domain:www.bbc.com)",
+      "WebFetch(domain:alt-portfolio.framer.website)",
+      "WebFetch(domain:www.purposetalent.xyz)",
+      "Bash(grep -n 'color: $brand-sage[^-]\\\\|color: $secondary\\\\|color: $brand-amber[^-]' _sass/_custom_classes.scss)",
+      "Bash(grep -nE 'color:\\\\s*\\\\$brand-sage\\\\b|color:\\\\s*\\\\$brand-amber\\\\b|color:\\\\s*\\\\$secondary\\\\b' _sass/_custom_classes.scss)",
+      "Bash(grep -nE 'rgba\\\\\\(\\\\$dark, 0\\\\.5\\(0|5\\)?\\\\\\)' _sass/_custom_classes.scss)",
+      "Bash(grep -nE 'rgba\\\\\\(\\\\$dark, 0\\\\.\\(5|55|6\\)\\\\\\)' _sass/_custom_classes.scss)",
+      "Bash(grep -nE 'rgba\\\\\\(\\\\$dark,' _sass/_custom_classes.scss)",
+      "Bash(grep -oE \"navigation-tiles[^\\\\\"]{0,40}\" _site/maturity-model.html)"
+    ]
+  }
+}
