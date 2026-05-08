@@ -19,6 +19,12 @@ countries,outcome_status}.yml — keys in the frontmatter resolve to
 human-readable labels via Liquid `where` lookups.
 {%- endcomment -%}
 
+{%- comment -%}
+Breadcrumbs are rendered by `_includes/breadcrumb.html` (local override),
+which the parent `page` layout inserts above the H1 when
+`site.theme_variables.breadcrumb` is true.
+{%- endcomment -%}
+
 {%- assign cs = site.data.case_study -%}
 
 {%- assign has_card = false -%}

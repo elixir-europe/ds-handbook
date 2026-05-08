@@ -1,0 +1,142 @@
+{%- comment -%}
+Filterable + searchable case-studies index.
+
+Renders `.navigation-tiles` cards (the same component used by the
+guidance index) so the visual language stays consistent. A search box
+and a single inline strip of theme chips sit above the grid; data-*
+attributes on each .col wrapper drive the JS filter handler at the
+bottom.
+{%- endcomment -%}
+
+{%- assign cs = site.data.case_study -%}
+{%- assign cases = site.pages | where_exp: "p", "p.type contains 'Case Study'" | sort: "title" -%}
+
+<div class="cs-index">
+
+    <div class="cs-index__controls">
+        <div class="cs-index__search">
+            <label for="cs-search" class="visually-hidden">Search case studies</label>
+            <i class="fa-solid fa-magnifying-glass cs-index__search-icon" aria-hidden="true"></i>
+            <input type="search" id="cs-search" class="cs-index__search-input" placeholder="Search case studies…" autocomplete="off">
+        </div>
+        <button type="button" class="cs-index__reset" data-cs-reset hidden>
+            <i class="fa-solid fa-xmark me-1" aria-hidden="true"></i>Clear
+        </button>
+    </div>
+
+    <div class="cs-index__chips" role="group" aria-label="Filter by theme">
+        {%- for t in cs.themes -%}
+        <button type="button" class="cs-chip" data-cs-filter="themes" data-cs-value="{{ t.key }}" title="{{ t.description | escape }}">{{ t.label }}</button>
+        {%- endfor -%}
+    </div>
+
+    <p class="cs-index__count" aria-live="polite"><span data-cs-count>{{ cases.size }}</span> case stud{% if cases.size == 1 %}y{% else %}ies{% endif %}</p>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 navigation-tiles tone--campfires cs-index__grid">
+        {%- for p in cases -%}
+        {%- assign country_obj = cs.countries | where: "key", p.country | first -%}
+        {%- capture themes_csv -%}{%- for t in p.themes -%}{{ t }}{%- unless forloop.last %},{%- endunless %}{%- endfor -%}{%- endcapture -%}
+        {%- capture search_blob -%}{{ p.title | downcase }} {{ p.description | downcase }} {{ p.lead_org | downcase }} {{ country_obj.label | downcase }}{%- endcapture -%}
+
+        <div class="col"
+             data-cs-tile
+             data-themes="{{ themes_csv }}"
+             data-scale="{{ p.scale }}"
+             data-country="{{ p.country }}"
+             data-status="{{ p.status }}"
+             data-search="{{ search_blob | strip_newlines | strip }}">
+            <div class="card h-100 tone--campfires">
+                <div class="card-body d-flex flex-column">
+                    <div class="card-type"><small>Campfire</small></div>
+                    <a class="stretched-link section-title" aria-label="Go to {{ p.title }}" href="{{ p.url | relative_url }}">
+                        <b>{{ p.title }}</b>
+                    </a>
+                    {%- if p.description -%}
+                    <p class="card-text">{{ p.description | truncate: 200 }}</p>
+                    {%- endif -%}
+                </div>
+            </div>
+        </div>
+        {%- endfor -%}
+    </div>
+
+    <p class="cs-index__empty" data-cs-empty hidden>No case studies match these filters yet. Try widening your selection, or <button type="button" class="cs-index__link-button" data-cs-reset-inline>clear all filters</button>.</p>
+
+</div>
+
+<script>
+(function () {
+    var grid = document.querySelector('.cs-index');
+    if (!grid) return;
+
+    var search = grid.querySelector('#cs-search');
+    var chips = grid.querySelectorAll('.cs-chip');
+    var tiles = grid.querySelectorAll('[data-cs-tile]');
+    var counter = grid.querySelector('[data-cs-count]');
+    var emptyMsg = grid.querySelector('[data-cs-empty]');
+    var resetBtns = grid.querySelectorAll('[data-cs-reset], [data-cs-reset-inline]');
+
+    var active = { themes: [] };
+    var query = '';
+
+    function applyFilters() {
+        var visible = 0;
+        tiles.forEach(function (tile) {
+            var ok = true;
+
+            if (active.themes.length) {
+                var raw = tile.getAttribute('data-themes') || '';
+                var tileThemes = raw.split(',').filter(Boolean);
+                var match = active.themes.some(function (v) { return tileThemes.indexOf(v) !== -1; });
+                if (!match) ok = false;
+            }
+
+            if (ok && query) {
+                var hay = tile.getAttribute('data-search') || '';
+                if (hay.indexOf(query) === -1) ok = false;
+            }
+
+            tile.hidden = !ok;
+            if (ok) visible++;
+        });
+
+        if (counter) counter.textContent = visible;
+        if (emptyMsg) emptyMsg.hidden = visible !== 0;
+
+        var anyFilter = query || active.themes.length;
+        resetBtns.forEach(function (b) { b.hidden = !anyFilter; });
+    }
+
+    chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+            var value = chip.dataset.csValue;
+            var idx = active.themes.indexOf(value);
+            if (idx === -1) {
+                active.themes.push(value);
+                chip.classList.add('is-active');
+            } else {
+                active.themes.splice(idx, 1);
+                chip.classList.remove('is-active');
+            }
+            applyFilters();
+        });
+    });
+
+    if (search) {
+        search.addEventListener('input', function () {
+            query = search.value.trim().toLowerCase();
+            applyFilters();
+        });
+    }
+
+    resetBtns.forEach(function (b) {
+        b.addEventListener('click', function () {
+            query = '';
+            if (search) search.value = '';
+            active.themes = [];
+            chips.forEach(function (c) { c.classList.remove('is-active'); });
+            applyFilters();
+        });
+    });
+})();
+</script>

@@ -2348,15 +2348,34 @@ nav#breadcrumb {
 
 /*=== Page metadata tabs (Contributors / Citation / etc.) ==============*/
 .page-metadata {
-    background-color: $brand-paper !important;
-    border: 1px solid $brand-rule;
-    border-radius: 0.5rem;
-    padding: 1.5rem !important;
-    margin-top: 3rem !important;
+    // Editorial-quiet: no card, no fill. A scribble-divider above marks
+    // the break from the related-pages block; the tab-row border below
+    // anchors the tab labels.
+    position: relative;
+    background-color: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    padding: 1.5rem 0 0 !important;
+    margin-top: 4rem !important;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -2.25rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 14rem;
+        height: 0.75rem;
+        background-image: url("#{$squiggle-sage}");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+    }
 
     .nav-tabs {
-        border-bottom: 1px solid $brand-rule;
-        margin-bottom: 1.5rem !important;
+        border-bottom: 1px solid rgba($dark, 0.25);
+        margin-bottom: 1.25rem !important;
         gap: 0.25rem;
 
         .nav-link {
@@ -2365,12 +2384,12 @@ nav#breadcrumb {
             border-radius: 0;
             background: transparent !important;
             font-family: $font-family-monospace;
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 500;
             letter-spacing: 0.14em;
             text-transform: uppercase;
-            color: rgba($dark, 0.65) !important;
-            padding: 0.55rem 0.95rem !important;
+            color: rgba($dark, 0.55) !important;
+            padding: 0.45rem 0.5rem !important;
             transition: color 0.15s ease, border-bottom-color 0.15s ease;
 
             i { margin-right: 0.35rem; font-size: 0.85rem; }
@@ -2391,7 +2410,8 @@ nav#breadcrumb {
 
     .tab-pane {
         font-family: $font-family-sans-serif;
-        font-size: 0.95rem;
+        font-size: 0.92rem;
+        color: rgba($dark, 0.85);
     }
 }
 
@@ -2758,6 +2778,12 @@ nav#breadcrumb {
         line-height: 1.4;
     }
 
+    &__sep {
+        display: inline-block;
+        margin: 0 0.55rem;
+        color: rgba($dark, 0.4);
+    }
+
     &__partners {
         font-family: $font-family-sans-serif;
         font-size: 0.8rem;
@@ -3011,5 +3037,204 @@ nav#breadcrumb {
         --tile-tone:      #{$brand-amber-text};
         --tile-tone-soft: #{rgba($brand-amber-soft, 0.45)};
         --tile-tone-rule: #{rgba($brand-amber, 0.6)};
+    }
+}
+
+
+/*=== Case study — breadcrumbs above the H1 ===========================*/
+// Rendered by _includes/breadcrumb.html (local override) inside the
+// theme's #intro div, BEFORE the page H1. Replaces the missing left
+// sidebar on case-study pages. Slim mono-uppercase row with a home icon
+// in slot 1.
+.case-study-breadcrumbs {
+    margin: 0 0 0.75rem;
+    font-family: $font-family-monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba($dark, 0.55);
+
+    ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.45rem;
+
+        li + li::before {
+            content: "›";
+            margin-right: 0.45rem;
+            color: rgba($dark, 0.35);
+        }
+
+        li[aria-current="page"] {
+            color: $dark;
+            font-weight: 600;
+            text-transform: none;     // case-study title reads as proper-cased
+            letter-spacing: 0;
+            font-family: $font-family-sans-serif;
+        }
+    }
+
+    a {
+        color: rgba($dark, 0.55);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: color 0.15s ease, border-bottom-color 0.15s ease;
+        display: inline-flex;
+        align-items: center;
+
+        &:hover {
+            color: $dark;
+            border-bottom-color: rgba($brand-amber, 0.5);
+        }
+
+        i {
+            font-size: 0.95rem;       // FA icon a touch larger than caps height
+        }
+    }
+}
+
+
+/*=== Case studies index — search + theme chips above the tile grid ====*/
+// Renders on /case-studies above a `.navigation-tiles` grid (same
+// component as the guidance index, so the cards stay visually consistent
+// across sections). The JS handler in the include reads data-* attributes
+// on each .col wrapper to show/hide tiles.
+.cs-index {
+    margin: 0.5rem 0 3rem;
+
+    &__controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    &__search {
+        position: relative;
+        flex: 1 1 280px;
+        max-width: 420px;
+
+        &-icon {
+            position: absolute;
+            left: 0.85rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba($dark, 0.5);
+            pointer-events: none;
+        }
+
+        &-input {
+            width: 100%;
+            padding: 0.55rem 1rem 0.55rem 2.4rem;
+            font-family: $font-family-sans-serif;
+            font-size: 0.95rem;
+            color: $dark;
+            background: $brand-paper;
+            border: 1px solid $brand-rule;
+            border-radius: 0.5rem;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+            &:focus {
+                outline: 0;
+                border-color: $brand-amber;
+                box-shadow: 0 0 0 3px rgba($brand-amber, 0.18);
+            }
+        }
+    }
+
+    &__reset {
+        font-family: $font-family-monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: $brand-brick-text;
+        background: transparent;
+        border: 1px solid rgba($brand-brick, 0.4);
+        border-radius: 999px;
+        padding: 0.4rem 0.85rem;
+        cursor: pointer;
+        transition: background-color 0.15s ease, border-color 0.15s ease;
+
+        &:hover {
+            background-color: rgba($brand-brick, 0.08);
+            border-color: $brand-brick;
+        }
+    }
+
+    &__chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        margin-bottom: 1rem;
+    }
+
+    &__count {
+        font-family: $font-family-monospace;
+        font-size: 0.78rem;
+        letter-spacing: 0.06em;
+        color: rgba($dark, 0.65);
+        margin: 0 0 1rem;
+
+        [data-cs-count] {
+            color: $dark;
+            font-weight: 600;
+        }
+    }
+
+    &__empty {
+        font-family: $font-family-sans-serif;
+        color: rgba($dark, 0.7);
+        background-color: rgba($brand-amber, 0.10);
+        border-radius: 0.5rem;
+        padding: 1rem 1.25rem;
+        margin: 1rem 0;
+    }
+
+    &__link-button {
+        background: transparent;
+        border: 0;
+        padding: 0;
+        color: $accent-color;
+        text-decoration: underline;
+        cursor: pointer;
+        font: inherit;
+
+        &:hover { color: $brand-brick; }
+    }
+
+    // Hide filtered tiles — Bootstrap's .col has display:flex on grids,
+    // which can override the [hidden] default. Be explicit.
+    &__grid > .col[hidden] { display: none !important; }
+}
+
+.cs-chip {
+    font-family: $font-family-monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+    color: $dark;
+    background-color: $brand-paper;
+    border: 1px solid rgba($dark, 0.25);
+    border-radius: 999px;
+    padding: 0.32rem 0.85rem;
+    cursor: pointer;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+
+    &:hover {
+        background-color: rgba($brand-amber, 0.10);
+        border-color: rgba($brand-amber, 0.7);
+    }
+
+    &.is-active {
+        color: $dark;
+        background-color: rgba($brand-amber, 0.30);
+        border-color: $brand-amber;
+        font-weight: 600;
     }
 }

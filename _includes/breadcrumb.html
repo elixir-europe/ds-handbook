@@ -1,0 +1,23 @@
+{%- comment -%}
+Local override of the theme include. The theme renders this *before*
+the H1 inside `_layouts/page.html` whenever `site.theme_variables.breadcrumb`
+is true, so this is the right hook to put a breadcrumb above the title.
+
+We only render breadcrumbs on case-study pages today (sidebar removed
+on those, so a breadcrumb gives the reader context). Other layouts get
+nothing.
+{%- endcomment -%}
+
+{%- if page.layout == "case-study" -%}
+<nav class="case-study-breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+        <li>
+            <a href="{{ '/' | relative_url }}" aria-label="Home">
+                <i class="fa-solid fa-house" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li><a href="{{ '/case-studies' | relative_url }}">Case studies</a></li>
+        <li aria-current="page">{{ page.title }}</li>
+    </ol>
+</nav>
+{%- endif -%}
