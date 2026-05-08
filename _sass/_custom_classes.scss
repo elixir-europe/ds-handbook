@@ -2443,11 +2443,12 @@ nav#breadcrumb {
 }
 
 
-/*=== Contributors roster ==============================================*/
-// Editorial replacement for the theme's contributor-tiles include. No
-// card surface – avatars + names sit directly on the cream page, with a
-// small mono affiliation when present. Filter pills above the grid hide
-// themselves until the YAML carries more than one role.
+/*=== Contributors roster — list layout, CRediT chips ==================*/
+// Renders /contributors as one row per person. Avatar on the left,
+// name + affiliation in the middle, links on the right. Each person's
+// row carries small mono-uppercase chips for every CRediT role they
+// hold (project-level + page-level, aggregated). Filter pills at the
+// top filter on those role chips.
 
 .contributor-filters {
     display: flex;
@@ -2459,63 +2460,77 @@ nav#breadcrumb {
         font-family: $font-family-monospace;
         font-size: 0.72rem;
         font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: rgba($dark, 0.65);
-        background: transparent;
-        border: 1px solid $brand-rule;
+        letter-spacing: 0.06em;
+        line-height: 1.4;
+        color: $dark;
+        background-color: $brand-paper;
+        border: 1px solid rgba($dark, 0.35);
         border-radius: 999px;
-        padding: 0.4rem 0.95rem;
+        padding: 0.32rem 0.85rem;
         cursor: pointer;
         transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
 
         &:hover {
-            color: $dark;
-            border-color: rgba($brand-amber, 0.5);
+            background-color: rgba($brand-amber, 0.10);
+            border-color: rgba($brand-amber, 0.7);
         }
 
         &.is-active {
             color: $dark;
-            background-color: rgba($brand-amber, 0.18);
+            background-color: rgba($brand-amber, 0.30);
             border-color: $brand-amber;
+            font-weight: 600;
         }
     }
 }
 
 .contributor-roster {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 1.75rem 1rem;
     list-style: none;
     padding: 0;
-    margin: 0 0 2.5rem;
+    margin: 0 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 2.5rem;
+    row-gap: 1.75rem;
 
+    @include media-breakpoint-up(sm) { grid-template-columns: repeat(2, 1fr); }
+    @include media-breakpoint-up(lg) { grid-template-columns: repeat(3, 1fr); }
+    @include media-breakpoint-up(xl) { grid-template-columns: repeat(4, 1fr); }
+
+    // Each card is a tight vertical stack: avatar → name → affiliation
+    // → links. Affiliation is line-clamped to two lines so card heights
+    // stay consistent across the grid. A thin top rule anchors each
+    // card visually without making it feel like a box.
     &__item {
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 1rem 0 0;
+        border-top: 1px solid rgba($dark, 0.5) !important;
 
         &[hidden] { display: none; }
     }
 
-    &__link {
+    &__avatar-slot {
         display: block;
-        text-decoration: none !important;
-        color: $dark !important;
+        line-height: 0;
+        text-decoration: none;
+        margin-bottom: 0.5rem;
+        transition: transform 0.25s ease;
 
-        &:hover .contributor-roster__avatar { transform: scale(1.04); }
-        &:hover .contributor-roster__name    { color: $accent-color; }
+        &:hover {
+            transform: rotate(-2deg) translateY(-1px);
+        }
     }
-
-    &__link--static { cursor: default; }
 
     &__avatar {
         display: block;
-        width: 4.5rem;
-        height: 4.5rem;
-        margin: 0 auto 0.6rem;
+        width: 2.75rem;
+        height: 2.75rem;
         border-radius: 50%;
         background-color: rgba($dark, 0.06);
         object-fit: cover;
-        transition: transform 0.2s ease;
     }
 
     &__avatar--initial {
@@ -2523,20 +2538,19 @@ nav#breadcrumb {
         align-items: center;
         justify-content: center;
         font-family: $font-family-monospace;
-        font-size: 0.95rem;
+        font-size: 0.82rem;
         font-weight: 500;
         letter-spacing: 0.04em;
         color: rgba($dark, 0.65);
     }
 
     &__name {
-        display: block;
         font-family: $font-family-theme;
-        font-size: 0.95rem;
-        font-weight: 500;
+        font-size: 1rem;
+        font-weight: 600;
         line-height: 1.25;
         color: $dark;
-        transition: color 0.15s ease;
+        margin: 0;
     }
 
     &__affiliation {
@@ -2544,14 +2558,100 @@ nav#breadcrumb {
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
-        font-family: $font-family-monospace;
-        font-size: 0.65rem;
+        font-family: $font-family-sans-serif;
+        font-size: 0.82rem;
         font-weight: 400;
-        letter-spacing: 0.04em;
-        line-height: 1.35;
-        color: rgba($dark, 0.55);
-        margin: 0.35rem 0 0;
+        line-height: 1.4;
+        color: rgba($dark, 0.78);
+        margin: 0;
+        min-height: 2.3em;       // reserve 2 lines so empty cards still align
     }
+
+    &__links {
+        display: flex;
+        gap: 0.55rem;
+        font-size: 0.85rem;
+        margin: 0.15rem 0 0;
+        line-height: 1;
+
+        a {
+            color: rgba($dark, 0.45);
+            transition: color 0.15s ease;
+
+            &:hover { color: $accent-color; }
+        }
+    }
+}
+
+
+/*=== Per-page CRediT role sub-tabs (inside Contributors metadata tab) ==*/
+// Inside the page-metadata "Contributors" outer tab, sub-tabs split the
+// people by CRediT role. Quieter than the outer tab nav: smaller type,
+// no underline rule (we keep the outer tab's line as the section anchor).
+.nav-tabs--credit-roles {
+    border-bottom: 0;
+    gap: 0.15rem;
+    margin-bottom: 0.85rem !important;
+
+    .nav-link {
+        border: 0 !important;
+        border-bottom: 2px solid transparent !important;
+        background: transparent !important;
+        font-family: $font-family-monospace;
+        font-size: 0.66rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba($dark, 0.55) !important;
+        padding: 0.35rem 0.55rem !important;
+
+        &:hover {
+            color: $dark !important;
+            border-bottom-color: rgba($brand-amber, 0.4) !important;
+        }
+
+        &.active {
+            color: $dark !important;
+            border-bottom-color: $brand-amber !important;
+            background: transparent !important;
+            font-weight: 600;
+        }
+    }
+}
+
+.page-credit-role-label,
+.page-credit-role-link {
+    font-family: $font-family-monospace;
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: rgba($dark, 0.55);
+    margin: 0 0 0.6rem;
+
+    a {
+        color: rgba($dark, 0.55);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: color 0.15s ease, border-bottom-color 0.15s ease;
+
+        &:hover {
+            color: $dark;
+            border-bottom-color: rgba($brand-amber, 0.5);
+        }
+    }
+}
+
+.page-credit-role-link {
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: $font-family-sans-serif;
+    font-size: 0.78rem;
+    color: rgba($dark, 0.55);
+    margin-top: -0.25rem;
+
+    em { font-family: $font-family-theme; font-style: italic; }
+    i { font-size: 0.7rem; }
 }
 
 

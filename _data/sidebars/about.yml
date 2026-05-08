@@ -5,5 +5,7 @@ subitems:
     url: /style-guide
   - title: How to contribute
     url: /how-to-contribute
+  - title: Contributors
+    url: /contributors
   - title: Accessibility
     url: /accessibility

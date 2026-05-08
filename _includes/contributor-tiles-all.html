@@ -1,72 +1,218 @@
 {%- comment -%}
-Local override of the theme include. Renders contributors from
-_data/CONTRIBUTORS.yaml as an editorial roster (no card surface), with
-optional role-filter pills above the grid. Pills only render when more
-than one distinct role exists in the data – drop "role: maintainer" /
-"role: reviewer" entries into the YAML and the pills appear.
+Local override of the theme include. Renders /contributors as an
+editorial list-style roster — one row per person — with aggregated
+CRediT roles. Each person's role set is the union of:
+
+  • Project-level roles declared in _data/CONTRIBUTORS.yaml (their
+    `roles:` field), and
+  • Page-level roles taken across every page in the site (each page's
+    `contributors:` frontmatter, role-keyed or flat shorthand).
+
+The two writing keys (writing-original-draft + writing-review-editing)
+collapse to a single "Writing" chip on the roster — page metadata still
+keeps them distinct.
+
+Filter chips above the roster filter on the union of roles.
 {%- endcomment -%}
 
-{%- assign all_roles = "" | split: "" -%}
-{%- for entry in site.data.CONTRIBUTORS -%}
-  {%- assign role = entry[1].role | default: "contributor" -%}
-  {%- assign all_roles = all_roles | push: role -%}
+{%- assign credit_roles = site.data.credit_roles -%}
+{%- assign contributors_data = site.data.CONTRIBUTORS -%}
+
+{%- comment -%}
+Walk every page once, build a string-encoded "page contributions" list:
+each page contributes "<name>|<role-key>" tokens. We then turn that into
+per-person role lists via simple Liquid string filtering — Liquid
+doesn't have nested mutable maps, so we build a flat token stream and
+extract from it per person.
+{%- endcomment -%}
+{%- assign page_role_tokens = "" -%}
+{%- for p in site.pages -%}
+  {%- if p.contributors -%}
+    {%- comment -%}Detect role-keyed (hash) form.{%- endcomment -%}
+    {%- assign page_is_keyed = false -%}
+    {%- for role in credit_roles -%}
+      {%- if p.contributors[role.key] and p.contributors[role.key].size > 0 -%}
+        {%- assign page_is_keyed = true -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if page_is_keyed -%}
+      {%- for role in credit_roles -%}
+        {%- assign names = p.contributors[role.key] -%}
+        {%- if names -%}
+          {%- for n in names -%}
+            {%- assign page_role_tokens = page_role_tokens | append: " " | append: n | append: "|" | append: role.key -%}
+          {%- endfor -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- elsif p.contributors.size > 0 -%}
+      {%- for n in p.contributors -%}
+        {%- assign page_role_tokens = page_role_tokens | append: " " | append: n | append: "|writing-original-draft" -%}
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endif -%}
 {%- endfor -%}
-{%- assign unique_roles = all_roles | uniq | sort -%}
 
-{%- if unique_roles.size > 1 -%}
-<div class="contributor-filters" role="group" aria-label="Filter contributors by role">
-  <button type="button" class="contributor-filter is-active" data-filter="all">All</button>
-  {%- for role in unique_roles -%}
-  <button type="button" class="contributor-filter" data-filter="{{ role }}">{{ role | capitalize }}</button>
-  {%- endfor -%}
-</div>
-{%- endif -%}
-
-<ul class="contributor-roster" role="list">
-  {%- for entry in site.data.CONTRIBUTORS -%}
-  {%- assign name = entry[0] -%}
+{%- comment -%}
+Compute the unique short-label set actually present in the roster, so
+the filter strip only shows roles that are real on this site.
+{%- endcomment -%}
+{%- assign present_shorts = "" | split: "" -%}
+{%- for entry in contributors_data -%}
   {%- assign data = entry[1] -%}
-  {%- assign role = data.role | default: "contributor" -%}
-  {%- assign words = name | split: " " -%}
-  {%- assign initials = "" -%}
-  {%- for w in words limit: 3 -%}
-    {%- assign first = w | slice: 0, 1 | upcase -%}
-    {%- assign initials = initials | append: first -%}
-  {%- endfor -%}
-  <li class="contributor-roster__item" data-role="{{ role }}">
-    {%- if data.git -%}
-    <a class="contributor-roster__link" href="https://github.com/{{ data.git }}" rel="noopener">
-      <img class="contributor-roster__avatar" src="https://avatars.githubusercontent.com/{{ data.git }}" alt="" loading="lazy">
-      <span class="contributor-roster__name">{{ name }}</span>
-    </a>
-    {%- else -%}
-    <div class="contributor-roster__link contributor-roster__link--static">
-      <span class="contributor-roster__avatar contributor-roster__avatar--initial" aria-hidden="true">{{ initials }}</span>
-      <span class="contributor-roster__name">{{ name }}</span>
+  {%- if data.roles -%}
+    {%- for rkey in data.roles -%}
+      {%- assign role_obj = credit_roles | where: "key", rkey | first -%}
+      {%- if role_obj and role_obj.short -%}
+        {%- unless present_shorts contains role_obj.short -%}
+          {%- assign present_shorts = present_shorts | push: role_obj.short -%}
+        {%- endunless -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+  {%- assign name = entry[0] -%}
+  {%- assign needle = " " | append: name | append: "|" -%}
+  {%- if page_role_tokens contains needle -%}
+    {%- for role in credit_roles -%}
+      {%- assign target = " " | append: name | append: "|" | append: role.key -%}
+      {%- if page_role_tokens contains target -%}
+        {%- unless present_shorts contains role.short -%}
+          {%- assign present_shorts = present_shorts | push: role.short -%}
+        {%- endunless -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign present_shorts = present_shorts | uniq | sort -%}
+
+<div class="contributor-roster-wrap">
+
+    {%- if present_shorts.size > 1 -%}
+    <div class="contributor-filters" role="group" aria-label="Filter by role">
+        <button type="button" class="contributor-filter is-active" data-filter="all">All</button>
+        {%- for short in present_shorts -%}
+        <button type="button" class="contributor-filter" data-filter="{{ short | slugify }}">{{ short }}</button>
+        {%- endfor -%}
     </div>
     {%- endif -%}
-    {%- if data.affiliation -%}
-    <span class="contributor-roster__affiliation">{{ data.affiliation }}</span>
-    {%- endif -%}
-  </li>
-  {%- endfor -%}
-</ul>
 
-{%- if unique_roles.size > 1 -%}
+    <ul class="contributor-roster" role="list">
+        {%- for entry in contributors_data -%}
+        {%- assign name = entry[0] -%}
+        {%- assign data = entry[1] -%}
+
+        {%- comment -%}Build the union of project-level + page-level role keys for this person.{%- endcomment -%}
+        {%- assign role_keys = "" | split: "" -%}
+        {%- if data.roles -%}
+          {%- for rkey in data.roles -%}
+            {%- unless role_keys contains rkey -%}
+              {%- assign role_keys = role_keys | push: rkey -%}
+            {%- endunless -%}
+          {%- endfor -%}
+        {%- endif -%}
+
+        {%- assign needle = " " | append: name | append: "|" -%}
+        {%- if page_role_tokens contains needle -%}
+          {%- for role in credit_roles -%}
+            {%- assign target = " " | append: name | append: "|" | append: role.key -%}
+            {%- if page_role_tokens contains target -%}
+              {%- unless role_keys contains role.key -%}
+                {%- assign role_keys = role_keys | push: role.key -%}
+              {%- endunless -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+
+        {%- comment -%}
+        Roles are not auto-assigned. A person ends up with no role keys
+        if they have no explicit `roles:` in CONTRIBUTORS.yaml AND don't
+        appear in any page's frontmatter — they'll show under "All" but
+        not match any specific role filter.
+        {%- endcomment -%}
+
+        {%- comment -%}Resolve to short labels (collapses both writing keys → "Writing"), dedupe.{%- endcomment -%}
+        {%- assign short_labels = "" | split: "" -%}
+        {%- for rkey in role_keys -%}
+          {%- assign role_obj = credit_roles | where: "key", rkey | first -%}
+          {%- if role_obj -%}
+            {%- unless short_labels contains role_obj.short -%}
+              {%- assign short_labels = short_labels | push: role_obj.short -%}
+            {%- endunless -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- comment -%}
+        Build a "role-X role-Y" class string. The for-loop tags below
+        deliberately use no minus signs, so the leading space of
+        " role-" is preserved — stripping it concatenates the classes
+        into one giant invalid class name.
+        {%- endcomment -%}
+        {%- capture filter_classes %}{% for s in short_labels %} role-{{ s | slugify }}{% endfor %}{%- endcapture -%}
+        {%- assign words = name | split: " " -%}
+        {%- assign initials = "" -%}
+        {%- for w in words limit: 3 -%}
+          {%- assign first = w | slice: 0, 1 | upcase -%}
+          {%- assign initials = initials | append: first -%}
+        {%- endfor -%}
+
+        <li class="contributor-roster__item{{ filter_classes }}" data-roles="{{ short_labels | join: '|' | downcase }}">
+            {%- if data.git -%}
+            <a class="contributor-roster__avatar-slot" href="https://github.com/{{ data.git }}" rel="noopener" aria-label="{{ name }} on GitHub">
+                <img class="contributor-roster__avatar" src="https://avatars.githubusercontent.com/{{ data.git }}" alt="" loading="lazy">
+            </a>
+            {%- else -%}
+            <span class="contributor-roster__avatar-slot" aria-hidden="true">
+                <span class="contributor-roster__avatar contributor-roster__avatar--initial">{{ initials }}</span>
+            </span>
+            {%- endif -%}
+
+            <p class="contributor-roster__name">{{ name }}</p>
+
+            {%- if data.affiliation -%}
+            <p class="contributor-roster__affiliation">{{ data.affiliation }}</p>
+            {%- else -%}
+            <p class="contributor-roster__affiliation" aria-hidden="true"></p>
+            {%- endif -%}
+
+            {%- if data.orcid or data.git -%}
+            <p class="contributor-roster__links">
+                {%- if data.orcid -%}
+                <a href="https://orcid.org/{{ data.orcid }}" rel="noopener" aria-label="{{ name }} on ORCID" title="ORCID iD">
+                    <i class="fa-brands fa-orcid" aria-hidden="true"></i>
+                </a>
+                {%- endif -%}
+                {%- if data.git -%}
+                <a href="https://github.com/{{ data.git }}" rel="noopener" aria-label="{{ name }} on GitHub" title="GitHub">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </a>
+                {%- endif -%}
+            </p>
+            {%- endif -%}
+        </li>
+        {%- endfor -%}
+    </ul>
+</div>
+
+{%- if present_shorts.size > 1 -%}
 <script>
 (function () {
-  var filters = document.querySelectorAll('.contributor-filter');
-  var items = document.querySelectorAll('.contributor-roster__item');
-  filters.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var f = btn.dataset.filter;
-      filters.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
-      items.forEach(function (it) {
-        var match = f === 'all' || it.dataset.role === f;
-        it.hidden = !match;
-      });
+    var filters = document.querySelectorAll('.contributor-filter');
+    var items = document.querySelectorAll('.contributor-roster__item');
+
+    filters.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var f = btn.dataset.filter;
+            filters.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+            items.forEach(function (it) {
+                if (f === 'all') {
+                    it.hidden = false;
+                } else {
+                    var roles = (it.dataset.roles || '').split('|');
+                    it.hidden = roles.indexOf(f) === -1;
+                }
+            });
+        });
     });
-  });
 })();
 </script>
 {%- endif -%}
