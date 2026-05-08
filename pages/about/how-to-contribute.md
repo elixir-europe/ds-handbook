@@ -153,22 +153,7 @@ For when something a colleague said deserves to stand on its own. Don't use it f
 
 Your readers can save any page to **the magpie's nest** (a browser-side reading list), and print the lot as a PDF. You don't need to do anything to enable it – every published chapter gets the bookmark button automatically.
 
-## Submitting a contribution
 
-We work on GitHub. The flow is the standard fork-and-PR:
-
-1. **Fork** the [Data Steward Handbook repository](https://github.com/elixir-europe/ds-handbook) on GitHub.
-2. **Clone** your fork locally and make a branch named after your contribution (e.g. `signpost/intake-meetings`).
-3. **Add yourself** to `_data/CONTRIBUTORS.yaml` if you're not already there.
-4. **Write your page** in the right folder:
-   - Signposts → `pages/guidance/`
-   - Campfires → `pages/case-studies/`
-   - About / meta → `pages/about/`
-5. **Add the right front matter** at the top of the file (see existing pages for examples – `title`, `type`, `description`, `contributors`, `page_id` are the minimum).
-6. **Open a Pull Request** against `main`. The site builds a preview automatically; you'll get a link in the PR comments.
-7. **Reviewers** will give feedback. Once two contributors approve, we merge.
-
-{% include callout.html type="note" content="If you're not comfortable with Git, [open an issue](https://github.com/elixir-europe/ds-handbook/issues) describing your contribution. Someone will help turn it into a PR with you." %}
 
 ## What's out of scope
 
@@ -183,11 +168,54 @@ Some things belong in sister projects:
 
 When in doubt, link to the existing resource and add the steward-specific context here.
 
+## Submitting a contribution
+
+We work on GitHub. The flow is the standard fork-and-PR:
+
+1. **Fork** the [Data Steward Handbook repository](https://github.com/elixir-europe/ds-handbook) on GitHub.
+2. **Add yourself** to `_data/CONTRIBUTORS.yaml` if you're not already there.
+3. **Write your page** in the right folder:
+   - Signposts → `pages/guidance/`
+   - Campfires → `pages/case-studies/`
+   - About / meta → `pages/about/`
+4. **Add the right front matter** at the top of the file (see existing pages for examples – `title`, `type`, `description`, `contributors`, `page_id` are the minimum).
+5. **Preview your changes** before opening the PR – two options, see below.
+6. **Open a Pull Request** against `main`. (GitHub will prompt you to name a branch when you commit, if you haven't already.)
+7. **Reviewers** will give feedback. Once two contributors approve, we merge.
+
+{% include callout.html type="note" content="If you're not comfortable with Git, [open an issue](https://github.com/elixir-europe/ds-handbook/issues) describing your contribution. Someone will help turn it into a PR with you." %}
+
+## Previewing your changes
+
+Two ways, depending on how comfortable you are with a terminal.
+
+### Option A – Preview on your fork (no local setup)
+
+If you'd rather not install Ruby/Jekyll, GitHub Pages can build the handbook for you directly from your fork.
+
+1. On your fork, go to **Settings → Pages**.
+2. Under *Build and deployment* set **Source: Deploy from a branch**, pick the branch you want to preview (e.g. `main`, or your working branch like `signpost/intake-meetings`) and `/ (root)`. Save.
+3. Wait a minute or two for the first build. Your preview lives at:
+   `https://YOUR-USERNAME.github.io/ds-handbook/`
+4. Edit pages directly in the GitHub web UI (pencil icon on any `.md` file) or push commits from a branch – the fork rebuilds automatically on every push.
+
+{% include callout.html type="tip" content="Builds typically take 30–90 seconds. If a build seems stuck or fails, check the **Actions** tab on your fork – the error message there usually points at the line that broke the build." %}
+
+### Option B – Run it locally
+
+If you've got Ruby and Bundler installed, you can run the site locally and see changes instantly:
+
+```sh
+bundle install
+bundle exec jekyll serve
+```
+
+The site is then at `http://localhost:4000`. Sass + Liquid changes hot-reload; theme assets come from the remote [ELIXIR Toolkit Theme](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme).
+
 ## Get help
 
 Stuck on the GitHub flow, the editorial voice, or the scope of your contribution? Reach out:
 
-- **Co-leads:** [Mijke Jetten](mailto:mijke.jetten@health-ri.nl) (ELIXIR-NL)
 - **GitHub issues:** [github.com/elixir-europe/ds-handbook/issues](https://github.com/elixir-europe/ds-handbook/issues)
 - **Editorial style guide:** [Style guide](/style-guide)
 

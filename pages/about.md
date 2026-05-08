@@ -1,7 +1,7 @@
 ---
 title: About this handbook
 description: A field handbook for the people side of data stewardship – what it is, who it's for, why we built it, and how to use it.
-contributors: [Xenia Perez Sitja]
+editor: [Xenia Perez Sitja]
 page_id: about
 ---
 
