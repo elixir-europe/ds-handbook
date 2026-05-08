@@ -3046,6 +3046,26 @@ nav#breadcrumb {
 // theme's #intro div, BEFORE the page H1. Replaces the missing left
 // sidebar on case-study pages. Slim mono-uppercase row with a home icon
 // in slot 1.
+/*=== Page edit / report-issue / history buttons ======================*/
+// The theme's github-buttons.html include uses Bootstrap's `text-primary`
+// utility, which maps to $brand-spring (mint) — invisible on cream.
+// Override with the dark ink + amber hover so the icons read clearly.
+#edit-me {
+    .btn.text-primary,
+    a.text-primary {
+        color: rgba($dark, 0.65) !important;
+        border: 1px solid transparent;
+        transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+
+        &:hover, &:focus {
+            color: $dark !important;
+            background-color: rgba($brand-amber, 0.15) !important;
+            border-color: rgba($brand-amber, 0.45) !important;
+        }
+    }
+}
+
+
 .case-study-breadcrumbs {
     margin: 0 0 0.75rem;
     font-family: $font-family-monospace;
