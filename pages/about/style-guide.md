@@ -1,7 +1,7 @@
 ---
 title: Style guide
 description: How the Data Stewardship Handbook reads, looks, and behaves – voice, typography, palette, components, accessibility.
-contributors: [Xenia Perez Sitja, Marina Popleteeva, Helena Schnitzer, Bojan Kverh, Flavio Licciulli, Carmen Reverté, Diana Pilvar]
+contributors: [Xenia Perez Sitja]
 page_id: style_guide
 ---
 
@@ -28,7 +28,7 @@ Five rules of thumb:
 ## Language
 
 - **British English.** Colour, organise, behaviour, programme.
-- **Short sentences and short paragraphs.** 3–4 sentences per paragraph as a rule of thumb.
+- **Short sentences and short paragraphs.** 3-4 sentences per paragraph as a rule of thumb.
 - **Active voice.** *"We send the consent form to the PI"* – not *"The consent form is sent to the PI"*.
 - **No jargon without unpacking.** First mention of a term gets a quick definition or a link. *"…the [DMP (data management plan)](https://rdmkit.elixir-europe.org/data_management_plan) we wrote in 2023…"*.
 - **Don't capitalise role titles** unless they're proper nouns. *"data steward"*, not *"Data Steward"*.
@@ -55,7 +55,7 @@ The handbook runs on four fonts. Each one earns its keep:
 | **JetBrains Mono** | Data accents | Code, page IDs, mono labels, eyebrows, breadcrumbs |
 | **Caveat** | Marginalia | Taglines, callout type labels, the magpie's voice, footer headline |
 
-You don't choose the font as a writer – pages render in the right font automatically. But understanding the system helps when you write copy *for* a specific role (e.g. a Caveat-style aside reads as the magpie's voice; mono labels read as data).
+You don't choose the font as a writer – pages render in the right font automatically. But understanding the system helps when you write copy for a specific role (e.g. a Caveat-style aside reads as the magpie's voice; mono labels read as data).
 
 ## Colour palette
 
@@ -86,7 +86,7 @@ Surface colours (sage, amber, brick at full saturation) **don't pass WCAG AA con
 
 ## The three landmarks
 
-The handbook is organised into three landmarks. Each has its own colour identity. Use the matching tone when writing about that section:
+The handbook is organised into three landmarks. Each has its own colour identity. We use the matching tone when writing about that section. This is automatically embedded in the tempaltes but you may consider this for images and other items. 
 
 | Landmark | Section | Tone colour | Where you'd write |
 |---|---|---|---|
@@ -104,7 +104,7 @@ The magpie is the handbook's mascot – observant, curious, a careful collector.
 - **`warning`** – actual harm risk
 - **`magpie`** – generic mascot voice
 
-{% include callout.html type="magpie" content="The magpie should appear when an aside genuinely helps. A page with one callout reads like a chapter; a page with eight reads like an alarm system." %}
+{% include callout.html type="magpie" content="The magpie should appear when an aside genuinely helps. A page with 1-3 callouts reads like a chapter; a page with eight reads like an alarm system." %}
 
 ## Accessibility
 
@@ -118,17 +118,17 @@ The magpie is the handbook's mascot – observant, curious, a careful collector.
 
 ## Reusable components
 
-For the full kit of editorial components (callouts, drop-cap, section-eyebrow, margin-note, pull-quote) with copy-pasteable code and rendered examples, see the [contributing guide](/how_to_contibute#reusable-components).
+For the full kit of editorial components (callouts, drop-cap, section-eyebrow, margin-note, pull-quote) with copy-pasteable code and rendered examples, see the [contributing guide](/how-to-contribute#reusable-components).
 
 ## Images and figures
 
-- **Diagrams** are encouraged – they often communicate faster than prose. Save them as SVG when possible.
+- **Diagrams** are encouraged – they often communicate faster than prose. Save them as SVG when possible. But remember that all content in the diagram should also be somewhere else in the text. They don't replace text; only help understand. 
 - **Screenshots** belong in case studies more than in signposts. Crop tight; don't include browser chrome unless it matters.
-- **No stock photography.** The handbook's identity is illustration + typography + the magpie. Stock photos break the voice.
+- **No stock photography.** The handbook's identity is illustration + typography + the magpie. Stock photos break the voice, tone and style.
 
 ## Linking out
 
-Be generous with links to sister projects:
+Be generous with links to sister projects, but ensure the links are added at the bottom of the page. Links across the entire page distract, they don't help. For example:
 
 - [RDMkit](https://rdmkit.elixir-europe.org/) – researcher-facing RDM
 - [FAIR Cookbook](https://faircookbook.elixir-europe.org/) – FAIR principle recipes
@@ -137,10 +137,10 @@ Be generous with links to sister projects:
 - [TeSS](https://tess.elixir-europe.org/) – training resources
 - [Turing Way](https://book.the-turing-way.org/) – handbook for reproducible research
 
-Always link to the most specific page, not just the homepage. Don't duplicate their content here.
+Add them all to the front matter, and always link to the most specific page, not just the homepage. **Don't duplicate their content here**.
 
 ## When in doubt
 
-- Read three or four existing chapters before writing yours. The voice will rub off.
+- Read two or three existing chapters before writing yours. The voice will rub off.
 - Open a draft PR early – feedback is faster on a half-written page than on a polished one.
 - Ask in a [GitHub issue](https://github.com/elixir-europe/ds-handbook/issues) if you're not sure where something belongs.

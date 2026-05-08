@@ -2,7 +2,7 @@
 title: How to contribute
 description: A guide for adding signposts, campfires, and waypoints to the Data Stewardship Handbook.
 contributors: [Xenia Perez Sitja]
-page_id: how_to_contribute
+page_id: how-to-contribute
 ---
 
 <p class="section-eyebrow">§ FOR CONTRIBUTORS</p>
