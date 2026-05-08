@@ -3,11 +3,8 @@ title: <!-- Chapter title -->
 search_exclude: true
 description: <!---REPLACE THIS with a one sentence description of the chapter--->
 contributors: [<!---REPLACE THIS with comma separated list of contributors--->]
-page_id: <!---REPLACE THIS with a shortened page name. The shortened page name should be in lowercase and separated by underscore(s) if needed. For example, page_id of Community building will be community_building -->
+page_id: <!---REPLACE THIS with a shortened page name. The shortened page name should be in lowercase and separated by underscore(s) if needed. For example, page_id of Community building will be community-building, replicate this in the name of the file -->
 ---
-
-# [Topic]
-Last updated: [D Month, Year] <!-- Remove this??? -->
 
 <!-- Summary of the topic
 Pointers for writing this section:
@@ -57,7 +54,4 @@ Indication of length: between a half and one page.
 -->
 
 
-## Community examples
-
-### Example 1
 

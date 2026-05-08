@@ -1,0 +1,43 @@
+# Case-study problem categories. Used as filter chips on the
+# case-studies index and validated against the `themes:` frontmatter
+# field on each campfire. Add new entries as patterns emerge — keep the
+# list short (~10 max) so filtering stays useful.
+- key: training-gap
+  label: Training gap
+  description: Lack of formal training, onboarding or upskilling pathway.
+
+- key: unclear-roles
+  label: Unclear roles
+  description: Ambiguous responsibilities between teams, services, or institutions.
+
+- key: fragmented-coordination
+  label: Fragmented coordination
+  description: Multiple teams or units working in parallel without alignment.
+
+- key: policy-gap
+  label: Policy gap
+  description: Missing, outdated, or contradictory institutional policy.
+
+- key: tooling-gap
+  label: Tooling gap
+  description: Tools or services are missing, unfit for purpose, or unsupported.
+
+- key: stakeholder-engagement
+  label: Stakeholder engagement
+  description: Difficulty engaging researchers, leadership, or external partners.
+
+- key: legal-compliance
+  label: Legal & compliance
+  description: GDPR, ethics review, sensitive-data handling, IP or licensing.
+
+- key: sustainability
+  label: Sustainability
+  description: Funding, staffing, or long-term continuity of the work.
+
+- key: community-building
+  label: Community building
+  description: Networks of practice, peer-to-peer support, internal champions.
+
+- key: careers
+  label: Careers & recognition
+  description: Career pathways, role definition, formal recognition for data stewards.

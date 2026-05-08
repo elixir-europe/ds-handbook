@@ -33,6 +33,10 @@ Step-by-step practical guidance on something you do – *"how to set up an insti
 
 A case study from your institution. **Be specific** – readers want to know what your institution looks like, what you tried, what didn't work, and what you'd do differently. Generic advice goes in Signposts; **lived experience** goes here.
 
+There's a dedicated [case-study template](https://github.com/elixir-europe/ds-handbook/blob/main/pages/case-studies/_TEMPLATE_case_study.md) – copy it into `pages/case-studies/`, fill in the frontmatter, and the page renders an at-a-glance card automatically.
+
+{% include callout.html type="note" content="Some campfire frontmatter fields (scale, domain, themes, country, status) use a controlled vocabulary that lives in `_data/case_study/`. If your case needs a value that isn't listed yet – a new theme, a country we haven't had before – propose it in your PR by adding a line to the relevant YAML, rather than inventing one inline. That keeps filtering and counts consistent across the site." %}
+
 ### 🪶 Plant a Waypoint
 
 Propose or refine a maturity indicator. The maturity model lives in the [rdm-maturity-model](https://github.com/elixir-europe/rdm-maturity-model) repository – contributions there flow into this handbook automatically.

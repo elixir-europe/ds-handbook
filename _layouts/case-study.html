@@ -1,0 +1,147 @@
+---
+layout: page
+---
+
+{%- comment -%}
+Renders the at-a-glance card for a case study using its frontmatter.
+Vocabularies live in _data/case_study/{themes,scales,domains,outcome_status}.yml.
+The card sits between the H1/notebook button and the page body.
+{%- endcomment -%}
+
+{%- assign cs = site.data.case_study -%}
+{%- assign has_card = false -%}
+{%- if page.description or page.lead_org or page.scale or page.domain or page.start or page.themes or page.country or page.external_url -%}
+  {%- assign has_card = true -%}
+{%- endif -%}
+
+{%- if has_card -%}
+<aside class="case-study-card" aria-label="Case study at a glance">
+    {%- if page.description -%}
+    <p class="case-study-card__summary">{{ page.description }}</p>
+    {%- endif -%}
+
+    <dl class="case-study-card__facts">
+        {%- if page.lead_org or page.country -%}
+        <div class="case-study-card__fact">
+            <dt>Organisation</dt>
+            <dd>
+                {%- if page.lead_org %}{{ page.lead_org }}{%- endif -%}
+                {%- if page.country -%}
+                {%- assign country = cs.countries | where: "key", page.country | first -%}
+                {%- if country -%}{%- if page.lead_org %} · {%- endif -%}{{ country.label }}{%- endif -%}
+                {%- endif -%}
+                {%- if page.partners %} <span class="case-study-card__partners">with {{ page.partners | join: ", " }}</span>{%- endif -%}
+            </dd>
+        </div>
+        {%- endif -%}
+
+        {%- if page.scale -%}
+        {%- assign scale = cs.scales | where: "key", page.scale | first -%}
+        {%- if scale -%}
+        <div class="case-study-card__fact">
+            <dt>Scale</dt>
+            <dd>{{ scale.label }}</dd>
+        </div>
+        {%- endif -%}
+        {%- endif -%}
+
+        {%- if page.domain -%}
+        {%- assign domain = cs.domains | where: "key", page.domain | first -%}
+        {%- if domain -%}
+        <div class="case-study-card__fact">
+            <dt>Domain</dt>
+            <dd>{{ domain.label }}</dd>
+        </div>
+        {%- endif -%}
+        {%- endif -%}
+
+        {%- if page.start or page.status -%}
+        <div class="case-study-card__fact">
+            <dt>Status</dt>
+            <dd>
+                {%- if page.start %}Since {{ page.start }}{%- endif -%}
+                {%- if page.start and page.status %} · {%- endif -%}
+                {%- if page.status -%}
+                {%- assign status = cs.outcome_status | where: "key", page.status | first -%}
+                <span class="case-study-status case-study-status--{{ page.status }}">{{ status.label | default: page.status }}</span>
+                {%- endif -%}
+            </dd>
+        </div>
+        {%- endif -%}
+    </dl>
+
+    {%- if page.themes -%}
+    <ul class="case-study-card__themes" aria-label="Themes">
+        {%- for t in page.themes -%}
+        {%- assign theme = cs.themes | where: "key", t | first -%}
+        {%- if theme -%}
+        <li class="case-study-chip" title="{{ theme.description | escape }}">{{ theme.label }}</li>
+        {%- endif -%}
+        {%- endfor -%}
+    </ul>
+    {%- endif -%}
+
+    {%- if page.external_url -%}
+    <p class="case-study-card__link">
+        <a href="{{ page.external_url }}" target="_blank" rel="noopener">
+            {{ page.external_url_label | default: "Visit the activity page" }}
+            <span aria-hidden="true">↗</span>
+        </a>
+    </p>
+    {%- endif -%}
+</aside>
+{%- endif -%}
+
+{%- if page.lead_quote -%}
+<blockquote class="pull-quote case-study-lead-quote">
+    <p>{{ page.lead_quote }}</p>
+</blockquote>
+{%- endif -%}
+
+{{ content }}
+
+{%- if page.related_guidance or page.related_indicators -%}
+<hr class="scribble-divider" aria-hidden="true">
+
+<section class="case-study-relations" aria-label="Related pages">
+    {%- if page.related_guidance -%}
+    <div class="case-study-relations__group">
+        <p class="case-study-relations__eyebrow">§ Related signposts</p>
+        <ul>
+            {%- for pid in page.related_guidance -%}
+            {%- assign target = site.pages | where: "page_id", pid | first -%}
+            {%- if target -%}
+            <li>
+                <a href="{{ target.url | relative_url }}">
+                    <span class="case-study-relations__title">{{ target.title }}</span>
+                    {%- if target.description %}<span class="case-study-relations__desc">{{ target.description }}</span>{%- endif %}
+                </a>
+            </li>
+            {%- endif -%}
+            {%- endfor -%}
+        </ul>
+    </div>
+    {%- endif -%}
+
+    {%- if page.related_indicators -%}
+    <div class="case-study-relations__group">
+        <p class="case-study-relations__eyebrow">§ Maturity waypoints</p>
+        <ul>
+            {%- for pid in page.related_indicators -%}
+            {%- assign target = site.pages | where: "page_id", pid | first -%}
+            {%- if target -%}
+            <li>
+                <a href="{{ target.url | relative_url }}">
+                    <span class="case-study-relations__title">{{ target.title }}</span>
+                    {%- if target.description %}<span class="case-study-relations__desc">{{ target.description }}</span>{%- endif %}
+                </a>
+            </li>
+            {%- else -%}
+            <li class="case-study-relations__missing"><code>{{ pid }}</code></li>
+            {%- endif -%}
+            {%- endfor -%}
+        </ul>
+    </div>
+    {%- endif -%}
+</section>
+{%- endif -%}

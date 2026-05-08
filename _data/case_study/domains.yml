@@ -1,0 +1,17 @@
+# Discipline of origin — *not* who might benefit from reading. A case
+# study is "life sciences" if that's where it was developed, even if a
+# physical-science steward could adapt it.
+- key: life-sciences
+  label: Life sciences
+
+- key: physical-sciences
+  label: Physical sciences
+
+- key: humanities
+  label: Humanities & social sciences
+
+- key: cross-domain
+  label: Cross-domain
+
+- key: domain-agnostic
+  label: Domain-agnostic
