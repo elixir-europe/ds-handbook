@@ -51,7 +51,7 @@ defaults:
       path: "pages/about"
     values:
       sidebar: about
-  # Case studies — no left sidebar on the index or on individual case
+  # Case studies – no left sidebar on the index or on individual case
   # studies. Discovery happens on the index (filterable tiles + search);
   # case-study pages get breadcrumbs at the top of the case-study layout
   # instead, freeing the reading width for the campfire prose.

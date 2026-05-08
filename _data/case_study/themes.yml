@@ -1,6 +1,6 @@
 # Case-study problem categories. Used as filter chips on the
 # case-studies index and validated against the `themes:` frontmatter
-# field on each campfire. Add new entries as patterns emerge — keep the
+# field on each campfire. Add new entries as patterns emerge – keep the
 # list short (~10 max) so filtering stays useful.
 - key: training-gap
   label: Training gap

@@ -1,6 +1,6 @@
 {%- comment -%}
 Local override of the theme include. Renders /contributors as an
-editorial list-style roster — one row per person — with aggregated
+editorial list-style roster – one row per person – with aggregated
 CRediT roles. Each person's role set is the union of:
 
   • Project-level roles declared in _data/CONTRIBUTORS.yaml (their
@@ -9,7 +9,7 @@ CRediT roles. Each person's role set is the union of:
     `contributors:` frontmatter, role-keyed or flat shorthand).
 
 The two writing keys (writing-original-draft + writing-review-editing)
-collapse to a single "Writing" chip on the roster — page metadata still
+collapse to a single "Writing" chip on the roster – page metadata still
 keeps them distinct.
 
 Filter chips above the roster filter on the union of roles.
@@ -21,7 +21,7 @@ Filter chips above the roster filter on the union of roles.
 {%- comment -%}
 Walk every page once, build a string-encoded "page contributions" list:
 each page contributes "<name>|<role-key>" tokens. We then turn that into
-per-person role lists via simple Liquid string filtering — Liquid
+per-person role lists via simple Liquid string filtering – Liquid
 doesn't have nested mutable maps, so we build a flat token stream and
 extract from it per person.
 {%- endcomment -%}
@@ -126,7 +126,7 @@ the filter strip only shows roles that are real on this site.
         {%- comment -%}
         Roles are not auto-assigned. A person ends up with no role keys
         if they have no explicit `roles:` in CONTRIBUTORS.yaml AND don't
-        appear in any page's frontmatter — they'll show under "All" but
+        appear in any page's frontmatter – they'll show under "All" but
         not match any specific role filter.
         {%- endcomment -%}
 
@@ -144,7 +144,7 @@ the filter strip only shows roles that are real on this site.
         {%- comment -%}
         Build a "role-X role-Y" class string. The for-loop tags below
         deliberately use no minus signs, so the leading space of
-        " role-" is preserved — stripping it concatenates the classes
+        " role-" is preserved – stripping it concatenates the classes
         into one giant invalid class name.
         {%- endcomment -%}
         {%- capture filter_classes %}{% for s in short_labels %} role-{{ s | slugify }}{% endfor %}{%- endcapture -%}

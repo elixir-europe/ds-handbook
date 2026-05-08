@@ -2,14 +2,14 @@
 
 # Data Stewardship Handbook
 
-A community-built field handbook from the [ELIXIR Research Data Management Community](https://elixir-europe.org/communities/research-data-management) **for the people who help researchers manage their data** — data stewards, RDM officers, research librarians, lab data champions, anyone who does the work with or without the title.
+A community-built field handbook from the [ELIXIR Research Data Management Community](https://elixir-europe.org/communities/research-data-management) **for the people who help researchers manage their data** – data stewards, RDM officers, research librarians, lab data champions, anyone who does the work with or without the title.
 
 > Live site: <https://elixir-europe.github.io/ds-handbook/>
 > Full intro: see the [About page](https://elixir-europe.github.io/ds-handbook/about) for what this is, who it's for, and the trail metaphor.
 
 ## What this is (and isn't)
 
-Most RDM resources tell **researchers** how to manage their own data. This one is different — it's about the **people side** of data stewardship: what stewards actually do day-to-day, how to build the role into an institution, and what's worked elsewhere.
+Most RDM resources tell **researchers** how to manage their own data. This one is different – it's about the **people side** of data stewardship: what stewards actually do day-to-day, how to build the role into an institution, and what's worked elsewhere.
 
 | | We do | We don't |
 |---|---|---|
@@ -23,9 +23,9 @@ If you're a researcher, you want **[RDMkit](https://rdmkit.elixir-europe.org/)**
 
 The handbook is organised around three sections, each with its own colour identity:
 
-- **🪶 [Signposts](https://elixir-europe.github.io/ds-handbook/guidance) — Guidance.** Practical step-by-step advice (writing an RDM strategy, building support networks, navigating data protection).
-- **🪶 [Campfires](https://elixir-europe.github.io/ds-handbook/case-studies) — Case studies.** Real institutional stories: *"here's what we did, here's what worked, here's what we'd do differently"*.
-- **🪶 [Waypoints](https://elixir-europe.github.io/ds-handbook/maturity-model) — Maturity indicators.** A self-assessment framework for benchmarking your institution's RDM maturity.
+- **🪶 [Signposts](https://elixir-europe.github.io/ds-handbook/guidance) – Guidance.** Practical step-by-step advice (writing an RDM strategy, building support networks, navigating data protection).
+- **🪶 [Campfires](https://elixir-europe.github.io/ds-handbook/case-studies) – Case studies.** Real institutional stories: *"here's what we did, here's what worked, here's what we'd do differently"*.
+- **🪶 [Waypoints](https://elixir-europe.github.io/ds-handbook/maturity-model) – Maturity indicators.** A self-assessment framework for benchmarking your institution's RDM maturity.
 
 ## Contributing
 
@@ -33,7 +33,7 @@ The handbook is built openly by data stewards (plus a few designers and develope
 
 - Read **[How to contribute](https://elixir-europe.github.io/ds-handbook/how-to-contribute)** for the process, conventions, and how to preview your changes (with or without a local setup).
 - Skim the **[Style guide](https://elixir-europe.github.io/ds-handbook/style-guide)** for voice, palette, components.
-- File an [issue](https://github.com/elixir-europe/ds-handbook/issues) or open a draft PR — feedback is faster on a half-written page than a polished one.
+- File an [issue](https://github.com/elixir-europe/ds-handbook/issues) or open a draft PR – feedback is faster on a half-written page than a polished one.
 
 ## Licence and citation
 
@@ -46,4 +46,4 @@ To cite:
 
 ## Acknowledgements
 
-The handbook's visual identity, custom layouts, and Liquid extensions were iterated on in collaboration with [Claude Code](https://claude.com/claude-code) — Anthropic's CLI for Claude — alongside human design and editorial judgement.
+The handbook's visual identity, custom layouts, and Liquid extensions were iterated on in collaboration with [Claude Code](https://claude.com/claude-code) – Anthropic's CLI for Claude – alongside human design and editorial judgement.

@@ -1385,7 +1385,7 @@ section#search-section {
         display: block;
         margin-top: 0.4rem;
 
-        &::before { content: "— "; }
+        &::before { content: "– "; }
     }
 }
 
@@ -2058,7 +2058,7 @@ section#search-section {
         margin-bottom: 0.35rem;
 
         &::after {
-            content: " —";
+            content: " –";
             color: rgba($dark, 0.4);
             font-weight: 400;
         }
@@ -2443,7 +2443,7 @@ nav#breadcrumb {
 }
 
 
-/*=== Contributors roster — list layout, CRediT chips ==================*/
+/*=== Contributors roster – list layout, CRediT chips ==================*/
 // Renders /contributors as one row per person. Avatar on the left,
 // name + affiliation in the middle, links on the right. Each person's
 // row carries small mono-uppercase chips for every CRediT role they
@@ -2794,10 +2794,10 @@ nav#breadcrumb {
 }
 
 
-/*=== Case study (campfire) — tabbed metadata header ==================*/
+/*=== Case study (campfire) – tabbed metadata header ==================*/
 // Adapted from the ELITMa training-module pattern. Two tabs:
-//   • "At a glance" — fact fields with vertical rules + mono labels.
-//   • "Summary"     — description + lead_quote.
+//   • "At a glance" – fact fields with vertical rules + mono labels.
+//   • "Summary"     – description + lead_quote.
 // The bottom of the page has a resources table and related-pages tiles
 // (see further down). Vocab in _data/case_study/*.yml.
 .case-study-meta {
@@ -2967,9 +2967,9 @@ nav#breadcrumb {
     &--archived { background-color: $brand-rule; color: rgba($dark, 0.75); }
 }
 
-/*=== Case study — resources table =====================================*/
+/*=== Case study – resources table =====================================*/
 // Auto-rendered at the end of every case study where `resources:` is set
-// in frontmatter. Editorial table on cream — no heavy borders, mono
+// in frontmatter. Editorial table on cream – no heavy borders, mono
 // header eyebrow, brick links, paper row shading on hover.
 .case-study-resources {
     margin: 0.5rem 0 2.5rem;
@@ -3046,8 +3046,8 @@ nav#breadcrumb {
     &--external { background-color: $brand-rule;                  color: rgba($dark, 0.8); }
 }
 
-/*=== Case study — related pages (slim tone-aware tiles) ===============*/
-// Distinct from .navigation-tiles — these are reading-context pointers,
+/*=== Case study – related pages (slim tone-aware tiles) ===============*/
+// Distinct from .navigation-tiles – these are reading-context pointers,
 // not landing-page jumps. Smaller type, tighter padding, no flourish
 // animations, no counter, no backlight. Each tile carries a tone-coloured
 // type label (Signpost / Campfire / Waypoint) with the matching FA icon.
@@ -3120,7 +3120,7 @@ nav#breadcrumb {
         color: rgba($dark, 0.7);
     }
 
-    // Per-landmark tones — match the door + tile-flourish vocabulary
+    // Per-landmark tones – match the door + tile-flourish vocabulary
     &--signposts {
         --tile-tone:      #{$brand-sage-text};
         --tile-tone-soft: #{rgba($brand-spring, 0.30)};
@@ -3141,14 +3141,14 @@ nav#breadcrumb {
 }
 
 
-/*=== Case study — breadcrumbs above the H1 ===========================*/
+/*=== Case study – breadcrumbs above the H1 ===========================*/
 // Rendered by _includes/breadcrumb.html (local override) inside the
 // theme's #intro div, BEFORE the page H1. Replaces the missing left
 // sidebar on case-study pages. Slim mono-uppercase row with a home icon
 // in slot 1.
 /*=== Page edit / report-issue / history buttons ======================*/
 // The theme's github-buttons.html include uses Bootstrap's `text-primary`
-// utility, which maps to $brand-spring (mint) — invisible on cream.
+// utility, which maps to $brand-spring (mint) – invisible on cream.
 // Override with the dark ink + amber hover so the icons read clearly.
 #edit-me {
     .btn.text-primary,
@@ -3218,7 +3218,7 @@ nav#breadcrumb {
 }
 
 
-/*=== Case studies index — search + theme chips above the tile grid ====*/
+/*=== Case studies index – search + theme chips above the tile grid ====*/
 // Renders on /case-studies above a `.navigation-tiles` grid (same
 // component as the guidance index, so the cards stay visually consistent
 // across sections). The JS handler in the include reads data-* attributes
@@ -3327,7 +3327,7 @@ nav#breadcrumb {
         &:hover { color: $brand-brick; }
     }
 
-    // Hide filtered tiles — Bootstrap's .col has display:flex on grids,
+    // Hide filtered tiles – Bootstrap's .col has display:flex on grids,
     // which can override the [hidden] default. Be explicit.
     &__grid > .col[hidden] { display: none !important; }
 }

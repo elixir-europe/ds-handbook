@@ -1,14 +1,14 @@
-# CRediT (Contributor Roles Taxonomy) — https://credit.niso.org/
+# CRediT (Contributor Roles Taxonomy) – https://credit.niso.org/
 # Used in two places:
 #
-# 1. _data/CONTRIBUTORS.yaml — `roles:` declares a person's
+# 1. _data/CONTRIBUTORS.yaml – `roles:` declares a person's
 #    project-level contributions (e.g. project administration, funding).
 #
-# 2. Page frontmatter — `contributors:` maps a role key to the names
+# 2. Page frontmatter – `contributors:` maps a role key to the names
 #    who took that role on that specific page. Each person may appear
 #    under at most ONE role per page.
 #
-# We use a curated subset of the 14 CRediT roles — the ones that
+# We use a curated subset of the 14 CRediT roles – the ones that
 # actually map to handbook contributions. The remaining six are valid
 # CRediT keys and can be added here if the handbook ever needs them.
 #
@@ -24,12 +24,12 @@
   url:   https://credit.niso.org/contributor-roles/conceptualization/
 
 - key:   writing-original-draft
-  label: "Writing — original draft"
+  label: "Writing – original draft"
   short: Writing
   url:   https://credit.niso.org/contributor-roles/writing-original-draft/
 
 - key:   writing-review-editing
-  label: "Writing — review & editing"
+  label: "Writing – review & editing"
   short: Writing
   url:   https://credit.niso.org/contributor-roles/writing-review-editing/
 

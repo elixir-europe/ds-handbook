@@ -14,7 +14,7 @@ Mature IT security emerges when policies are documented, staff are trained regul
 
 ## Guidance
 
-Data stewards play a pivotal role in bridging the gap between researchers and IT professionals—helping to embed data security concerns into research culture and daily practice. The mission of a data steward is to facilitate adoption of data security practices while still enabling  awareness, practical guidance, and embedding security into workflows.
+Data stewards play a pivotal role in bridging the gap between researchers and IT professionals–helping to embed data security concerns into research culture and daily practice. The mission of a data steward is to facilitate adoption of data security practices while still enabling  awareness, practical guidance, and embedding security into workflows.
 Furthermore, data stewards play a vital role in adapting institutional security policies to the realities of the research environment. This input is crucial, as Information Security Officers (ISOs) often come from business-oriented backgrounds that may not align with the unique workflows and openness required in a research institute.
 
 **1\. Promote awareness and visibility of IT security support and guidance**

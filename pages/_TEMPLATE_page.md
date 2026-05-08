@@ -5,7 +5,7 @@ description: <!---REPLACE THIS with a one sentence description of the chapter---
 contributors: [<!---REPLACE THIS with comma separated list of contributors--->]
 page_id: <!---REPLACE THIS with a shortened page name. The shortened page name should be in lowercase and separated by underscore(s) if needed. For example, page_id of Community building will be community-building, replicate this in the name of the file -->
 
-# Cross-references — render at the bottom as a "Related pages" block of
+# Cross-references – render at the bottom as a "Related pages" block of
 # slim tone-aware tiles. Nested by type; each section is one row of tiles.
 # Recognised type keys: Guidance, Case_Study, Maturity_Indicator.
 # Drop the whole block (or any inner section) if not relevant.
@@ -15,7 +15,7 @@ related_pages:
   Maturity_Indicator:
     - mm-indicator-shortname
 
-# Resources — render at the bottom as ELITMA-style tables grouped by
+# Resources – render at the bottom as ELITMA-style tables grouped by
 # category (Templates / Internal / External). Two ways to add an entry:
 #
 # 1. Reference an ID from the central registry _data/tool_and_resource_list.yml

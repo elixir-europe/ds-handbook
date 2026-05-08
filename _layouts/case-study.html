@@ -3,19 +3,19 @@ layout: page
 ---
 
 {%- comment -%}
-Case-study layout — adapted from the ELITMa training-module pattern.
+Case-study layout – adapted from the ELITMa training-module pattern.
 
   1. A tabbed metadata header at the top:
-     • "At a glance" tab — facts (org, country, scale, domain, status,
+     • "At a glance" tab – facts (org, country, scale, domain, status,
        theme chips, link to the activity page).
-     • "Summary" tab — the description + lead_quote.
+     • "Summary" tab – the description + lead_quote.
   2. The page body ({{ content }}).
   3. A resources table built from the `resources:` frontmatter list.
   4. Related-pages navigation tiles built from `related_guidance:` and
      `related_indicators:` (page_id arrays).
 
 Vocabularies live in _data/case_study/{themes,scales,domains,
-countries,outcome_status}.yml — keys in the frontmatter resolve to
+countries,outcome_status}.yml – keys in the frontmatter resolve to
 human-readable labels via Liquid `where` lookups.
 {%- endcomment -%}
 
@@ -130,13 +130,13 @@ which the parent `page` layout inserts above the H1 when
 {{ content }}
 
 {%- comment -%}
-Resources table — rendered automatically by `_includes/resource-table-page.html`
+Resources table – rendered automatically by `_includes/resource-table-page.html`
 (local override) which the parent `page` layout calls after {{content}}.
 Drives off the `page.resources` frontmatter list.
 {%- endcomment -%}
 
 {%- comment -%}
-Related pages — rendered automatically by `_includes/related-pages.html`
+Related pages – rendered automatically by `_includes/related-pages.html`
 (local override) which the parent `page` layout calls after {{content}}.
 Drives off the `related_pages:` nested frontmatter (see template).
 {%- endcomment -%}

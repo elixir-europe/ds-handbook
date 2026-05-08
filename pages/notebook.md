@@ -11,7 +11,7 @@ search_exclude: true
     <div class="notebook-greeting-text">
         <p class="notebook-greeting-hi">hello!</p>
         <p class="notebook-greeting-body">These are the things I've collected for you. I'm afraid I don't have a lot of space in my secret nest, so I can only hold them for a bit. When you close the browser, clear cookies, or change device, this lot will be lost.</p>
-        <p class="notebook-greeting-sign">— the magpie</p>
+        <p class="notebook-greeting-sign">– the magpie</p>
     </div>
 </section>
 

@@ -161,18 +161,18 @@ Your readers can save any page to **the magpie's nest** (a browser-side reading 
 
 ## Crediting contributions
 
-The handbook uses the [CRediT (Contributor Roles Taxonomy)](https://credit.niso.org/) so each person's contribution to a chapter is captured precisely — written, reviewed, illustrated, etc. — rather than collapsed into a generic "contributor" label.
+The handbook uses the [CRediT (Contributor Roles Taxonomy)](https://credit.niso.org/) so each person's contribution to a chapter is captured precisely – written, reviewed, illustrated, etc. – rather than collapsed into a generic "contributor" label.
 
 The supported CRediT roles in this handbook are:
 
-- **Conceptualization** — overall scope or structure decisions
-- **Writing — original draft** — wrote the chapter from scratch
-- **Writing — review & editing** — reviewed, edited, or proofread someone else's draft
-- **Visualization** — illustrations, diagrams, design
-- **Software** — code or tooling that powers the site
-- **Project administration** — coordination, herding the project
-- **Funding acquisition** — got the grant or institutional support
-- **Supervision** — mentored other contributors
+- **Conceptualization** – overall scope or structure decisions
+- **Writing – original draft** – wrote the chapter from scratch
+- **Writing – review & editing** – reviewed, edited, or proofread someone else's draft
+- **Visualization** – illustrations, diagrams, design
+- **Software** – code or tooling that powers the site
+- **Project administration** – coordination, herding the project
+- **Funding acquisition** – got the grant or institutional support
+- **Supervision** – mentored other contributors
 
 ### On a page
 
@@ -185,7 +185,7 @@ contributors:
   visualization: [Sam Stylist]
 ```
 
-The flat-list shorthand still works — it's treated as `writing-original-draft`:
+The flat-list shorthand still works – it's treated as `writing-original-draft`:
 
 ```yaml
 contributors: [Aida Moure Fernández]   # solo writer
@@ -193,7 +193,7 @@ contributors: [Aida Moure Fernández]   # solo writer
 
 ### Project-wide contributions
 
-Some people contribute to the handbook as a whole rather than to specific chapters — running the project, getting the grant, designing the site. Those go in `_data/CONTRIBUTORS.yaml` against their entry:
+Some people contribute to the handbook as a whole rather than to specific chapters – running the project, getting the grant, designing the site. Those go in `_data/CONTRIBUTORS.yaml` against their entry:
 
 ```yaml
 Aida Moure Fernández:
@@ -205,7 +205,7 @@ Aida Moure Fernández:
     - conceptualization
 ```
 
-The `/contributors` page aggregates *all* of a person's roles — project-wide ones plus every page-level role they've taken — into a single roster entry, so a project lead who's also written three chapters appears with the full set of chips.
+The `/contributors` page aggregates *all* of a person's roles – project-wide ones plus every page-level role they've taken – into a single roster entry, so a project lead who's also written three chapters appears with the full set of chips.
 
 {% include callout.html type="note" content="The two writing roles (original draft + review & editing) collapse to a single **Writing** chip on the global `/contributors` roster, to avoid clutter when someone has been an editor on one page and a writer on another. On individual page metadata, the two stay distinct so the role each person played on *that* chapter is clear." %}
 
@@ -233,7 +233,7 @@ We work on GitHub. The flow is the standard fork-and-PR:
    - Signposts → `pages/guidance/`
    - Campfires → `pages/case-studies/`
    - About / meta → `pages/about/`
-4. **Add the right front matter** at the top of the file (see existing pages for examples – `title`, `type`, `description`, `contributors`, `page_id` are the minimum). The `contributors` field should credit each person's specific role on this page using [CRediT](https://credit.niso.org/) — see *Crediting contributions* below.
+4. **Add the right front matter** at the top of the file (see existing pages for examples – `title`, `type`, `description`, `contributors`, `page_id` are the minimum). The `contributors` field should credit each person's specific role on this page using [CRediT](https://credit.niso.org/) – see *Crediting contributions* below.
 5. **Preview your changes** before opening the PR – two options, see below.
 6. **Open a Pull Request** against `main`. (GitHub will prompt you to name a branch when you commit, if you haven't already.)
 7. **Reviewers** will give feedback. Once two contributors approve, we merge.

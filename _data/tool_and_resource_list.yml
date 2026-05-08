@@ -5,7 +5,7 @@
 #     resources: [rdmkit, fair-cookbook, dsw]
 #
 # The page can also include inline (hash-form) entries for one-off
-# resources — see _TEMPLATE_case_study.md.
+# resources – see _TEMPLATE_case_study.md.
 #
 # Categories
 #   template          – downloadable artefact you'd reuse (DMP, SOP, slides)
@@ -42,7 +42,7 @@
 - id: tess
   name: TeSS
   url: https://tess.elixir-europe.org/
-  description: ELIXIR's training portal — courses, materials, events.
+  description: ELIXIR's training portal – courses, materials, events.
   category: external_resource
 
 # --- Sustainability + community partners -----------------------------------
