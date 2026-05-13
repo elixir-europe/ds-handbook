@@ -1,7 +1,13 @@
 ---
 title: Maturity model
-page_img: # none it doesnt't work
+description: A self-assessment framework for benchmarking your institution's data stewardship maturity across four domains – strategy, data management, legal and governance, and support.
+page_id: maturity-model-index
 ---
+
+<p class="section-eyebrow">WAYPOINTS</p>
+
+<p class="drop-cap">Waypoints are the handbook's <em>self-assessment framework</em>. The maturity model lets you benchmark your institution's data stewardship practice across four domains. Use it to see where you are, identify where to invest next, and make the case for resources or organisational change.</p>
+
 {% include auto-expand.html %}
 
 ## Indicators
