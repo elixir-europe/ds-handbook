@@ -1,6 +1,6 @@
 ---
 title: "RDM information or guidelines for researchers"
-description: coming soon...
+description: This page presents guidance on how RDM information and guidelines are communicated to researchers, including centralisation, maintenance, and active sharing
 type: Guidance
 page_id: g-support-guidelines
 ---

@@ -1,6 +1,6 @@
 ---
 title: Strategy and Sustainability
-description: coming soon...
+description: This page presents the maturity model indicators for the strategy and sustainability domain
 page_id: mm-strategy
 type: [Maturity Model]
 ---

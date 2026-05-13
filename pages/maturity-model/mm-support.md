@@ -1,6 +1,6 @@
 ---
 title: Support
-description: coming soon... 
+description: This page presents the maturity model indicators for the RDM support domain
 type: [Maturity Model]
 page_id: mm-support
 ---
