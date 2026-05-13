@@ -258,9 +258,12 @@ If you'd rather not install Ruby/Jekyll, GitHub Pages can build the handbook for
 
 ### Option B – Run it locally
 
-If you've got Ruby and Bundler installed, you can run the site locally and see changes instantly:
+If you've got Ruby installed, you can run the site locally and see changes instantly:
 
 ```sh
+git clone https://github.com/elixir-europe/ds-handbook --recurse-submodules
+cd ds-handbook
+gem install bundler
 bundle install
 bundle exec jekyll serve
 ```
