@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+title: Data Stewardship Handbook
+message: "If you use or reference this handbook, please cite it using the metadata from this file."
+type: misc
+authors:
+  - name: "ELIXIR Research Data Management Community"
+abstract: >-
+  A community-built field handbook for data stewards and the people who help
+  researchers manage their data. Produced as a deliverable of the
+  ELIXIR-funded DATAREX implementation study.
+url: "https://elixir-europe.github.io/ds-handbook/"
+repository-code: "https://github.com/elixir-europe/ds-handbook"
+license: CC-BY-4.0
+date-released: "2026-05-08"
+keywords:
+  - data stewardship
+  - research data management
+  - RDM
+  - ELIXIR
+  - DATAREX
+references:
+  - type: software
+    title: ELIXIR Toolkit Theme
+    authors:
+      - name: "ELIXIR Belgium"
+    url: "https://elixir-belgium.github.io/elixir-toolkit-theme/"
+    repository-code: "https://github.com/ELIXIR-Belgium/elixir-toolkit-theme"
+    license: MIT
