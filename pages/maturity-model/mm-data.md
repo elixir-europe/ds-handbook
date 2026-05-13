@@ -1,6 +1,6 @@
 ---
 title: Data
-description: coming soon...
+description: This page presents the maturity model indicators for the data and metadata management domain
 page_id: mm-data
 type: [Maturity Model]
 ---

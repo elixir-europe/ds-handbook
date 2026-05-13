@@ -1,6 +1,6 @@
 ---
 title: Legal and governance
-description: coming soon...
+description: This page presents the maturity model indicators for the legal and governance domain
 type: [Maturity Model]
 page_id: mm-legal
 ---
