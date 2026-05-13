@@ -9,11 +9,11 @@ page_img: # none it doesnt't work
  {% for domain in site.data.shared.maturity_model.domains %}
   <div class="accordion-item">
     <h3 class="accordion-header">
-      <button class="accordion-button {% unless forloop.first %}collapsed{% endunless %}" 
+      <button class="accordion-button collapsed" 
               type="button"
               data-bs-toggle="collapse" 
               data-bs-target="#collapse2{{forloop.index}}" 
-              aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" 
+              aria-expanded="false" 
               aria-controls="collapse2{{forloop.index}}">
           <div class="container-fluid">
             <div class="row pb-1">
@@ -29,7 +29,7 @@ page_img: # none it doesnt't work
           </div>
       </button>
     </h3>
-    <div id="collapse2{{forloop.index}}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" data-bs-parent="#indicatorsAccordion">
+    <div id="collapse2{{forloop.index}}" class="accordion-collapse collapse" data-bs-parent="#indicatorsAccordion">
       <div class="accordion-body">
         {% assign domain_indicators = site.data.shared.maturity_model.indicators | where:"domain", domain.domainName %}
         {% if domain_indicators != empty %}
