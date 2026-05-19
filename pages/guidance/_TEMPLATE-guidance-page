@@ -67,11 +67,22 @@ resources:
 Instructions: 
 - Consider ordering the steps if this is a linear manual using heading 3 for each step
 - Consider different formats if the guidance is not linear or requires a more complex explanation
+- Check DS Handbook Style Guide and How to Contribute (under About section).
+- Make sure all to-do's are in the scope of the page, otherwise start a new page or re-adjust outcomes in the Top card.
+# mandatory – Write a sentence or two before to-dos how to read this section, what is the order of the to-do's 
+
+### To-do 1
+ 
+It is a tip for data stewards not researchers.
+It should be practical, feasible. 
+Depending on the structure of your tips you could have different dificulties levels for different experience of data stewards.
+
+### To-do 2
+
 -->
 
 
-
-## Quick checklist
+## Quick checklist 
 <!-- mandatory 
 note to self: add feature of checklist (copy from ELITMa repo)
 -->
