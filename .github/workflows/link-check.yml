@@ -48,13 +48,19 @@ jobs:
         run: |
           bundle install
 
-      # Built WITHOUT --baseurl on purpose: the site's root-relative links
-      # (/case-studies, /g-security…) then resolve against _site/ directly, so
-      # lychee's --root-dir works. Adding the /ds-handbook base path here would
-      # make every internal link look broken.
+      # --baseurl "" is required, not just omitted: with JEKYLL_ENV=production
+      # (below), jekyll-github-metadata's SiteGitHubMunger hook auto-fills
+      # site.baseurl from the GitHub repo (e.g. "/ds-handbook") whenever no
+      # baseurl was explicitly set – simply leaving the flag off still gets
+      # it injected. That would make every root-relative link in the built
+      # HTML start with "/ds-handbook/…", which lychee's --root-dir (below)
+      # can't resolve, since _site/ has no such subfolder – only jekyll.yml's
+      # *deployed* site actually lives at that path. Passing an explicit
+      # empty string satisfies the munger's "already set" check and keeps
+      # links flat (/case-studies), matching the _site/ layout on disk.
       - name: Build with Jekyll
         run: |
-          bundle exec jekyll build
+          bundle exec jekyll build --baseurl ""
         env:
           PAGES_REPO_NWO: ${{ github.repository }}
           JEKYLL_ENV: production
