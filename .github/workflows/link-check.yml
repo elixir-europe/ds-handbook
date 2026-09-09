@@ -1,0 +1,104 @@
+name: Link Checker
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Mondays 06:00 UTC. Weekly rather than daily – the handbook is a slow-moving
+    # content site, and a daily report would mostly repeat itself.
+    - cron: "0 6 * * 1"
+
+jobs:
+  linkChecker:
+    # The weekly cron only fires on the canonical repo – forks shouldn't get
+    # an automatic report issue nobody asked for. Manual runs (workflow_dispatch)
+    # are allowed everywhere, so a fork owner can test this workflow on demand.
+    if: |
+      github.event_name == 'workflow_dispatch' || github.repository_owner == 'elixir-europe'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+
+      # The maturity-model data lives in _external/rdm-maturity-model (symlinked
+      # as _data/shared). Without it, the maturity-model pages build empty and
+      # their links never get checked.
+      - name: Update submodule to latest main
+        run: git submodule update --init --remote --merge
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1.321.0
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+          cache-version: 0
+
+      - name: Install dependencies
+        run: |
+          bundle install
+
+      # Built WITHOUT --baseurl on purpose: the site's root-relative links
+      # (/case-studies, /g-security…) then resolve against _site/ directly, so
+      # lychee's --root-dir works. Adding the /ds-handbook base path here would
+      # make every internal link look broken.
+      - name: Build with Jekyll
+        run: |
+          bundle exec jekyll build
+        env:
+          PAGES_REPO_NWO: ${{ github.repository }}
+          JEKYLL_ENV: production
+          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JEKYLL_BUILD_BRANCH: ${{ github.ref_name }}
+
+      - name: Link Checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          # --fallback-extensions html: permalinks are extensionless
+          #   (permalink: /:basename), so /case-studies is _site/case-studies.html.
+          # --exclude github.com: the theme injects edit/history/contributor-avatar
+          #   links on every page – a few hundred boilerplate requests per run
+          #   that can't rot independently of the repo itself. Since v2 this
+          #   action passes `token` (default ${{ github.token }}) to lychee as
+          #   GITHUB_TOKEN, so rate limiting is no longer the blocker: drop this
+          #   line if you'd rather have the handful of *content* links to
+          #   github.com checked too, and accept the extra noise.
+          args: >-
+            --fallback-extensions html
+            --exclude '^https://github\.com'
+            --root-dir "${{ github.workspace }}/_site"
+            _site/
+          # Report, don't fail: pre-existing dead external links shouldn't turn
+          # the repo's status red. The issue below is the actual signal.
+          fail: false
+          lycheeVersion: v0.24.2
+
+      # Rewrite the report heading so the paths are clickable on the live site
+      # instead of pointing at _site/ paths that only existed in the runner.
+      - name: Add page URL
+        run: |
+          # Derived from the repo running the workflow (not hardcoded) so a
+          # fork's test run reports its own Pages URL, not the upstream one.
+          DEPLOY_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/"
+          if [ -f ./lychee/out.md ]; then
+            sed -i "s|\#\#\# Errors in _site/|\#\#\# Errors in ${DEPLOY_URL}|g" ./lychee/out.md
+            cat ./lychee/out.md
+          fi
+
+      # TODO(maintainers), both one-off repo settings:
+      #   • add `issue-number: <n>` pointing at a long-lived "Link Checker
+      #     Report" issue so each run updates that one issue (as RDMkit does)
+      #     instead of opening a new one every week;
+      #   • create an `automated issue` label and add it below, if you want
+      #     these reports filterable apart from human-filed bugs.
+      - name: Create Issue From File
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v6
+        with:
+          title: Link Checker Report
+          content-filepath: ./lychee/out.md
+          labels: bug
