@@ -1,0 +1,21 @@
+# Shared policy for local runs and GitHub Actions. Lane-specific behavior is
+# selected by command-line flags in the workflow.
+no_progress = true
+include_verbatim = false
+accept = ["100..=103", "200..=299"]
+accept_timeouts = false
+
+max_redirects = 10
+timeout = 20
+max_retries = 2
+retry_wait_time = 2
+max_concurrency = 16
+host_concurrency = 2
+host_request_interval = "200ms"
+
+max_cache_age = "7d"
+cache_exclude_status = "403,429,500.."
+
+# Never let authored URLs turn the runner into an internal-network probe.
+exclude_all_private = true
+user_agent = "ds-handbook-link-check/1.0 (+https://github.com/elixir-europe/ds-handbook)"
