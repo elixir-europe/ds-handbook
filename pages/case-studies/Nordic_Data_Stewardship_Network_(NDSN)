@@ -8,32 +8,38 @@ description: The Nordic Data Stewardship Network (NDSN) connects data stewards a
 contributors: [Minna Ahokas, Diana Pilvar, Päivi Rauste, Ines Chaves]
 page_id: case-study-ndsn
 
-lead_org: "The NSDN steering group"       # [free] main org behind the work
-country:                      # [vocab] countries.yml – 2-letter key
-# If your ELIXIR node matters, mention it inside lead_org – e.g. "CSC (ELIXIR-FI)".
+lead_org: "The NSDN steering group" 
+country:     FI, DK, SE, IS, NO    
 
 partners:                          # [free] optional – vendors, universities, funders
   - "Nordic e-Infrastructure Collaboration (NeiC)"
   - "Sigma2"
-  - 
+  - "CSC - IT Center for Science"
+  - "Danish e-infrastructure Consortium (DeiC)"
+  - "Faculty of Medicine, Umeå University"
+  - "University of Iceland"
+  - "University of Oslo"
+  - "Technical University of Denmark"
+  - "Icelandic research data service (DATICE), University of Iceland"
+  - "Nordic e-Infrastructure Collaboration (NeiC)"
+  - "KTH Royal Institute of Technology"
+  - "Umeå University Library"
+  - "University of Tartu"
 
-# Pick the right size of the work.
-# individual | team | institutional | national | international
-scale: institutional               # [vocab] scales.yml
+scale: international
 
 # Pick the discipline the work ORIGINATED in, not who could adapt it later.
 # life-sciences | physical-sciences | humanities | cross-domain | domain-agnostic
-domain: life-sciences              # [vocab] domains.yml
+domain: cross-domain             # [vocab] domains.yml
 
 # One or more – pick the PROBLEMS this case addresses, not the solution.
 # Full list in themes.yml: training-gap, unclear-roles, policy-gap,
 # tooling-gap, sustainability, legal-compliance, stakeholder-engagement,
 # community-building.
 themes:                            # [vocab] themes.yml
-  - tooling-gap
-  - stakeholder-engagement
+  - community-building
 
-start: 2024                        # [free] year the work began
+start: 2023                        # [free] year the work began
 
 # Lifecycle of the work today.
 # active | evolved | paused | archived
@@ -43,8 +49,8 @@ status: active                     # [vocab] outcome_status.yml
 # handbook (the institutional page, the funder page, the project site).
 # Renders as a "Visit the activity page" link inside the context card.
 # Override the link text with `external_url_label` if you need to.
-external_url: https://example.org/activity
-external_url_label: Visit the activity page
+external_url: https://datice.is/en/nordic-data-stewardship-network
+external_url_label: Nordic Data Stewardship Network
 
 # ---------------------------------------------------------------------------
 # Lead quote – one sentence you wish someone had told you at the start.
@@ -95,75 +101,137 @@ resources:
 ---
 
 
-## Why this case (mandatory)
+## Why this case 
 
-What problem or gap did this work address, and why was it worth doing?
-Set up enough institutional context that a reader from a different
-country or sector can follow.
+### What problem or gap did this work address?
 
-- What was the situation before?
-- Who was affected (researchers, stewards, leadership)?
-- Why now – what made this the moment to act?
+Research data management (RDM) and data stewardship have developed differently across the Nordic countries. Although national initiatives existed, there was no coordinated Nordic forum for data stewards to exchange knowledge, address common challenges, or strengthen the profession collectively.
 
-Two or three short paragraphs. Don't recite policy – tell the story of
-the gap. Concrete details (sizes, dates, the specific incident that
-triggered it) help more than abstractions.
+This particularly affected data stewards and research support staff, many of whom worked in small communities without clear career paths, peer networks, or opportunities for collaboration. Growing FAIR and Open Science requirements, combined with shared challenges around skills, infrastructure, and professional recognition, created momentum for a regional network.
 
+The idea for a Nordic network was inspired by previous collaboration on the Skills4EOSC project, one of whose objectives was to establish such data steward networks. The network of Competence Centers also helped demonstrate the value of cross-organizational collaboration.
 
-## What we did (mandatory)
+The timing for action emerged around 2023–2025. Several parallel developments created momentum: 
 
-The actual approach. Walk through what you tried, in roughly the order
-you tried it. Bring people and tools in as they appear – no need for a
-separate "stakeholders" or "tools" section.
-
-- What was the first move?
-- Which tools, frameworks, or existing resources did you use? (e.g.
-  RDMkit pages, DSW templates, internal SOPs, the FAIR Cookbook)
-- How were researchers / leadership / partners engaged at each step?
-- Was this brand-new, or built on something existing?
-- Roughly how much effort was involved (FTE, calendar time)?
-
-Be concrete. *"We held a 30-minute intake call with the PI before each
-new project"* beats *"We instituted a stakeholder-engagement protocol"*.
-If you got something wrong and pivoted, say so here – the pivot is part
-of the story.
+* increasing policy pressure for FAIR data
+* growing demand for data stewardship skills
+* shared challenges: lack of professionalisation, infrastructure gaps, and limited training pathways
+* strong interest in Nordic collaboration, driven by existing national networks
 
 
-## What changed (encouraged)
+## What we did
 
-What's different now? Concrete outputs are most useful – a training
-course delivered, a workflow adopted, a policy written, a tool deployed,
-a number that moved.
+[The Nordic Data Stewardship Network (NDSN)](https://datice.is/en/nordic-data-stewardship-network) was created as a cross-border community to connect data stewardship professionals and support collaboration across Nordic countries. The initiative began with a simple question: *Could there be a shared Nordic platform for data stewardship?*
 
-- What was produced or implemented?
-- What's the evidence it worked? (uptake numbers, feedback, metrics,
-  anecdotes – all valid; pick what you actually have.)
-- What barriers came up, and which factors helped you push through?
-  (Leadership backing, an existing community, a deadline, a champion?)
+__Tools, structures, and formats:__
 
-If the work hasn't produced visible change yet, say so – *"too early to
-tell, will revisit in 12 months"* is a fine answer when it's honest.
-Better than reaching for impact that isn't there.
+* __Lightweight governance__: Steering group, shared leadership
+* __Networking__: Online events, workshops, and a hybrid seminar in Espoo (May 2026)
+* __Communication__: Shared platform, discussion forum, newsletter
+* __Resources__: Shared "playbook" for collaboration, leveraging existing national networks (e.g., Denmark, Finland), existing infrastructures and coordination bodies in each country ELIXIR, EOSC, and FAIR-aligned tools and resources.
+
+__Engagement in practice:__
+
+* Nordic networking events (first in October 2025) and workshops brought stakeholders together to define goals and priorities.
+* Ongoing discussions identified common challenges, including professional recognition, infrastructure gaps, and legal complexities.
+* Activities focused on community-building and peer exchange.
+
+__Formalisation phase:__
+
+A key milestone was the Copenhagen in-person steering group meeting (2025), where:
+
+* Terms of Reference were finalised
+* Communication structures were agreed upon
+* Collaboration with NeIC (Nordic e-Infrastructure Collaboration) was formalised
+* Leadership roles were defined and handed over
+
+__Effort involved:__
+
+The network grew incrementally through in-kind contributions from participating organisations, with coordination shared across countries rather than funded through a single project.
 
 
-## What we'd tell others (mandatory)
 
-The lesson, the caveats, the conditions for replication, and what
-happens next – bundled because they overlap in practice.
 
-- **What worked, and why.** The one or two things you'd repeat without
-  hesitation if you were starting over.
-- **What didn't work, and how you adapted.** The corner you painted
-  yourself into. Future contributors learn most from these.
-- **Transferability and scaling potential.** Can this approach be reused
-  by another institution or individual? What conditions are required
-  (leadership buy-in, existing service, specific funding, a particular
-  legal context)? What adaptations might be needed? Be honest about
-  what was special about your setting.
-- **Sustainability and next steps.** How is the work currently supported
-  or funded? Who maintains or owns it? What are the plans for
-  continuation, embedding, or scaling? If continuity is uncertain, say
-  so.
+## What changed
+
+The most immediate change was the creation of a visible, cross-national community of practice for data stewardship in the Nordic region. Data stewards now have a platform for connecting with peers across countries, sharing experiences, and discussing common challenges. The network has also introduced basic governance and communication structures that support continued collaboration without imposing heavy administrative overhead.
+
+__Outputs and results__
+
+* Establishment of a formal Nordic network for data stewards
+* A cross-national steering group and governance structure
+* Shared platforms for communication, networking, and collaboration
+* A growing community with potential to grow to several hundred participants, reflecting the size of the Nordic data stewardship community
+* Increased visibility of data stewardship as a professional field
+
+__Evidence it worked__
+
+* Strong participation in initial networking events
+* Continued engagement from multiple Nordic countries and Estonia.
+* Adoption of shared goals and mission across national contexts
+
+__Barriers encountered__
+
+* Differences in national maturity levels and infrastructures
+* Lack of formal career paths and recognition for data stewards
+* Sustainability and funding challenges
+* Legal and technical differences between countries (e.g. GDPR interpretation, infrastructure gaps)
+
+__Enablers__
+
+* Strong existing national communities and initiatives
+* Common challenges and shared objectives
+* Cultural alignment and the tradition of Nordic collaboration
+* Lightweight governance model enabling flexibility
+* Enthusiastic champions across institutions
+
+__Current status__
+
+The network is still evolving. While structures are in place, long-term sustainability, funding, and formalisation of outputs are ongoing areas of development.
+
+
+
+## What we'd tell others
+
+### What worked
+
+One of the main lessons is the value of starting with a shared need rather than a fully defined solution. In the case of NDSN, the initial question, whether there should be a Nordic platform for data stewardship, created space for a collaborative process in which the network could evolve organically. This made it easier to build trust and ensure that the initiative reflected real needs across countries.
+
+* __Start with a shared question, not a fixed solution.__ The initial “what if” framing allowed the network to grow organically.
+* __Build on existing communities.__ Leveraging national networks avoided duplication and increased trust.
+* __Use lightweight governance.__ Shared leadership across countries enabled participation without heavy bureaucracy.
+* __Focus on people, not just infrastructure.__ The network succeeded by prioritising community-building and peer support.
+
+### What didn’t work
+
+* __Assuming uniform readiness across countries.__ Differences in maturity required flexible approaches rather than one-size-fits-all solutions.
+* __Unclear sustainability early on.__ Gradually addressed funding and long-term coordination instead of solving it upfront.
+* __Balancing formalisation and openness.__ Too much structure risked slowing momentum, so governance remained intentionally lightweight.
+
+### Transferability and scaling
+
+The model is well suited to regions with:
+
+* Existing RDM or data stewardship initiatives
+* A collaborative culture across institutions
+* 
+Shared policy drivers such as FAIR, EOSC  and Open Science
+Success depends on committed champions, basic coordination capacity, and willingness to work through distributed leadership. Additional adaptation may be needed where support structures are fragmented or less mature.
+
+Adaptations may be needed where:
+
+* National systems are highly fragmented or competitive
+* There is no existing baseline of RDM support or policy alignment
+
+### Sustainability and next steps
+
+Looking ahead, the main priorities for the coming years include:
+
+* Strengthening the professionalisation of data stewardship
+* Expanding participation and visibility
+* Developing shared training materials, guidance, and career frameworks
+* Secure funding or embed coordination within sustainable organisational structures
+
 
 
 <!--
