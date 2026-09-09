@@ -1,6 +1,6 @@
 ---
 title: RDM Training
-description: How to 
+description: How to plan, deliver, evaluate and sustain accessible RDM training for researchers and support staff.
 contributors: [Minna Ahokas, Diana Pilvar, Marina Popleteeva, Mijke Jetten, Heleri Inno, Jana Martínková, Aída Moure Fernández]
 page_id: g-support-rdm-training
 type: [Guidance]
