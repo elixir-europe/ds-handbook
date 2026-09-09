@@ -39,7 +39,7 @@ domain: cross-domain             # [vocab] domains.yml
 themes:                            # [vocab] themes.yml
   - community-building
 
-start: 2023                        # [free] year the work began
+start: 2025                        # [free] year the work began
 
 # Lifecycle of the work today.
 # active | evolved | paused | archived
@@ -94,10 +94,9 @@ related_pages:
 # Both forms can be mixed in the same list.
 # ---------------------------------------------------------------------------
 resources:
-  - rdmkit
-  - name: "Resource title"
-    url: https://example.org/resource
-    description: One-line context – why this resource matters here.
+  - name: "Nordic Data Stewardship Network"
+    url: https://datice.is/en/nordic-data-stewardship-network
+    description: NDSN home page
 ---
 
 
