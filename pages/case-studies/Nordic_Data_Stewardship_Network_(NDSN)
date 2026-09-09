@@ -1,0 +1,241 @@
+---
+title: "Nordic Data Stewardship Network (NDSN)"
+layout: case-study
+type: Case Study
+search_exclude: true
+description: The Nordic Data Stewardship Network (NDSN) connects data stewards across Nordic countries, fostering collaboration, peer exchange, and joint development of data stewardship practices at a regional level.
+
+contributors: [Minna Ahokas, Diana Pilvar, Päivi Rauste, Ines Chaves]
+page_id: case-study-ndsn
+
+lead_org: "The NSDN steering group" 
+country:     FI, DK, SE, IS, NO    
+
+partners:                          # [free] optional – vendors, universities, funders
+  - "Nordic e-Infrastructure Collaboration (NeiC)"
+  - "Sigma2"
+  - "CSC - IT Center for Science"
+  - "Danish e-infrastructure Consortium (DeiC)"
+  - "Faculty of Medicine, Umeå University"
+  - "University of Iceland"
+  - "University of Oslo"
+  - "Technical University of Denmark"
+  - "Icelandic research data service (DATICE), University of Iceland"
+  - "Nordic e-Infrastructure Collaboration (NeiC)"
+  - "KTH Royal Institute of Technology"
+  - "Umeå University Library"
+  - "University of Tartu"
+
+scale: international
+
+# Pick the discipline the work ORIGINATED in, not who could adapt it later.
+# life-sciences | physical-sciences | humanities | cross-domain | domain-agnostic
+domain: cross-domain             # [vocab] domains.yml
+
+# One or more – pick the PROBLEMS this case addresses, not the solution.
+# Full list in themes.yml: training-gap, unclear-roles, policy-gap,
+# tooling-gap, sustainability, legal-compliance, stakeholder-engagement,
+# community-building.
+themes:                            # [vocab] themes.yml
+  - community-building
+
+start: 2023                        # [free] year the work began
+
+# Lifecycle of the work today.
+# active | evolved | paused | archived
+status: active                     # [vocab] outcome_status.yml
+
+# Optional link to the official activity / project page outside this
+# handbook (the institutional page, the funder page, the project site).
+# Renders as a "Visit the activity page" link inside the context card.
+# Override the link text with `external_url_label` if you need to.
+external_url: https://datice.is/en/nordic-data-stewardship-network
+external_url_label: Nordic Data Stewardship Network
+
+# ---------------------------------------------------------------------------
+# Lead quote – one sentence you wish someone had told you at the start.
+# Renders as a pull-quote near the top. Skip if you can't think of one.
+# ---------------------------------------------------------------------------
+lead_quote: The single most useful thing we learned, in one sentence.
+
+# ---------------------------------------------------------------------------
+# Cross-references (optional but encouraged) – page_ids of related guidance
+# pages and maturity indicators. Both render as a "Related" block at the
+# bottom of the page.
+# ---------------------------------------------------------------------------
+# Cross-references – rendered as a "Related pages" block at the bottom.
+# Nested by type; each section becomes a row of slim tone-aware tiles.
+# Type keys recognised: Guidance, Case_Study, Maturity_Indicator.
+related_pages:
+  Guidance:
+    - g-writing-rdm-strategy
+  Case_Study:
+    - other-case-shortname
+  Maturity_Indicator:
+    - mm-strategy-defined
+
+# ---------------------------------------------------------------------------
+# Resources – render as ELITMA-style tables (Templates / Internal /
+# External) at the end of the page. Two ways to add an entry:
+#
+# 1. Reference an ID from _data/tool_and_resource_list.yml (preferred
+#    for shared resources like RDMkit, FAIR Cookbook, DSW…):
+#
+#        resources: [rdmkit, fair-cookbook, ssi]
+#
+# 2. Add an inline entry for one-off resources unique to this case study
+#    (the SOP, the grant reference, the institutional URL):
+#
+#        - name: "Resource title"
+#          url: https://example.org/resource
+#          description: One-line context.
+#          category: external_resource   # or template, internal_resource
+#
+# Both forms can be mixed in the same list.
+# ---------------------------------------------------------------------------
+resources:
+  - rdmkit
+  - name: "Resource title"
+    url: https://example.org/resource
+    description: One-line context – why this resource matters here.
+---
+
+
+## Why this case 
+
+### What problem or gap did this work address?
+
+Research data management (RDM) and data stewardship have developed differently across the Nordic countries. Although national initiatives existed, there was no coordinated Nordic forum for data stewards to exchange knowledge, address common challenges, or strengthen the profession collectively.
+
+This particularly affected data stewards and research support staff, many of whom worked in small communities without clear career paths, peer networks, or opportunities for collaboration. Growing FAIR and Open Science requirements, combined with shared challenges around skills, infrastructure, and professional recognition, created momentum for a regional network.
+
+The idea for a Nordic network was inspired by previous collaboration on the Skills4EOSC project, one of whose objectives was to establish such data steward networks. The network of Competence Centers also helped demonstrate the value of cross-organizational collaboration.
+
+The timing for action emerged around 2023–2025. Several parallel developments created momentum: 
+
+* increasing policy pressure for FAIR data
+* growing demand for data stewardship skills
+* shared challenges: lack of professionalisation, infrastructure gaps, and limited training pathways
+* strong interest in Nordic collaboration, driven by existing national networks
+
+
+## What we did
+
+[The Nordic Data Stewardship Network (NDSN)](https://datice.is/en/nordic-data-stewardship-network) was created as a cross-border community to connect data stewardship professionals and support collaboration across Nordic countries. The initiative began with a simple question: *Could there be a shared Nordic platform for data stewardship?*
+
+__Tools, structures, and formats:__
+
+* __Lightweight governance__: Steering group, shared leadership
+* __Networking__: Online events, workshops, and a hybrid seminar in Espoo (May 2026)
+* __Communication__: Shared platform, discussion forum, newsletter
+* __Resources__: Shared "playbook" for collaboration, leveraging existing national networks (e.g., Denmark, Finland), existing infrastructures and coordination bodies in each country ELIXIR, EOSC, and FAIR-aligned tools and resources.
+
+__Engagement in practice:__
+
+* Nordic networking events (first in October 2025) and workshops brought stakeholders together to define goals and priorities.
+* Ongoing discussions identified common challenges, including professional recognition, infrastructure gaps, and legal complexities.
+* Activities focused on community-building and peer exchange.
+
+__Formalisation phase:__
+
+A key milestone was the Copenhagen in-person steering group meeting (2025), where:
+
+* Terms of Reference were finalised
+* Communication structures were agreed upon
+* Collaboration with NeIC (Nordic e-Infrastructure Collaboration) was formalised
+* Leadership roles were defined and handed over
+
+__Effort involved:__
+
+The network grew incrementally through in-kind contributions from participating organisations, with coordination shared across countries rather than funded through a single project.
+
+
+
+
+## What changed
+
+The most immediate change was the creation of a visible, cross-national community of practice for data stewardship in the Nordic region. Data stewards now have a platform for connecting with peers across countries, sharing experiences, and discussing common challenges. The network has also introduced basic governance and communication structures that support continued collaboration without imposing heavy administrative overhead.
+
+__Outputs and results__
+
+* Establishment of a formal Nordic network for data stewards
+* A cross-national steering group and governance structure
+* Shared platforms for communication, networking, and collaboration
+* A growing community with potential to grow to several hundred participants, reflecting the size of the Nordic data stewardship community
+* Increased visibility of data stewardship as a professional field
+
+__Evidence it worked__
+
+* Strong participation in initial networking events
+* Continued engagement from multiple Nordic countries and Estonia.
+* Adoption of shared goals and mission across national contexts
+
+__Barriers encountered__
+
+* Differences in national maturity levels and infrastructures
+* Lack of formal career paths and recognition for data stewards
+* Sustainability and funding challenges
+* Legal and technical differences between countries (e.g. GDPR interpretation, infrastructure gaps)
+
+__Enablers__
+
+* Strong existing national communities and initiatives
+* Common challenges and shared objectives
+* Cultural alignment and the tradition of Nordic collaboration
+* Lightweight governance model enabling flexibility
+* Enthusiastic champions across institutions
+
+__Current status__
+
+The network is still evolving. While structures are in place, long-term sustainability, funding, and formalisation of outputs are ongoing areas of development.
+
+
+
+## What we'd tell others
+
+### What worked
+
+One of the main lessons is the value of starting with a shared need rather than a fully defined solution. In the case of NDSN, the initial question, whether there should be a Nordic platform for data stewardship, created space for a collaborative process in which the network could evolve organically. This made it easier to build trust and ensure that the initiative reflected real needs across countries.
+
+* __Start with a shared question, not a fixed solution.__ The initial “what if” framing allowed the network to grow organically.
+* __Build on existing communities.__ Leveraging national networks avoided duplication and increased trust.
+* __Use lightweight governance.__ Shared leadership across countries enabled participation without heavy bureaucracy.
+* __Focus on people, not just infrastructure.__ The network succeeded by prioritising community-building and peer support.
+
+### What didn’t work
+
+* __Assuming uniform readiness across countries.__ Differences in maturity required flexible approaches rather than one-size-fits-all solutions.
+* __Unclear sustainability early on.__ Gradually addressed funding and long-term coordination instead of solving it upfront.
+* __Balancing formalisation and openness.__ Too much structure risked slowing momentum, so governance remained intentionally lightweight.
+
+### Transferability and scaling
+
+The model is well suited to regions with:
+
+* Existing RDM or data stewardship initiatives
+* A collaborative culture across institutions
+* 
+Shared policy drivers such as FAIR, EOSC  and Open Science
+Success depends on committed champions, basic coordination capacity, and willingness to work through distributed leadership. Additional adaptation may be needed where support structures are fragmented or less mature.
+
+Adaptations may be needed where:
+
+* National systems are highly fragmented or competitive
+* There is no existing baseline of RDM support or policy alignment
+
+### Sustainability and next steps
+
+Looking ahead, the main priorities for the coming years include:
+
+* Strengthening the professionalisation of data stewardship
+* Expanding participation and visibility
+* Developing shared training materials, guidance, and career frameworks
+* Secure funding or embed coordination within sustainable organisational structures
+
+
+
+<!--
+  Don't add a `## Resources` heading here – the layout renders the
+  `resources:` frontmatter list automatically as a table at the bottom
+  of the page.
+-->
