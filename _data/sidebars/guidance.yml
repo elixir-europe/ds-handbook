@@ -17,4 +17,7 @@ subitems:
     url: /g-data-protection
   - title: IT security
     url: /g-security
-
+  - title: RDM Training
+    url: /g-support-rdm-training
+  - title: Ethics / ELSI for research data
+    url: /g-legal-elsi
