@@ -23,6 +23,13 @@ jobs:
         uses: actions/checkout@v7
         with:
           submodules: recursive
+          # Full history, not the default shallow depth-1 clone. Without this,
+          # the submodule below is checked out shallow/detached too, and the
+          # later `--merge` step fails with "refusing to merge unrelated
+          # histories" because the shallow clone has no common ancestor with
+          # the submodule's remote main. jekyll.yml does the same for the
+          # same reason.
+          fetch-depth: 0
 
       # The maturity-model data lives in _external/rdm-maturity-model (symlinked
       # as _data/shared). Without it, the maturity-model pages build empty and
