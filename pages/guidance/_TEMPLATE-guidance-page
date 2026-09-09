@@ -1,25 +1,24 @@
 ---
 # ============================================================================
 # Guidance (signpost) template
-# Copy this file into pages/guidance/<your-page>.md and fill it in.
-# Required fields are marked (mandatory). Everything else is optional but
-# encouraged – the more you fill in, the more useful the case is to others.
+# Copy the content of this file into your newly create page at pages/guidance/<your-page>.md and fill it in. Choose a page name that matches the conventions: g-shortname. 
+# Required fields are marked (mandatory). Everything else is optional but 
+# encouraged – the more you fill in, the more useful the guidance is to others.
 #
 # Some fields use a controlled vocabulary – you set a key, and the layout
 # looks up the human-readable label from a YAML in _data/guidance/.
-# If you need a value that isn't there, propose it in your PR.
+# If you need a value that isn't there, propose it in your Pull Request.
 # ============================================================================
 
-title: "Guidance title"            # mandatory – short, specific
+title: [add title]                 # mandatory – short, not a full sentence, be specific, align with file name, check existing pages for inspiration
 layout: page                       # mandatory – leave as-is
 type: Guidance                     # mandatory – leave as-is
 search_exclude: true               # – leave as-is
 
-# 20–30 words. Used in meta tags, search results, and the highlights box at
-description: One or two sentences capturing the core outcome or insight of this page.
+# [add description]                # one or two sentences, max 20-30 words, capturing the core outcome or insight of this page. Used in meta tags, search results, and the highlights box at top, in the description tab - TO DO: change highlight box tab name
 
-contributors: [Your Name]          # mandatory – names must match _data/CONTRIBUTORS.yaml
-page_id: g-shortname               # mandatory – lowercase, hyphenated
+contributors: [Add names]          # mandatory – names must match _data/CONTRIBUTORS.yaml - if you or co-writers are not in yaml file, update it or propose it in your Pull Request
+page_id: g-[shortname]               # mandatory – lowercase, hyphenated - this should match your page name
 
 # ---------------------------------------------------------------------------
 # Top card – populates the box at the top of the page. Easier to write last, once the rest of the page exists.
