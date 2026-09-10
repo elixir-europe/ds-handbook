@@ -236,8 +236,7 @@ jobs:
               { owner, repo, state: "all", per_page: 100 }
             );
             const existing = issues.find(
-              issue => !issue.pull_request &&
-                (issue.body?.includes(marker) || issue.title === title)
+              issue => !issue.pull_request && issue.body?.includes(marker)
             );
 
             if (!existing && !broken) {
