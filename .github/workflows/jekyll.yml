@@ -45,6 +45,12 @@ jobs:
         run: |
           bundle install
 
+      - name: Validate indicator-page coverage
+        run: |
+          echo "Maturity model commit: $(git -C _external/rdm-maturity-model rev-parse HEAD)"
+          bundle exec ruby var/test/validate_indicator_coverage_test.rb
+          bundle exec ruby var/validate_indicator_coverage.rb
+
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: |
