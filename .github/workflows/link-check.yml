@@ -113,8 +113,11 @@ jobs:
           restore-keys: |
             lychee-${{ runner.os }}-${{ hashFiles('lychee.toml') }}-
 
-      # Scan authored sources rather than generated theme links. This retains
-      # genuine GitHub links without hundreds of edit/history/avatar requests.
+      # Scan authored sources (content, config, and static includes) rather
+      # than theme output. This covers hand-written links while skipping
+      # per-contributor GitHub/avatar/ORCID links that contributor-tiles-all.html
+      # generates from _data/CONTRIBUTORS.yaml, which would add hundreds of
+      # requests if scanned.
       - name: Check authored external links
         id: lychee
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
@@ -128,6 +131,8 @@ jobs:
             --include-fragments=none
             --extensions md,yml,yaml
             README.md
+            _config.yml
+            _includes/footer.html
             './pages/**/*.md'
             './_data/**/*.yml'
             './_data/**/*.yaml'
