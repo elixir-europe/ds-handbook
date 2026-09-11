@@ -1,11 +1,11 @@
 ---
-title: "National Data Support Network in Finland" 
+title: "Data Support Network in Finland" 
 layout: case-study                
 type: Case Study                 
 
 description: With 170 members across Finnish research institutions, this national peer network demonstrates how informal, grassroots collaboration can strengthen formal Open Science structures and enhance knowledge exchange.
 
-contributors: [Minna Ahokas, Diana Pilvar, Päivi Rauste]         
+contributors: [Minna Ahokas, Diana Pilvar, Päivi Rauste, Siiri Fuchs]         
 page_id: case-study-finish-data-support-network     
 
 lead_org: "CSC (ELIXIR-FI)"      
@@ -45,7 +45,6 @@ scale: national
 domain: cross-domain           # [vocab] domains.yml
 
 themes:                           
-  - fragmented-coordination
   - community-building
   - stakeholder-engagement
 
