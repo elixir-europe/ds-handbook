@@ -14,7 +14,7 @@ title: [add title]                 # mandatory – short, not a full sentence, b
 layout: page                       # mandatory – leave as-is
 type: Guidance                     # mandatory – leave as-is
 search_exclude: true               # – leave as-is
-contributors: [add names]          # mandatory – names must match _data/CONTRIBUTORS.yaml - if you or co-writers are not in yaml file, update it or propose it in your Pull Request - TODO: add location of yaml file
+contributors: [add names]          # mandatory – names must match _data/CONTRIBUTORS.yaml - if you or co-writers are not in yaml file, update it or propose it in your Pull Request. yaml fil is located under data > sidebars > file CONTRIBUTORS
 page_id: g-[shortname]             # mandatory – lowercase, hyphenated - this should match your page name
 
 # ---------------------------------------------------------------------------
@@ -28,12 +28,14 @@ topics:                            # mandatory - include important keywords that
   - [topic 1]
   - [topic 2]
   - [topic 3]
-who-to-involve:                    # optional – name a list of roles/people – need to create a controlled vocabulary inside _data/guidance
-  - [role 1]
-  - [role 2]
-  - [role 3]
 
-  # second tab
+# second tab                       # tab name: Team skills; hardcoded first line sentence: Useful skill set to effectively perform the activities:
+team-skills:                       # mandatory – name a list of skill(s) – need to create a controlled vocabulary inside _data/guidance
+  - [skill 1]
+  - [skill 2]
+  - [skill 3]
+
+  # third tab
 takeaways:                          # mandatory – write this once you have finished the page, 2-3 short bullet points containing the main takeaway message for the reader after going through the content on this page
   - [takeaway 1]
   - [takeaway 1]
