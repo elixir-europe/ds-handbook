@@ -78,9 +78,28 @@ resources:
     url: [add URL]
     description: [Add sentence]
 ---
+## Activity/category/area title
+Sentence to explain
+
+### Tip title
+Explanation of the tip
+
+### Tip title
+Explanation of the tip
 
 
-## Context
+## Activity/category/area title
+Sentence to explain
+
+### Tip title
+Explanation of the tip
+
+### Tip title
+Explanation of the tip
+
+etc
+
+
 <!-- mandatory 
 Instructions: 
 - Mandatory, short paragraph (two to three sentences) explaining the relevance of the topic and its context
@@ -104,7 +123,7 @@ Depending on the structure of your tips you could have different dificulties lev
 -->
 
 
-## What to do
+
 <!-- mandatory 
 Instructions: 
 - Consider ordering the steps if this is a linear manual using heading 3 for each step
@@ -121,12 +140,6 @@ Depending on the structure of your tips you could have different dificulties lev
 
 ### To-do 2
 
--->
-
-
-## Quick checklist 
-<!-- mandatory 
-note to self: add feature of checklist (copy from ELITMa repo)
 -->
 
 <!--
