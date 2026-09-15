@@ -24,7 +24,9 @@ page_id: g-[shortname]             # mandatory – lowercase, hyphenated - this 
 description: [add sentence]        # optional - one sentence, max 10-20 words, capturing the core outcome or insight of this page. Used in meta tags, search results - TO DO: change highlight box tab name
 last update: [add date]            # date page last updated, substantial changes or last review, not typos etc, use ISO 8601
 status: [add status]               # tag, choose from: in progress, in review, reviewed - TO: check with tech team for the controlled vocab/tags  
-topics:                            # mandatory - include important keywords that will be useful for the user but also for search engine optimisation, add words that indicate the (sub)topic(s) of the page, use term in file x - TODO: create controlled vocabulary   
+topics:                            # mandatory - include important keywords that will be useful for the user but also for search engine optimisation, add words that indicate the (sub)topic(s) of the page, use term in file x - TODO: create controlled vocabulary 
+
+NEW IDEA: let people choose free text from https://esco.ec.europa.eu/en/classification/skill_main and Terms4FAIRskills and then we can add vocab later; maybe indicate at what level
   - [topic 1]
   - [topic 2]
   - [topic 3]
