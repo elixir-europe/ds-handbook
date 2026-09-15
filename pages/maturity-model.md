@@ -58,7 +58,7 @@ page_id: maturity-model-index
               <td>
                 <ol>
                   {% for level in indicator.maturityLevels %}
-                  <li>{{ level }}</li>
+                  <li>{{ level.title }}{% if level.briefDescription %} – {{ level.briefDescription }}{% endif %}</li>
                   {% endfor %}
                 </ol>
               </td>
@@ -73,6 +73,13 @@ page_id: maturity-model-index
   {% endfor %}
 </div>
 
+
+## Contributors
+
+The maturity model is maintained by the RDM Community as a whole, so contributors are
+recorded against the model rather than against individual indicators.
+
+{% include mm-contributors.html %}
 
 ## Version information
 
