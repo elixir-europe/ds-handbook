@@ -58,7 +58,10 @@
     </ul>
 
     <a class="trail-magpie" href="{{ '/notebook' | relative_url }}" aria-label="The magpie's nest – saved pages">
-        <img src="{{ 'assets/img/magpie-dark.svg' | relative_url }}" alt="">
+        <span class="magpie-swap magpie-swap--trail">
+            <img class="magpie-swap__rest" src="{{ 'assets/img/magpie-2.svg' | relative_url }}" alt="">
+            <img class="magpie-swap__hover" src="{{ 'assets/img/magpie-6.svg' | relative_url }}" alt="" aria-hidden="true">
+        </span>
         <p class="trail-magpie-count">your guide</p>
     </a>
 </nav>

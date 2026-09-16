@@ -7,10 +7,11 @@ search_exclude: true
 ---
 
 <section class="notebook-greeting">
-    <img class="notebook-greeting-magpie" src="{{ 'assets/img/magpie-dark.svg' | relative_url }}" alt="" aria-hidden="true">
+    <img class="notebook-greeting-magpie" src="{{ 'assets/img/nest.svg' | relative_url }}" alt="" aria-hidden="true">
     <div class="notebook-greeting-text">
         <p class="notebook-greeting-hi">hello!</p>
         <p class="notebook-greeting-body">These are the things I've collected for you. I'm afraid I don't have a lot of space in my secret nest, so I can only hold them for a bit. When you close the browser, clear cookies, or change device, this lot will be lost.</p>
+        <p class="notebook-greeting-body">If you'd like to keep them properly, use <b>print or save as PDF</b> below. I'll gather every page in the nest into one document you can save, print, or take offline.</p>
         <p class="notebook-greeting-sign">– the magpie</p>
     </div>
 </section>
@@ -28,5 +29,5 @@ search_exclude: true
 
 <div id="notebook-empty" class="notebook-empty">
     <p class="notebook-empty-line">The nest is empty for now.</p>
-    <p class="notebook-empty-hint">Pick any page across the handbook and click <span class="notebook-empty-button">+ add to the magpie's nest</span>. The magpie will keep them here until you close the browser.</p>
+    <p class="notebook-empty-hint">Pick any page across the handbook and click <span class="notebook-empty-button">+ add to the magpie's nest</span>. The magpie will keep them here until you close the browser, and can gather everything you collect into a single PDF to save or print.</p>
 </div>

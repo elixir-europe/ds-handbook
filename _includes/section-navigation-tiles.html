@@ -61,11 +61,11 @@ they can be re-added when needed.
                 {%- endif %}
             </div>
             {%- if flourish == "campfire" %}
-            <span class="tile-flourish" aria-hidden="true">{% include icons/tile-campfire.svg %}</span>
+            <span class="tile-flourish" aria-hidden="true">{{ "assets/img/icons/tile-campfire.svg" | inline_svg }}</span>
             {%- elsif flourish == "guidance" %}
-            <span class="tile-flourish" aria-hidden="true">{% include icons/tile-guidance.svg %}</span>
+            <span class="tile-flourish" aria-hidden="true">{{ "assets/img/icons/tile-guidance.svg" | inline_svg }}</span>
             {%- elsif flourish == "maturity" %}
-            <span class="tile-flourish" aria-hidden="true">{% include icons/tile-maturity.svg %}</span>
+            <span class="tile-flourish" aria-hidden="true">{{ "assets/img/icons/tile-maturity.svg" | inline_svg }}</span>
             {%- endif %}
         </div>
     </div>
