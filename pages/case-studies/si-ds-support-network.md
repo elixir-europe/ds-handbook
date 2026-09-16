@@ -6,7 +6,8 @@ search_exclude: true
 
 description: How a national mandate in Slovenia brought 20 research organizations together to build a monthly peer-support network and Slack community for data stewards.
 
-contributors: [Luka Kranjc]
+contributors:
+  writing-original-draft: [Luka Kranjc]
 page_id: case-study-slovenian-data-support-network
 
 lead_org: "Central Technical Library of the University of Ljubljana (CTK)"
@@ -53,7 +54,7 @@ status: active
 external_url: https://projekt-spoznaj.si/en/podporna-skupina-podatkovnih-strokovnjakov/
 external_url_label: Visit the Data Expert Support Group activity page
 
-lead_quote: "The fastest way to master data stewardship is listening to nineteen other people solve the exact same problem you faced yesterday."
+lead_quote: "One of the best ways to grow as a data steward is listening to peers solve the exact same problem you faced yesterday."
 
 related_pages:
   Guidance:
