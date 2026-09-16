@@ -46,7 +46,7 @@ themes:
   - training-gap
   - unclear-roles
 
-start: 2025
+start: 2024
 
 status: active
 
@@ -60,8 +60,6 @@ related_pages:
     - g-support-networks
     - g-support-communication
     - g-support-rdm-information
-  Case_Study:
-    - case-study-finish-data-support-network
   Maturity_Indicator:
     - mm-support-network
 
