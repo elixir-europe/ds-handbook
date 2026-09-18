@@ -1,5 +1,5 @@
 ---
 title: DTLS Interest Group
-page_id: dtls-interst-group
+page_id: dtls-interest-group
 type: [Case Study]
 ---

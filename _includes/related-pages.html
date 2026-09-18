@@ -38,15 +38,15 @@ both spellings (e.g. `Case_Study` and `Campfire`) work.
         {%- assign single_label = key | replace: "_", " " -%}
         {%- if key contains "Guidance" or key contains "Signpost" -%}
           {%- assign tone = "signposts" -%}
-          {%- assign icon_file = "icons/tile-guidance.svg" -%}
+          {%- assign icon_file = "assets/img/icons/tile-guidance.svg" -%}
           {%- assign single_label = "Signpost" -%}
         {%- elsif key contains "Case" or key contains "Campfire" -%}
           {%- assign tone = "campfires" -%}
-          {%- assign icon_file = "icons/tile-campfire.svg" -%}
+          {%- assign icon_file = "assets/img/icons/tile-campfire.svg" -%}
           {%- assign single_label = "Campfire" -%}
         {%- elsif key contains "Maturity" or key contains "Indicator" or key contains "Waypoint" -%}
           {%- assign tone = "waypoints" -%}
-          {%- assign icon_file = "icons/tile-maturity.svg" -%}
+          {%- assign icon_file = "assets/img/icons/tile-maturity.svg" -%}
           {%- assign single_label = "Waypoint" -%}
         {%- endif -%}
 
@@ -56,9 +56,7 @@ both spellings (e.g. `Case_Study` and `Campfire`) work.
           <div class="col">
               <a class="related-tile related-tile--{{ tone }}" href="{{ target.url | relative_url }}">
                   <span class="related-tile__type">
-                      {%- if icon_file == "icons/tile-guidance.svg" -%}{% include icons/tile-guidance.svg %}{%- endif -%}
-                      {%- if icon_file == "icons/tile-campfire.svg" -%}{% include icons/tile-campfire.svg %}{%- endif -%}
-                      {%- if icon_file == "icons/tile-maturity.svg" -%}{% include icons/tile-maturity.svg %}{%- endif -%}
+                      {{ icon_file | inline_svg }}
                       {{ single_label }}
                   </span>
                   <span class="related-tile__title">{{ target.title }}</span>

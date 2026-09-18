@@ -34,8 +34,8 @@ layout: default
                 aria-pressed="false"
                 data-url="{{ page.url | relative_url }}"
                 data-title="{{ page.title | escape }}"
-                data-section="{{ page.sidebar }}">
-            <img class="notebook-toggle-magpie" src="{{ 'assets/img/magpie-dark.svg' | relative_url }}" alt="" aria-hidden="true">
+                data-section="{% if page.sidebar %}{{ page.sidebar }}{% elsif page.path contains 'pages/case-studies' %}case-studies{% endif %}">
+            <img class="notebook-toggle-magpie" src="{{ 'assets/img/magpie-7.svg' | relative_url }}" alt="" aria-hidden="true">
             <span class="notebook-toggle-icon" aria-hidden="true">+</span>
             <span class="notebook-toggle-label">add to the magpie's nest</span>
         </button>
