@@ -1,6 +1,7 @@
 .sass-cache/
 .jekyll-metadata
 .jekyll-cache/
+.lycheecache
 _pdf
 .DS_Store
 .idea
