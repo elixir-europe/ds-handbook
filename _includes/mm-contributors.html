@@ -1,0 +1,68 @@
+{%- comment -%}
+The people who built the maturity model.
+
+Both the names and their details come from the rdm-maturity-model repository
+(_data/contributors.yaml there, site.data.shared.contributors here): the model is
+what they contributed to, and the indicator pages are generated from it, so there
+is no page frontmatter to carry an attribution. The list is pooled across the whole
+model rather than split per indicator, because the model is revised as a whole.
+
+That file carries each person's GitHub handle, ORCID and affiliation, copied across
+when the model took over the indicator pages. This include falls back to this
+repository's own _data/CONTRIBUTORS.yaml for anyone the model's list names but has
+no details for, and renders initials for anyone we have no details for at all.
+{%- endcomment -%}
+
+{%- assign people = site.data.shared.contributors -%}
+{%- if people and people.size > 0 -%}
+<ul class="contributor-roster" role="list">
+    {%- for entry in people -%}
+    {%- assign name = entry[0] -%}
+    {%- assign data = entry[1] -%}
+    {%- unless data.git or data.orcid or data.affiliation -%}
+      {%- assign data = site.data.CONTRIBUTORS[name] -%}
+    {%- endunless -%}
+
+    {%- assign words = name | split: " " -%}
+    {%- assign initials = "" -%}
+    {%- for w in words limit: 3 -%}
+      {%- assign initials = initials | append: w | slice: 0, 1 | upcase -%}
+    {%- endfor -%}
+
+    <li class="contributor-roster__item">
+        {%- if data.git -%}
+        <a class="contributor-roster__avatar-slot" href="https://github.com/{{ data.git }}" rel="noopener" aria-label="{{ name }} on GitHub">
+            <img class="contributor-roster__avatar" src="https://avatars.githubusercontent.com/{{ data.git }}" alt="" loading="lazy">
+        </a>
+        {%- else -%}
+        <span class="contributor-roster__avatar-slot" aria-hidden="true">
+            <span class="contributor-roster__avatar contributor-roster__avatar--initial">{{ initials }}</span>
+        </span>
+        {%- endif -%}
+
+        <p class="contributor-roster__name">{{ name }}</p>
+
+        {%- if data.affiliation -%}
+        <p class="contributor-roster__affiliation">{{ data.affiliation }}</p>
+        {%- else -%}
+        <p class="contributor-roster__affiliation" aria-hidden="true"></p>
+        {%- endif -%}
+
+        {%- if data.orcid or data.git -%}
+        <p class="contributor-roster__links">
+            {%- if data.orcid -%}
+            <a href="https://orcid.org/{{ data.orcid }}" rel="noopener" aria-label="{{ name }} on ORCID" title="ORCID iD">
+                <i class="fa-brands fa-orcid" aria-hidden="true"></i>
+            </a>
+            {%- endif -%}
+            {%- if data.git -%}
+            <a href="https://github.com/{{ data.git }}" rel="noopener" aria-label="{{ name }} on GitHub" title="GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+            {%- endif -%}
+        </p>
+        {%- endif -%}
+    </li>
+    {%- endfor -%}
+</ul>
+{%- endif -%}
