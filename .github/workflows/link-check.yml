@@ -53,11 +53,14 @@ jobs:
         with:
           bundler-cache: true
 
-      # The explicit empty value prevents jekyll-github-metadata from injecting
-      # the Pages base URL, so root-relative links resolve directly inside _site.
+      # Build with the deployed Pages base path and nest the output under it,
+      # so --root-dir maps URLs exactly as github.io does. Links missing the
+      # prefix (e.g. a bare /case-studies) then fail here as they do in
+      # production.
       - name: Build the site
-        run: bundle exec jekyll build --baseurl ""
+        run: bundle exec jekyll build --baseurl "$BASE_PATH" --destination "_linkcheck$BASE_PATH"
         env:
+          BASE_PATH: /${{ github.event.repository.name }}
           PAGES_REPO_NWO: ${{ github.repository }}
           JEKYLL_ENV: production
           JEKYLL_BUILD_BRANCH: ${{ github.head_ref || github.ref_name }}
@@ -71,12 +74,12 @@ jobs:
             --config lychee.toml
             --offline
             --scheme file
-            --root-dir "${{ github.workspace }}/_site"
+            --root-dir "${{ github.workspace }}/_linkcheck"
             --fallback-extensions html
             --index-files index.html
             --include-fragments=anchor-only
             --extensions html
-            '_site/**/*.html'
+            '_linkcheck/**/*.html'
           fail: true
           failIfEmpty: true
           jobSummary: true
