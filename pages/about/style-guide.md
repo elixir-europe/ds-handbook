@@ -122,7 +122,7 @@ The magpie is the handbook's mascot – observant, curious, a careful collector.
 
 ## Reusable components
 
-For the full kit of editorial components (callouts, drop-cap, section-eyebrow, margin-note, pull-quote) with copy-pasteable code and rendered examples, see the [contributing guide](/how-to-contribute#reusable-components).
+For the full kit of editorial components (callouts, drop-cap, section-eyebrow, margin-note, pull-quote) with copy-pasteable code and rendered examples, see the [contributing guide](/style-guide#reusable-components).
 
 ## Images and figures
 
