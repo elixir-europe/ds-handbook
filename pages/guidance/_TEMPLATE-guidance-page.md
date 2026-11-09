@@ -1,151 +1,85 @@
 ---
 # ============================================================================
-# Guidance (signpost) template
-# Copy the content of this file into your newly create page at pages/guidance/<your-page>.md and fill it in. Choose a page name that matches the conventions: g-shortname. 
-# Required fields are marked (mandatory). Everything else is optional but 
-# encouraged – the more you fill in, the more useful the guidance is to others.
-#
-# Some fields use a controlled vocabulary – you set a key, and the layout
-# looks up the human-readable label from a YAML in _data/guidance/.
-# If you need a value that isn't there, propose it in your Pull Request.
+# Signpost (Guidance) template
+# Copy this file to pages/guidance/g-<shortname>.md and fill it in.
+# Fields marked (mandatory) are required. Everything else is optional.
+# Write in line with the DS Handbook Style Guide (About > Style guide).
 # ============================================================================
 
-title: [add title]                 # mandatory – short, not a full sentence, be specific, align with file name, check existing pages for inspiration
+title: [add title]                 # mandatory – short, not a full sentence, specific; align with file name
 layout: page                       # mandatory – leave as-is
 type: Guidance                     # mandatory – leave as-is
-search_exclude: true               # – leave as-is
-contributors: [add names]          # mandatory – names must match _data/CONTRIBUTORS.yaml - if you or co-writers are not in yaml file, update it or propose it in your Pull Request. yaml fil is located under data > sidebars > file CONTRIBUTORS
-page_id: g-[shortname]             # mandatory – lowercase, hyphenated - this should match your page name
+search_exclude: true               # leave as-is
+contributors: [add names]          # mandatory – comma separated list, names must match _data/CONTRIBUTORS.yaml; add missing names in your Pull Request; yaml file is located under data > sidebars > file CONTRIBUTORS
+page_id: g-[shortname]             # mandatory – lowercase, hyphenated, same as the file name
 
 # ---------------------------------------------------------------------------
-# At a glance box – populates the box at the top of the page. Easier to write last, once the rest of the page exists.
+# At a glance box – three tabs at the top of the page. Easiest to write last.
+# ---------------------------------------------------------------------------
 
-  # first tab
-description: [add sentence]        # optional - one sentence, max 10-20 words, capturing the core outcome or insight of this page. Used in meta tags, search results - TO DO: change highlight box tab name
-last update: [add date]            # date page last updated, substantial changes or last review, not typos etc, use ISO 8601
-status: [add status]               # tag, choose from: in progress, in review, reviewed - TO: check with tech team for the controlled vocab/tags  
-topics:                            # mandatory - include important keywords that will be useful for the user but also for search engine optimisation, add words that indicate the (sub)topic(s) of the page, use term in file x - TODO: create controlled vocabulary 
-
-NEW IDEA: let people choose free text from https://esco.ec.europa.eu/en/classification/skill_main and Terms4FAIRskills and then we can add vocab later; maybe indicate at what level
-  - [topic 1]
+# Tab 1: At a glance
+description: [add sentence]        # mandatory – one sentence (10–20 words) on the core outcome of the page; also used in search results
+last update: [YYYY-MM-DD]          # mandatory – date of the last substantial change or review (ISO 8601), not typo fixes
+topics:                            # mandatory – 3–5 short keywords for readers and search engines
+  - [topic 1]                      # free text; if a term comes from Terms4FAIRskills (https://terms4fairskills.github.io/) or ESCO (https://esco.ec.europa.eu/en/classification/skills), add its ID as a comment
   - [topic 2]
   - [topic 3]
 
-# second tab                       # tab name: Team skills; hardcoded first line sentence: Useful skill set to effectively perform the activities:
-team-skills:                       # mandatory – name a list of skill(s) – need to create a controlled vocabulary inside _data/guidance
-  - [skill 1]
+# Tab 2: Introduced skills
+skills:                            # mandatory – 3–5 skills; use the exact label from ESCO or add the URI as a comment
+  - [skill 1]                      # e.g. evaluate training   # http://data.europa.eu/esco/skill/728ad40d-4a79-4b4d-b77b-a48d094d73fa
   - [skill 2]
   - [skill 3]
 
-  # third tab
-takeaways:                          # mandatory – write this once you have finished the page, 2-3 short bullet points containing the main takeaway message for the reader after going through the content on this page
+# Tab 3: Takeaways
+takeaways:                         # mandatory – 2–3 short bullets with the main message of the page; write these last
   - [takeaway 1]
-  - [takeaway 1]
+  - [takeaway 2]
+  - [takeaway 3]
 
 # ---------------------------------------------------------------------------
-# Cross-references – optional, rendered as a "Related pages" block at the bottom.
-# Nested by type; each section becomes a row of slim tone-aware tiles.
-# Type keys recognised: Guidance, Case_Study, Maturity_Indicator.
-# e.g., 
-# Guidance:
-#    - g-writing-rdm-strategy
-#  Case_Study:
-#    - other-case-shortname
-#  Maturity_Indicator:
-#    - mm-strategy-defined
+# Related pages – optional, shown as tiles at the bottom of the page.
+# Use page_ids. Type keys: Guidance, Case_Study, Maturity_Indicator.
+# Delete the types you don't use.
 # ---------------------------------------------------------------------------
 related_pages:
-  [Type]:
-    - [page_id]
-  [Type]:
-    - [page_id]
+  Guidance:
+    - [g-page-id]
+  Case_Study:
+    - [case-study-page-id]
+  Maturity_Indicator:
+    - [mm-page-id]
 
 # ---------------------------------------------------------------------------
-# Resources – render as tables (Templates / Internal /
-# External) at the end of the page. 
-
-# Add an inline entry resources:
-#  - name: "Resource title"
-#    url: https://example.org/resource
-#    description: One-line context.
-#    category: external_resource   # or template, internal_resource
-# e.g., 
-# resources:
-#  - name: rdmkit
-#    url: https://example.org/resource
-#    description: One-line context – why this resource matters here.
+# Resources – optional, shown as a table at the bottom of the page.
+# Only add Resources in this section, not in the text body.
+# category: external_resource, internal_resource or template
 # ---------------------------------------------------------------------------
 resources:
-  - name: [add name]
-    url: [add URL]
-    description: [Add sentence]
+  - name: [resource title]
+    url: [https://...]
+    description: [one line on why this resource is useful here]
+    category: [category]
 ---
-## Activity/category/area title
-Sentence to explain
 
-### Tip title
-Explanation of the tip
+[Intro – mandatory. Two or three sentences on why this topic matters and its context. Address the reader as "you".]
 
-### Tip title
-Explanation of the tip
+[Reading guide – mandatory. One or two sentences on how to read the sections below and whether the order matters.]
 
+## [Activity title]
+[One sentence explaining the activity.]
 
-## Activity/category/area title
-Sentence to explain
+### [Tip title]
+[Explain the tip in a few short sentences. Tips are for data stewards, not researchers. Keep them practical and feasible.]
 
-### Tip title
-Explanation of the tip
+### [Tip title]
+[Explanation of the tip.]
 
-### Tip title
-Explanation of the tip
+## [Activity title]
+[One sentence explaining the activity.]
 
-etc
+### [Tip title]
+[Explanation of the tip.]
 
-
-<!-- mandatory 
-Instructions: 
-- Mandatory, short paragraph (two to three sentences) explaining the relevance of the topic and its context
-- Check DS Handbook Style Guide and How to Contribute (under About section)., a
-- Additional paragraphs will be collapsable content
-
-Consider ordering the steps if this is a linear manual using heading 3 for each step
-- Consider different formats if the guidance is not linear or requires a more complex explanation
-- Check DS Handbook Style Guide and How to Contribute (under About section).
-- Make sure all to-do's are in the scope of the page, otherwise start a new page or re-adjust outcomes in the Top card.
-# mandatory – Write a sentence or two before to-dos how to read this section, what is the order of the to-do's 
-
-### To-do 1
- 
-It is a tip for data stewards not researchers.
-It should be practical, feasible. 
-Depending on the structure of your tips you could have different dificulties levels for different experience of data stewards.
-
-### To-do 2
-
--->
-
-
-
-<!-- mandatory 
-Instructions: 
-- Consider ordering the steps if this is a linear manual using heading 3 for each step
-- Consider different formats if the guidance is not linear or requires a more complex explanation
-- Check DS Handbook Style Guide and How to Contribute (under About section).
-- Make sure all to-do's are in the scope of the page, otherwise start a new page or re-adjust outcomes in the Top card.
-# mandatory – Write a sentence or two before to-dos how to read this section, what is the order of the to-do's 
-
-### To-do 1
- 
-It is a tip for data stewards not researchers.
-It should be practical, feasible. 
-Depending on the structure of your tips you could have different dificulties levels for different experience of data stewards.
-
-### To-do 2
-
--->
-
-<!--
-  Don't add a `## Resources` heading here – the layout renders the
-  `resources:` frontmatter list automatically as a table at the bottom
-  of the page.
--->
+### [Tip title]
+[Explanation of the tip.]
