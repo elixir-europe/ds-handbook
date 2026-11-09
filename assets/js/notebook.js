@@ -46,6 +46,12 @@
             return new Date(ts).toLocaleDateString(undefined, { month: 'long', day: 'numeric' });
         } catch (e) { return ''; }
     }
+    // A page with no sidebar renders data-section as the string "false",
+    // which is truthy in JS — treat stringified booleans as "no section".
+    function cleanSection(section) {
+        if (!section || section === 'false' || section === 'true' || section === 'null') return '';
+        return section;
+    }
     function sectionLabel(section) {
         var map = {
             'guidance': 'Signposts',
@@ -124,11 +130,12 @@
 
         items.sort(function (a, b) { return b.savedAt - a.savedAt; }).forEach(function (item) {
             var li = document.createElement('li');
-            var toneClass = item.section ? ' tone--' + item.section.replace(/[^a-z0-9-]/g, '') : '';
+            var section = cleanSection(item.section);
+            var toneClass = section ? ' tone--' + section.replace(/[^a-z0-9-]/g, '') : '';
             li.className = 'notebook-item' + toneClass;
             li.innerHTML =
                 '<a class="notebook-item-link" href="' + escapeHtml(item.url) + '">' +
-                    (item.section ? '<span class="notebook-item-section">' + escapeHtml(sectionLabel(item.section)) + '</span>' : '') +
+                    (section ? '<span class="notebook-item-section">' + escapeHtml(sectionLabel(section)) + '</span>' : '') +
                     '<span class="notebook-item-title">' + escapeHtml(item.title) + '</span>' +
                     '<span class="notebook-item-meta">' +
                         '<span class="notebook-item-url">' + escapeHtml(item.url) + '</span>' +
@@ -171,7 +178,7 @@
             if (saving) {
                 add(url, title, section);
                 // Bob the sidebar magpie too if it's on the page
-                var sidebarMagpie = document.querySelector('.trail-magpie img');
+                var sidebarMagpie = document.querySelector('.trail-magpie .magpie-swap');
                 if (sidebarMagpie) {
                     sidebarMagpie.classList.remove('bobbing');
                     void sidebarMagpie.offsetWidth;
@@ -259,7 +266,7 @@
         var things = count === 1 ? 'shiny thing' : 'shiny things';
 
         cover.innerHTML =
-            '<img class="notebook-print-magpie" src="/assets/img/magpie-dark.svg" alt="">' +
+            '<img class="notebook-print-magpie" src="/assets/img/magpie-1.svg" alt="">' +
             '<p class="notebook-print-cover-eyebrow">FROM THE MAGPIE\'S NEST</p>' +
             '<h1 class="notebook-print-cover-title">A handful of<br>shiny things</h1>' +
             '<p class="notebook-print-cover-meta">' + count + ' ' + things + ', collected on ' + dateStr + '</p>' +

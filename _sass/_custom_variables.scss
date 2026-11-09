@@ -16,10 +16,10 @@ $btn-primary-bg-hover:    $secondary;
 $btn-primary-color-hover: $white;
 
 /*-----Top navigation-----*/
-$topnav-bg:              $brand-paper;
-$topnav-brand-height:    3.5rem;
-$topnav-title-color:     $dark;
-$topnav-searchbar:       $brand-cream;
+$topnav-bg:              $dark;
+$topnav-brand-height:    2.25rem;
+$topnav-title-color:     $brand-linen;
+$topnav-searchbar:       #2B4C3B; // a lighter shade of the bar, not a white box
 
 /*-----Search-----*/
 $search-result-color: $accent-color;
@@ -66,8 +66,8 @@ $badge-bg-hover:     $primary;
 
 /*-----Footer-----*/
 $footer-bg:             $dark;
-$footer-color:          $brand-cream;
-$footer-link-color:     $brand-cream;
+$footer-color:          $brand-linen;
+$footer-link-color:     $brand-linen;
 $footer-link-color-hover: $brand-amber;
 $footer-copyright-bg:   rgba($white, 0.06);
 $footer-ett:            $brand-amber;

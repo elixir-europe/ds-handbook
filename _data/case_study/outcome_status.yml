@@ -4,7 +4,7 @@
 - key: active
   label: Active
   description: The work is currently running and supported.
-  tone: spring
+  tone: mist
 
 - key: evolved
   label: Evolved

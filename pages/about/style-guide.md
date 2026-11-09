@@ -59,29 +59,29 @@ You don't choose the font as a writer – pages render in the right font automat
 
 ## Colour palette
 
-Trailhead – modern outdoor handbook, greens grounded with amber and brick.
+Trailhead – modern outdoor handbook, deep teal-blues grounded with amber and brick on a pale sky page.
 
 | Token | Hex | Role |
 |---|---|---|
-| **Ink** | `#1F3A2E` | Body text, dark surfaces, footer |
-| **Sage** | `#6B9E7E` | Surface accents, mid-green highlights |
-| **Spring** | `#C7E8B5` | Highlights, the backlight effect, Signposts landmark |
+| **Ink** | `#143139` | Body text, dark surfaces, footer |
+| **Lake** | `#5B95A0` | Surface accents, mid-teal highlights |
+| **Mist** | `#BEE3E8` | Highlights, the backlight effect, Signposts landmark |
 | **Amber** | `#E8B547` | Surface fills, decorative accents, Campfires hover |
 | **Amber-soft** | `#F5DC9C` | Soft amber wash – Waypoints landmark, door-icon blocks |
 | **Brick** | `#C44536` | Brand red, link colour |
 | **Brick-soft** | `#E9B4AB` | Soft brick wash – Campfires landmark, door-icon blocks |
-| **Cream** | `#F4EFE4` | Body background |
-| **Paper** | `#FFFFFF` | Cards, sidebars floating on cream |
-| **Rule** | `#E0DACE` | Hairlines, dividers |
+| **Sky** | `#ECF2F3` | Body background – pale teal-tinted paper |
+| **Paper** | `#FFFFFF` | Cards, sidebars floating on sky |
+| **Rule** | `#D3DEE0` | Hairlines, dividers |
 
 ### Text-safe variants
 
-Surface colours (sage, amber, brick at full saturation) **don't pass WCAG AA contrast on cream**, so we use deeper variants whenever a colour appears as text:
+Surface colours (lake, amber, brick at full saturation) **don't pass WCAG AA contrast on the sky ground**, so we use deeper variants whenever a colour appears as text:
 
-| Surface | Text-safe variant | Contrast on cream |
+| Surface | Text-safe variant | Contrast on sky |
 |---|---|---|
-| `#6B9E7E` Sage | `#3F6B52` Sage-text | 6.5:1 ✓ AA |
-| `#E8B547` Amber | `#8C6516` Amber-text | 5.8:1 ✓ AA |
+| `#5B95A0` Lake | `#1B5F68` Lake-text | 6.4:1 ✓ AA |
+| `#E8B547` Amber | `#8C6516` Amber-text | 4.7:1 ✓ AA (little headroom) |
 | `#C44536` Brick | `#B03828` Brick-text | 5.4:1 ✓ AA |
 
 {% include callout.html type="important" content="If you're adding new components, never use the surface variant as a text colour. The compiled CSS already routes text through the safe variants – don't override that." %}
@@ -90,11 +90,11 @@ Surface colours (sage, amber, brick at full saturation) **don't pass WCAG AA con
 
 The handbook is organised into three landmarks. Each has its own colour identity. Templates apply the tone automatically; consider it when picking images or accents.
 
-The three landmark tones rotate around a warm trio – on the home-page doors, hovering one previews the next:
+The three landmark tones rotate – a cool teal against the warm pair – on the home-page doors, hovering one previews the next:
 
 | Landmark | Section | Tone colour | Where you'd write |
 |---|---|---|---|
-| **🪶 Signposts** | Guidance | Spring (green) | `pages/guidance/` |
+| **🪶 Signposts** | Guidance | Mist (teal) | `pages/guidance/` |
 | **🪶 Campfires** | Case studies | Brick-soft (red) | `pages/case-studies/` |
 | **🪶 Waypoints** | Maturity model | Amber-soft (yellow) | (in the maturity-model submodule) |
 
