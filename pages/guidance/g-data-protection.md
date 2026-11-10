@@ -40,8 +40,8 @@ These actions ensure that the organizational structure, roles, and necessary too
 * Map responsibilities for data protection across researchers, data stewards, DPOs, ethics committees, and legal advisors.  
 * Provide a one-page overview of responsibilities, highlighting what tasks belong to the DPO versus the data steward, Principal Investigator and IT staff. Clearly communicate the mandates of the different roles (consultation, monitoring, impact assessment).  
 * Offer regular, role-specific training to ensure these individuals understand their duties regarding data handling and security.  
-* Keep contact details for the DPO and related offices (Legal, TTO) visible in onboarding materials, presentations, intranet pages, and RDM pages.  
-* Provide the DPO with executive support to enforce compliance across departments (if that is in the mandate of the DS role).
+* Keep contact details for the DPO and related offices (Legal, TTO (technology transfer office)) visible in onboarding materials, presentations, intranet pages, and RDM (research data management) pages.  
+* Provide the DPO with executive support to enforce compliance across departments (if that is in the mandate of the Data Steward (DS) role).
 
 ✔ **Centralize and Standardize Documentation**
 
