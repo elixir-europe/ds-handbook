@@ -97,10 +97,10 @@ related_pages:
 # Both forms can be mixed in the same list.
 # ---------------------------------------------------------------------------
 resources:
-  - name: Vienna's Research Questions
-    url: https://www.digital.wienbibliothek.at
+  - name: "Vienna's Research Questions"
+    url: https://www.digital.wienbibliothek.at/urn/urn:nbn:at:AT-WBR-1937995
     description: The City of Vienna actively invites urban researchers to collaborate.
-  - name: EU Mission: Climate-Neutral and Smart Cities
+  - name: "EU Mission: Climate-Neutral and Smart Cities"
     url: https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe/eu-missions-horizon-europe/climate-neutral-and-smart-cities_en
     description: Contextualizes the project and provides the funding rationale.
 ---
