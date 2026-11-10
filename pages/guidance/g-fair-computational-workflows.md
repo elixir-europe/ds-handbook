@@ -1,5 +1,5 @@
 ---
-title: Making your computational workflows FAIR
+title: Making computational workflows FAIR
 description: How to make computational workflows findable, accessible, interoperable, and reusable — from registration and versioning to provenance capture and archival packaging.
 contributors: [Luiz Gadelha]
 page_id: g-fair-computational-workflows
