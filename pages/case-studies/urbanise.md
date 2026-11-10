@@ -108,16 +108,16 @@ resources:
 How do you begin RDM support when the “research community” is not a department or discipline, but an emerging 
 network across a university, a city, public bodies, industry and civil society? 
 
-Data stewards often support a defined research community: one lab, department, faculty or discipline. Most 
+Data stewards often support a defined research community: one lab, department, faculty or discipline and are thus embedded. Most 
 RDM guidance, training and service models assume that this community already exists. 
 
 My role starts somewhere less settled. I work in a two-year project linked to the EU Mission for climate-neutral 
-and smart cities. The work brings together urban researchers from different parts of the university with people 
+and smart cities. The work brings together urban researchers from different parts of the University of Vienna with people 
 outside academia, including city administration, funders, infrastructure providers, industry partners and, in 
 some cases, community groups. 
 
 This changes the stewardship task. I still support familiar RDM work, such as data management plans (DMPs), 
-documentation, sharing and curation. But I also need to help people find each other, understand each other’s 
+documentation, sharing and curation. Additionally, I also need to help people find each other, understand each other’s 
 work and recognise where their data may connect. 
 
 Good RDM will not make a city climate-neutral by itself. It can, however, make research evidence easier to find, 
@@ -132,9 +132,9 @@ disciplinary setting into a transdisciplinary network that is still being built.
 > - **interdisciplinary**: researchers from different disciplines work together;
 > - **transdisciplinary**: research also involves people outside academia, such as public bodies, industry, community groups or citizens. 
 >
-> In practice, the boundaries blur. The point is not to sort people into neat boxes. It is to notice when your usual support model no longer fits. 
+> In practice, the boundaries blur. The point is not to sort people into neat boxes, but to notice when your usual support model no longer fits. 
 >
-> Side note: A steward can be embedded and still work across disciplines.   The difference here is that the role itself is designed to move between communities.
+> Side note: A steward can be embedded and still work across disciplines. My role, in contrast, is designed to move between communities.
 
 
 ## What we did
@@ -177,7 +177,7 @@ potential long-term ownership early, even though we do not yet have all the answ
 My first task was onboarding. This included the usual practical work, but it also meant learning a 
 new university, a new city and new research environments. Joining the team of data stewards was the most fun! 
  
-I met key people in informal one-hour conversations. These meetings helped me understand their work, 
+I met key people in informal one-hour conversations. These meetings helped me grasp their work, 
 their priorities and the networks they already relied on. They also made my new role visible. In a 
 new transversal role, people need to know not only who you are, but why they might want to talk to you. 
  
@@ -194,7 +194,8 @@ I found it useful to prepare three versions of my introduction:
 
 - one-sentence version for handshakes; 
 - 30-second version for new contacts; 
-- two-minute version for people who wanted to know how the role connected to their work. 
+- two-minute version for people who wanted to know how the role connected to their work.
+
 Instead of trying to explain RDM in its entirety or the general role of data stewards, the crucial 
 message is rather what I could help with and why that might matter to the person in front of me. Only 
 when people are interested then, it makes sense to expand on the available options. 
@@ -210,7 +211,7 @@ and eventually reach group leaders and researchers, research support staff, repo
 providers, funders, city administration, industry contacts and community initiatives at the same time. 
  
 For each contact, I record only information that is useful for the work and appropriate to keep, 
-standardized with a template you can find below. I avoid storing personal impressions or information 
+standardized with a template. I avoid storing personal impressions or information 
 that does not have a clear purpose. The template remains under review: if a field does not help to 
 make a decision or follow up, I will remove it eventually. 
 
@@ -244,7 +245,7 @@ structured template for contacts (see above) ensures that entries are consistent
 displayed and filtered in a tabular way using the native Bases-Plugin. Obsidian may or may not remain 
 the right tool as the work grows. 
 
-#### What was difficult from the start 
+### What was difficult from the start 
 The work is difficult because the community, the service model and the working relationships are 
 all still taking shape at the same time. Additionally, the short project timeline, discipline differences 
 and the aim beyond the university pose expectable difficulties. 
@@ -255,7 +256,7 @@ formal deliverables and a more uncertain future. This necessitates to prioritise
 intensive one-to-one support to every possible urban research project. At the same time, a programme 
 made only of events can remain too general to change day-to-day practice. 
 
-There is a balance to be found. For now, I combine targeted support offers and training input for selected 
+There is a balance to be found. For now, I combine on-demand targeted support offers and training input for selected 
 projects with broader events that help people meet, compare approaches and see where RDM matters in the wider Mission. 
 
 #### Different disciplines use familiar words differently 
@@ -281,9 +282,8 @@ repeated conversations matter. They help me learn what each group needs before I
 process or event. 
 
 ## What is changing so far 
-It is too early to claim or expect that the project has changed data practice across urban research. I 
-have only recently started building the network, and many relationships need time before they lead to 
-RDM requests or joint work. 
+I have only recently started building the network, and many relationships need time before they lead to 
+RDM requests or joint work. It is too early to claim or expect that the project has changed data practice across urban research. 
  
 What has changed already is the framing of RDM within conversations. I bring a transdisciplinary and 
 networking perspective into the work of the wider RDM team: not only “how do we manage this dataset?”, 
@@ -291,7 +291,7 @@ but also “who else may need to find, understand or reuse this data?”
  
 One early example is an event I organised for urban researchers in Vienna. It brought together a 
 social-science repository, AUSSDA; a register-data provider, AMDC; a funder, the Austrian Academy of 
-Sciences (ÖAW); and a city representative presenting Vienna’s existing research questions. The aim 
+Sciences (ÖAW); and a city representative presenting Vienna’s existing research questions. The goal 
 was practical, namely to invite researchers to take a research question of policy relevance, tap into 
 existing data sources and support routes, and know where to get funding for such a project. More 
 generally, the aim was to show where repository, register and city data may connect. The event is 
@@ -310,19 +310,6 @@ For the first year, I am tracking simple signs that the network is becoming more
 These indicators will not measure long-term societal impact but rather show whether the conditions 
 required for transdisciplinary data stewardship are being built. 
 
-### What is not solved yet 
- 
-I don't know yet whether the contact map will remain manageable as the network grows. 
-Maybe it will need to be moved to a different tool, to be downsized in scope or to be put under a 
-clearer ownership regime. 
- 
-It remains a challenge to find right balance between event-based work and one-to-one support. 
-Events reach more people, but they can remain too general. Individual support is more useful 
-for a project, but it does not scale easily in a two-year role. 
- 
-Finally, continuity remains uncertain. The project allows to test the model, but the 
-relationships and routines I build will need a home after the project ends.
-
 ### What happens next 
  
 Over the next months, I will continue building the contact map, run cross-sector events and identify selected 
@@ -335,7 +322,7 @@ For a meaningful review it would be good to know:
 - whether the contact map is useful enough to justify the effort required to maintain it; and 
 - what would be needed to continue the role after the project ends. 
  
-I will update this case study when I have enough evidence to say more. 
+The intermediate and final report required by the funder will be linked here for further information after their publication, so you can check them if you are invested in the story.
 
 
 ## What I'd tell others 
@@ -361,7 +348,7 @@ about expectations, decision-making, communication and ownership.
 The core skills of a disciplinary data steward still matter: asking good questions, understanding 
 workflows, improving documentation, supporting storage and sharing, and helping people make realistic 
 plans for their specific datasets. 
-In a transdisciplinary role, you need an additional layer. You need to translate between disciplines 
+In a transdisciplinary role, you need an additional layer: translating between disciplines 
 and between research and non-academic partners. The aim is not to make every project use the same 
 standards. It is to make differences visible early and identify where shared documentation, formats, 
 vocabularies or access arrangements are needed. 
