@@ -70,7 +70,7 @@ These steps ensure that compliance is maintained throughout the project lifecycl
 
 ✔ **Formalize Data Subject Rights Exercise**
 
-* S.Support the DPO in creating a documented process for Data Subject Rights (e.g., access or erasure). This process should be clearly publicized and include specific steps for receiving, logging, and responding to requests.  
+* Support the DPO in creating a documented process for Data Subject Rights (e.g., access or erasure). This process should be clearly publicized and include specific steps for receiving, logging, and responding to requests.  
 * Ensure that Data Stewards are trained and prepared to help execute these rights in a timely and compliant manner.
 
 ✔ **Use Audit Results to Drive Optimization**
