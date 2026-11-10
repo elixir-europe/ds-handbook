@@ -50,7 +50,7 @@ resources:
 
 ## Context
 
-Computational workflows are simultaneously **software**, something executable, and **data**: a specification of a process. Therefore, curating and managing them are increasingly part of the tasks of data stewards. Dependencies deprecate and containers become unavailable, making more difficuly to reproduce a workflow with time. Even when it still runs, one needs detailed provenance to know whether an output came from the same code, the same version, and the same parameters.
+Computational workflows are simultaneously **software**, something executable, and **data**, a specification of a process. Therefore, curating and managing them are increasingly part of the tasks of data stewards. Dependencies deprecate and containers become unavailable, making more difficuly to reproduce a workflow with time. Even when it still runs, one needs detailed provenance to know whether an output came from the same code, the same version, and the same parameters.
 
 You can apply the FAIR principles to computational workflows: registering the workflow makes it findable, using standard formats for its specification and execution records makes it interoperable, and capturing provenance at run time makes it reusable. In 2025, the FAIR Computational Workflows Working Group (part of the Workflows Community Initiative) published 20 guidelines adapting FAIR to computational workflows (see resources below). This page translates those guidelines into practical actions you can take with existing tools.
 
@@ -58,32 +58,28 @@ You can apply the FAIR principles to computational workflows: registering the wo
 
 ## Guidance
 
-1. **Register your workflow in a searchable registry**
+1. **Make sure each workflow is registered in a searchable registry**
 
-   Deposit the workflow in WorkflowHub or Dockstore (see resources). Both mint persistent identifiers (DOIs) for registered workflows, store metadata, and track versions. A GitHub repository alone is not indexed in a searchable, citable way, registration is what makes your workflow findable to others.
+   When you curate a workflow, check that ir is deposited in WorkflowHub or Dockstore (see resources), and help the authors register it if it is not. Both registries mint persistent identifiers (DOIs) for registered workflows, store metadata, and track versions. A GitHub repository alone is not indexed in a searchable, citable way, registration is what makes the workflow findable to others. If your institution or project has many workflows, consider setting up an institutional or project space in WorkflowHub so they are grouped and easy to find.
 
-2. **Version-tag each release and associate a DOI**
+2. **Check that releases are versioned and cited with a version-specific DOI**
 
-   Tag each release in version control and register it (step 1) to obtain a version-specific DOI. Different versions of a workflow can produce different results, so collaborators and reviewers need to cite the exact version used. WorkflowHub generates a DOI per tagged release automatically; connecting your GitHub repository to Zenodo achieves the same for simpler cases.
+   Confirm that each release is tagged in version control and registered (step 1), so that every version has its own DOI. Different versions of a workflow can produce different results, so collaborators and reviewers need to cite the exact version used. WorkflowHub generates a DOI per tagged release automatically; connecting a Github to Zenodo achieves the same for simpler cases.
 
-3. **Add standardised metadata**
+3. **Review and complete the workflow metadata**
 
-   Describe your workflow with machine-readable metadata. The Bioschemas ComputationalWorkflow profile or CodeMeta captures title, authors with ORCIDs, workflow specification language, licence, and dependencies. For Nextflow, add this metadata to the `manifest` block in `nextflow.config`.
+   Check that the workflow is described with machine-readable metadata, and fill gaps with the authors. The Bioschemas ComputationalWorkflow profile or CodeMeta captures title, authors with ORCIDs, workflow specification language, licence, and dependencies. For Nextflow, this metadata is recorded in the `manifest` block in `nextflow.config`.
 
-4. **Licence the workflow and its components**
+4. **Check the licence of the workflow and its components**
 
-   Choose a licence for the workflow as a whole, then verify it is compatible with the licences of all its components, tools, sub-workflows, and containers each carry their own. Incompatible licences can restrict how the combined output is shared, and this is easy to overlook when assembling modular pipelines.
+   Make sure the workflow as a whole has a licence, then verify it is compatible with the licences of all its components, tools, sub-workflows, and containers each carry their own. Incompatible licences can restrict how the combined output is shared. This is easy to overlook when assembling modular workflows.
 
-5. **Capture provenance at run time**
+5. **Make sure provenance is captured at run time**
 
-   Configure your workflow engine to record which input files and parameters were used, which tool versions ran, and what outputs were produced. This is the evidence you need to reproduce any specific execution,  not the workflow alone, but the record of a run on specific inputs. For Nextflow, enable the `nf-prov`  plugin, which records provenance as a Workflow Run RO-Crate or a BioCompute Object, or the data lineage option in in Nextflow configuration.
+   Check whether the workflow engine was configured to record which input files and parameters were used, which tool versions ran, and what outputs were produced. This is the evidence you need to reproduce any specific execution, not the workflow alone, but the record of a run on specific inputs. For Nextflow, enable the `nf-prov`  plugin, which records provenance as a Workflow Run RO-Crate or a BioCompute Object, or the data lineage option in the Nextflow configuration.
 
 {% include callout.html type="tip" content="nf-prov and Nextflow lineage capture are not enabled by default, they are opt-in configurations. Build them into your workflow template so new pipelines inherit them from the start." %}
 
-6. **Package the workflow with RO-Crate for archival**
+6. **Archive the workflow as an RO-Crate**
 
-   Bundle your workflow, its metadata, and (where feasible) an example run record into an RO-Crate, a  packaging standard that keeps the workflow readable and citable even when the execution platform is no longer available (see resources). For Nextflow, `nf-core pipelines rocrate` packages the workflow with Bioschemas-compatible metadata that you can then upload to WorkflowHub for registration.
-
-7. **Add automated testing and domain benchmarking**
-
-   Include at least one automated test that verifies the workflow produces correct output from a known input, this documents and protects correctness as the workflow evolves. Optionally, add domain-specific benchmarking to provide evidence of scientific output quality. For example, in Nextflow, `nf-test` covers testing and `nf-core/variantbenchmarking` covers benchmarking in the variant calling domain.
+   For long-term preservation, make sure the workflow, its metadata, and (where feasible) an example run record into an RO-Crate, a  packaging standard that keeps the workflow readable and citable even when the execution platform is no longer available (see resources). For Nextflow, `nf-core pipelines rocrate` packages the workflow with Bioschemas-compatible metadata that can then be uploaded to WorkflowHub for registration.
