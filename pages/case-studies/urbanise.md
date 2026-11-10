@@ -16,7 +16,7 @@ layout: case-study                 # mandatory – leave as-is
 type: Case Study                   # mandatory – leave as-is
 search_exclude: true               # – leave as-is
 
-description: The URBANISE (Urban Research and Data Stewardship for Innovation, Sustainability and Engagement) project funds a transdisciplinary data steward at the University of Vienna. This camp fire highlights specific challenges and first lessons learned. [Last Update: 2026-11-11]
+description: The URBANISE (Urban Research and Data Stewardship for Innovation, Sustainability and Engagement) project funds a transdisciplinary data steward at the University of Vienna. This camp fire highlights specific challenges and first lessons learned. Last Update: 2026-11-11
 
 contributors: [Jeanne Wilbrandt]          # mandatory – names must match _data/CONTRIBUTORS.yaml
 page_id: urbanise      # mandatory – lowercase, hyphenated
