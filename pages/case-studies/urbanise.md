@@ -11,12 +11,12 @@
 # inventing one inline (so filtering and counts stay consistent).
 # ============================================================================
 
-title: When your research community is a whole city
+title: "When your research community is a whole city: The URBANISE Project"
 layout: case-study                 # mandatory – leave as-is
 type: Case Study                   # mandatory – leave as-is
 search_exclude: true               # – leave as-is
 
-description: "The URBANISE (Urban Research and Data Stewardship for Innovation, Sustainability and Engagement) project funds a transdisciplinary data steward at the University of Vienna. This camp fire highlights specific challenges and first lessons learned. Last Update: 2026-11-11"
+description: "The URBANISE (Urban Research and Data Stewardship for Innovation, Sustainability and Engagement) project funds a transdisciplinary data steward at the University of Vienna. This camp fire highlights specific challenges of networking and providing support for diverse stakeholders. First lessons learned concern the importance of onboarding and personal connections. Last Update: 2026-11-11"
 
 contributors: [Jeanne Wilbrandt]          # mandatory – names must match _data/CONTRIBUTORS.yaml
 page_id: urbanise      # mandatory – lowercase, hyphenated
@@ -126,7 +126,7 @@ understand, assess and reuse across projects and organisational boundaries.
 I tell this story because this role is still unusual. It shows what happens when a data steward moves from a 
 disciplinary setting into a transdisciplinary network that is still being built.  
 
-> These words get used loosely, so here is how we use them in this case study: 
+> The following terms are often used loosely, so here is how I use them in this case study: 
 > - **embedded data steward**: a steward who works mainly with one faculty, department, institute or research community;
 > - **disciplinary**: work grounded in one research field and its methods, standards and practices;
 > - **interdisciplinary**: researchers from different disciplines work together;
@@ -255,7 +255,7 @@ formal deliverables and a more uncertain future. This necessitates to prioritise
 intensive one-to-one support to every possible urban research project. At the same time, a programme 
 made only of events can remain too general to change day-to-day practice. 
 
-We are still finding the balance. For now, we combine targeted support and training input for selected 
+There is a balance to be found. For now, I combine targeted support offers and training input for selected 
 projects with broader events that help people meet, compare approaches and see where RDM matters in the wider Mission. 
 
 #### Different disciplines use familiar words differently 
@@ -277,7 +277,7 @@ about a publication in two years. An infrastructure provider may need technical 
 may need clarity about what will happen with their contribution. 
  
 One communication format will not work for all of them. This is why the contact map, introductions and 
-repeated conversations matter. They help us learn what each group needs before we ask them to join a new 
+repeated conversations matter. They help me learn what each group needs before I ask them to join a new 
 process or event. 
 
 ## What is changing so far 
@@ -295,7 +295,7 @@ Sciences (ÖAW); and a city representative presenting Vienna’s existing resear
 was practical, namely to invite researchers to take a research question of policy relevance, tap into 
 existing data sources and support routes, and know where to get funding for such a project. More 
 generally, the aim was to show where repository, register and city data may connect. The event is 
-not evidence of impact by itself. We will look at attendance, feedback, follow-up requests and any 
+not evidence of impact by itself. I will look at attendance, feedback, follow-up requests and any 
 new connections or project ideas that emerge afterwards. 
 
 ### What I am tracking
@@ -307,27 +307,28 @@ For the first year, I am tracking simple signs that the network is becoming more
 - selected projects that receive RDM support; 
 - examples where partners identify a concrete data-sharing, documentation or interoperability need. 
 
-These indicators will not measure long-term societal impact. They will help us see whether the conditions 
-for that work are being built. 
+These indicators will not measure long-term societal impact but rather show whether the conditions 
+required for transdisciplinary data stewardship are being built. 
 
 ### What is not solved yet 
  
-We do not yet know whether the contact map will remain manageable as the network grows. 
-It may need a different tool, clearer ownership or a smaller scope. 
+I don't know yet whether the contact map will remain manageable as the network grows. 
+Maybe it will need to be moved to a different tool, to be downsized in scope or to be put under a 
+clearer ownership regime. 
  
-We also have not found the right balance between event-based work and one-to-one support. 
+It remains a challenge to find right balance between event-based work and one-to-one support. 
 Events reach more people, but they can remain too general. Individual support is more useful 
 for a project, but it does not scale easily in a two-year role. 
  
-Finally, continuity remains uncertain. The project gives us space to test the model, but the 
-relationships and routines we build will need a home after the project ends.
+Finally, continuity remains uncertain. The project allows to test the model, but the 
+relationships and routines I build will need a home after the project ends.
 
 ### What happens next 
  
-Over the next months, I will continue building the contact map, run the 
-first cross-sector events and identify selected projects for more focused RDM support. 
+Over the next months, I will continue building the contact map, run cross-sector events and identify selected 
+projects for more focused RDM support. 
  
-I will review the approach after [time period]. In particular, I want to know: 
+For a meaningful review it would be good to know:
 - which connections led to useful follow-up; 
 - whether events reached the people we intended to reach; 
 - which RDM questions recur across disciplines; 
@@ -337,14 +338,14 @@ I will review the approach after [time period]. In particular, I want to know:
 I will update this case study when I have enough evidence to say more. 
 
 
-## What we'd tell others 
-### Start with relationships, not a service catalogue 
+## What I'd tell others 
+### ✔ Start with relationships, not a service catalogue 
 In an established department, you may be able to begin with a clear list of RDM services. 
 In a new transdisciplinary setting, first find out who is already doing related work and where 
 people need help. Thus, relationship-building needs to be acknowledged and executed as part of 
 stewardship work, rather than as something you do only when the “real” work is finished. 
 
-### Make onboarding an explicit work package 
+### ✔ Make onboarding an explicit work package 
 A new steward needs more than accounts, access and policy documents. You need introductions, 
 context and someone who can explain how decisions are really made. 
  
@@ -356,7 +357,7 @@ about expectations, decision-making, communication and ownership.
 
 {% include callout.html type="tip" content="Keep a small “things I learned the hard way” note during your first months. It will become useful onboarding material for the next person." %}
 
-### Do not treat one discipline’s practice as the default 
+### ✔ Do not treat one discipline’s practice as the default 
 The core skills of a disciplinary data steward still matter: asking good questions, understanding 
 workflows, improving documentation, supporting storage and sharing, and helping people make realistic 
 plans for their specific datasets. 
@@ -365,7 +366,7 @@ and between research and non-academic partners. The aim is not to make every pro
 standards. It is to make differences visible early and identify where shared documentation, formats, 
 vocabularies or access arrangements are needed. 
 
-### Balance events with direct support 
+### ✔ Balance events with direct support 
 Events are efficient when you need to bring a new community together. They can create visibility, 
 surface common questions and help people discover each other. Events do not replace project-level support, 
 though. Researchers often need help applying a general message to their own data, methods and constraints. 
@@ -373,7 +374,7 @@ though. Researchers often need help applying a general message to their own data
 We are testing a mixed model: broad events to create connections and shared awareness, plus more focused 
 support for selected projects. The right balance will depend on your capacity, mandate and time frame. 
 
-### Build for continuity from day one 
+### ✔ Build for continuity from day one 
 Relationship-building, trust, and regular exchange take time. A two-year project can start this work, but 
 it may not be long enough to stabilize it. 
 
