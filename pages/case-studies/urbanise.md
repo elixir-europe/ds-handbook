@@ -56,7 +56,7 @@ external_url_label: Visit the URBANISE page
 # Lead quote – one sentence you wish someone had told you at the start.
 # Renders as a pull-quote near the top. Skip if you can't think of one.
 # ---------------------------------------------------------------------------
-# lead_quote: 
+lead_quote: Working as a transdisciplinary data steward with city and research stakeholders adds a broader networking focus to skills also used by embedded data stewards.
 
 # ---------------------------------------------------------------------------
 # Cross-references (optional but encouraged) – page_ids of related guidance
@@ -173,7 +173,7 @@ potential long-term ownership early, even though we do not yet have all the answ
 
 ### First moves and starting difficulties 
 
-#### ➪ Onboarding 
+#### Onboarding 
 My first task was onboarding. This included the usual practical work, but it also meant learning a 
 new university, a new city and new research environments. Joining the team of data stewards was the most fun! 
  
