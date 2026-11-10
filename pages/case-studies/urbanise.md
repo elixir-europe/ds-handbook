@@ -16,7 +16,7 @@ layout: case-study                 # mandatory – leave as-is
 type: Case Study                   # mandatory – leave as-is
 search_exclude: true               # – leave as-is
 
-description: Being a transdisciplinary data steward in aproject setting has specific challenges. We share the first insights of the setup ohase.
+description: Being a transdisciplinary data steward in a project setting has specific challenges. We share the first insights of the setup phase of the URBANISE project, i.e., setting up a data steward for urban research at the University of Vienna.
 
 contributors: [Jeanne Wilbrandt]          # mandatory – names must match _data/CONTRIBUTORS.yaml
 page_id: urbanise      # mandatory – lowercase, hyphenated
@@ -106,7 +106,7 @@ resources:
 ---
 
 
-## Why this case (mandatory)
+## Why this case
 
 How do you begin RDM support when the “research community” is not a department or discipline, but an emerging 
 network across a university, a city, public bodies, industry and civil society? 
@@ -129,20 +129,18 @@ understand, assess and reuse across projects and organisational boundaries.
 I tell this story because this role is still unusual. It shows what happens when a data steward moves from a 
 disciplinary setting into a transdisciplinary network that is still being built.  
 
-> **the magpie says** 
-> 
-> These words get used loosely, so here is how we use them in this case study: 
-> 
-> - **embedded data steward**: a steward who works mainly with one faculty, department, institute or research community; 
-> - **disciplinary**: work grounded in one research field and its methods, standards and practices; 
-> - **interdisciplinary**: researchers from different disciplines work together; 
-> - **transdisciplinary**: research also involves people outside academia, such as public bodies, industry, community groups or citizens. 
-> 
-> In practice, the boundaries blur. The point is not to sort people into neat boxes. It is to notice when your usual support model no longer fits. 
-> 
-> Side note: A steward can be embedded and still work across disciplines.   The difference here is that the role itself is designed to move between communities. 
+{% include callout.html type="magpie" content="> These words get used loosely, so here is how we use them in this case study: 
+- **embedded data steward**: a steward who works mainly with one faculty, department, institute or research community;
+- **disciplinary**: work grounded in one research field and its methods, standards and practices;
+- **interdisciplinary**: researchers from different disciplines work together;
+- **transdisciplinary**: research also involves people outside academia, such as public bodies, industry, community groups or citizens. 
 
-## What we did (mandatory)
+In practice, the boundaries blur. The point is not to sort people into neat boxes. It is to notice when your usual support model no longer fits. 
+
+Side note: A steward can be embedded and still work across disciplines.   The difference here is that the role itself is designed to move between communities. " %}
+
+
+## What we did
 
 Hi! I just sat down for a break here, my path is still ahead of me. However, I can already tell 
 you about some bumps in the road. I will come back some time and tell you the rest of the tale. 
@@ -172,9 +170,7 @@ what support they needed and where RDM could make a practical difference.
 This case study captures the beginning of that work. It is too early to claim long-term impact 
 but not too early to share the setup work, the pressure points and the choices we are making. 
 
-> **note** 
-> 
-> A fixed-term project can be a useful place to test a new service model. It can also make continuity difficult. We started planning for handover and potential long-term ownership early, even though we do not yet have all the answers. 
+{% include callout.html type="note" content="A fixed-term project can be a useful place to test a new service model. It can also make continuity difficult. We started planning for handover and potential long-term ownership early, even though we do not yet have all the answers." %}
 
 ### First moves and starting difficulties 
 
@@ -189,10 +185,8 @@ new transversal role, people need to know not only who you are, but why they mig
 An ally who can make introductions is especially valuable. In my case, colleagues from the data 
 steward network and the project team opened doors that I would not have known existed. Their introductions 
 carried more weight than a general announcement email. 
- 
-> **the magpie says** 
-> 
-> A short introduction from a trusted colleague can be more impactful than a webpage, launch event or flyer. 
+
+<aside class="margin-note">A short introduction from a trusted colleague can be more impactful than a webpage, launch event or flyer. </aside>
  
 
 #### Preparing three versions of my introduction 
@@ -234,10 +228,8 @@ The contact map is a working tool, not a directory of everyone connected to urba
 deciding what information is needed, keeping it proportionate and making links between people, projects 
 and services visible is key to a useful map. It should help me prepare introductions, spot missing 
 connections, and plan events targeted to connect or inform specific groups from the contact map. 
- 
-> **important** 
-> 
-> A relationship map contains personal data. Before you build one, agree where it will be stored, who can access it, what information is necessary, how long you will retain it and how you will keep it up to date. Follow your organisation’s data protection and information security rules. 
+
+{% include callout.html type="important" content="A relationship map contains personal data. Before you build one, agree where it will be stored, who can access it, what information is necessary, how long you will retain it and how you will keep it up to date. Follow your organisation’s data protection and information security rules." %}
 
 I expect the first version of the map to take several months to build. Keeping it current will be 
 ongoing work, not a one-off task. 
@@ -273,9 +265,7 @@ may be unfamiliar or inappropriate in another.
 This makes the data steward’s translator role more visible. I need to understand enough of each context to ask useful 
 questions, while avoiding the assumption that one discipline’s workflow should become the default for everyone else. 
 
-> **the magpie says** 
-> 
-> When someone uses a familiar term, do not assume you know its implications. Ask for an example: “What would that look like in your project?” 
+{% include callout.html type="tip" content="When someone uses a familiar term, do not assume you know its implications. Ask for an example: “What would that look like in your project?”" %}
 
 #### Working beyond the university changes the conversation 
 External partners may have different timelines, language, incentives and ways of making decisions. A city 
@@ -361,9 +351,7 @@ several lengths. Expect that work cultures may differ even when institutions or 
 Small misunderstandings can grow when nobody notices them. Ask questions early, especially 
 about expectations, decision-making, communication and ownership. 
 
-> **tip** 
-> 
-> Keep a small “things I learned the hard way” note during your first months. It will become useful onboarding material for the next person. 
+{% include callout.html type="tip" content="Keep a small “things I learned the hard way” note during your first months. It will become useful onboarding material for the next person." %}
 
 ### Do not treat one discipline’s practice as the default 
 The core skills of a disciplinary data steward still matter: asking good questions, understanding 
