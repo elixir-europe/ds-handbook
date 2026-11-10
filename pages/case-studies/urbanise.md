@@ -268,7 +268,7 @@ This makes the data steward’s translator role more visible. I need to understa
 questions, while avoiding the assumption that one discipline’s workflow should become the default for everyone else. 
 
 {% include callout.html type="tip" content="When someone uses a familiar term, do not assume you know its implications. 
-Ask for an example: “What would that look like in your project?”" %}
+Ask for an example: What would that look like in your project?" %}
 
 #### Working beyond the university changes the conversation 
 External partners may have different timelines, language, incentives and ways of making decisions. A city 
