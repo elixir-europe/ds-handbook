@@ -21,7 +21,7 @@ Data stewards help translate ethical principles into actionable guidance and sup
 **✔ Strengthen visibility of ethical resources at the institutional level**
 
 * Contribute to the creation or revision of ethical guidelines, templates, and procedures by providing research-related feedback.
-* Ensure institutional RDM and DMP guidance includes clear references to ethics, consent, data sensitivity, and responsible sharing.
+* Ensure institutional RDM (research data management) and DMP (data management plan) guidance includes clear references to ethics, consent, data sensitivity, and responsible sharing.
 * Embed ELSI information into onboarding materials and general training portfolios.
 * Share reminders or updates on ethical requirements via newsletters, departmental meetings, or internal communication channels.
 * Participate in research governance bodies or ethics-related events to increase visibility and build trust with different relevant stakeholders (e.g., researchers, clinical staff and community or patient representatives).  
