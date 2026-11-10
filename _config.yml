@@ -14,7 +14,7 @@ sass:
 theme_variables:
   breadcrumb: true     # gate the breadcrumb include; the override only renders on case studies
   topnav:
-    brand_logo: assets/img/magpie-dark.svg
+    brand_logo: assets/img/logo/logomark.svg
     theme: light
   fonts:
     - https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Caveat:wght@400..700&family=Inter:opsz,wght@14..32,100..900&family=JetBrains+Mono:wght@400..700&display=swap

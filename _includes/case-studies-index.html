@@ -55,6 +55,12 @@ bottom.
                     <p class="card-text">{{ p.description | truncate: 200 }}</p>
                     {%- endif -%}
                 </div>
+                {%- comment -%}
+                Campfire flourish beside the arrow, matching the landmark tiles.
+                The card already carries .tone--campfires, which is what drives
+                the flame's hover flicker.
+                {%- endcomment -%}
+                <span class="tile-flourish" aria-hidden="true">{{ "assets/img/icons/tile-campfire.svg" | inline_svg }}</span>
             </div>
         </div>
         {%- endfor -%}

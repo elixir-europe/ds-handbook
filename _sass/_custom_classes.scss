@@ -5,13 +5,13 @@
     Inter               (body, UI)
     JetBrains Mono      (data accents – page IDs, codes, levels, numbers)
     Caveat              (marginalia)
-  Palette: ink, sage, spring, amber, brick on cream + paper
+  Palette: ink, lake, fern, amber, brick on linen + paper
 ========================================================================*/
 
 /*-----Tone tokens per landmark-----*/
-$tone-signposts:   $brand-spring;     // soft green
+$tone-signposts:   $brand-mist;      // soft green
 $tone-campfires:   $brand-brick;      // deep terracotta
-$tone-waypoints:   $brand-sage;       // mid green
+$tone-waypoints:   $brand-leaf;      // mid teal
 
 
 /*=== Body / global typography ===========================================*/
@@ -19,7 +19,7 @@ body {
     font-family: $font-family-sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: $brand-cream;
+    background-color: $brand-linen;
     color: $dark;
     line-height: 1.6;
     font-size: 1rem;
@@ -62,16 +62,16 @@ body {
 
     p, li { font-family: $font-family-sans-serif; }
 
-    // Theme paints list markers in $brand-spring (mint) which has no contrast
-    // on cream. Force ink so bullets and ordered-list numbers stay readable.
+    // Theme paints list markers in $brand-mist (pale teal) which has no contrast
+    // on linen. Force ink so bullets and ordered-list numbers stay readable.
     ul li::marker,
     ol li::marker { color: $dark; font-weight: 600; }
 }
 
-// Theme sets selection to white-on-mint, which is unreadable. Keep the mint
+// Theme sets selection to white-on-mist, which is unreadable. Keep the mist
 // background (it matches the backlight highlight) but use ink for the text.
-::selection      { color: $dark; background: $brand-spring; }
-::-moz-selection { color: $dark; background: $brand-spring; }
+::selection      { color: $dark; background: $brand-mist; }
+::-moz-selection { color: $dark; background: $brand-mist; }
 
 .ff-display { font-family: $font-family-display !important; }
 .ff-mono    { font-family: $font-family-monospace !important; }
@@ -110,32 +110,119 @@ code {
 /*=== Backlight highlight (per brief) =====================================*/
 .color-highlight {
     text-decoration: none;
-    box-shadow: inset 0 -.5em 0 rgba($brand-spring, 0.85);
+    box-shadow: inset 0 -.5em 0 rgba($brand-mist, 0.85);
     color: inherit;
     padding: 0 .05em;
 }
 
 
-/*=== Topnav (light, paper bg) ==========================================*/
-header .navbar {
-    border-bottom: 1px solid $brand-rule;
-    box-shadow: none !important;
+/*=== Topnav (dark green bar) ===========================================*/
+// The masthead runs wider than the reading column, so the s and the
+// logo get room the content column doesn't need.
+header .navbar > .container {
+    max-width: none;
+    width: min(100%, 1560px);
+}
 
-    .navbar-brand img {
-        max-height: 2.5rem;
-        width: auto;
+// One fixed bar height at every width. Without this the header breathed:
+// `.img-fluid` on the brand caps it at max-width:100%, so once the row got
+// tight the logo shrank (at ~1050px it collapsed to a dot) and the bar
+// collapsed with it, while at other widths the nav wrapped and it grew.
+$topnav-height: 4rem;
+
+header .navbar {
+    // Dark green bar, matching the footer: the page is bracketed top and
+    // bottom so the dark footer reads as structure rather than an orphan slab.
+    background-color: $dark !important;
+    border-bottom: 0;
+    box-shadow: none !important;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    > .container { min-height: $topnav-height; }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;          // never let the mark be squeezed
+
+        img {
+            height: $topnav-brand-height;
+            width: auto;
+            max-width: none;     // defeat .img-fluid's max-width: 100%
+            // Light disc behind the mark, same treatment as the footer: the
+            // magpie is near-black artwork and the bar is near-black green,
+            // so it needs its own ground to sit on.
+            background-color: $light-background;
+            border-radius: 100%;
+        }
     }
 }
 
-// Marker-swipe hover: rotated mint stripe scaling left→right (the original
+// The divider between the page links and Nest/GitHub. The theme draws it in
+// $dark at 25% and the markup adds `.bg-dark .opacity-25` — all of which is
+// invisible now the bar is dark green. Repaint it light and drop the extra
+// opacity, or it ends up at 25% of 30% and vanishes again.
+header .navbar .nav-break {
+    opacity: 1 !important;
+    // Flat 1px rule, not the theme's feathered gradient — the fade reads as a
+    // soft smudge rather than a divider.
+    background: rgba($brand-linen, 0.28) !important;
+}
+
+// Collapsed, the menu is a column, so the divider becomes a horizontal rule
+// with a little air around it.
+@include media-breakpoint-down(lg) {
+    header .navbar .nav-break {
+        width: 100%;
+        height: 1px;
+        align-self: auto;
+        margin: 0.45rem 0;
+        background: rgba($brand-linen, 0.28) !important;
+    }
+}
+
+// The search sits on the dark bar, so its type, icon and placeholder all have
+// to be light — the theme only recolours the field itself.
+header .navbar {
+    #search-input,
+    #search-label,
+    .input-group-text {
+        color: $brand-linen !important;
+        border: 0 !important;
+    }
+
+    #search-input::placeholder { color: rgba($brand-linen, 0.65) !important; }
+}
+
+// Above the collapse breakpoint everything stays on one row: labels don't
+// wrap, the nav list doesn't wrap, and the search field absorbs the slack.
+@include media-breakpoint-up(lg) {
+    header .navbar {
+        .navbar-nav { flex-wrap: nowrap; }
+        .nav-link { white-space: nowrap; }
+        .navbar-collapse,
+        form,
+        .input-group { min-width: 0; }
+    }
+}
+
+// Marker-swipe hover: rotated mist stripe scaling left→right (the original
 // move, kept light and rotated so it reads as a marker pen, not a CSS bar).
 .navbar-light .navbar-nav .nav-item > a.nav-link,
 .navbar-nav .nav-item > a.nav-link {
     position: relative;
     display: inline-block;
-    color: $dark !important;
+    // Nest + GitHub carry Bootstrap's `.d-flex` (display:flex !important),
+    // which beats the inline-block above and makes them block-level. In the
+    // collapsed mobile menu that stretches them to the full row, so the
+    // marker swipe ran edge-to-edge while the plain links hugged their text.
+    // fit-content shrinks the box back to its content in both cases.
+    width: fit-content;
+    color: $brand-linen !important;
     font-family: $font-family-theme;
     font-weight: 500;
+    line-height: 1.2;
     text-decoration: none;
     padding: 0.45rem 0.7rem !important;
     z-index: 1;
@@ -147,7 +234,7 @@ header .navbar {
         right: -2px;
         bottom: 4px;
         height: 55%;
-        background-color: rgba($brand-spring, 0.65);
+        background-color: rgba($brand-mist, 0.30);
         transform: rotate(-2deg) scaleX(0);
         transform-origin: left center;
         transition: transform 0.4s cubic-bezier(0.55, 0.06, 0.18, 1.0);
@@ -162,17 +249,47 @@ header .navbar {
         transform: rotate(-2deg) scaleX(1);
     }
 
+    // The theme also paints its own hover block behind the link
+    // (`background-color: rgba($primary, .08)` on .nav-link:hover/.active).
+    // Two overlapping highlights read as a chip; the stripe is the whole idea.
+    &:hover, &:focus, &.active {
+        background-color: transparent !important;
+    }
+
     &:focus-visible {
         outline: 2px solid rgba($primary, 0.8);
         outline-offset: 3px;
     }
 }
 
-.navbar-light .navbar-toggler { border: none; color: $dark; }
+// The theme's markup puts Bootstrap's `.text-primary` on the toggler button.
+// That resolves to $primary — the pale mist — with !important, so it beat the
+// colour below and left the hamburger at 1.4:1 on the white topnav. Force the
+// dark teal instead; the icon is a child <i>, so it needs the colour too.
+.navbar-light .navbar-toggler,
+.navbar-toggler {
+    border: none;
+    color: $brand-linen !important;
+
+    i { color: inherit !important; }
+
+    // Bootstrap draws a box-shadow ring on :focus in the current colour, so
+    // now the icon is linen it became a light box that stuck around after
+    // every tap. Drop it for pointer focus, but keep a real indicator for
+    // keyboard users rather than removing the affordance altogether.
+    box-shadow: none !important;
+
+    &:focus { box-shadow: none !important; }
+
+    &:focus-visible {
+        outline: 2px solid rgba($brand-linen, 0.7);
+        outline-offset: 3px;
+    }
+}
 
 
 /*=== Landing page hero ===================================================*/
-.landingpage-body { background-color: $brand-cream; }
+.landingpage-body { background-color: $brand-linen; }
 
 .landingpage {
     .hero {
@@ -238,7 +355,7 @@ header .navbar {
 /*=== Editorial "rough mark" utilities ===================================*/
 // A wobbly underline used under titles. Inline SVG, scaled to element width.
 $squiggle-amber: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 12' preserveAspectRatio='none'><path d='M 2 8 Q 20 4 40 7 T 80 6 T 120 7 T 160 6 T 200 7 T 238 6' stroke='%23E8B547' stroke-width='3.5' stroke-linecap='round' fill='none'/></svg>";
-$squiggle-sage:  "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 12' preserveAspectRatio='none'><path d='M 2 8 Q 20 4 40 7 T 80 6 T 120 7 T 160 6 T 200 7 T 238 6' stroke='%236B9E7E' stroke-width='3.5' stroke-linecap='round' fill='none'/></svg>";
+$squiggle-lake:  "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 12' preserveAspectRatio='none'><path d='M 2 8 Q 20 4 40 7 T 80 6 T 120 7 T 160 6 T 200 7 T 238 6' stroke='%23569978' stroke-width='3.5' stroke-linecap='round' fill='none'/></svg>";
 $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 12' preserveAspectRatio='none'><path d='M 2 8 Q 20 4 40 7 T 80 6 T 120 7 T 160 6 T 200 7 T 238 6' stroke='%23C44536' stroke-width='3.5' stroke-linecap='round' fill='none'/></svg>";
 
 // Editorial divider used between sections in body content + footer.
@@ -251,7 +368,7 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
     margin: 2.5rem auto;
     border: 0;
     opacity: 1;
-    background-image: url("#{$squiggle-sage}");
+    background-image: url("#{$squiggle-lake}");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
@@ -267,7 +384,7 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
     background-size: 100% 0.45em;
 }
 
-.has-underline--sage  { background-image: url("#{$squiggle-sage}"); }
+.has-underline--lake  { background-image: url("#{$squiggle-lake}"); }
 .has-underline--brick { background-image: url("#{$squiggle-brick}"); }
 
 
@@ -285,9 +402,9 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
 }
 
 .door {
-    --tone: #{$brand-sage};
-    --tone-block: #{rgba($brand-sage, 0.22)};
-    --tone-block-strong: #{rgba($brand-sage, 0.42)};
+    --tone: #{$brand-leaf};
+    --tone-block: #{rgba($brand-leaf, 0.22)};
+    --tone-block-strong: #{rgba($brand-leaf, 0.42)};
     --tilt: 0deg;
 
     position: relative;
@@ -458,15 +575,15 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
     }
 
     // Per-landmark tone + intentionally-irregular tilts.
-    // Bg block colours rotate on hover: green → red → yellow → green,
+    // Bg block colours rotate on hover: teal → red → yellow → teal,
     // so each door previews the warmth of the next landmark when you
     // mouse over it.
     &--signposts {
-        --tone: #{$brand-sage};
-        --tone-block: #{rgba($brand-spring, 0.6)};         // green default
+        --tone: #{$brand-leaf};
+        --tone-block: #{rgba($brand-mist, 0.6)};         // teal default
         --tone-block-strong: #{rgba($brand-brick-soft, 0.75)}; // → red on hover
         --tilt: -0.7deg;
-        --door-underline: url("#{$squiggle-sage}");
+        --door-underline: url("#{$squiggle-lake}");
     }
     &--campfires {
         --tone: #{$brand-brick};
@@ -476,9 +593,9 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
         --door-underline: url("#{$squiggle-brick}");
     }
     &--waypoints {
-        --tone: #{$brand-sage};
+        --tone: #{$brand-leaf};
         --tone-block: #{rgba($brand-amber-soft, 0.7)};     // yellow default
-        --tone-block-strong: #{rgba($brand-spring, 0.85)}; // → green on hover
+        --tone-block-strong: #{rgba($brand-mist, 0.85)}; // → green on hover
         --tilt: -0.3deg;
         --door-underline: url("#{$squiggle-amber}");
     }
@@ -513,7 +630,7 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
 
         main#main {
             padding-top: $spacer * 2.5;
-            background-color: $brand-cream;
+            background-color: $brand-linen;
         }
     }
 }
@@ -544,7 +661,7 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
     font-size: 0.7rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba($dark, 0.7); // contrast-safe on cream
+    color: rgba($dark, 0.7); // contrast-safe on linen
     margin-bottom: 0.25rem;
 }
 
@@ -558,7 +675,7 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
     text-decoration: none;
     font-variation-settings: "opsz" 24, "wdth" 95;
 
-    &:hover { color: $brand-sage-text !important; }
+    &:hover { color: $brand-leaf-text !important; }
     &.disabled { pointer-events: none; }
 }
 
@@ -578,7 +695,7 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
         top: 0.85rem;
         bottom: 0.85rem;
         width: 3px;
-        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='3' height='80' viewBox='0 0 3 80'><path d='M 1.5 2 L 1.5 8 M 1.5 13 L 1.5 22 M 1.5 26 L 1.5 33 M 1.5 38 L 1.5 49 M 1.5 53 L 1.5 60 M 1.5 64 L 1.5 78' stroke='%23E0DACE' stroke-width='2.5' stroke-linecap='round' fill='none'/></svg>");
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='3' height='80' viewBox='0 0 3 80'><path d='M 1.5 2 L 1.5 8 M 1.5 13 L 1.5 22 M 1.5 26 L 1.5 33 M 1.5 38 L 1.5 49 M 1.5 53 L 1.5 60 M 1.5 64 L 1.5 78' stroke='%23E2DFD4' stroke-width='2.5' stroke-linecap='round' fill='none'/></svg>");
         background-repeat: repeat-y;
         background-size: 3px 80px;
     }
@@ -627,11 +744,11 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
 
     &:hover {
         color: $dark !important;
-        background-color: rgba($brand-spring, 0.45);
+        background-color: rgba($brand-mist, 0.45);
 
         .trail-dot {
-            background: $brand-sage;
-            border-color: $brand-sage;
+            background: $brand-leaf;
+            border-color: $brand-leaf;
             transform: scale(1.15);
         }
     }
@@ -653,7 +770,7 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
     }
 }
 
-// The remote theme paints a translucent spring overlay on hover via
+// The remote theme paints a translucent mist overlay on hover via
 // `#sidebar > nav > ul li a::after`. That pseudo sits *on top* of the
 // text and washes out the contrast. Neutralise the bg; the link's own
 // hover bg above gives the same affordance with the text reading
@@ -682,7 +799,7 @@ $squiggle-brick: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
 
     &:hover {
         color: $dark !important;
-        background-color: rgba($brand-spring, 0.35);
+        background-color: rgba($brand-mist, 0.35);
     }
 
     &.is-here {
@@ -720,8 +837,7 @@ $arrow-mask-svg: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg
 .navigation-tiles .card,
 section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
     --tone: #{$brand-brick-text};
-    --tone-soft: #{rgba($brand-brick, 0.10)};
-    --tone-wash: #{rgba($brand-spring, 0.85)};
+    --tone-wash: #{rgba($brand-mist, 0.85)};
     counter-increment: card-num;
     position: relative;
     background: $brand-paper !important;
@@ -765,7 +881,10 @@ section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
     }
 
     &:hover {
-        background-color: var(--tone-soft) !important;
+        // The card keeps its white on hover. Tinting the background here only
+        // ever muddied it: this rule overrides background-color alone, so the
+        // card's white `background` was replaced rather than layered under.
+        // The lift and the shadow carry the interaction instead.
         box-shadow: 0 14px 32px -10px rgba($dark, 0.12);
         transform: translateY(-3px);
 
@@ -839,23 +958,20 @@ section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
 
 // Per-landmark tone classes (set by the local section-navigation-tiles include)
 // --tone-wash sets the title backlight wash so it harmonises with the
-// rest of the landmark's identity (green / red / yellow).
+// rest of the landmark's identity (teal / red / yellow).
 .navigation-tiles.tone--signposts .card,
 .card.tone--signposts {
-    --tone: #{$brand-sage-text};
-    --tone-soft: #{rgba($brand-sage, 0.10)};
-    --tone-wash: #{rgba($brand-spring, 0.85)};
+    --tone: #{$brand-leaf-text};
+    --tone-wash: #{rgba($brand-mist, 0.85)};
 }
 .navigation-tiles.tone--campfires .card,
 .card.tone--campfires {
     --tone: #{$brand-brick-text};
-    --tone-soft: #{rgba($brand-brick, 0.08)};
     --tone-wash: #{rgba($brand-brick-soft, 0.85)};
 }
 .navigation-tiles.tone--waypoints .card,
 .card.tone--waypoints {
-    --tone: #{$brand-sage-text};
-    --tone-soft: #{rgba($brand-sage, 0.10)};
+    --tone: #{$brand-leaf-text};
     --tone-wash: #{rgba($brand-amber-soft, 0.9)};
 }
 
@@ -897,7 +1013,7 @@ section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
     }
 }
 
-// Signpost – each "arm" is a group containing the spring blob + the
+// Signpost – each "arm" is a group containing the mist blob + the
 // matching black plank, so they swing together (and the black line
 // keeps the motion visible against the pale tile background). The two
 // arms swing in opposite phases, like the post is changing direction.
@@ -1002,7 +1118,7 @@ section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
 
 
 /*=== Right-hand TOC ("On this page") ===================================*/
-// Theme defaults route through $primary which is now the soft mint – fails
+// Theme defaults route through $primary which is now the soft mist – fails
 // contrast both for resting and active state. Override completely.
 
 #toc {
@@ -1091,9 +1207,9 @@ section .container .row.row-cols-1.row-cols-sm-2.row-cols-lg-3.g-4 .card {
 
 footer#footer {
     background-color: $dark !important;
-    color: $brand-cream !important;
+    color: $brand-linen !important;
 
-    a { color: $brand-cream !important; }
+    a { color: $brand-linen !important; }
 
     .footer-masthead {
         text-align: center;
@@ -1105,7 +1221,7 @@ footer#footer {
         font-family: $font-family-monospace;
         font-size: 0.72rem;
         line-height: 1;
-        color: rgba($brand-cream, 0.55);
+        color: rgba($brand-linen, 0.55);
         letter-spacing: 0.16em;
         text-transform: uppercase;
         margin: 0 0 1rem;
@@ -1126,7 +1242,7 @@ footer#footer {
         font-family: $font-family-sans-serif;
         font-size: 1.02rem;
         line-height: 1.6;
-        color: rgba($brand-cream, 0.78);
+        color: rgba($brand-linen, 0.78);
         margin: 0 auto;
         max-width: 56ch;
     }
@@ -1137,14 +1253,14 @@ footer#footer {
         letter-spacing: 0.10em;
         text-transform: uppercase;
         margin-top: 0.5rem;
-        color: rgba($brand-cream, 0.85);
+        color: rgba($brand-linen, 0.85);
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 0.5rem 0.75rem;
 
         a {
-            color: rgba($brand-cream, 0.85) !important;
+            color: rgba($brand-linen, 0.85) !important;
             text-decoration: none;
             font-weight: 500;
             padding: 0.15rem 0;
@@ -1157,21 +1273,21 @@ footer#footer {
             }
         }
 
-        .footer-sep { color: rgba($brand-cream, 0.35); user-select: none; }
+        .footer-sep { color: rgba($brand-linen, 0.35); user-select: none; }
     }
 
     .copyright {
         background-color: rgba($white, 0.04) !important;
         margin-top: 3.5rem;
-        border-top: 1px solid rgba($brand-cream, 0.08);
+        border-top: 1px solid rgba($brand-linen, 0.08);
     }
 
     .footer-copyright-text {
         font-family: $font-family-sans-serif;
         font-size: 0.78rem;
-        color: rgba($brand-cream, 0.65);
+        color: rgba($brand-linen, 0.65);
 
-        a { color: rgba($brand-cream, 0.65) !important; text-decoration: underline; }
+        a { color: rgba($brand-linen, 0.65) !important; text-decoration: underline; }
         p { margin: 0; }
         img { vertical-align: middle; opacity: 0.65; height: 16px; width: auto; }
     }
@@ -1182,11 +1298,11 @@ footer#footer {
         gap: 0.4rem;
         font-family: $font-family-monospace;
         font-size: 0.72rem;
-        color: rgba($brand-cream, 0.5) !important;
+        color: rgba($brand-linen, 0.5) !important;
         text-decoration: none;
 
-        svg circle.cls-1 { fill: rgba($brand-cream, 0.12); }
-        svg path.cls-3   { fill: rgba($brand-cream, 0.7); }
+        svg circle.cls-1 { fill: rgba($brand-linen, 0.12); }
+        svg path.cls-3   { fill: rgba($brand-linen, 0.7); }
 
         &:hover {
             color: $brand-amber !important;
@@ -1309,26 +1425,66 @@ section#search-section {
 /*=== Italic / em emphasis =============================================*/
 // In body, em/i feel like the author's voice. Render in Bricolage italic
 // (synthesised slope is fine – Bricolage doesn't ship a true italic).
-// Excludes Font Awesome icons (`<i class="fa-*">`), which need to keep
-// their own font-family and `font-style: normal`.
+// Excludes icon fonts, which use <i> as a carrier and must keep their own
+// font-family and upright slope. Matching only `fa-*` missed the theme's own
+// set (`<i class="icon-pencil">`), so the edit/report/history glyphs by the
+// H1 were being given a synthesised slant. Any <i> with a class is an icon;
+// a genuine italic in prose is <em> or a bare <i>.
 #main em,
-#main i:not([class*="fa-"]) {
+#main i:not([class]) {
     font-style: italic;
     color: rgba($dark, 0.92);
 }
 
 /*=== Drop cap utility ================================================*/
 // Apply on a paragraph (e.g., chapter intro): <p class="drop-cap">…
+// The float has to clear a whole number of line boxes or the next line keeps
+// the indent. Body copy is 1.6em per line, so two lines is 3.2em — but
+// landing *exactly* on 3.2em is a knife-edge: sub-pixel rounding at some zoom
+// levels and screen densities tips it over and the third line re-indents.
+// Aim just under instead. Float height = 4 × line-height + the 0.2em top
+// margin = 3.04em, comfortably inside two lines (3.2em) and well past one.
 .drop-cap::first-letter {
     font-family: $font-family-theme;
     font-size: 4em;
-    line-height: 0.85;
+    line-height: 0.71;
     float: left;
     margin: 0.05em 0.12em 0 0;
     color: $brand-brick-text; // contrast-safe, warm
     font-weight: 700;
     font-variation-settings: "opsz" 96, "wdth" 88;
 }
+
+/*=== Magpie hover swap ================================================*/
+// Two poses stacked in one box: the resting bird, and a second that fades in
+// on hover. object-fit keeps both undistorted and object-position sits them
+// on a shared baseline, so the pair swaps without the feet jumping.
+.magpie-swap {
+    position: relative;
+    display: block;
+
+    // No crossfade: two overlapping silhouettes fading through each other
+    // shows both at once and reads as a smudge. The pose swaps cleanly and
+    // the movement is carried by the wrapper's own transform instead.
+    img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: bottom center;
+    }
+
+    &__hover { opacity: 0; }
+}
+
+// Reduced motion still gets the swap — it's a state change, not motion.
+.trail-magpie:hover .magpie-swap,
+.trail-magpie:focus-visible .magpie-swap {
+    .magpie-swap__rest  { opacity: 0; }
+    .magpie-swap__hover { opacity: 1; }
+}
+
 
 /*=== Margin note / aside in Caveat ====================================*/
 // <aside class="margin-note">a small handwritten aside</aside>
@@ -1397,12 +1553,12 @@ section#search-section {
     font-weight: 500;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba($dark, 0.7); // contrast-safe on cream
+    color: rgba($dark, 0.7); // contrast-safe on linen
     margin: 0 0 0.4rem;
 
-    &.tone--signposts { color: $brand-sage-text; }
+    &.tone--signposts { color: $brand-leaf-text; }
     &.tone--campfires { color: $brand-brick-text; }
-    &.tone--waypoints { color: $brand-sage-text; }
+    &.tone--waypoints { color: $brand-leaf-text; }
     &.tone--amber     { color: $brand-amber-text; }
 }
 
@@ -1436,7 +1592,7 @@ section#search-section {
         height: 1rem;
         margin-left: 0.5rem;
         vertical-align: middle;
-        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 20' fill='none'><path d='M 2 10 Q 12 4 22 10 T 36 12' stroke='%233F6B52' stroke-width='1.6' stroke-linecap='round'/><path d='M 30 6 L 36 12 L 30 16' stroke='%233F6B52' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>");
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 20' fill='none'><path d='M 2 10 Q 12 4 22 10 T 36 12' stroke='%23004B37' stroke-width='1.6' stroke-linecap='round'/><path d='M 30 6 L 36 12 L 30 16' stroke='%23004B37' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>");
         background-repeat: no-repeat;
         background-size: contain;
         transform: rotate(8deg);
@@ -1472,8 +1628,8 @@ section#search-section {
     transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
 
     .notebook-toggle-magpie {
-        width: 2rem;
-        height: 2rem;
+        width: 2.5rem;
+        height: 2.5rem;
         display: block;
         transform: rotate(-3deg);
         transform-origin: 60% 80%;
@@ -1664,9 +1820,9 @@ section#search-section {
         box-shadow: 0 8px 18px -10px rgba($dark, 0.15);
     }
 
-    &.tone--guidance      { --tone: #{$brand-sage-text}; }
+    &.tone--guidance      { --tone: #{$brand-leaf-text}; }
     &.tone--case-studies  { --tone: #{$brand-brick-text}; }
-    &.tone--maturity-model { --tone: #{$brand-sage-text}; }
+    &.tone--maturity-model { --tone: #{$brand-leaf-text}; }
 }
 
 .notebook-item-link {
@@ -1749,7 +1905,7 @@ section#search-section {
     .notebook-empty-line {
         font-family: $font-family-display;
         font-size: 2rem;
-        color: $brand-sage-text;
+        color: $brand-leaf-text;
         margin: 0 0 0.75rem;
         transform: rotate(-1deg);
         display: inline-block;
@@ -2014,9 +2170,15 @@ section#search-section {
 // Same grid layout for all (bird left, body right). Type-specific colour
 // for the rule + tint + label. The magpie tilts at a different angle per
 // type so the bird reads as a different pose for each piece of advice.
-#main #content .alert {
+// Scoped to `aside.alert`, not `.alert`. The theme @extends .alert onto
+// `blockquote`, so a bare `.alert` selector here also compiled to
+// `#main #content blockquote` — which turned every quote on the site into a
+// two-column grid and dropped its paragraph into the 3.25rem magpie column.
+// Sass can't merge two type selectors, so `aside.alert` produces no
+// blockquote variant. Our callouts render as <aside>, so nothing is lost.
+#main #content aside.alert {
     display: grid;
-    grid-template-columns: 3.25rem 1fr;
+    grid-template-columns: 3.5rem 1fr;
     column-gap: 1rem;
     align-items: center;
     background-color: transparent;
@@ -2033,7 +2195,7 @@ section#search-section {
     // The bird, posed per type via subclass tilt
     .alert-magpie {
         grid-column: 1;
-        width: 3.25rem;
+        width: 3.5rem;
         height: auto;
         align-self: center;
         transform: rotate(-4deg);
@@ -2068,9 +2230,9 @@ section#search-section {
 
     // ----- Per type: colour + magpie pose --------------------------------
     &.alert-tip {
-        border-left-color: $brand-sage;
-        background: rgba($brand-sage, 0.08);
-        b { color: $brand-sage-text; }
+        border-left-color: $brand-leaf;
+        background: rgba($brand-leaf, 0.08);
+        b { color: $brand-leaf-text; }
         // upright + slight forward lean – encouraging
         .alert-magpie { transform: rotate(-2deg); }
     }
@@ -2080,7 +2242,7 @@ section#search-section {
         background: rgba($brand-amber, 0.10);
         b { color: $brand-amber-text; }
         // tilted head – curious, attentive
-        .alert-magpie { transform: rotate(-8deg); }
+        .alert-magpie { transform: rotate(-3deg); }
     }
 
     &.alert-important {
@@ -2088,7 +2250,7 @@ section#search-section {
         background: rgba($brand-amber, 0.16);
         b { color: $brand-amber-text; }
         // leaning forward – insistent
-        .alert-magpie { transform: rotate(8deg) translateY(1px); }
+        .alert-magpie { transform: rotate(2deg) translateY(1px); }
     }
 
     &.alert-warning {
@@ -2096,7 +2258,7 @@ section#search-section {
         background: rgba($brand-brick, 0.08);
         b { color: $brand-brick-text; }
         // alarmed: head up, looking back
-        .alert-magpie { transform: rotate(-14deg) translateY(-2px); }
+        .alert-magpie { transform: rotate(-3deg) translateY(-2px); }
     }
 
     &.alert-magpie {
@@ -2104,7 +2266,7 @@ section#search-section {
         background: rgba($brand-amber, 0.10);
         b { color: $brand-amber-text; }
         // mid-conversation pose
-        .alert-magpie { transform: rotate(-4deg); }
+        .alert-magpie { transform: rotate(-2deg); }
     }
 }
 
@@ -2123,7 +2285,12 @@ section#search-section {
         max-width: 720px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: auto 1fr;
+        // Both tracks size to their content and the pair is centred as a unit.
+        // With `1fr` on the text column the track stayed full width while the
+        // paragraph inside stopped at its 44ch cap, so the slack collected on
+        // the right and the visible block sat left of centre.
+        grid-template-columns: auto auto;
+        justify-content: center;
         align-items: center;
         gap: 1.5rem;
 
@@ -2185,23 +2352,25 @@ section#search-section {
     text-decoration: none !important;
     color: inherit !important;
 
-    img {
-        width: 4.5rem;
-        height: auto;
+    .magpie-swap {
+        // Wide enough for the broader of the two poses at full height. At
+        // 4.5rem the hover bird overflowed and `object-fit: contain` shrank
+        // it to 95.6%, so the swap read as a lurch rather than a pose change.
+        width: 4.75rem;
+        height: 6.9rem;
         margin: 0 auto;
-        display: block;
         opacity: 0.92;
         transform: rotate(-4deg);
         transform-origin: center bottom;
-        transition: transform 0.25s ease;
+        transition: transform 0.3s cubic-bezier(.33, 1, .68, 1);
     }
 
-    &:hover img { transform: rotate(2deg) translateY(-1px); }
+    &:hover .magpie-swap { transform: rotate(-1deg) translateY(-1px); }
 
     .trail-magpie-count {
         font-family: $font-family-display;
         font-size: 1.05rem;
-        color: $brand-sage-text;
+        color: $brand-leaf-text;
         margin: 0.35rem 0 0;
         line-height: 1.1;
         transform: rotate(-3deg);
@@ -2211,6 +2380,35 @@ section#search-section {
     }
 }
 
+// In the collapsed submenu the sidebar is a full-width panel, so a large
+// centred bird floats in the middle of the row. Shrink it and pull it to the
+// left with the caption beside it. The box keeps the 6.9 / 4.75 ratio so
+// neither hover pose gets scaled down by object-fit.
+@include media-breakpoint-down(lg) {
+    .trail-magpie {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.65rem;
+        text-align: left;
+
+        .magpie-swap {
+            width: 2.4rem;
+            height: 3.49rem;
+            margin: 0;
+        }
+
+        .trail-magpie-count { margin: 0; }
+    }
+
+    // The toggle button above already names the section ("Guidance menu"), so
+    // the TRAILHEAD eyebrow and the repeated title are dead weight here.
+    .trailhead { display: none; }
+
+    // Open, the panel ran straight into the page H1 below it.
+    aside#sidebar { margin-bottom: 2.5rem; }
+}
+
 // Bobbing animation triggered when a page gets saved elsewhere on the site
 @keyframes magpie-bob {
     0%   { transform: rotate(-4deg) translateY(0); }
@@ -2218,7 +2416,7 @@ section#search-section {
     60%  { transform: rotate(2deg) translateY(2px); }
     100% { transform: rotate(-4deg) translateY(0); }
 }
-.trail-magpie img.bobbing {
+.trail-magpie .magpie-swap.bobbing {
     animation: magpie-bob 0.65s cubic-bezier(.4,0,.2,1);
 }
 
@@ -2233,17 +2431,20 @@ section#search-section {
 
 .footer-magpie {
     display: block;
-    width: 80px;
+    width: 50px;
+    margin-bottom: 5px;
     height: auto;
-    transform: rotate(-6deg);
-    opacity: 0.95;
-    filter: drop-shadow(0 4px 14px rgba($brand-amber, 0.18));
+    background-color: $light-background;
+    border-radius: 100%;
+    // A light halo is the only thing separating a near-black bird from the
+    // near-black footer, so keep it white rather than tinting it amber.
+  // filter: drop-shadow(0 4px 16px rgba($white, 0.28)); ->
 }
 
 .footer-magpie-note {
     font-family: $font-family-display;
     font-size: 1.05rem;
-    color: rgba($brand-cream, 0.7);
+    color: rgba($brand-linen, 0.7);
     margin: 0;
     line-height: 1;
     transform: rotate(-2deg);
@@ -2340,7 +2541,7 @@ nav#breadcrumb {
         caption-side: top;
         font-family: $font-family-display;
         font-size: 1.2rem;
-        color: $brand-sage-text;
+        color: $brand-leaf-text;
         padding: 0 0 0.4rem;
     }
 }
@@ -2367,7 +2568,7 @@ nav#breadcrumb {
         width: 100%;
         max-width: 14rem;
         height: 0.75rem;
-        background-image: url("#{$squiggle-sage}");
+        background-image: url("#{$squiggle-lake}");
         background-repeat: no-repeat;
         background-size: 100% 100%;
         background-position: center;
@@ -2682,7 +2883,7 @@ nav#breadcrumb {
         font-size: 0.9rem !important;
     }
 
-    &:hover h3 { color: $brand-sage-text !important; }
+    &:hover h3 { color: $brand-leaf-text !important; }
     &:hover i { color: $brand-amber !important; }
 }
 
@@ -2705,7 +2906,7 @@ nav#breadcrumb {
 
     .info-links {
         a.btn {
-            background-color: $brand-cream !important;
+            background-color: $brand-linen !important;
             color: $dark !important;
             border: 1px solid $brand-rule !important;
             border-radius: 0.4rem !important;
@@ -2742,7 +2943,10 @@ nav#breadcrumb {
         display: inline-block;
         font-size: 0.95rem;
         line-height: 1;
-        color: $brand-amber-text;
+        // On the dark bar the shine takes the full amber, not the text-safe
+        // dark variant — $brand-amber-text is built for light grounds and
+        // lands at 2.2:1 here, which reads as muddy brown rather than gold.
+        color: $brand-amber;
         transition: transform 0.25s ease, color 0.2s ease;
     }
 
@@ -2763,7 +2967,7 @@ nav#breadcrumb {
 
     &:hover .nav-shine,
     &.active .nav-shine {
-        color: $brand-amber;
+        color: $brand-amber-soft;
         transform: rotate(45deg) scale(1.1);
     }
 }
@@ -2774,8 +2978,8 @@ nav#breadcrumb {
 }
 
 @keyframes nav-shine-twinkle {
-    0%, 100% { transform: rotate(0deg)  scale(1);    color: $brand-amber-text; }
-    50%      { transform: rotate(45deg) scale(1.18); color: $brand-amber; }
+    0%, 100% { transform: rotate(0deg)  scale(1);    color: $brand-amber; }
+    50%      { transform: rotate(45deg) scale(1.18); color: $brand-amber-soft; }
 }
 
 
@@ -2960,7 +3164,7 @@ nav#breadcrumb {
     line-height: 1.2;
     color: $dark;
 
-    &--active   { background-color: rgba($brand-spring, 0.85); }
+    &--active   { background-color: rgba($brand-mist, 0.85); }
     &--evolved  { background-color: rgba($brand-amber, 0.65); }
     &--paused   { background-color: rgba($brand-amber-soft, 0.85); }
     &--ended    { background-color: rgba($brand-brick-soft, 0.8); }
@@ -2969,7 +3173,7 @@ nav#breadcrumb {
 
 /*=== Case study – resources table =====================================*/
 // Auto-rendered at the end of every case study where `resources:` is set
-// in frontmatter. Editorial table on cream – no heavy borders, mono
+// in frontmatter. Editorial table on linen – no heavy borders, mono
 // header eyebrow, brick links, paper row shading on hover.
 .case-study-resources {
     margin: 0.5rem 0 2.5rem;
@@ -3042,7 +3246,7 @@ nav#breadcrumb {
     color: $dark;
 
     &--template { background-color: rgba($brand-amber, 0.55);     color: $dark; }
-    &--internal { background-color: rgba($brand-spring, 0.7);     color: $dark; }
+    &--internal { background-color: rgba($brand-mist, 0.7);     color: $dark; }
     &--external { background-color: $brand-rule;                  color: rgba($dark, 0.8); }
 }
 
@@ -3122,9 +3326,9 @@ nav#breadcrumb {
 
     // Per-landmark tones – match the door + tile-flourish vocabulary
     &--signposts {
-        --tile-tone:      #{$brand-sage-text};
-        --tile-tone-soft: #{rgba($brand-spring, 0.30)};
-        --tile-tone-rule: #{rgba($brand-sage, 0.55)};
+        --tile-tone:      #{$brand-leaf-text};
+        --tile-tone-soft: #{rgba($brand-mist, 0.30)};
+        --tile-tone-rule: #{rgba($brand-leaf, 0.55)};
     }
 
     &--campfires {
@@ -3147,12 +3351,13 @@ nav#breadcrumb {
 // sidebar on case-study pages. Slim mono-uppercase row with a home icon
 // in slot 1.
 /*=== Page edit / report-issue / history buttons ======================*/
-// The theme's github-buttons.html include uses Bootstrap's `text-primary`
-// utility, which maps to $brand-spring (mint) – invisible on cream.
-// Override with the dark ink + amber hover so the icons read clearly.
+// These render as <a role="button" class="btn btn-sm btn-icon-round ...">
+// with no colour class of their own, so they inherited a pale tint and the
+// glyphs barely read. (An older theme build put `.text-primary` on them,
+// which is what this block used to target — that selector matched nothing.)
 #edit-me {
-    .btn.text-primary,
-    a.text-primary {
+    .btn,
+    a[role="button"] {
         color: rgba($dark, 0.65) !important;
         border: 1px solid transparent;
         transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;

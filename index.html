@@ -29,7 +29,7 @@ layout: none
         <section class="container g-lg-5 magpie-intro">
             <p class="section-eyebrow">Your guide</p>
             <div class="magpie-intro-inner">
-                <img class="magpie-intro-img" src="{{ 'assets/img/magpie-dark.svg' | relative_url }}" alt="An illustration of a magpie carrying a book">
+                <img class="magpie-intro-img" src="{{ 'assets/img/magpie-1.svg' | relative_url }}" alt="An illustration of a magpie">
                 <div class="magpie-intro-text">
                     <p class="magpie-intro-lead">say hi to the magpie</p>
                     <p class="magpie-intro-body">Curious, observant, a careful collector – your guide through the handbook. Watch for them along the trail; they'll have tips and asides where they're needed.</p>
@@ -53,9 +53,9 @@ layout: none
                     <a href="{{ item.url | relative_url }}" class="door door--{{ tones[idx] }}">
                         <div class="door-icon" aria-hidden="true">
                             {%- case tones[idx] -%}
-                            {%- when "signposts" %}{% include icons/tile-guidance.svg %}
-                            {%- when "campfires" %}{% include icons/tile-campfire.svg %}
-                            {%- when "waypoints" %}{% include icons/tile-maturity.svg %}
+                            {%- when "signposts" %}{{ "assets/img/icons/tile-guidance.svg" | inline_svg }}
+                            {%- when "campfires" %}{{ "assets/img/icons/tile-campfire.svg" | inline_svg }}
+                            {%- when "waypoints" %}{{ "assets/img/icons/tile-maturity.svg" | inline_svg }}
                             {%- else %}<img src="{{ item.image_url | relative_url }}" alt="{{ item.title }} icon">
                             {%- endcase -%}
                         </div>

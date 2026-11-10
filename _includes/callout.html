@@ -1,6 +1,6 @@
 {%- comment -%}
-Local override of theme callout. The magpie speaks every type – different
-tilt per pose, type-specific colour + Caveat label.
+Local override of theme callout. The magpie speaks every type – a
+different pose per type, type-specific colour + Caveat label.
 Types: tip · note · important · warning · magpie (generic aside).
 {%- endcomment -%}
 
@@ -13,8 +13,19 @@ Types: tip · note · important · warning · magpie (generic aside).
 {%- if type == "warning" %}{%- assign label = "watch out" %}{%- endif %}
 {%- if type == "magpie" %}{%- assign label = "the magpie says" %}{%- endif %}
 
+{%- comment -%}
+One pose per type, so the callout reads at a glance instead of relying on a
+few degrees of tilt to tell the five types apart.
+{%- endcomment -%}
+{%- assign pose = "magpie-8" %}
+{%- if type == "tip" %}{%- assign pose = "magpie-3" %}{%- endif %}
+{%- if type == "note" %}{%- assign pose = "magpie-1" %}{%- endif %}
+{%- if type == "important" %}{%- assign pose = "magpie-6" %}{%- endif %}
+{%- if type == "warning" %}{%- assign pose = "magpie-4" %}{%- endif %}
+{%- capture pose_src %}assets/img/{{ pose }}.svg{% endcapture %}
+
 <aside class="alert alert-{{ type }}" role="note">
-    <img class="alert-magpie" src="{{ 'assets/img/magpie-dark.svg' | relative_url }}" alt="" aria-hidden="true">
+    <img class="alert-magpie" src="{{ pose_src | relative_url }}" alt="" aria-hidden="true">
     <div class="alert-body" markdown="span">
         <b>{{ label }}</b>{{ include.content }}
     </div>
