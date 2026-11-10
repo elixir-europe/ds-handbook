@@ -16,7 +16,7 @@ layout: case-study                 # mandatory – leave as-is
 type: Case Study                   # mandatory – leave as-is
 search_exclude: true               # – leave as-is
 
-description: Being a transdisciplinary data steward in a project setting has specific challenges. We share the first insights of the setup phase of the URBANISE project, i.e., setting up a data steward for urban research at the University of Vienna.
+description: The URBANISE (Urban Research and Data Stewardship for Innovation, Sustainability and Engagement) project funds a transdisciplinary data steward at the University of Vienna. This camp fire highlights specific challenges and first lessons learned. [Last Update: 2026-11-11]
 
 contributors: [Jeanne Wilbrandt]          # mandatory – names must match _data/CONTRIBUTORS.yaml
 page_id: urbanise      # mandatory – lowercase, hyphenated
@@ -27,10 +27,10 @@ page_id: urbanise      # mandatory – lowercase, hyphenated
 # Fields tagged [free] are typed verbatim by you.
 # ---------------------------------------------------------------------------
 
-lead_org: University of Vienna       # [free] main org behind the work
+lead_org: University of Vienna: Research and Publication Services of the University Library and Research Services and Career Development  
 country: AT                        # [vocab] countries.yml – 2-letter key
 
-# partners:                          # [free] optional – vendors, universities, funders as a list
+partners: Funded by the Austrian Research Promotion Agency (FFG)                # [free] optional – vendors, universities, funders as a list
 
 scale: individual               # [vocab] scales.yml
 
@@ -48,10 +48,7 @@ start: 2026                        # [free] year the work began
 
 status: active                     # [vocab] outcome_status.yml
 
-# Optional link to the official activity / project page outside this
-# handbook (the institutional page, the funder page, the project site).
-# Renders as a "Visit the activity page" link inside the context card.
-# Override the link text with `external_url_label` if you need to.
+# Project website
 external_url: https://urbanise.univie.ac.at
 external_url_label: Visit the URBANISE page
 
@@ -129,15 +126,15 @@ understand, assess and reuse across projects and organisational boundaries.
 I tell this story because this role is still unusual. It shows what happens when a data steward moves from a 
 disciplinary setting into a transdisciplinary network that is still being built.  
 
-{% include callout.html type="magpie" content="> These words get used loosely, so here is how we use them in this case study: 
-- **embedded data steward**: a steward who works mainly with one faculty, department, institute or research community;
-- **disciplinary**: work grounded in one research field and its methods, standards and practices;
-- **interdisciplinary**: researchers from different disciplines work together;
-- **transdisciplinary**: research also involves people outside academia, such as public bodies, industry, community groups or citizens. 
-
-In practice, the boundaries blur. The point is not to sort people into neat boxes. It is to notice when your usual support model no longer fits. 
-
-Side note: A steward can be embedded and still work across disciplines.   The difference here is that the role itself is designed to move between communities. " %}
+> These words get used loosely, so here is how we use them in this case study: 
+> - **embedded data steward**: a steward who works mainly with one faculty, department, institute or research community;
+> - **disciplinary**: work grounded in one research field and its methods, standards and practices;
+> - **interdisciplinary**: researchers from different disciplines work together;
+> - **transdisciplinary**: research also involves people outside academia, such as public bodies, industry, community groups or citizens. 
+>
+> In practice, the boundaries blur. The point is not to sort people into neat boxes. It is to notice when your usual support model no longer fits. 
+>
+> Side note: A steward can be embedded and still work across disciplines.   The difference here is that the role itself is designed to move between communities.
 
 
 ## What we did
@@ -170,7 +167,9 @@ what support they needed and where RDM could make a practical difference.
 This case study captures the beginning of that work. It is too early to claim long-term impact 
 but not too early to share the setup work, the pressure points and the choices we are making. 
 
-{% include callout.html type="note" content="A fixed-term project can be a useful place to test a new service model. It can also make continuity difficult. We started planning for handover and potential long-term ownership early, even though we do not yet have all the answers." %}
+{% include callout.html type="note" content="A fixed-term project can be a useful place to test 
+a new service model. It can also make continuity difficult. We started planning for handover and 
+potential long-term ownership early, even though we do not yet have all the answers." %}
 
 ### First moves and starting difficulties 
 
@@ -186,7 +185,8 @@ An ally who can make introductions is especially valuable. In my case, colleague
 steward network and the project team opened doors that I would not have known existed. Their introductions 
 carried more weight than a general announcement email. 
 
-<aside class="margin-note">A short introduction from a trusted colleague can be more impactful than a webpage, launch event or flyer. </aside>
+<aside class="margin-note">A short introduction from a trusted colleague can be more impactful than a webpage, 
+  launch event or flyer. </aside>
  
 
 #### Preparing three versions of my introduction 
@@ -229,7 +229,9 @@ deciding what information is needed, keeping it proportionate and making links b
 and services visible is key to a useful map. It should help me prepare introductions, spot missing 
 connections, and plan events targeted to connect or inform specific groups from the contact map. 
 
-{% include callout.html type="important" content="A relationship map contains personal data. Before you build one, agree where it will be stored, who can access it, what information is necessary, how long you will retain it and how you will keep it up to date. Follow your organisation’s data protection and information security rules." %}
+{% include callout.html type="important" content="A relationship map contains personal data. Before you build one, 
+agree where it will be stored, who can access it, what information is necessary, how long you will retain it and 
+how you will keep it up to date. Follow your organisation’s data protection and information security rules." %}
 
 I expect the first version of the map to take several months to build. Keeping it current will be 
 ongoing work, not a one-off task. 
@@ -265,7 +267,8 @@ may be unfamiliar or inappropriate in another.
 This makes the data steward’s translator role more visible. I need to understand enough of each context to ask useful 
 questions, while avoiding the assumption that one discipline’s workflow should become the default for everyone else. 
 
-{% include callout.html type="tip" content="When someone uses a familiar term, do not assume you know its implications. Ask for an example: “What would that look like in your project?”" %}
+{% include callout.html type="tip" content="When someone uses a familiar term, do not assume you know its implications. 
+Ask for an example: “What would that look like in your project?”" %}
 
 #### Working beyond the university changes the conversation 
 External partners may have different timelines, language, incentives and ways of making decisions. A city 
