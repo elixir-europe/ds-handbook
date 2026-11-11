@@ -1,0 +1,50 @@
+# Skills introduced by guidance (signpost) pages.
+#
+# A curated subset of the ESCO skills classification, pinned to ESCO v1.2.1.
+# Only skills that at least one guidance page uses belong here – this is not
+# a full copy of ESCO (which has ~14,000 skills).
+#
+# Used by:
+#   • _layouts/guidance.html        – "Introduced skills" tab on each page
+#   • _includes/guidance-index.html – skill filter chips on /guidance
+#
+# Fields:
+#   key          slug used in the index filter (lowercase, hyphenated label)
+#   label        the ESCO preferred label (English) – must match exactly the
+#                text written under `skills:` in a guidance page's frontmatter
+#   uri          the ESCO concept URI (persistent identifier)
+#   description  the ESCO description, shown as a tooltip
+#
+# To add a skill, look it up on https://esco.ec.europa.eu/en/classification/skills
+# or run:  python3 var/esco_skill.py <ESCO skill URI>
+# and paste the output below. Keep entries sorted by label.
+
+- key: develop-organisational-policies
+  label: develop organisational policies
+  uri: http://data.europa.eu/esco/skill/3254275d-a1b5-4640-9481-02f38780ac35
+  description: Develop and supervise the implementation of policies aimed at documenting and detailing the procedures for the operations of the organisation in the lights of its strategic planning.
+
+- key: develop-training-programmes
+  label: develop training programmes
+  uri: http://data.europa.eu/esco/skill/517f678e-001b-4985-acb4-9edc3500d74c
+  description: Design programmes where employees or future employees are taught the necessary skills for the job or to improve and expand skills for new activities or tasks. Select or design activities aimed at introducing the work and systems or improving the performance of individuals and groups in organisational settings.
+
+- key: evaluate-training
+  label: evaluate training
+  uri: http://data.europa.eu/esco/skill/728ad40d-4a79-4b4d-b77b-a48d094d73fa
+  description: Assess the realisation of the training's learning outcomes and goals, the quality of teaching, and give transparent feedback to the trainers and trainees.
+
+- key: identify-training-needs
+  label: identify training needs
+  uri: http://data.europa.eu/esco/skill/4dafe480-f2ae-46b5-bd5e-8d4e538f50c7
+  description: Analyse the training problems and identify the training requirements of an organisation or individuals, so as to provide them with instruction tailored to their prior mastery, profile, means and problems.
+
+- key: strategic-planning
+  label: strategic planning
+  uri: http://data.europa.eu/esco/skill/949ced5f-7536-4614-ac60-563ffc91a2f2
+  description: The elements defining the foundation and core of an organisation such as its mission, vision, values, and objectives.
+
+- key: track-key-performance-indicators
+  label: track key performance indicators
+  uri: http://data.europa.eu/esco/skill/8dcbcabe-09f7-4d11-940d-125af57bbc40
+  description: Identify the quantifiable measures that a company or industry uses to gauge or compare performance in terms of meeting their operational and strategic goals, using preset performance indicators.

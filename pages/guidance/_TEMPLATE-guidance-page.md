@@ -7,7 +7,7 @@
 # ============================================================================
 
 title: [add title]                 # mandatory – short, not a full sentence, specific; align with file name
-layout: page                       # mandatory – leave as-is
+layout: guidance                   # mandatory – leave as-is
 type: Guidance                     # mandatory – leave as-is
 search_exclude: true               # leave as-is
 contributors: [add names]          # mandatory – comma separated list, names must match _data/CONTRIBUTORS.yaml; add missing names in your Pull Request; yaml file is located under data > sidebars > file CONTRIBUTORS
@@ -19,14 +19,14 @@ page_id: g-[shortname]             # mandatory – lowercase, hyphenated, same a
 
 # Tab 1: At a glance
 description: [add sentence]        # mandatory – one sentence (10–20 words) on the core outcome of the page; also used in search results
-last update: [YYYY-MM-DD]          # mandatory – date of the last substantial change or review (ISO 8601), not typo fixes
+last_update: [YYYY-MM-DD]          # mandatory – date of the last substantial change or review (ISO 8601), not typo fixes
 topics:                            # mandatory – 3–5 short keywords for readers and search engines
   - [topic 1]                      # free text; if a term comes from Terms4FAIRskills (https://terms4fairskills.github.io/) or ESCO (https://esco.ec.europa.eu/en/classification/skills), add its ID as a comment
   - [topic 2]
   - [topic 3]
 
 # Tab 2: Introduced skills
-skills:                            # mandatory – 3–5 skills; use the exact label from ESCO or add the URI as a comment
+skills:                            # mandatory – 3–5 skills; use the exact ESCO label, and make sure it is listed in _data/guidance/skills.yml (add it there in your Pull Request if not – see var/esco_skill.py)
   - [skill 1]                      # e.g. evaluate training   # http://data.europa.eu/esco/skill/728ad40d-4a79-4b4d-b77b-a48d094d73fa
   - [skill 2]
   - [skill 3]
