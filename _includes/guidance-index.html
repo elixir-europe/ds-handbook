@@ -1,0 +1,170 @@
+{%- comment -%}
+Filterable + searchable guidance index – the signpost counterpart of
+_includes/case-studies-index.html. Reuses its .cs-index layout styles.
+
+Two filter layers, built from the frontmatter of the guidance pages:
+  • Topics – every `topics:` value used on at least one page.
+  • Skills – every `skills:` value used on at least one page (tooltips
+             from the ESCO subset in _data/guidance/skills.yml).
+
+Within a layer, chips are OR-ed (any selected topic); across layers they
+are AND-ed (matches a selected topic AND a selected skill). Values are
+matched by their slug, so capitalisation differences don't split a chip.
+{%- endcomment -%}
+
+{%- assign skills_vocab = site.data.guidance.skills -%}
+{%- assign guides = site.pages | where_exp: "p", "p.type contains 'Guidance'" | sort: "title" -%}
+
+{%- assign all_topics = "" | split: "" -%}
+{%- assign all_skills = "" | split: "" -%}
+{%- for p in guides -%}
+  {%- if p.topics -%}{%- assign all_topics = all_topics | concat: p.topics -%}{%- endif -%}
+  {%- if p.skills -%}{%- assign all_skills = all_skills | concat: p.skills -%}{%- endif -%}
+{%- endfor -%}
+{%- assign all_topics = all_topics | uniq | sort_natural -%}
+{%- assign all_skills = all_skills | uniq | sort_natural -%}
+
+<div class="cs-index guidance-index">
+
+    <div class="cs-index__controls">
+        <div class="cs-index__search">
+            <label for="g-search" class="visually-hidden">Search guidance</label>
+            <i class="fa-solid fa-magnifying-glass cs-index__search-icon" aria-hidden="true"></i>
+            <input type="search" id="g-search" class="cs-index__search-input" placeholder="Search guidance…" autocomplete="off">
+        </div>
+        <button type="button" class="cs-index__reset" data-g-reset hidden>
+            <i class="fa-solid fa-xmark me-1" aria-hidden="true"></i>Clear
+        </button>
+    </div>
+
+    {%- if all_topics.size > 0 -%}
+    <div class="guidance-index__filter">
+        <p class="guidance-index__filter-label" id="g-topics-label"><i class="fa-solid fa-tag me-1" aria-hidden="true"></i>Topics</p>
+        <div class="cs-index__chips" role="group" aria-labelledby="g-topics-label">
+            {%- for t in all_topics -%}
+            <button type="button" class="guidance-pill guidance-pill--topic" data-g-layer="topics" data-g-value="{{ t | slugify }}" aria-pressed="false">{{ t }}</button>
+            {%- endfor -%}
+        </div>
+    </div>
+    {%- endif -%}
+
+    {%- if all_skills.size > 0 -%}
+    <div class="guidance-index__filter">
+        <p class="guidance-index__filter-label" id="g-skills-label"><i class="fa-solid fa-graduation-cap me-1" aria-hidden="true"></i>Skills</p>
+        <div class="cs-index__chips" role="group" aria-labelledby="g-skills-label">
+            {%- for s in all_skills -%}
+            {%- assign skill = skills_vocab | where: "label", s | first -%}
+            <button type="button" class="guidance-pill guidance-pill--skill" data-g-layer="skills" data-g-value="{{ s | slugify }}" aria-pressed="false"{% if skill %} title="{{ skill.description | escape }}"{% endif %}>{{ s }}</button>
+            {%- endfor -%}
+        </div>
+    </div>
+    {%- endif -%}
+
+    <p class="cs-index__count" aria-live="polite"><span data-g-count>{{ guides.size }}</span> guidance page{% if guides.size != 1 %}s{% endif %}</p>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4 navigation-tiles tone--signposts cs-index__grid">
+        {%- for p in guides -%}
+        {%- capture topics_csv -%}{%- for t in p.topics -%}{{ t | slugify }},{%- endfor -%}{%- endcapture -%}
+        {%- capture skills_csv -%}{%- for s in p.skills -%}{{ s | slugify }},{%- endfor -%}{%- endcapture -%}
+        {%- capture search_blob -%}{{ p.title | downcase }} {{ p.description | downcase }} {{ p.topics | join: " " | downcase }} {{ p.skills | join: " " | downcase }}{%- endcapture -%}
+
+        <div class="col"
+             data-g-tile
+             data-topics="{{ topics_csv }}"
+             data-skills="{{ skills_csv }}"
+             data-search="{{ search_blob | strip_newlines | strip | escape }}">
+            <div class="card h-100 tone--signposts">
+                <div class="card-body d-flex flex-column">
+                    <div class="card-type"><small>Guidance</small></div>
+                    <a class="stretched-link section-title" aria-label="Go to the {{ p.title }} page" href="{{ p.url | relative_url }}">
+                        <b>{{ p.title }}</b>
+                    </a>
+                    {%- if p.description -%}
+                    <p class="card-text">{{ p.description }}</p>
+                    {%- endif -%}
+                </div>
+                <span class="tile-flourish" aria-hidden="true">{{ "assets/img/icons/tile-guidance.svg" | inline_svg }}</span>
+            </div>
+        </div>
+        {%- endfor -%}
+    </div>
+
+    <p class="cs-index__empty" data-g-empty hidden>No guidance pages match these filters yet. Try widening your selection, or <button type="button" class="cs-index__link-button" data-g-reset-inline>clear all filters</button>.</p>
+
+</div>
+
+<script>
+(function () {
+    var root = document.querySelector('.guidance-index');
+    if (!root) return;
+
+    var search = root.querySelector('#g-search');
+    var chips = root.querySelectorAll('[data-g-layer]');
+    var tiles = root.querySelectorAll('[data-g-tile]');
+    var counter = root.querySelector('[data-g-count]');
+    var emptyMsg = root.querySelector('[data-g-empty]');
+    var resetBtns = root.querySelectorAll('[data-g-reset], [data-g-reset-inline]');
+
+    var active = { topics: [], skills: [] };
+    var query = '';
+
+    // A tile passes a layer when nothing is selected in it, or when it has
+    // any of the selected values (OR within a layer).
+    function passesLayer(tile, layer) {
+        var selected = active[layer];
+        if (!selected.length) return true;
+        var values = (tile.getAttribute('data-' + layer) || '').split(',').filter(Boolean);
+        return selected.some(function (v) { return values.indexOf(v) !== -1; });
+    }
+
+    function applyFilters() {
+        var visible = 0;
+        tiles.forEach(function (tile) {
+            var ok = passesLayer(tile, 'topics') && passesLayer(tile, 'skills');
+            if (ok && query) {
+                ok = (tile.getAttribute('data-search') || '').indexOf(query) !== -1;
+            }
+            tile.hidden = !ok;
+            if (ok) visible++;
+        });
+
+        if (counter) counter.textContent = visible;
+        if (emptyMsg) emptyMsg.hidden = visible !== 0;
+        var anyFilter = query || active.topics.length || active.skills.length;
+        resetBtns.forEach(function (b) { b.hidden = !anyFilter; });
+    }
+
+    chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+            var list = active[chip.dataset.gLayer];
+            var value = chip.dataset.gValue;
+            var idx = list.indexOf(value);
+            if (idx === -1) list.push(value); else list.splice(idx, 1);
+            var on = idx === -1;
+            chip.classList.toggle('is-active', on);
+            chip.setAttribute('aria-pressed', on ? 'true' : 'false');
+            applyFilters();
+        });
+    });
+
+    if (search) {
+        search.addEventListener('input', function () {
+            query = search.value.trim().toLowerCase();
+            applyFilters();
+        });
+    }
+
+    resetBtns.forEach(function (b) {
+        b.addEventListener('click', function () {
+            query = '';
+            if (search) search.value = '';
+            active = { topics: [], skills: [] };
+            chips.forEach(function (c) {
+                c.classList.remove('is-active');
+                c.setAttribute('aria-pressed', 'false');
+            });
+            applyFilters();
+        });
+    });
+})();
+</script>

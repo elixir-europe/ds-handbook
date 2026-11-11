@@ -3563,3 +3563,167 @@ nav#breadcrumb {
         font-weight: 600;
     }
 }
+
+/*=== Guidance (signpost) – tabbed "At a glance" header ================*/
+// Reuses .case-study-meta (see above) and swaps the campfire amber for the
+// signpost mist/leaf tone. Tabs: At a glance · Introduced skills · Takeaways.
+// Layout: _layouts/guidance.html. Skills vocab: _data/guidance/skills.yml.
+.guidance-meta {
+    .case-study-meta__nav.nav-tabs .nav-link:hover {
+        background-color: rgba($brand-mist, 0.35);
+        border-bottom-color: $brand-mist;
+    }
+
+    .case-study-meta__label i { color: $brand-leaf-text; }
+
+    &__fields { margin-top: 1.25rem; }
+
+    &__skills {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.9rem;
+
+        li {
+            border-left: 2px solid $brand-mist;
+            padding-left: 0.9rem;
+        }
+    }
+
+    &__skill-label {
+        font-family: $font-family-sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        color: $dark;
+        text-decoration: none;
+        border-bottom: 1px solid rgba($brand-leaf-text, 0.4);
+
+        &:is(a):hover { border-bottom-color: $brand-leaf-text; }
+    }
+
+    &__skill-desc {
+        font-size: 0.88rem;
+        color: rgba($dark, 0.72);
+        line-height: 1.45;
+        margin: 0.25rem 0 0;
+    }
+
+    &__source {
+        font-family: $font-family-monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.04em;
+        color: rgba($dark, 0.6);
+        margin: 1.1rem 0 0;
+
+        a { color: inherit; }
+    }
+
+    &__takeaways {
+        margin: 0;
+        padding-left: 1.2rem;
+
+        li {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 0.45rem;
+
+            &::marker { color: $brand-leaf-text; }
+        }
+    }
+}
+
+// Topic vs skill pills – used both in the page header and as filter chips
+// on the guidance index, so the two kinds look the same everywhere.
+//   • topic – soft filled mist pill (what the page is about)
+//   • skill – outlined pill with a cap icon (what the reader will be able to do)
+.guidance-pills {
+    list-style: none;
+    padding: 0;
+    margin: 0.35rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.guidance-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: $font-family-monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+    color: $dark;
+    border-radius: 999px;
+    padding: 0.25rem 0.8rem;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+
+    &--topic {
+        background-color: rgba($brand-mist, 0.55);
+        border: 1px solid $brand-mist;
+    }
+
+    &--skill {
+        background-color: $brand-paper;
+        border: 1px dashed $brand-leaf-text;
+        border-radius: 0.35rem;
+
+        &::before {
+            content: "\f19d"; // fa-graduation-cap
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 0.65rem;
+            color: $brand-leaf-text;
+        }
+    }
+
+    // Interactive (filter chip) state on the index.
+    &:is(button) {
+        cursor: pointer;
+
+        &.guidance-pill--topic {
+            background-color: $brand-paper;
+            &:hover { background-color: rgba($brand-mist, 0.4); }
+            &.is-active {
+                background-color: $brand-mist;
+                border-color: $brand-leaf-text;
+                font-weight: 600;
+            }
+        }
+
+        &.guidance-pill--skill {
+            &:hover { background-color: rgba($brand-mist, 0.25); }
+            &.is-active {
+                color: $brand-paper;
+                background-color: $brand-leaf-text;
+                border-style: solid;
+                font-weight: 600;
+                &::before { color: $brand-paper; }
+            }
+        }
+    }
+}
+
+// Guidance index – two labelled filter rows above the tile grid.
+.guidance-index {
+    &__filter { margin-bottom: 0.25rem; }
+
+    &__filter-label {
+        font-family: $font-family-monospace;
+        font-size: 0.66rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba($dark, 0.65);
+        margin: 0 0 0.4rem;
+
+        i { color: $brand-leaf-text; }
+    }
+
+    .cs-index__search-input:focus {
+        border-color: $brand-leaf-text;
+        box-shadow: 0 0 0 3px rgba($brand-mist, 0.5);
+    }
+}

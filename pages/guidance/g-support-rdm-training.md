@@ -1,85 +1,175 @@
 ---
 title: RDM Training
-description: How to plan, deliver, evaluate and sustain accessible RDM training for researchers and support staff.
+layout: guidance
+type: Guidance
+search_exclude: true
 contributors: [Minna Ahokas, Diana Pilvar, Marina Popleteeva, Mijke Jetten, Heleri Inno, Jana Martínková, Aída Moure Fernández]
 page_id: g-support-rdm-training
-type: [Guidance]
+
+# ---------------------------------------------------------------------------
+# At a glance box
+# ---------------------------------------------------------------------------
+
+# Tab 1: At a glance
+description: How to plan, deliver, evaluate and sustain accessible RDM training for researchers and support staff.
+last update: 2026-11-10
+topics:
+  - RDM training
+  - FAIR training                  # Terms4FAIRskills T4FS_0000259
+  - train-the-trainer
+
+# Tab 2: Introduced skills
+skills:                            # ESCO v1.2.1
+  - identify training needs        # http://data.europa.eu/esco/skill/4dafe480-f2ae-46b5-bd5e-8d4e538f50c7
+  - develop training programmes    # http://data.europa.eu/esco/skill/517f678e-001b-4985-acb4-9edc3500d74c
+  - evaluate training              # http://data.europa.eu/esco/skill/728ad40d-4a79-4b4d-b77b-a48d094d73fa
+
+# Tab 3: Takeaways
+takeaways:
+  - Plan RDM training as a continuous programme linked to onboarding, grant deadlines and doctoral requirements.
+  - Offer varied formats and update materials regularly, based on standards and participant feedback.
+  - Share delivery across a network, train new trainers and recognise participation.
+
+# ---------------------------------------------------------------------------
+# Related pages
+# ---------------------------------------------------------------------------
+related_pages:
+  Guidance:
+    - g-support-networks
+    - g-support-communication
+    - g-support-rdm-information
+  Case_Study:
+    - elixir-uk-fellowship
+  Maturity_Indicator:
+    - mm-support-training
+    - mm-support-training-materials
+    - mm-strategy-personnel
+
+# ---------------------------------------------------------------------------
+# Resources
+# ---------------------------------------------------------------------------
+resources:
+  - name: ELIXIR Training SPLASH – Training lifecycle
+    url: https://training-splash.org/lifecycle
+    description: Step-by-step guidance on planning, designing, delivering and evaluating training.
+    category: external_resource
+  - name: ELIXIR Learning Paths
+    url: https://training-splash.org/learning-paths
+    description: How to design a learning path that helps people build skills step by step.
+    category: external_resource
+  - name: ELIXIR Training Metrics Database
+    url: https://training-splash.org/tmd
+    description: Ready-made feedback surveys, including surveys for long-term follow-up.
+    category: external_resource
+  - name: ELIXIR-GOBLET Train-the-Trainer programme
+    url: https://training-splash.org/train-the-trainer
+    description: Courses and materials that teach trainers how to design and deliver training.
+    category: external_resource
+  - name: Train-the-Trainer Concept on Research Data Management
+    url: https://doi.org/10.5281/zenodo.13927613
+    description: Open train-the-trainer course concept for RDM, combining RDM topics with teaching methods.
+    category: external_resource
+  - name: FAIR Training Handbook
+    url: https://elixir-europe-training.github.io/ELIXIR-TrP-FAIR-training-handbook/
+    description: How to make your training materials FAIR, with metadata, licences and persistent identifiers.
+    category: external_resource
+  - name: RDMkit – Trainer role
+    url: https://rdmkit.elixir-europe.org/trainer
+    description: RDMkit page for people who design and deliver RDM training, with links to training resources.
+    category: external_resource
+  - name: RDMkit – Researcher role
+    url: https://rdmkit.elixir-europe.org/researcher
+    description: What researchers need to know about data management, useful when you tailor content to this group.
+    category: external_resource
+  - name: RDMkit – Principal investigator role
+    url: https://rdmkit.elixir-europe.org/principal_investigator
+    description: What principal investigators need to know about data management, useful when you tailor content to this group.
+    category: external_resource
+  - name: ELIXIR TeSS
+    url: https://tess.elixir-europe.org/
+    description: Training portal where you can find training and list your own events and materials.
+    category: external_resource
+  - name: Terms4FAIRskills
+    url: https://terms4fairskills.github.io/
+    description: Terminology of FAIR competencies, useful for describing skills and learning objectives per level.
+    category: external_resource
+  - name: Data Stewardship Program, University of Basel
+    url: https://researchdata.unibas.ch/en/about/data-stewardship-program/
+    description: Faculty data stewards with their own training and train-the-trainer programme.
+    category: external_resource
 ---
-## Context
 
-Training in research data management (RDM) is a cornerstone of building capacity for FAIR and Open Science. For researchers, it provides the skills and confidence to apply best practices in their own work; for data stewards and support staff, it ensures they can deliver consistent, high-quality guidance across projects and disciplines. As expectations around data sharing, reproducibility and compliance grow, so too does the need for accessible, well-targeted, and sustainable RDM training for data stewards or complementary profiles.
+Research data management (RDM) training builds capacity for FAIR (Findable, Accessible, Interoperable, Reusable) data and Open Science. It helps researchers apply good practices and helps support staff give the same advice across projects. With growing expectations around data sharing, reproducibility and compliance, people need training that is easy to access, well targeted and here to stay.
 
-The RDM training provision is shaped by its scope, accessibility and integration into institutional processes. Training remains ad hoc and siloed in many contexts, driven by individual enthusiasm or urgent need, dependent on short-term funding, or limited to single events. The materials developed are often valuable, yet they also reflect this ad hoc nature. Moving toward a structured, continuous training portfolio requires strategic planning, dedicated resources and alignment with national or thematic infrastructure. This includes clear definitions of audience, targeted expertise levels and learning objectives; and feedback loops to keep material relevant. For training aimed at professional roles, such as data stewards, embedding Train-the-Trainer approaches and recognising participation through certificates or ECTS points can further strengthen uptake and impact.
+The sections below cover planning, delivery, quality and sustainability. You don't have to follow them in order. Start with what your organisation needs most.
 
-In federated and cross-institutional environments, harmonising training presents both challenges and opportunities. Centralised catalogues, shared curricula and collaborative delivery can reduce duplication and increase reach, but this requires coordination and clear responsibilities. Whether delivered in person, online, as e-learning or as blended formats, effective RDM training is not only about knowledge transfer; it also helps enable culture change, embedding shared principles and practices that persist beyond the training itself.
+## Plan your training
+Move from ad hoc sessions that depend on a few enthusiastic people to a continuous programme with clear goals and resources.
 
-## Guidelines
+### Start small
+If you start from scratch, ask a few researchers and support colleagues what they struggle with most. Begin with one pressing topic, such as a funder's requirement for a data management plan (DMP), in a short workshop or webinar. RDMkit's guidance on DMPs gives you a ready base for the content. Team up with your library or IT department to share the work and reach more people.
 
-RDM training strengthens skills development and embeds good data practices across an organisation. These tips are organised around four core drivers: **strategic planning**, **accessible delivery**, **quality assurance** and **sustainable capacity**, reflecting organisational experience and established good practice.
+### Make someone responsible
+Training that runs on goodwill or short-term funding stops when that person or project leaves. Name a contact person for RDM training and agree how much of their time goes to it. Ask your organisation for a small budget for materials and tools, even if you start part-time. The waypoint on [personnel for RDM](/mm-strategy-personnel) shows how this can grow over time.
 
-**1. Plan strategically for training delivery**
+### Know your audience
+Map [who needs RDM training](https://training-splash.org/plan), for example PhD candidates, postdocs, senior researchers, technical staff and project managers. Find out what each group already knows, what their role is and what they need. Use this to set expertise levels and learning objectives that match their discipline and the research they actually do.
 
-**✔ Identify and analyse target audiences**
+Then tailor the content to roles and topics. For example, offer RDM basics to new PhD candidates, advanced DMP writing to principal investigators (PIs), and separate in-depth sessions on data sharing, metadata or secure storage. The RDMkit role pages for researchers and PIs show what each group needs to know.
 
-Map the personnel requiring RDM training - such as PhD candidates, postdoctoral researchers, senior researchers, technical staff, or project managers - and assess their existing knowledge, roles and needs in their respective positions.  Training design should also consider domain-specific knowledge and requirements to ensure that learning objectives are properly aligned with disciplinary contexts.
+### Build a learning path
+Repeating the same session is a good start, but a learning path helps people grow step by step. Group your courses into levels, such as introductory, advanced and expert, and give each module clear learning objectives. [Terms4FAIRskills](https://terms4fairskills.github.io/) helps you describe the skills per level, and the [ELIXIR Learning Paths guidance](https://training-splash.org/learning-paths) explains how to design a path.
 
-**✔ Integrate training into institutional cycles**
+### Link to institutional moments
+Plan training for the moments when people need it:
+- onboarding of new staff
+- grant application and submission deadlines
+- doctoral training requirements
+- ethics review
 
-Align training with research milestones to maximise participation:
-* Onboarding programmes
-* Grant application and submission deadlines
-* Doctoral training requirements
-* Ethics review processes
+If your organisation has a support team, such as a data desk or research office, run training together with them. Researchers then learn what they need at the moment they need it, and you can follow up through the service.
 
-**2. Deliver through accessible and consistent formats**
+## Make training easy to join
+Offer training in a way people can plan for and attend.
 
-**✔ Offer predictable schedules**
+### Publish and promote a calendar
+Share a yearly or semester calendar, so staff can plan well ahead. Announce training through institutional newsletters, the intranet, faculty mailing lists and social media. For a wider audience, list your events and materials in TeSS, the ELIXIR training portal.
 
-Publish an annual or semester-based training calendar to enable staff to plan their attendance well in advance.
+### Mix formats
+Use different formats to reach people in different places and time zones:
+- in-person workshops, online modules, e-learning and [hybrid or blended sessions](https://training-splash.org/deliver)
+- short microlearning sessions alongside full-day courses
+- recordings of live sessions to watch later
 
-**✔ Use varied formats for accessibility**
+## Keep materials up to date
+Even good materials often start out as one-off work, so keep them correct, shared and useful.
 
-Combine in-person workshops, online modules and hybrid sessions to reach participants across locations and time zones:
-* Short “microlearning” sessions to complement full-day courses
-* Recorded versions of live sessions for flexible follow-up
+### Reuse and share materials
+Base your content on institutional, national and international resources, such as RDMkit, the FAIR principles and standards from the research domain.
 
-**✔ Promote through multiple channels**
+Store slides, exercises and guides in one shared place, so colleagues can reuse them and nothing gets lost when people leave. Use one standard format, so sessions stay consistent whoever teaches them. Publish materials under an open licence, so others can find and reuse them. The [FAIR Training Handbook](https://elixir-europe-training.github.io/ELIXIR-TrP-FAIR-training-handbook/) explains how to add metadata, licences and persistent identifiers.
 
-Use diverse communication channels to ensure awareness and uptake:
-* Institutional newsletters
-* Intranet announcements
-* Faculty mailing lists
-* Social platforms
+### Update with feedback
+Review your materials at least once a year, or sooner when new tools, policies or practices come up. Look at participant feedback straight after each session and, if needed, adjust the content before the next one. Make updating part of how you run the course, and plan time for it.
 
-**3. Maintain quality and relevance of materials**
+[Collect evaluations](https://training-splash.org/evaluate) after every session and use them to improve both content and delivery. Feedback shows which topics are unclear and where people want new training, so the programme stays relevant. For ready-made surveys, start from the templates in the [ELIXIR Training Metrics Database](https://training-splash.org/tmd).
 
-**✔ Align with recognised standards**
+Also track who attends, and check after a few months whether people use what they learned. The Training Metrics Database includes surveys for this long-term follow-up.
 
-Base content on institutional, national and international resources such as RDMkit, FAIR principles and domain-specific standards.
+## Make training last
+Build shared habits that people keep after the course, with a programme that doesn't depend on one person.
 
-**✔ Regularly update content**
+### Share the work
+Build a small team or network of trainers, so training carries on when staff change. If you work across institutions, shared curricula, central catalogues and joint delivery avoid duplication and reach more people. This takes coordination and clear agreements on who does what.
 
-Review and refresh materials at least annually, or sooner if new tools, policies or best practices emerge. Feedback from participants regarding the materials should be reviewed immediately after each training session, and, where relevant, used to update the content before the next course delivery. Include the content update in the course delivery procedures, enabling enough time for this process. 
+Link your programme to national or thematic infrastructures, such as your ELIXIR Node. You can reuse their materials, point people to their courses and avoid building everything yourself.
 
-**✔ Integrate feedback into development**
+### Train trainers
+Prepare colleagues in faculties or departments to give sessions locally. You reach more people without overloading central support. For professional roles such as data stewards, train-the-trainer approaches work especially well, for example the [ELIXIR-GOBLET Train-the-Trainer programme](https://training-splash.org/train-the-trainer) or the [Train-the-Trainer Concept on Research Data Management](https://doi.org/10.5281/zenodo.13927613).
 
-Collect participant evaluations systematically and use them to refine content, improve delivery methods and identify emerging needs:
-* Highlight unclear topics
-* Identify demand for new training areas
+Good candidates are data stewards, librarians and senior researchers who already support others. Give them ready-made materials, a mentor and basic teaching skills. The [Data Stewardship Program at the University of Basel](https://researchdata.unibas.ch/en/about/data-stewardship-program/) shows how faculty data stewards are trained this way.
 
-**4. Build sustainability and institutional capacity**
+### Recognise participation
+Give trainers and participants credit, for example through certificates, digital badges or ECTS (European Credit Transfer and Accumulation System) credits. Recognition helps more people take part.
 
-**✔ Share delivery responsibility**
-
-Develop a small team or network of trainers to reduce reliance on individuals and ensure continuity during staff changes.
-
-**✔ Adopt Train-the-Trainer models**
-
-Equip colleagues in different faculties or departments to deliver sessions locally, increasing reach without overburdening central support.
-
-**✔ Recognise and reward participation**
-
-Provide recognition mechanisms for both trainers and participants:
-* Certificates
-* Digital badges
-* Formal academic credits (e.g. ECTS)
+Trainers deserve credit too. Count their teaching as professional development, and give them a certificate when they complete a trainer course.
