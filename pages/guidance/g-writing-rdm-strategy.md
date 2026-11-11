@@ -1,64 +1,118 @@
 ---
 title: Writing an RDM strategy
-description: How to write a strategy to have a structured framework to guide the RDM activities of the organisation
-contributors: [Maria Klapa, Xenia Perez Sitja, Riku Riski, Niclas Jareborg, Vassilios Ioannidis]
-page_id: g-writing-rdm-strategy
+layout: page
 type: Guidance
+search_exclude: true
+contributors: [Maria Klapa, Xenia Perez Sitja, Riku Riski, Niclas Jareborg, Vassilios Ioannidis, Mijke Jetten]
+page_id: g-writing-rdm-strategy
+
+# ---------------------------------------------------------------------------
+# At a glance box
+# ---------------------------------------------------------------------------
+
+# Tab 1: At a glance
+description: How to write a strategy that gives a structured framework for your organisation's RDM activities.
+last_update: 2026-11-11
+topics:
+  - RDM strategy
+  - vision and mission
+  - monitoring and evaluation
+
+# Tab 2: Introduced skills
+skills:                            # ESCO v1.2.1
+  - strategic planning             # http://data.europa.eu/esco/skill/949ced5f-7536-4614-ac60-563ffc91a2f2
+  - develop organisational policies   # http://data.europa.eu/esco/skill/3254275d-a1b5-4640-9481-02f38780ac35
+  - track key performance indicators  # http://data.europa.eu/esco/skill/8dcbcabe-09f7-4d11-940d-125af57bbc40
+
+# Tab 3: Takeaways
+takeaways:
+  - Start from your users and the policies you have to follow.
+  - Turn your vision into goals you can measure, and name one person responsible for each.
+  - Share the strategy and review it at least once a year.
+
+# ---------------------------------------------------------------------------
+# Related pages
+# ---------------------------------------------------------------------------
+related_pages:
+  Guidance:
+    - g-support-guidelines
+    - g-support-communication
+    - g-support-rdm-training
+  Maturity_Indicator:
+    - mm-strategy-defined
+    - mm-strategy-goals-kpis
+    - mm-strategy-policy-adherence
+    - mm-strategy-funding
+
+# ---------------------------------------------------------------------------
+# Resources
+# ---------------------------------------------------------------------------
+resources:
+  - name: ELITMa – Node data management strategy module
+    url: https://elixir-europe-training.github.io/ELIXIR-ELITMa/modules/data-management/
+    description: Online module with exercises for writing a data management strategy for an ELIXIR Node.
+    category: external_resource
+  - name: Global Open Research Commons (GORC) International Model, version 1.1
+    url: https://www.rd-alliance.org/groups/gorc-international-model-wg/outputs/the-global-open-research-commons-international-model-version-1-1/
+    description: Research Data Alliance (RDA) model of the elements a research data commons can cover, useful to decide what your strategy includes.
+    category: external_resource
+  - name: NBIS Data Management Strategy
+    url: https://figshare.scilifelab.se/articles/online_resource/NBIS_Data_Management_Strategy/27604476
+    description: Published strategy of the data management team at NBIS, the Swedish ELIXIR Node.
+    category: external_resource
+  - name: Published institutional RDM strategies (Canada)
+    url: https://science.gc.ca/site/science/en/interagency-research-funding/policies-and-guidelines/research-data-management/published-institutional-research-data-management-strategies
+    description: Strategies published by Canadian universities and research hospitals, useful as examples when you write your own.
+    category: external_resource
+  - name: FAIRsharing – Policies
+    url: https://fairsharing.org/search?fairsharingRegistry=Policy
+    description: Searchable list of data policies from funders, journals and institutions.
+    category: external_resource
 ---
 
-## Context
+A research data management (RDM) strategy sets out how your organisation supports good data management, and links its services and policies to a clear vision and mission. As a data steward, you often prepare the strategy or help write it, whether for an ELIXIR Node or a small support team.
 
-The purpose of a Research Data Management (RDM) strategy is to provide a structured **framework** that guides how an organisation supports and enables good data management practices across the research lifecycle. It **aligns** data-related services, policies, tools, and training with the organisation’s vision and  mission, ensuring that research data is managed in a way that is efficient, FAIR, and compliant with institutional and funder requirements.
+The sections below are in the order in which you build a strategy, from groundwork to review. In a federated set-up with several partner organisations, each step takes longer because all partners have to agree, and the strategy should add to what partners already do (see this [example from ELIXIR Germany](https://elixir-europe-training.github.io/ELIXIR-ELITMa/dm-example-germany-fitting-the-strategy-to-a-distributed-node)).
 
-**Vision** describes the state that an organisation wants to enable. An example vision could be “Our researchers apply good Data Management practices so that the produced research outputs are available to the global research community according to principles of Open Science, Reproducible Research and FAIR”.
+## Lay the groundwork
+Before you write, find out who should be involved and where your organisation stands now.
 
-The **mission** then defines the overarching objectives required to achieve the vision, along with the approaches to reach them, such as software services, tools, policies, consultation services, documentation, training, and outreach. It serves as a foundation for guiding the organisation’s activities that support and enable the vision..
+### Set up a team and get a mandate
+Don't write the strategy alone. A small group works better, for example a coordinator who knows the organisation's priorities and someone from support or training who hears what researchers ask for. Also find a manager who backs the strategy, and agree early on who approves it.
 
-To be effective in guiding RDM activities, the strategy needs to be **communicated** to all relevant staff. Expected impact from defined objectives should be monitored and used to regularly update and revise the strategy.
+### Define your scope
+Decide who your RDM activities serve. Researchers in one institute need a different strategy than researchers across a whole country.
 
-## Guidance
+Then list the policies your organisation has to follow at local, national and international level, such as funder requirements and your institution's data policy. You can look up funder and journal policies in FAIRsharing. Their goals often shape your vision and mission.
 
-1. Define the Intended beneficiaries of the organization’s RDM efforts
+In Canada, funders require a strategy, so institutions have published [more than 200 of them](https://science.gc.ca/site/science/en/interagency-research-funding/policies-and-guidelines/research-data-management/published-institutional-research-data-management-strategies).
 
-   Determine what the target user-base(s) for your RDM activities are. Who do you serve? 
+### Take stock of where you are
+Map the people and infrastructure you have, and what you still need. This also helps when you plan budgets. Collect what already exists, such as service plans, policies and earlier user surveys.
 
-   Determining the intended demographic for your data management practices is crucial. The scope outlines who the services will directly benefit – for example, are you targeting researchers within a specific institute or nationwide researchers? Understanding your scope gives you a definitive audience and subsequently paves the way to align your strategies to meet their specific needs.
+Then use the Handbook's [maturity indicators](maturity-model) as a self-assessment. Pick the areas that matter most to you and compare the level descriptions with your situation. The gaps you find are input for your goals.
 
-2. Determine existing policies and guidelines that govern the organisation's activities
+## Write the strategy
+Turn your groundwork into a vision and concrete goals.
 
-   Identify what existing policies and guidelines exist that your organisation should adhere to.
+### Write a vision and mission
+The vision describes the state your organisation wants to enable, at a set point in time. For example: "Our researchers apply good data management practices, so their research outputs are available to the global research community according to the principles of Open Science, reproducible research and FAIR."
 
-   These can contain larger objectives that might influence the vision and mission of the RDM activities. Delving into the existing governing policies and guidelines, be they local, national, or international, allows your organisation to create a strategic plan that is aligned and compliant with larger objectives. 
+The mission defines the objectives needed to reach the vision, and how you'll reach them. You can have more than one mission statement. [ELIXIR Sweden](https://elixir-europe-training.github.io/ELIXIR-ELITMa/dm-example-sweden-clarifying-the-node-remit) wrote theirs in a workshop when the team grew from two to five people.
 
-3. Formulate vision and mission statements
+### Set goals and plan activities
+Write each goal so you can check it later. "All new PhD candidates attend an RDM course in their first year" is easier to measure than "improve RDM skills". For each goal, decide which activities deliver it and who is responsible for them. Activities can include support services, policies, documentation, software, outreach, training and guidelines.
 
-   Formulate a vision statement that describes a desired future state that your organisation wants to enable, given the identified beneficiaries and existing governing policies. Define the vision within the  foreseen context of the future research landscape at a predefined time point.   
-   Formulate mission statement(s) that specifies overall objectives to work towards the vision, and the approach(es) to reach those objectives.
+### Keep it focused
+Aim for one or two pages that people read, and put the details in an action plan. You don't have to cover everything. The [Global Open Research Commons (GORC) model](https://www.rd-alliance.org/groups/gorc-international-model-wg/outputs/the-global-open-research-commons-international-model-version-1-1/) lists the elements a strategy can cover, such as human capacity or sustainability, so you can pick the ones that matter most to you. The [NBIS Data Management Strategy](https://figshare.scilifelab.se/articles/online_resource/NBIS_Data_Management_Strategy/27604476) shows what this looks like for an ELIXIR Node.
 
-4. Identify existing resources and those that need to be obtained
+Keep the strategy separate from policies and data management plans (DMPs). A policy sets formal rules, and a DMP covers one research project. Your strategy looks across projects and points to those documents for the details.
 
-   Determine the human resources, technical infrastructure, and other necessary amenities your organisation currently possesses and what else will be required to achieve the established objectives. Addressing these aspects not only aids in the strategizing process, but also helps in devising funding models and budgets.
+## Put it into practice
+A strategy only helps if people know it and you check whether it works.
 
-5. Devise activities to accomplish the mission
+### Share the strategy
+Publish the strategy where all staff can find it, for example on your intranet or website. Present it at a team meeting, and add it to onboarding for new staff who work with data. Include a communication plan in the strategy itself. In a distributed ELIXIR Node, plan extra communication and regular check-ins between partners.
 
-   Specify what activities your organisation will engage in to fulfill its mission.
-
-   This could include the development of specialised software, implementation of specific policies, provision of consultation services, initiation of supportive services, creation and distribution of documentation, organising training, and conducting outreach initiatives.
-
-6. Establish mechanisms for monitoring and evaluation
-
-   Set up ways to monitor the progress and impact of the activities. 
-
-   This step involves determining key performance indicators (KPIs) that provide concrete means to gauge your strategy's progress. This not only verifies if your actions are steering the organisation towards its objective, but also allows for adjusting measures if needed, thereby maintaining strategic flexibility.
-
-7. Establish routines to disseminate the strategy to staff
-
-   Make the strategy available and findable to all staff.  Set up the procedures needed to make all relevant staff aware of the content of the strategy. 
-
-   Make the strategy easily accessible to all members of your organisation, e.g. by publishing it on a web page. Organise events to present the strategy, and make sure it is part of the onboarding process for relevant staff. Include a communication plan in the strategy.
-
-8. Review and update
-
-   Define mechanisms to regularly review and update the strategy as RDM practices, technologies, and requirements change over time.
-
-Be aware that in distributed or federated structures, e.g.  involving multiple partner organisations, going through these steps will entail serious efforts of harmonisation and agreement across all partners to establish a viable strategy.
+### Monitor and review
+Track progress with key performance indicators (KPIs) linked to your goals, for example the number of DMPs your team reviews per year. Review the strategy once or twice a year, and sooner after a big change such as new funding or staff leaving. Make sure more than one person owns the review. Otherwise the strategy disappears when that person leaves.
