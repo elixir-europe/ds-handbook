@@ -11,7 +11,7 @@ page_id: g-support-networks
 # ---------------------------------------------------------------------------
 
 # Tab 1: At a glance
-description: Learn how to use expert networks to build expertise, share knowledge and improve RDM support.  
+description: Practical guidance on using expert networks to build expertise, share knowledge, and improve RDM support.
 last-update: 2026-11-11  
 topics:                            
   - expert networks
