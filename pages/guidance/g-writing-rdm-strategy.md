@@ -1,6 +1,6 @@
 ---
 title: Writing an RDM strategy
-layout: page
+layout: guidance
 type: Guidance
 search_exclude: true
 contributors: [Maria Klapa, Xenia Perez Sitja, Riku Riski, Niclas Jareborg, Vassilios Ioannidis, Mijke Jetten]
