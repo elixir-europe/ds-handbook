@@ -6,6 +6,9 @@ search_exclude: true
 contributors: [Mijke Jetten, Helena Schnitzer, Jeanne Wilbrandt, Flora D’Anna, Hana Marčetić, Jana Martínková, Heleri Inno, Diana Pilvar, Brane Leskošek, Federico Bianchini, Minna Ahokas, Siiri Fuchs]       
 page_id: g-support-networks
 
+# ---------------------------------------------------------------------------
+# At a glance box
+# ---------------------------------------------------------------------------
 
 # Tab 1: At a glance
 description: Learn how to use expert networks to build expertise, share knowledge and improve RDM support.  
@@ -17,10 +20,10 @@ topics:
 
 # Tab 2: Introduced skills
 skills:                            
-  - develop professional network # http://data.europa.eu/esco/skill/bf5d77ad-e18c-48d8-83f0-bc79c011c74a 
-  - manage personal professional development # http://data.europa.eu/esco/skill/a8d24a95-47b3-4f88-92e7-06600bcd3612 
-  - establish collaborative relations # http://data.europa.eu/esco/skill/326809fc-238d-40c2-881e-40042f7f2f0d 
-  - working in teams # http://data.europa.eu/esco/skill/e4da156d-a6c4-4b29-935b-eff9c9553cf1
+  - develop professional network               # http://data.europa.eu/esco/skill/bf5d77ad-e18c-48d8-83f0-bc79c011c74a 
+  - manage personal professional development   # http://data.europa.eu/esco/skill/a8d24a95-47b3-4f88-92e7-06600bcd3612 
+  - establish collaborative relations          # http://data.europa.eu/esco/skill/326809fc-238d-40c2-881e-40042f7f2f0d 
+  - working in teams                           # http://data.europa.eu/esco/skill/e4da156d-a6c4-4b29-935b-eff9c9553cf1
 
 # Tab 3: Takeaways
 takeaways:                        
@@ -28,20 +31,25 @@ takeaways:
   - Contribute actively by sharing experiences, joining working groups and supporting community outputs.
   - Bring network outcomes back to your organisation to improve RDM practice and secure continued support.
 
+# ---------------------------------------------------------------------------
+# Related pages
+# ---------------------------------------------------------------------------
+
 related_pages:
   Guidance:
     - g-support-communication
     - g-support-rdm-information
     - g-support-rdm-training
-
   Case_Study:
     - case-study-Data-Support-Network-Finland
     - case-study-Nordic_Data_Stewardship_Network_(NDSN)
-  
   Maturity_Indicator:
     - mm-strategy-personnel
     - mm-strategy-align-with-best-practices
 
+# ---------------------------------------------------------------------------
+# Resources
+# ---------------------------------------------------------------------------
 resources:
   - name: RDMkit - Data Steward role
     url: https://rdmkit.elixir-europe.org/data_steward
