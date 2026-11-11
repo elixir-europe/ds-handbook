@@ -19,6 +19,11 @@
 # or run:  python3 var/esco_skill.py <ESCO skill URI>
 # and paste the output below. Keep entries sorted by label.
 
+- key: develop-organisational-policies
+  label: develop organisational policies
+  uri: http://data.europa.eu/esco/skill/3254275d-a1b5-4640-9481-02f38780ac35
+  description: Develop and supervise the implementation of policies aimed at documenting and detailing the procedures for the operations of the organisation in the lights of its strategic planning.
+
 - key: develop-training-programmes
   label: develop training programmes
   uri: http://data.europa.eu/esco/skill/517f678e-001b-4985-acb4-9edc3500d74c
@@ -33,3 +38,13 @@
   label: identify training needs
   uri: http://data.europa.eu/esco/skill/4dafe480-f2ae-46b5-bd5e-8d4e538f50c7
   description: Analyse the training problems and identify the training requirements of an organisation or individuals, so as to provide them with instruction tailored to their prior mastery, profile, means and problems.
+
+- key: strategic-planning
+  label: strategic planning
+  uri: http://data.europa.eu/esco/skill/949ced5f-7536-4614-ac60-563ffc91a2f2
+  description: The elements defining the foundation and core of an organisation such as its mission, vision, values, and objectives.
+
+- key: track-key-performance-indicators
+  label: track key performance indicators
+  uri: http://data.europa.eu/esco/skill/8dcbcabe-09f7-4d11-940d-125af57bbc40
+  description: Identify the quantifiable measures that a company or industry uses to gauge or compare performance in terms of meeting their operational and strategic goals, using preset performance indicators.
