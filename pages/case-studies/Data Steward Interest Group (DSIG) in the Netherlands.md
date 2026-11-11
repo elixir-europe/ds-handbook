@@ -4,27 +4,26 @@ layout: case-study
 type: Case Study
 search_exclude: true
 
-description: An informal and inclusive community hub where data stewards in the Netherlands and abroad share experiences. Running since 2017 on rotating chairs, recurring agenda items and open shared notes.
+description: An informal, inclusive community where data stewards in the Netherlands and abroad learn from each other through regular online meetings and Slack, open to anyone interested in data stewardship since 2017.
 
 contributors:
   writing-original-draft: [Mijke Jetten]
 page_id: case-study-dsig-netherlands
 
 # Context card -----------------------------------------------------------
-lead_org: "Health-RI (ELIXIR-NL)"
+lead_org: "Health-RI"
 country: NL
 
 partners:
-  - "TDCC Life Sciences & Health (TDCC-LSH)"
-  - "TDCC Social Sciences & Humanities (TDCC-SSH)"
-  - "TDCC Natural & Engineering Sciences (TDCC-NES)"
+  - "The three national, discipline-based Thematic Digital Competence Centres (TDCCs) in the Netherlands"
 
 scale: national
-domain: cross-domain   # started in life sciences & health, cross-domain since 2022/2023
+domain: cross-domain
 
 themes:
-  - community-building
   - fragmented-coordination
+  - stakeholder-engagement
+  - community-building
 
 start: 2017
 status: active
