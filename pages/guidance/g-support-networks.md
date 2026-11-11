@@ -3,7 +3,7 @@ title: RDM Expert Network
 layout: guidance
 type: Guidance
 search_exclude: true
-contributors: [Mijke Jetten, Helena Schnitzer, Jeanne Wilbrandt, Flora D’Anna, Hana Marčetić, Jana Martínková, Heleri Inno, Diana Pilvar, Brane Leskošek, Federico Bianchini, Minna Ahokas, Siiri Fuchs]       
+contributors: [Mijke Jetten, Helena Schnitzer, Jeanne Wilbrandt, Flora D’Anna, Hana Marčetić, Jana Martínková, Heleri Inno, Diana Pilvar, Brane Leskošek, Federico Bianchini, Minna Ahokas, Siiri Fuchs, Marina Popleteeva]
 page_id: g-support-networks
 
 # ---------------------------------------------------------------------------
