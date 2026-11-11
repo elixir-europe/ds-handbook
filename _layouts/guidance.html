@@ -1,0 +1,112 @@
+---
+layout: page
+---
+
+{%- comment -%}
+Guidance (signpost) layout – same tabbed header pattern as the case-study
+layout, driven by the frontmatter in pages/guidance/_TEMPLATE-guidance-page.md:
+
+  • "At a glance" tab   – description (summary), last update, topic pills
+                          and skill pills.
+  • "Introduced skills" – each skill with its ESCO description + link,
+                          resolved against _data/guidance/skills.yml.
+  • "Takeaways" tab     – `takeaways:` bullets.
+
+Topic and skill pills use the same two styles as the filter rows on the
+guidance index (_includes/guidance-index.html), so readers can tell them
+apart everywhere. Resources and related pages are rendered by the parent
+`page` layout from `resources:` and `related_pages:`.
+{%- endcomment -%}
+
+{%- assign skills_vocab = site.data.guidance.skills -%}
+{%- assign last_update = page["last update"] | default: page.last_update -%}
+
+{%- if page.description or page.topics or page.skills or page.takeaways -%}
+<div class="case-study-meta guidance-meta">
+    <nav>
+        <div class="nav nav-tabs case-study-meta__nav" role="tablist">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#g-glance" type="button" role="tab" aria-controls="g-glance" aria-selected="true">At a glance</button>
+            {%- if page.skills -%}
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#g-skills" type="button" role="tab" aria-controls="g-skills" aria-selected="false">Introduced skills</button>
+            {%- endif -%}
+            {%- if page.takeaways -%}
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#g-takeaways" type="button" role="tab" aria-controls="g-takeaways" aria-selected="false">Takeaways</button>
+            {%- endif -%}
+        </div>
+    </nav>
+
+    <div class="tab-content case-study-meta__content">
+        <!-- At a glance ----------------------------------------------- -->
+        <div class="tab-pane fade show active" id="g-glance" role="tabpanel">
+            {%- if page.description -%}
+            <p class="case-study-meta__summary">{{ page.description }}</p>
+            {%- endif -%}
+
+            <div class="case-study-meta__fields guidance-meta__fields">
+                {%- if last_update -%}
+                <div class="case-study-meta__field">
+                    <div class="case-study-meta__label"><i class="fa-solid fa-calendar-check me-1" aria-hidden="true"></i>Last update</div>
+                    <div class="case-study-meta__value"><time datetime="{{ last_update | date: '%Y-%m-%d' }}">{{ last_update | date: "%-d %B %Y" }}</time></div>
+                </div>
+                {%- endif -%}
+
+                {%- if page.topics -%}
+                <div class="case-study-meta__field">
+                    <div class="case-study-meta__label"><i class="fa-solid fa-tag me-1" aria-hidden="true"></i>Topics</div>
+                    <ul class="guidance-pills" aria-label="Topics">
+                        {%- for t in page.topics -%}
+                        <li class="guidance-pill guidance-pill--topic">{{ t }}</li>
+                        {%- endfor -%}
+                    </ul>
+                </div>
+                {%- endif -%}
+
+                {%- if page.skills -%}
+                <div class="case-study-meta__field">
+                    <div class="case-study-meta__label"><i class="fa-solid fa-graduation-cap me-1" aria-hidden="true"></i>Skills</div>
+                    <ul class="guidance-pills" aria-label="Skills">
+                        {%- for s in page.skills -%}
+                        {%- assign skill = skills_vocab | where: "label", s | first -%}
+                        <li class="guidance-pill guidance-pill--skill"{% if skill %} title="{{ skill.description | escape }}"{% endif %}>{{ s }}</li>
+                        {%- endfor -%}
+                    </ul>
+                </div>
+                {%- endif -%}
+            </div>
+        </div>
+
+        <!-- Introduced skills ----------------------------------------- -->
+        {%- if page.skills -%}
+        <div class="tab-pane fade" id="g-skills" role="tabpanel">
+            <ul class="guidance-meta__skills">
+                {%- for s in page.skills -%}
+                {%- assign skill = skills_vocab | where: "label", s | first -%}
+                <li>
+                    {%- if skill -%}
+                    <a href="{{ skill.uri }}" target="_blank" rel="noopener" class="guidance-meta__skill-label">{{ skill.label }}</a>
+                    <p class="guidance-meta__skill-desc">{{ skill.description }}</p>
+                    {%- else -%}
+                    <span class="guidance-meta__skill-label">{{ s }}</span>
+                    {%- endif -%}
+                </li>
+                {%- endfor -%}
+            </ul>
+            <p class="guidance-meta__source">Skills from <a href="https://esco.ec.europa.eu/en/classification/skills" target="_blank" rel="noopener">ESCO</a>, the European classification of skills.</p>
+        </div>
+        {%- endif -%}
+
+        <!-- Takeaways ------------------------------------------------- -->
+        {%- if page.takeaways -%}
+        <div class="tab-pane fade" id="g-takeaways" role="tabpanel">
+            <ul class="guidance-meta__takeaways">
+                {%- for t in page.takeaways -%}
+                <li>{{ t }}</li>
+                {%- endfor -%}
+            </ul>
+        </div>
+        {%- endif -%}
+    </div>
+</div>
+{%- endif -%}
+
+{{ content }}

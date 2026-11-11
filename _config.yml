@@ -65,6 +65,7 @@ defaults:
       path: "pages/guidance"
     values:
       sidebar: guidance
+      layout: guidance
   -
     scope:
       path: "pages/maturity-model"
