@@ -1,6 +1,6 @@
 ---
 title: RDM Expert Network             
-layout: page
+layout: guidance
 type: Guidance
 search_exclude: true
 contributors: [Mijke Jetten, Helena Schnitzer, Jeanne Wilbrandt, Flora D’Anna, Hana Marčetić, Jana Martínková, Heleri Inno, Diana Pilvar, Brane Leskošek, Federico Bianchini, Minna Ahokas, Siiri Fuchs]       
