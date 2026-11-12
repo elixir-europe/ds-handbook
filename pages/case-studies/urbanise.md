@@ -332,7 +332,7 @@ In a new transdisciplinary setting, first find out who is already doing related 
 people need help. Thus, relationship-building needs to be acknowledged and executed as part of 
 stewardship work, rather than as something you do only when the “real” work is finished. 
 
-### ✔ Make onboarding an explicit work package 
+### Make onboarding an explicit work package 
 A new steward needs more than accounts, access and policy documents. You need introductions, 
 context and someone who can explain how decisions are really made. 
  
