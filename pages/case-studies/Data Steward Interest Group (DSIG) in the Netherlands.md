@@ -4,7 +4,7 @@ layout: case-study
 type: Case Study
 search_exclude: true
 
-description: An informal, inclusive community where data stewards in the Netherlands and abroad learn from each other through regular online meetings and Slack, open to anyone interested in data stewardship since 2017.
+description: An informal, inclusive community where data stewards in the Netherlands and abroad learn from each other via regular online meetings and Slack.
 
 contributors:
   writing-original-draft: [Mijke Jetten]
@@ -15,7 +15,7 @@ lead_org: "Health-RI"
 country: NL
 
 partners:
-  - "The three national, discipline-based Thematic Digital Competence Centres (TDCCs) in the Netherlands"
+  - "the three national, discipline-based Thematic Digital Competence Centres (TDCCs) in the Netherlands"   # no cap on purpose, renders as part of the sentence "with ..."
 
 scale: national
 domain: cross-domain
@@ -69,24 +69,23 @@ resources:
     category: external_resource
 ---
 
-<p class="drop-cap">The DSIG is an informal and inclusive community hub where data stewards and like-minded people in the Netherlands and abroad share their experiences. Anyone interested in data stewardship can join.</p>
+<p class="drop-cap">The Data Steward Interest Group (DSIG) is an informal and inclusive community hub where data stewards and like-minded people in the Netherlands and abroad share their experiences. Anyone interested in data stewardship can join.</p>
 
 ## Why this case
 
-In 2017, data stewardship was a new profession in the Netherlands. Universities and university medical centres were hiring data stewards to help researchers make their data FAIR, but each steward was often the only one in their department. There was no obvious place to ask a peer at another institution: *"how did you solve this?"*
+In 2017, data stewardship was a relatively new profession in the Netherlands. Universities and university medical centres were hiring data stewards to help researchers make their data FAIR, but each steward was often the only one in their department. There was no obvious place to ask a peer at another institution: *"how did you solve this?"*
 
-National and international groups worked on policy, competences and careers for data stewards. What was missing was a hands-on place for practical matters, where data stewards learn directly from each other. The DSIG started as a collaboration between data stewards at university medical centres and the Dutch Techcentre for Life Sciences (DTL) to fill that gap.
-
+National and international groups worked on policy and competences for data stewards. What was missing was a hands-on place for practical matters, where data stewards learn directly from each other. The DSIG started as a collaboration between data stewards at university medical centres and the Dutch Techcentre for Life Sciences (DTL) to fill that gap.
 
 ## What we did
 
-The DSIG began as a small, in-person meeting in the life sciences, every other month. During COVID-19 it moved online, and it has stayed online since. It gradually opened up to data stewards from all disciplines and from other countries. Today the cross-domain meetings are facilitated by Health-RI, the Dutch national health data infrastructure, and the three Dutch Thematic Digital Competence Centres (TDCCs) organise meetings for their own domains: life sciences and health, social sciences and humanities, and natural and engineering sciences. General and domain meetings alternate, roughly once a month.
+The DSIG began as a small, in-person meeting in the life sciences, every other month. During COVID-19 it moved online, and it has stayed online since. It gradually opened up to data stewards from all disciplines and from other countries. Today a community manager at Health-RI, the Dutch national health data infrastructure, organises the cross-domain meetings, and the three Thematic Digital Competence Centres (TDCCs) organise meetings for their own domains: life sciences and health, social sciences and humanities, and natural and engineering sciences. The DSIG meets roughly once a month, alternating general and domain meetings.
 
 ### A different chair every time
 
-Each meeting is organised and chaired by a different organisation. The chair picks the topic and shows what they are working on or struggling with. Most organisations volunteer. Others are asked because they raised a topic in an earlier meeting.
+Each meeting is chaired by a different organisation. The chair picks the topic and shows what they are working on or struggling with. Most organisations volunteer. Others are asked because they raised a topic in an earlier meeting.
 
-The facilitating organisation does everything else: the agenda, the registration form, the announcements and the shared notes. Preparing a meeting is light work for the chair.
+The community manager does everything else: the agenda, the registration form, the announcements and preparing the shared notes. That way the chair can focus on the content.
 
 ### The same agenda every time
 
@@ -96,15 +95,17 @@ Every meeting follows the same template:
 - an introduction round, so new people can introduce themselves;
 - a list of participants with affiliation and contact details, for networking afterwards;
 - *New and Newsworthy*, where anyone can share news or ask a question about data-related events and projects;
-- *In Case You Missed It*: ten data-related things data stewards should know about;
+- *In Case You Missed It*: slides from the community manager with ten data-related news items from the past period that data stewards should know about;
 - one or two presentations with discussion;
 - feedback in the shared notes under *Keep, Add, Less & More*.
+
+The part before the presentations matters most. In the introduction round, newcomers say what they do and why they joined, which often starts a conversation straight away. *New and Newsworthy* gives people time to ask each other questions and share how they solved something. This is where most of the peer learning happens.
 
 Participants write the shared notes together during the meeting, and the notes are published afterwards with links to the presentations. If you missed a meeting, you can still catch up.
 
 <aside class="margin-note">The notes start with "These notes are for you! Please add comments, +1s, gifs". People do.</aside>
 
-Topics range from setting up an infrastructure for reusing clinical data to FAIR support in the social sciences, research software and citizen science. Some discussions turned into smaller Special Interest Groups (SIGs). In 2020, for example, DSIG data stewards helped a national funder check the data management plans of COVID-19 research projects, and a COVID-19 SIG grew out of that.
+The topics come from the chairs, so they follow what data stewards are working on at that moment. Some are about daily support, such as data management plans, privacy, data access committees and research data management (RDM) for students. Others show a tool or approach worth reusing, such as FAIR lesson plans, the Personal Health Train or The Turing Way. Chairs also bring in their own field: clinical data reuse, social sciences in the cloud, sports data, open hardware, research software and citizen science.
 
 {% include callout.html type="tip" content="Keep one planning sheet: past meetings, topics in planning, loose ideas, and a contact person for each. It is the easiest way to always have a next chair lined up." %}
 
