@@ -22,7 +22,7 @@ topics:
 
 # Tab 2: Introduced skills
 skills:                            # ESCO v1.2.1
-  - Data ethics                    # http://data.europa.eu/esco/skill/e9575f7f-053a-439e-8074-f93df3334e92
+  - data ethics                    # http://data.europa.eu/esco/skill/e9575f7f-053a-439e-8074-f93df3334e92
 
 # Tab 3: Takeaways
 takeaways:
