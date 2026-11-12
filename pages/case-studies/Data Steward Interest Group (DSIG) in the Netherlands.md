@@ -29,74 +29,47 @@ start: 2017
 status: active
 
 external_url: https://tdcc.nl/network/dsig/
-external_url_label: Visit the DSIG page
+external_url_label: Visit the Data Steward Interest Group (DSIG) page
 
 # Lead quote at the top of the page --------------------------------------
-lead_quote: "Everyone contributes in small ways, and those small contributions matter."
+lead_quote: "Data stewards learn most from each other, so build a community where anyone can share a problem and leave with how others solved it."
 
 # Cross-references -------------------------------------------------------
 related_pages:
   Guidance:
     - g-support-networks
-    - g-support-communication
-    - g-support-rdm-information
   Case_Study:
     - case-study-finish-data-support-network
     - case-study-ndsn
     - elixir-uk-fellowship
   Maturity_Indicator:
     - mm-support-network
+    - mm-strategy-align-with-best-practices
 
 resources:
   - name: "DSIG page on the TDCC website"
     url: https://tdcc.nl/network/dsig/
-    description: Vision, history, contacts and the shared notes of every meeting since 2018.
+    description: Vision, history, how to join (mailing list, Slack, meetings) and the shared notes.
     category: external_resource
-  - name: "How to participate in the DSIG"
-    url: https://tdcc.nl/network/dsig/#how-to-participate
-    description: Join the mailing list and the Slack workspace, or register for the next meeting.
-    category: external_resource
-  - name: "DSIG shared Drive"
-    url: https://drive.google.com/drive/folders/1X0JU0l7PbaBcgynrjzevKWD125-89E3g?usp=sharing
-    description: Agenda template, recurring items and meeting notes to reuse for your own community.
-    category: template
   - name: "Spotlight on data stewards"
-    url: https://tdcc.nl/dsig/spotlight-on-data-stewards
-    description: Short profiles of data stewards, a joint TDCC and DSIG series.
+    url: https://tdcc.nl/network/spotlight-on-data-stewards/
+    description: Interviews with data stewards in the Netherlands, a joint TDCC and DSIG series.
     category: external_resource
   - name: "Community building via the DTL Data Stewards Interest Group (DSIG)"
     url: https://doi.org/10.3233/FC-230503
-    description: FAIR Connect article on the DSIG model and meeting format.
+    description: FAIR Connect article (2023) on the DSIG model and meeting format.
     category: external_resource
   - name: "Community building in the Netherland & beyond: the Data Stewards Interest Group (DSIG)"
     url: https://doi.org/10.5281/zenodo.7997530
-    description: Slides for the EOSC Data Stewardship Task Force, June 2023 (CC BY 4.0).
-    category: external_resource
-  - name: "From principles to practice: building a FAIR and Open research data ecosystem"
-    url: https://doi.org/10.5281/zenodo.18309859
-    description: Talk at Humboldt-Universität, January 2026, with what works in the DSIG.
+    description: Slides for the EOSC Data Stewardship Task Force (2023).
     category: external_resource
   - name: "DSIG profile on Research Data Netherlands"
     url: https://researchdata.nl/en/2026/07/data-steward-interest-group-dsig/
-    description: The DSIG in RDNL's overview of communities for data professionals.
-    category: external_resource
-  - name: "Thematic Digital Competence Centres (TDCCs)"
-    url: https://tdcc.nl/
-    description: The three Dutch domain centres that host the domain-specific DSIG meetings.
-    category: external_resource
-  - name: "RDA Professionalising Data Stewardship Interest Group"
-    url: https://www.rd-alliance.org/groups/professionalising-data-stewardship-ig
-    description: The global group the DSIG feeds into on roles, competences and careers.
-    category: external_resource
-  - name: "National Coordination Point Research Data Management (LCRDM)"
-    url: https://www.lcrdm.nl/en
-    description: Dutch national RDM network working on policy and coordination.
+    description: The DSIG in the national overview of communities for data professionals.
     category: external_resource
 ---
 
-
-<p class="drop-cap">The Data Steward Interest Group (DSIG) is an informal and inclusive community hub where data stewards and like-minded people in the Netherlands and abroad share their experiences. Anyone interested in data stewardship can join.</p>
-
+<p class="drop-cap">The DSIG is an informal and inclusive community hub where data stewards and like-minded people in the Netherlands and abroad share their experiences. Anyone interested in data stewardship can join.</p>
 
 ## Why this case
 
@@ -202,10 +175,3 @@ If you want to start your own community, we are happy to help you get started.
 ### Sustainability and next steps
 
 The DSIG depends on the community manager at Health-RI and the TDCC coordinators. The TDCCs are funded for ten years, which gives the network a stable base for now. Next, we want to link the DSIG to the new national training platform for data professionals, so people who take a course find their peers straight away.
-
-
-<!--
-  Don't add a `## Resources` heading here. The layout renders the
-  `resources:` frontmatter list automatically as a table at the bottom
-  of the page.
--->
