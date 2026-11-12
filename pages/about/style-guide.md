@@ -9,7 +9,7 @@ page_id: style_guide
 
 <p class="drop-cap">This is how the handbook reads and looks. The voice rules apply to everyone writing content; the visual rules apply to anyone touching the design system. Most of it is practical – short rules with examples – and there's a copy-pasteable kit of components for contributors.</p>
 
-This guide is built on top of the [RDMkit style guide](https://rdmkit.elixir-europe.org/style_guide), the European Commission's [Web Writing Style Guide](https://wikis.ec.europa.eu/display/WEBGUIDE/02.+Web+writing+guidelines), and the [English Style Guide](https://commission.europa.eu/system/files/2023-01/styleguide_english_dgt_en.pdf). When in doubt, defer to those.
+This guide is built on top of the [RDMkit style guide](https://rdmkit.elixir-europe.org/style_guide) and the European Commission's [English Style Guide](https://knowledge-centre-translation-interpretation.ec.europa.eu/sites/default/files/ckeditor5-files/styleguide_english_dgt_en.pdf). When in doubt, defer to those. 
 
 ## Voice and tone
 
@@ -42,7 +42,10 @@ Every chapter follows the same skeleton:
 3. **Lede paragraph** – what this page is about, in one or two sentences. Optionally with a `.drop-cap` for chapter-opener feel.
 4. **Body** broken into H2 sections for the major moves, H3 for sub-points.
 5. **Don't use H1 inside the body** – Jekyll renders the front-matter `title:` as the H1.
-6. **Internal links** – use full paths from the site root, passed through `relative_url` so the `/ds-handbook` base path is added, e.g. {% raw %}`[case studies]({{ '/case-studies' | relative_url }})`{% endraw %}. A bare `(/case-studies)` works locally but 404s on the deployed site.
+6. **Internal links** – to link to another handbook page, write its file name without `.md`. Don't start the link with `/`.
+   - Right: `[case studies](case-studies)`
+   - Wrong: `[case studies](/case-studies)`. The handbook lives at `elixir-europe.github.io/ds-handbook/`, and a leading `/` drops the `ds-handbook/` part, so the link returns a 404.
+   - For "see also" links, you don't need a link in the text. Add the page's `page_id` under `related_pages:` in the front matter, and the link appears on the page for you.
 
 ## Typography
 
@@ -115,14 +118,14 @@ The magpie is the handbook's mascot – observant, curious, a careful collector.
 **Always**:
 
 - **Add alt text** to images. Decorative ones get `alt=""` and `aria-hidden="true"`. Meaningful ones get a real description.
-- **Use descriptive link text.** "Read the [DMP guidance]({{ '/g-writing-rdm-strategy' | relative_url }})" – not "[click here]({{ '/g-writing-rdm-strategy' | relative_url }})".
+- **Use descriptive link text.** "Read the [DMP guidance](g-writing-rdm-strategy)" – not "[click here](g-writing-rdm-strategy)".
 - **Don't rely on colour alone** to convey meaning. The landmark colour is a hint; the icon and the label do the work.
 - **Headings in order.** Don't skip levels (H2 → H4). Screen readers use them as a table of contents.
 - **Test the contrast.** All text uses the safe colour variants – if you add a new component, run it through a contrast checker.
 
 ## Reusable components
 
-For the full kit of editorial components (callouts, drop-cap, section-eyebrow, margin-note, pull-quote) with copy-pasteable code and rendered examples, see the [contributing guide]({{ '/how-to-contribute#reusable-components' | relative_url }}).
+For the full kit of editorial components (callouts, drop-cap, section-eyebrow, margin-note, pull-quote) with copy-pasteable code and rendered examples, see the [contributing guide](how-to-contribute#reusable-components).
 
 ## Images and figures
 

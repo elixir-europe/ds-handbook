@@ -46,6 +46,7 @@ domain: cross-domain           # [vocab] domains.yml
 
 themes:                           
   - community-building
+  - fragmented-coordination
   - stakeholder-engagement
 
 start: 2020                      
@@ -125,7 +126,7 @@ __Iteration and pivot:__ Initially, community engagement included in-person caf√
 
 __Outputs and results:__
 
-* A national network of over ~170 members across nearly all Finnish HEIs and RPOs (by May 2026) 
+* A national network of over 170 members across nearly all Finnish HEIs and RPOs (by May 2026) 
 * A functioning monthly newsletter, active discussion forum, and regular meeting format
 * Delivery of training events and reusable RDM materials
 * Creation of an informal peer-support channel for RDM professionals
