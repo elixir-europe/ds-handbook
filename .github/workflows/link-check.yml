@@ -2,6 +2,10 @@ name: Link checks
 
 on:
   pull_request:
+  # Re-check main after every merge: two pull requests can pass on their own
+  # and still break links together.
+  push:
+    branches: [main]
   schedule:
     # Monday 06:17 UTC. Off the top of the hour to reduce scheduler congestion.
     - cron: "17 6 * * 1"
@@ -25,8 +29,10 @@ on:
 # Grant each job only the permissions it needs.
 permissions: {}
 
+# The event name keeps a push to main from cancelling the scheduled run, which
+# checks the same ref.
 concurrency:
-  group: link-check-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  group: link-check-${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -34,6 +40,7 @@ jobs:
     name: Internal links and anchors
     if: >-
       github.event_name == 'pull_request' ||
+      github.event_name == 'push' ||
       (github.event_name == 'workflow_dispatch' &&
        (inputs.lane == 'internal' || inputs.lane == 'both'))
     runs-on: ubuntu-24.04
