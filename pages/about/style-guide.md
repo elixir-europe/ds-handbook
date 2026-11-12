@@ -9,7 +9,7 @@ page_id: style_guide
 
 <p class="drop-cap">This is how the handbook reads and looks. The voice rules apply to everyone writing content; the visual rules apply to anyone touching the design system. Most of it is practical – short rules with examples – and there's a copy-pasteable kit of components for contributors.</p>
 
-This guide is built on top of the [RDMkit style guide](https://rdmkit.elixir-europe.org/style_guide), the European Commission's [Web Writing Style Guide](https://wikis.ec.europa.eu/display/WEBGUIDE/02.+Web+writing+guidelines), and the [English Style Guide](https://commission.europa.eu/system/files/2023-01/styleguide_english_dgt_en.pdf). When in doubt, defer to those.
+This guide is built on top of the [RDMkit style guide](https://rdmkit.elixir-europe.org/style_guide) and the European Commission's [English Style Guide](https://knowledge-centre-translation-interpretation.ec.europa.eu/sites/default/files/ckeditor5-files/styleguide_english_dgt_en.pdf). When in doubt, defer to those. 
 
 ## Voice and tone
 
