@@ -1,39 +1,38 @@
-​​---
-title: “IT security”                
-layout: guidance                   # mandatory – leave as-is
-type: Guidance                     # mandatory – leave as-is
-search_exclude: true               # leave as-is
+---
+title: IT security              
+layout: guidance 
+type: Guidance   
+search_exclude: true   
 contributors: [Aina Jené, Heleri Inno, Hana Marčetić, Jana Martínková, Saliha Zenboudji-Beddek, Diana Pilvar, Vilem Ded, Marina Popleteeva]          
-page_id: g-security             
+page_id: g-security          
 
 # ---------------------------------------------------------------------------
-# At a glance box – three tabs at the top of the page. Easiest to write last.
+# At a glance box
 # ---------------------------------------------------------------------------
 
 # Tab 1: At a glance
-description: “How to protect stored data”        # mandatory – one sentence (10–20 words) 
-last_update: [2026-11-12]          # mandatory – date of the last substantial change or review 
-topics:                            # mandatory – 3–5 short keywords for readers and search engines
-  - [topic 1]                      # free text; if a term comes from Terms4FAIRskills (https://terms4fairskills.github.io/) or ESCO (https://esco.ec.europa.eu/en/classification/skills), add its ID as a comment
-  - [topic 2]
-  - [topic 3]
+description: “Embedding IT security into RDM, workflows and researcher support.”  
+last_update: 2026-11-12         
+topics:                         
+  - information security
+  - data protection
+  - risk management
+  - security awareness
 
 # Tab 2: Introduced skills
 skills:                            # mandatory – 3–5 skills; use the exact ESCO label, and make sure it is listed in _data/guidance/skills.yml (add it there in your Pull Request if not – see var/esco_skill.py)
-  - [skill 1]                      # e.g. evaluate training   # http://data.europa.eu/esco/skill/728ad40d-4a79-4b4d-b77b-a48d094d73fa
-  - [skill 2]
-  - [skill 3]
+  - apply data protection policies
+  - identify security risks
+  - liaise with colleagues
+  - promote awareness of information security
 
 # Tab 3: Takeaways
 takeaways:                         # mandatory – 2–3 short bullets with the main message of the page; write these last
-  - [takeaway 1]
-  - [takeaway 2]
-  - [takeaway 3]
+  - Make security guidance practical, visible and part of everyday research workflows.
+  - Work regularly with information security colleagues to identify risks and improve support.
 
 # ---------------------------------------------------------------------------
-# Related pages – optional, shown as tiles at the bottom of the page.
-# Use page_ids. Type keys: Guidance, Case_Study, Maturity_Indicator.
-# Delete the types you don't use.
+# Related pages
 # ---------------------------------------------------------------------------
 related_pages:
   Guidance:
@@ -46,18 +45,27 @@ related_pages:
     - mm-data-resources
     - mm-data-standards-documentation
     - mm-data-standards-rdm
-
-
+    
 # ---------------------------------------------------------------------------
-# Resources – optional, shown as a table at the bottom of the page.
-# Only add Resources in this section, not in the text body.
-# category: external_resource, internal_resource or template
+# Resources
 # ---------------------------------------------------------------------------
-#resources:
-#  - name: [resource title]
-    url: [https://...]
-    description: [one line on why this resource is useful here]
-    category: [category]
+
+resources:
+  - name: "NIST Cybersecurity Framework 2.0"
+    url: https://www.nist.gov/cyberframework
+    description: "A widely used framework for managing cybersecurity risk, including governance, protection, detection, response and recovery."
+    category: external_resource
+
+  - name: "ENISA – Cybersecurity Skills Development"
+    url: https://www.enisa.europa.eu/topics/skills-and-competences/skills-development
+    description: "European Cybersecurity Skills Framework (ECSF) to address Europe’s growing need for a unified approach to defining roles and skills in the cybersecurity field."
+    category: external_resource
+
+  - name: "RDMkit – Sensitive data"
+    url: https://rdmkit.elixir-europe.org/sensitive_data
+    description: "Practical RDM guidance for handling sensitive data, including security, access and legal considerations."
+    category: external_resource
+
 ---
 
 IT security is essential to responsible research data management (RDM). It protects research data, participants and institutional 
