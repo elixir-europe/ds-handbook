@@ -21,7 +21,7 @@ Furthermore, data stewards play a vital role in adapting institutional security 
 
 **✔ Promote presence at the institutional level**
 
-* Include references to IT security policies and procedures into institutional RDM and DMP guidelines.  
+* Include references to IT security policies and procedures into institutional RDM (research data management) and DMP (data management plan) guidelines.  
 * Include IT security guidance in onboarding and offboarding materials and general training portfolio.  
 * Share reminders about security practices via newsletters or internal communications.
 
@@ -45,7 +45,7 @@ Furthermore, data stewards play a vital role in adapting institutional security 
 
 * Align security checks with research project registration, data collection, storage, sharing, or long-term preservation.  
 * Ensure access controls, and risk assessments are applied at the right time.  
-* Translate high-level policies into actionable steps for researchers (e.g., password management, MFA, secure file storage).
+* Translate high-level policies into actionable steps for researchers (e.g., password management, MFA (Multi-Factor Authentication), secure file storage).
 
 **4\.  Establish collaboration with your information security office**
 

@@ -7,12 +7,16 @@ subitems:
     url: /g-support-guidelines
   - title: Informing about RDM
     url: /g-support-rdm-information
+  - title: RDM training
+    url: /g-support-rdm-training
   - title: Communication about RDM
     url: /g-support-communication
   - title: RDM expert networks
     url: /g-support-networks
   - title: Creation of a legal framework
     url: /g-legal-framework
+  - title: Ethics / ELSI for research data
+    url: /g-legal-elsi
   - title: Data protection compliance
     url: /g-data-protection
   - title: IT security

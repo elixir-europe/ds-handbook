@@ -246,13 +246,14 @@ Two ways, depending on how comfortable you are with a terminal.
 
 ### Option A – Preview on your fork (no local setup)
 
-If you'd rather not install Ruby/Jekyll, GitHub Pages can build the handbook for you directly from your fork.
+If you'd rather not install Ruby/Jekyll, GitHub Actions can build the handbook for you directly from your fork.
 
-1. On your fork, go to **Settings → Pages**.
-2. Under *Build and deployment* set **Source: Deploy from a branch**, pick the branch you want to preview (e.g. `main`, or your working branch like `signpost/intake-meetings`) and `/ (root)`. Save.
-3. Wait a minute or two for the first build. Your preview lives at:
+1. On your fork, open the **Actions** tab and click **I understand my workflows, go ahead and enable them** (forks have Actions switched off by default).
+2. Go to **Settings → Pages** and under *Build and deployment* set **Source**: **GitHub Actions** (not *Deploy from a branch*, because that build fails).
+3. Go to **Settings → Environments → github-pages** and under *Deployment branches and tags* choose **No restriction**. By default only `main` may deploy, so running the workflow on any other branch fails with *Branch "…" is not allowed to deploy to github-pages due to environment protection rules*.
+4. In **Actions**, select **Jekyll site CI** → **Run workflow**, pick the branch you want to preview (e.g. `main`, or your working branch like `signpost/intake-meetings`) and run it. Your fork has one preview site, so each run replaces the previous preview. Your preview lives at:
    `https://YOUR-USERNAME.github.io/ds-handbook/`
-4. Edit pages directly in the GitHub web UI (pencil icon on any `.md` file) or push commits from a branch – the fork rebuilds automatically on every push.
+5. Edit pages directly in the GitHub web UI (pencil icon on any `.md` file) or push commits. Pushes to `main` rebuild automatically; for other branches, use **Run workflow** again.
 
 {% include callout.html type="tip" content="Builds typically take 30–90 seconds. If a build seems stuck or fails, check the **Actions** tab on your fork – the error message there usually points at the line that broke the build." %}
 
@@ -275,6 +276,6 @@ The site is then at `http://localhost:4000`. Sass + Liquid changes hot-reload; t
 Stuck on the GitHub flow, the editorial voice, or the scope of your contribution? Reach out:
 
 - **GitHub issues:** [github.com/elixir-europe/ds-handbook/issues](https://github.com/elixir-europe/ds-handbook/issues)
-- **Editorial style guide:** [Style guide](/style-guide)
+- **Editorial style guide:** [Style guide](style-guide)
 
 {% include callout.html type="magpie" content="The handbook only works because people keep adding to it. Thank you in advance – yours is the next chapter." %}
