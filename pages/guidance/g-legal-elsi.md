@@ -14,23 +14,21 @@ page_id: g-legal-elsi
 description: How to set up an ELSI framework for research data that goes beyond legal compliance.
 last_update: 2026-11-12                                  
 topics:
-- ELSI
-- research ethics
-- data stewardship
-- GDPR
-- informed consent
-
+  - ELSI
+  - research ethics
+  - data stewardship
+  - GDPR
+  - informed consent
 
 # Tab 2: Introduced skills
-skills:
-- Data ethics  # http://data.europa.eu/esco/skill/e9575f7f-053a-439e-8074-f93df3334e92
-
+skills:                            # ESCO v1.2.1
+  - Data ethics                    # http://data.europa.eu/esco/skill/e9575f7f-053a-439e-8074-f93df3334e92
 
 # Tab 3: Takeaways
 takeaways:
-- Ethical stewardship focuses on what should be done, not only what must be done – data can be legally compliant yet ethically complex.
-- ELSI is an active process spanning the research lifecycle, from the drafting of informed consent to the decision-making process regarding long-term access.
-- A mature ethical culture is established when policies are documented, consistently applied, and regularly reviewed.
+  - Ethical stewardship focuses on what should be done, not only what must be done – data can be legally compliant yet ethically complex.
+  - ELSI is an active process spanning the research lifecycle, from the drafting of informed consent to the decision-making process regarding long-term access.
+  - A mature ethical culture is established when policies are documented, consistently applied, and regularly reviewed.
 
 # ---------------------------------------------------------------------------
 # Related pages – optional, shown as tiles at the bottom of the page.
@@ -43,7 +41,6 @@ related_pages:
     - g-data-protection
     - g-support-rdm-training 
     - g-support-guidelines
-
 
   Case_Study:
     - ELSI-servicedesk
