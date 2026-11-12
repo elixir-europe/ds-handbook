@@ -361,7 +361,7 @@ though. Researchers often need help applying a general message to their own data
 We are testing a mixed model: broad events to create connections and shared awareness, plus more focused 
 support for selected projects. The right balance will depend on your capacity, mandate and time frame. 
 
-### ✔ Build for continuity from day one 
+### Build for continuity from day one 
 Relationship-building, trust, and regular exchange take time. A two-year project can start this work, but 
 it may not be long enough to stabilize it. 
 
