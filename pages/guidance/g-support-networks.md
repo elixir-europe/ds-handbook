@@ -50,7 +50,7 @@ related_pages:
 # Resources
 # ---------------------------------------------------------------------------
 resources:
-  - name: RDMkit - Data Steward role
+  - name: Research Data Management Community at ELIXIR
     url: https://elixir-europe.org/communities/research-data-management
     description: RDMkit page for people who work as data stewards, with links to data management guidance and resources.
     category: external_resource
