@@ -25,11 +25,6 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.inputs.branch }}
 
-      - name: Update submodule to latest main
-        run: |
-          git submodule update --init --remote --merge
-          git status
-
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1.204.0
         with:
