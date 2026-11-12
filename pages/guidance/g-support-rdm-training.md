@@ -110,7 +110,7 @@ Move from ad hoc sessions that depend on a few enthusiastic people to a continuo
 If you start from scratch, ask a few researchers and support colleagues what they struggle with most. Begin with one pressing topic, such as a funder's requirement for a data management plan (DMP), in a short workshop or webinar. RDMkit's guidance on DMPs gives you a ready base for the content. Team up with your library or IT department to share the work and reach more people.
 
 ### Make someone responsible
-Training that runs on goodwill or short-term funding stops when that person or project leaves. Name a contact person for RDM training and agree how much of their time goes to it. Ask your organisation for a small budget for materials and tools, even if you start part-time. The waypoint on [personnel for RDM](/mm-strategy-personnel) shows how this can grow over time.
+Training that runs on goodwill or short-term funding stops when that person or project leaves. Name a contact person for RDM training and agree how much of their time goes to it. Ask your organisation for a small budget for materials and tools, even if you start part-time. The waypoint on [personnel for RDM](mm-strategy-personnel) shows how this can grow over time.
 
 ### Know your audience
 Map [who needs RDM training](https://training-splash.org/plan), for example PhD candidates, postdocs, senior researchers, technical staff and project managers. Find out what each group already knows, what their role is and what they need. Use this to set expertise levels and learning objectives that match their discipline and the research they actually do.
