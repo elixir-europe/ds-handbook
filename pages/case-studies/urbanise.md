@@ -16,7 +16,7 @@ layout: case-study                 # mandatory – leave as-is
 type: Case Study                   # mandatory – leave as-is
 search_exclude: true               # – leave as-is
 
-description: "The URBANISE (Urban Research and Data Stewardship for Innovation, Sustainability and Engagement) project funds a transdisciplinary data steward. Challenges include networking and providing support for diverse stakeholders; it highlights the importance of onboarding and personal connections. Last Update: 2026-11-11"
+description: "The URBANISE (Urban Research and Data Stewardship for Innovation, Sustainability and Engagement) project funds a transdisciplinary data steward. Challenges include networking and providing support for diverse stakeholders; it highlights the importance of onboarding and personal connections."
 
 contributors: [Jeanne Wilbrandt]          # mandatory – names must match _data/CONTRIBUTORS.yaml
 page_id: urbanise      # mandatory – lowercase, hyphenated
