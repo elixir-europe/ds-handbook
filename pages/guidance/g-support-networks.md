@@ -44,7 +44,7 @@ related_pages:
     - case-study-Data-Support-Network-Finland
     - case-study-Nordic_Data_Stewardship_Network_(NDSN)
   Maturity_Indicator:
-    - mm-strategy-align-with-best-practices
+    - mm-support-network
 
 # ---------------------------------------------------------------------------
 # Resources
