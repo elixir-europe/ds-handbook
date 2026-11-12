@@ -52,7 +52,7 @@ related_pages:
 resources:
   - name: Research Data Management Community at ELIXIR
     url: https://elixir-europe.org/communities/research-data-management
-    description: RDMkit page for people who work as data stewards, with links to data management guidance and resources.
+    description: Connecting RDM experts to share knowledge and best practices, boosting efficiency and confidence in delivering harmonised RDM services to life science researchers.
     category: external_resource
 
 ---
