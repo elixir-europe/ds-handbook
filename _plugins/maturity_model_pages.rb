@@ -20,6 +20,15 @@ module DSHandbook
 
     SIDEBAR = "maturity-model".freeze
 
+    # The theme's edit, history and report-an-issue buttons link to page.path in this
+    # repository by default. A generated page has no file here, so they point to the
+    # model instead, which is where its content is edited.
+    MODEL_SOURCE = {
+      "repository_url" => "https://github.com/elixir-europe/rdm-maturity-model",
+      "branch" => "main",
+      "file_path" => "_data/maturity_model.json"
+    }.freeze
+
     def generate(site)
       model = site.data.dig("shared", "maturity_model")
       if model.nil? || model["indicators"].nil?
@@ -88,6 +97,7 @@ module DSHandbook
         "layout" => "page",
         "sidebar" => SIDEBAR,
         "permalink" => "/#{id}",
+        "github" => MODEL_SOURCE,
         "generated_from_model" => true
       )
       page
