@@ -173,7 +173,7 @@ potential long-term ownership early, even though we do not yet have all the answ
 
 ### First moves and starting difficulties 
 
-#### ✔ Onboarding 
+#### Onboarding 
 My first task was onboarding. This included the usual practical work, but it also meant learning a 
 new university, a new city and new research environments. Joining the team of data stewards was the most fun! 
  
