@@ -326,7 +326,7 @@ The intermediate and final report required by the funder will be linked here for
 
 
 ## What I'd tell others 
-### ✔ Start with relationships, not a service catalogue 
+### Start with relationships, not a service catalogue 
 In an established department, you may be able to begin with a clear list of RDM services. 
 In a new transdisciplinary setting, first find out who is already doing related work and where 
 people need help. Thus, relationship-building needs to be acknowledged and executed as part of 
