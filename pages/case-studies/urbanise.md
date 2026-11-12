@@ -344,7 +344,7 @@ about expectations, decision-making, communication and ownership.
 
 {% include callout.html type="tip" content="Keep a small “things I learned the hard way” note during your first months. It will become useful onboarding material for the next person." %}
 
-### ✔ Do not treat one discipline’s practice as the default 
+### Do not treat one discipline’s practice as the default 
 The core skills of a disciplinary data steward still matter: asking good questions, understanding 
 workflows, improving documentation, supporting storage and sharing, and helping people make realistic 
 plans for their specific datasets. 
