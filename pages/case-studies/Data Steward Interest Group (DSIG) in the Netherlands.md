@@ -49,7 +49,11 @@ related_pages:
 resources:
   - name: "DSIG page on the TDCC website"
     url: https://tdcc.nl/network/dsig/
-    description: Vision, history, how to join (mailing list, Slack, meetings) and the shared notes.
+    description: Vision, history, how to join and the shared notes.
+    category: external_resource
+  - name: "Join the DSIG Slack community"
+    url: https://tdcc.nl/network/dsig/#how-to-participate
+    description: Questions, events, job ads and news on data stewardship. Open to anyone interested, in the Netherlands and abroad.
     category: external_resource
   - name: "Spotlight on data stewards"
     url: https://tdcc.nl/network/spotlight-on-data-stewards/
@@ -89,7 +93,7 @@ The community manager does everything else: the agenda, the registration form, t
 
 ### The same agenda every time
 
-Every meeting follows the same template:
+Every meeting follows the same structure:
 
 - an informal start with coffee or tea;
 - an introduction round, so new people can introduce themselves;
@@ -111,7 +115,9 @@ The topics come from the chairs, so they follow what data stewards are working o
 
 ### Between meetings
 
-A mailing list and a Slack community connect people between meetings. They use it to ask each other questions and to share events, job ads and experiences. With the TDCCs, the DSIG also publishes *Spotlight on data stewards*: short profiles of data stewards and what they need from peers.
+The Slack community is where the DSIG lives between meetings. It is open to anyone working in or interested in data stewardship, in the Netherlands or abroad. Members ask each other questions, share events and job ads, post new guidance and tools, and point each other to what is happening in other countries. There is a lot going on in data stewardship, and this is one of the easiest ways to keep up. If you are a data steward, join us.
+
+With the TDCCs, the DSIG also publishes *Spotlight on data stewards*: interviews with data stewards about their work and what they need from peers.
 
 <blockquote class="pull-quote">
   <p>The two recurring issues challenging me as a data steward are determining data ownership and data sensitivity. It would be great to collaborate on these topics with other data stewards.</p>
@@ -120,18 +126,21 @@ A mailing list and a Slack community connect people between meetings. They use i
 
 __Effort involved:__ the DSIG has no project funding of its own. It runs on part of a community manager's time at Health-RI, the coordinators at the TDCCs, and the time chairing organisations put in.
 
+An informal community still takes work. Behind every meeting, the community manager finds and briefs a chair, prepares the agenda and registration, collects the *In Case You Missed It* items, sends the announcements and publishes the notes. Between meetings there is the Slack community and the planning of the next topics. Without someone who has this in their job, the meetings would stop.
+
+{% include callout.html type="important" content="Low-threshold for participants does not mean no effort for organisers. Make sure someone has time for community management in their job, not on top of it." %}
 
 ## What changed
 
 __Outputs and results__
 
-The DSIG has met without a break since 2017, more than 50 times, and the notes of every meeting since 2018 are online. During the COVID-19 years, meetings had 50 to 75 participants. Recent meetings have around 30 to 35 registrations. The agenda template is open for anyone who wants to start a similar community.
+The DSIG has met more than 50 times since 2017, and the notes of every meeting since 2018 are online. During the COVID-19 years, meetings had 50 to 75 participants. Recent meetings have around 30 to 35 registrations. There is no formal template, but anyone who wants to start a similar community can copy the approach, as it works very well.
 
 __Evidence it worked__
 
-- Chairs say chairing a meeting was useful and fun, mostly because of the engaged participants.
-- In a 2023 poll, participants said the network helps them keep up to date and find collaborators and job offers. One answer simply said *"being with like-minded"*.
-- The group reaches well beyond the Netherlands. At a meeting in September 2026, more than half the participants came from other countries, including Finland, Estonia, Slovenia, Scotland and Portugal.
+- Chairs say chairing a meeting is useful and fun, mostly because of the engaged participants.
+- In a 2023 poll, participants said the network helps them keep up to date and find collaborators and job offers. As one participant put it: *"being with like-minded"*.
+- The group reaches well beyond the Netherlands. Data stewards from other countries join regularly, and their experiences add to every discussion.
 - When the three TDCCs started, they chose to hold their data stewardship meetings within the DSIG instead of starting separate networks.
 
 __Barriers encountered__
