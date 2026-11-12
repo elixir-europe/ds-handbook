@@ -141,7 +141,7 @@ The DSIG has met more than 50 times since 2017, and the notes of every meeting s
 ### Evidence it worked
 
 - Chairs say chairing a meeting is useful and fun, mostly because of the engaged participants.
-- In a 2023 poll, participants said the network helps them keep up to date and find collaborators and job offers. As one participant put it: *"being with like-minded"*.
+- In a 2023 poll, participants said the network helps them keep up to date, find collaborators and job offers, and be among like-minded people.
 - The group reaches well beyond the Netherlands. Data stewards from other countries join regularly, and their experiences add to every discussion.
 - When the three TDCCs started, they chose to hold their data stewardship meetings within the DSIG instead of starting separate networks.
 
