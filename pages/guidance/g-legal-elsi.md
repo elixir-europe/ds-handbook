@@ -1,5 +1,5 @@
 ---
-title: Ethics / ELSI for research data
+title: ELSI for research data
 layout: guidance
 type: Guidance
 search_exclude: true
