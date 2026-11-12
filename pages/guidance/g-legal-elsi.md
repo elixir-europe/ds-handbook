@@ -23,7 +23,7 @@ topics:
 
 # Tab 2: Introduced skills
 skills:
-- Data ethics  https://esco.ec.europa.eu/en/classification/skill?uri=http%3A%2F%2Fdata.europa.eu%2Fesco%2Fskill%2Fbf5d77ad-e18c-48d8-83f0-bc79c011c74a
+- Data ethics  # http://data.europa.eu/esco/skill/e9575f7f-053a-439e-8074-f93df3334e92
 
 
 # Tab 3: Takeaways
