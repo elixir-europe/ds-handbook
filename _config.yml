@@ -31,6 +31,7 @@ gtag:
 
 exclude:
   - README.md
+  - docs/
   - .gitignore
   - var/
   - vendor

@@ -34,6 +34,7 @@ The handbook is built openly by data stewards (plus a few designers and develope
 - Read **[How to contribute](https://elixir-europe.github.io/ds-handbook/how-to-contribute)** for the process, conventions, and how to preview your changes (with or without a local setup).
 - Skim the **[Style guide](https://elixir-europe.github.io/ds-handbook/style-guide)** for voice, palette, components.
 - File an [issue](https://github.com/elixir-europe/ds-handbook/issues) or open a draft PR – feedback is faster on a half-written page than a polished one.
+- Working on the site's code rather than its content? Technical notes are in [`docs/`](docs/), starting with [how the maturity model gets into the handbook](docs/maturity-model.md).
 
 ## Licence and citation
 
