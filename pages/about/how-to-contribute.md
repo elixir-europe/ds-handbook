@@ -276,6 +276,6 @@ The site is then at `http://localhost:4000`. Sass + Liquid changes hot-reload; t
 Stuck on the GitHub flow, the editorial voice, or the scope of your contribution? Reach out:
 
 - **GitHub issues:** [github.com/elixir-europe/ds-handbook/issues](https://github.com/elixir-europe/ds-handbook/issues)
-- **Editorial style guide:** [Style guide](/style-guide)
+- **Editorial style guide:** [Style guide](style-guide)
 
 {% include callout.html type="magpie" content="The handbook only works because people keep adding to it. Thank you in advance – yours is the next chapter." %}
