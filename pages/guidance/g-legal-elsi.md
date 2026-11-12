@@ -1,6 +1,6 @@
 ---
 title: Ethics / ELSI for research data
-layout: page
+layout: guidance
 type: Guidance
 search_exclude: true
 contributors: [Heleri Inno, Hana Marčetić, Saliha Zenboudji-Beddek, Mijke Jetten, Jana Martínková, Diana Pilvar]
