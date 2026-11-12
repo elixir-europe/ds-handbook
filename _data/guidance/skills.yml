@@ -21,7 +21,7 @@
 
 - key: data-ethics
   label: data ethics
-  uri: http://data.europa.eu/esco/skill/bf5d77ad-e18c-48d8-83f0-bc79c011c74a
+  uri: http://data.europa.eu/esco/skill/e9575f7f-053a-439e-8074-f93df3334e92
   description: The subfield of ethics that assess whether data practices are considerable ethical. It assesses processes such as collecting, analysing and disseminating structured and unstructured data that might negatively impact the society.
   
 - key: develop-organisational-policies
