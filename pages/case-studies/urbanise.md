@@ -353,7 +353,7 @@ and between research and non-academic partners. The aim is not to make every pro
 standards. It is to make differences visible early and identify where shared documentation, formats, 
 vocabularies or access arrangements are needed. 
 
-### ✔ Balance events with direct support 
+### Balance events with direct support 
 Events are efficient when you need to bring a new community together. They can create visibility, 
 surface common questions and help people discover each other. Events do not replace project-level support, 
 though. Researchers often need help applying a general message to their own data, methods and constraints. 
