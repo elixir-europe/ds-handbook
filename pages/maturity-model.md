@@ -10,6 +10,12 @@ page_id: maturity-model-index
 
 {% include auto-expand.html %}
 
+## How to use this page and the DSW knowledge model
+
+This page is the **reference guide** for the RDM Maturity Model. It lists all domains, indicators, and maturity levels, and links to detailed guidance for each indicator. Use it to understand what each indicator means, how maturity levels are defined, and what good practice looks like at each stage.
+
+To run an **interactive self-assessment**, use the RDM Maturity Model knowledge model published in the [DSW Registry](https://registry.ds-wizard.org/knowledge-models/). Import it into your [Data Stewardship Wizard](https://ds-wizard.org/) instance to get a structured questionnaire that mirrors the indicators below. DSW lets you record your institution's responses, track progress over time, collaborate with colleagues, and export results — making it suitable for periodic benchmarking or reporting.
+
 ## Indicators
 <div class="accordion accordion-flush" id="indicatorsAccordion">
  {% for domain in site.data.shared.maturity_model.domains %}

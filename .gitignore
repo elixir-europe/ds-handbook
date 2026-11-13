@@ -1,11 +1,13 @@
 .sass-cache/
 .jekyll-metadata
 .jekyll-cache/
+.lycheecache
 _pdf
 .DS_Store
 .idea
 .bundle/
 _site
+_linkcheck/
 /vendor
 .vscode/
 Gemfile.lock

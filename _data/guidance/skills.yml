@@ -1,0 +1,105 @@
+# Skills introduced by guidance (signpost) pages.
+#
+# A curated subset of the ESCO skills classification, pinned to ESCO v1.2.1.
+# Only skills that at least one guidance page uses belong here – this is not
+# a full copy of ESCO (which has ~14,000 skills).
+#
+# Used by:
+#   • _layouts/guidance.html        – "Introduced skills" tab on each page
+#   • _includes/guidance-index.html – skill filter chips on /guidance
+#
+# Fields:
+#   key          slug used in the index filter (lowercase, hyphenated label)
+#   label        the ESCO preferred label (English) – must match exactly the
+#                text written under `skills:` in a guidance page's frontmatter
+#   uri          the ESCO concept URI (persistent identifier)
+#   description  the ESCO description, shown as a tooltip
+#
+# To add a skill, look it up on https://esco.ec.europa.eu/en/classification/skills
+# or run:  python3 var/esco_skill.py <ESCO skill URI>
+# and paste the output below. Keep entries sorted by label.
+
+- key: apply-information-security-policies
+  label: apply information security policies
+  uri: http://data.europa.eu/esco/skill/86d2e2ea-1ba2-4aa6-b465-8a1f9abc81b8
+  description: Implement policies, methods and regulations for data and information security in order to respect confidentiality, integrity and availability principles.
+
+- key: data-ethics
+  label: data ethics
+  uri: http://data.europa.eu/esco/skill/e9575f7f-053a-439e-8074-f93df3334e92
+  description: The subfield of ethics that assess whether data practices are considerable ethical. It assesses processes such as collecting, analysing and disseminating structured and unstructured data that might negatively impact the society.
+
+- key: develop-organisational-policies
+  label: develop organisational policies
+  uri: http://data.europa.eu/esco/skill/3254275d-a1b5-4640-9481-02f38780ac35
+  description: Develop and supervise the implementation of policies aimed at documenting and detailing the procedures for the operations of the organisation in the lights of its strategic planning.
+
+- key: develop-professional-network
+  label: develop professional network
+  uri: http://data.europa.eu/esco/skill/bf5d77ad-e18c-48d8-83f0-bc79c011c74a
+  description: Reach out to and meet up with people in a professional context. Find common ground and use your contacts for mutual benefit. Keep track of the people in your personal professional network and stay up to date on their activities.
+
+- key: develop-training-programmes
+  label: develop training programmes
+  uri: http://data.europa.eu/esco/skill/517f678e-001b-4985-acb4-9edc3500d74c
+  description: Design programmes where employees or future employees are taught the necessary skills for the job or to improve and expand skills for new activities or tasks. Select or design activities aimed at introducing the work and systems or improving the performance of individuals and groups in organisational settings.
+
+- key: establish-collaborative-relations
+  label: establish collaborative relations
+  uri: http://data.europa.eu/esco/skill/326809fc-238d-40c2-881e-40042f7f2f0d
+  description: Establish a connection between organisations or individuals which may benefit from communicating with one another in order to facilitate an enduring positive collaborative relationship between both parties.
+
+- key: evaluate-training
+  label: evaluate training
+  uri: http://data.europa.eu/esco/skill/728ad40d-4a79-4b4d-b77b-a48d094d73fa
+  description: Assess the realisation of the training's learning outcomes and goals, the quality of teaching, and give transparent feedback to the trainers and trainees.
+
+- key: identify-ict-security-risks
+  label: identify ICT security risks
+  uri: http://data.europa.eu/esco/skill/fe1c2b32-7fe9-4668-affa-07ff658a68cf
+  description: Apply methods and techniques to identify potential security threats, security breaches and risk factors using ICT tools for surveying ICT systems, analysing risks, vulnerabilities and threats and evaluating contingency plans.
+
+- key: identify-training-needs
+  label: identify training needs
+  uri: http://data.europa.eu/esco/skill/4dafe480-f2ae-46b5-bd5e-8d4e538f50c7
+  description: Analyse the training problems and identify the training requirements of an organisation or individuals, so as to provide them with instruction tailored to their prior mastery, profile, means and problems.
+
+- key: liaise-with-colleagues
+  label: liaise with colleagues
+  uri: http://data.europa.eu/esco/skill/9d5521f9-44d7-4db4-b7ac-0ba7d389f44d
+  description: Liaise with fellow colleagues to ensure common understanding on work related affairs and agree on the necessary compromises the parties might need to face. Negotiate compromises between parties as to ensure that work in general run efficiently towards the achievement of the objectives.
+
+- key: manage-findable-accessible-interoperable-and-reusable-data
+  label: manage findable accessible interoperable and reusable data
+  uri: http://data.europa.eu/esco/skill/4f5c1208-62fd-4e5a-a51e-306c06947e11
+  description: Produce, describe, store, preserve and (re) use scientific data based on FAIR (Findable, Accessible, Interoperable, and Reusable) principles, making data as open as possible, and as closed as necessary.
+
+- key: manage-personal-professional-development
+  label: manage personal professional development
+  uri: http://data.europa.eu/esco/skill/a8d24a95-47b3-4f88-92e7-06600bcd3612
+  description: Take responsibility for lifelong learning and continuous professional development. Engage in learning to support and update professional competence. Identify priority areas for professional development based on reflection about own practice and through contact with peers and stakeholders. Pursue a cycle of self-improvement and develop credible career plans.
+
+- key: manage-research-data
+  label: manage research data
+  uri: http://data.europa.eu/esco/skill/08b04e53-ed25-41a2-9f90-0b9cd939ba3d
+  description: Produce and analyse scientific data originating from qualitative and quantitative research methods. Store and maintain the data in research databases. Support the re-use of scientific data and be familiar with open data management principles.
+
+- key: strategic-planning
+  label: strategic planning
+  uri: http://data.europa.eu/esco/skill/949ced5f-7536-4614-ac60-563ffc91a2f2
+  description: The elements defining the foundation and core of an organisation such as its mission, vision, values, and objectives.
+
+- key: tools-for-software-configuration-management
+  label: tools for software configuration management
+  uri: http://data.europa.eu/esco/skill/9d2e926f-53d9-41f5-98f3-19dfaa687f3f
+  description: The software programs to perform configuration identification, control, status accounting and audit, such as CVS, ClearCase, Subversion, GIT and TortoiseSVN perform this management.
+
+- key: track-key-performance-indicators
+  label: track key performance indicators
+  uri: http://data.europa.eu/esco/skill/8dcbcabe-09f7-4d11-940d-125af57bbc40
+  description: Identify the quantifiable measures that a company or industry uses to gauge or compare performance in terms of meeting their operational and strategic goals, using preset performance indicators.
+
+- key: working-in-teams
+  label: working in teams
+  uri: http://data.europa.eu/esco/skill/e4da156d-a6c4-4b29-935b-eff9c9553cf1
+  description: Working confidently within a group with each doing their part in the service of the whole. Understanding and respecting the roles and competencies of other team members.

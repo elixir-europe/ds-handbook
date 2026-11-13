@@ -1,20 +1,28 @@
+# Make sure the order of sidebar items matches the order of titles on the Guidance page
+
 title: Guidance
 title_url: /guidance
 subitems:
-  - title: Writing an RDM strategy
-    url: /g-writing-rdm-strategy
-  - title: Creation of RDM guidelines
-    url: /g-support-guidelines
-  - title: Informing about RDM
-    url: /g-support-rdm-information
-  - title: Communication about RDM
-    url: /g-support-communication
-  - title: RDM expert networks
-    url: /g-support-networks
-  - title: Creation of a legal framework
-    url: /g-legal-framework
   - title: Data protection compliance
     url: /g-data-protection
+  - title: Ethics / ELSI for research data
+    url: /g-legal-elsi
+  - title: Communication about RDM
+    url: /g-support-communication
   - title: IT security
     url: /g-security
+  - title: Informing about RDM
+    url: /g-support-rdm-information
+  - title: Creation of a legal framework
+    url: /g-legal-framework
+  - title: FAIR computational workflows
+    url: g-fair-computational-workflows
+  - title: RDM expert networks
+    url: /g-support-networks
+  - title: RDM training
+    url: /g-support-rdm-training
+  - title: Creation of RDM guidelines
+    url: /g-support-guidelines
+  - title: Writing an RDM strategy
+    url: /g-writing-rdm-strategy
 

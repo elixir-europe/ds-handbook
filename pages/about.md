@@ -46,15 +46,15 @@ Magpies are observant, **curious**, and notorious **collectors** – they pick u
 
 The handbook is organised around three landmarks. You don't have to read them in order – pick the door that matches what you came for.
 
-### 🪶 [Signposts](/guidance) – practical guidance
+### 🪶 [Signposts](guidance) – practical guidance
 
 Step-by-step advice for the things data stewards actually do: writing an RDM strategy, building support networks, communicating about RDM, navigating data-protection requirements. Most useful when you're new, or when you're starting something for the first time.
 
-### 🪶 [Campfires](/case-studies) – case studies
+### 🪶 [Campfires](case-studies) – case studies
 
 Real institutional stories from data stewards across ELIXIR. *"Here's what we did, here's what worked, here's what we'd do differently."* Most useful when you've got the basics and want to see how others have solved a particular puzzle.
 
-### 🪶 [Waypoints](/maturity-model) – maturity indicators
+### 🪶 [Waypoints](maturity-model) – maturity indicators
 
 A self-assessment framework for benchmarking your institution's data stewardship maturity. Most useful when you need to make the case for resources, or when you're planning where to invest next.
 
@@ -70,7 +70,7 @@ We try to stay in our lane. The handbook is **not**:
 
 ## How it's made
 
-The handbook is built openly on GitHub by a group of data stewards (and a few designers and developers) volunteering their time. Every page lists its contributors. Want to add yours? Have a look at [how to contribute](/how-to-contribute).
+The handbook is built openly on GitHub by a group of data stewards (and a few designers and developers) volunteering their time. Every page lists its contributors. Want to add yours? Have a look at [how to contribute](how-to-contribute).
 
 Visual refinement and theme customisation were iterated on in collaboration with [Claude Code](https://claude.com/claude-code) (Anthropic's CLI for Claude), under human direction.
 
