@@ -19,6 +19,11 @@
 # or run:  python3 var/esco_skill.py <ESCO skill URI>
 # and paste the output below. Keep entries sorted by label.
 
+- key: apply-information-security-policies
+  label: apply information security policies
+  uri: http://data.europa.eu/esco/skill/86d2e2ea-1ba2-4aa6-b465-8a1f9abc81b8
+  description: Implement policies, methods and regulations for data and information security in order to respect confidentiality, integrity and availability principles.
+
 - key: data-ethics
   label: data ethics
   uri: http://data.europa.eu/esco/skill/e9575f7f-053a-439e-8074-f93df3334e92
@@ -49,10 +54,20 @@
   uri: http://data.europa.eu/esco/skill/728ad40d-4a79-4b4d-b77b-a48d094d73fa
   description: Assess the realisation of the training's learning outcomes and goals, the quality of teaching, and give transparent feedback to the trainers and trainees.
 
+- key: identify-ict-security-risks
+  label: identify ICT security risks
+  uri: http://data.europa.eu/esco/skill/fe1c2b32-7fe9-4668-affa-07ff658a68cf
+  description: Apply methods and techniques to identify potential security threats, security breaches and risk factors using ICT tools for surveying ICT systems, analysing risks, vulnerabilities and threats and evaluating contingency plans.
+
 - key: identify-training-needs
   label: identify training needs
   uri: http://data.europa.eu/esco/skill/4dafe480-f2ae-46b5-bd5e-8d4e538f50c7
   description: Analyse the training problems and identify the training requirements of an organisation or individuals, so as to provide them with instruction tailored to their prior mastery, profile, means and problems.
+
+- key: liaise-with-colleagues
+  label: liaise with colleagues
+  uri: http://data.europa.eu/esco/skill/9d5521f9-44d7-4db4-b7ac-0ba7d389f44d
+  description: Liaise with fellow colleagues to ensure common understanding on work related affairs and agree on the necessary compromises the parties might need to face. Negotiate compromises between parties as to ensure that work in general run efficiently towards the achievement of the objectives.
 
 - key: manage-findable-accessible-interoperable-and-reusable-data
   label: manage findable accessible interoperable and reusable data
@@ -68,7 +83,7 @@
   label: manage research data
   uri: http://data.europa.eu/esco/skill/08b04e53-ed25-41a2-9f90-0b9cd939ba3d
   description: Produce and analyse scientific data originating from qualitative and quantitative research methods. Store and maintain the data in research databases. Support the re-use of scientific data and be familiar with open data management principles.
-  
+
 - key: strategic-planning
   label: strategic planning
   uri: http://data.europa.eu/esco/skill/949ced5f-7536-4614-ac60-563ffc91a2f2
