@@ -15,8 +15,8 @@ subitems:
     url: /g-support-rdm-information
   - title: Creation of a legal framework
     url: /g-legal-framework
-  - title: FAIR computational frameworks
-    url: g-fair-computational-workflows.md
+  - title: FAIR computational workflows
+    url: g-fair-computational-workflows
   - title: RDM expert networks
     url: /g-support-networks
   - title: RDM training
