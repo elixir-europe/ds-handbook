@@ -54,15 +54,30 @@
   uri: http://data.europa.eu/esco/skill/4dafe480-f2ae-46b5-bd5e-8d4e538f50c7
   description: Analyse the training problems and identify the training requirements of an organisation or individuals, so as to provide them with instruction tailored to their prior mastery, profile, means and problems.
 
+- key: manage-findable-accessible-interoperable-and-reusable-data
+  label: manage findable accessible interoperable and reusable data
+  uri: http://data.europa.eu/esco/skill/4f5c1208-62fd-4e5a-a51e-306c06947e11
+  description: Produce, describe, store, preserve and (re) use scientific data based on FAIR (Findable, Accessible, Interoperable, and Reusable) principles, making data as open as possible, and as closed as necessary.
+
 - key: manage-personal-professional-development
   label: manage personal professional development
   uri: http://data.europa.eu/esco/skill/a8d24a95-47b3-4f88-92e7-06600bcd3612
   description: Take responsibility for lifelong learning and continuous professional development. Engage in learning to support and update professional competence. Identify priority areas for professional development based on reflection about own practice and through contact with peers and stakeholders. Pursue a cycle of self-improvement and develop credible career plans.
 
+- key: manage-research-data
+  label: manage research data
+  uri: http://data.europa.eu/esco/skill/08b04e53-ed25-41a2-9f90-0b9cd939ba3d
+  description: Produce and analyse scientific data originating from qualitative and quantitative research methods. Store and maintain the data in research databases. Support the re-use of scientific data and be familiar with open data management principles.
+  
 - key: strategic-planning
   label: strategic planning
   uri: http://data.europa.eu/esco/skill/949ced5f-7536-4614-ac60-563ffc91a2f2
   description: The elements defining the foundation and core of an organisation such as its mission, vision, values, and objectives.
+
+- key: tools-for-software-configuration-management
+  label: tools for software configuration management
+  uri: http://data.europa.eu/esco/skill/9d2e926f-53d9-41f5-98f3-19dfaa687f3f
+  description: The software programs to perform configuration identification, control, status accounting and audit, such as CVS, ClearCase, Subversion, GIT and TortoiseSVN perform this management.
 
 - key: track-key-performance-indicators
   label: track key performance indicators
