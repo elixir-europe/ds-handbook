@@ -101,6 +101,10 @@ Katharina Friedlinde Heil:
   orcid: 0000-0003-3341-3736
 Laura Portell Silva:
   git: lauportell
+Luiz Gadelha:
+  git: lgadelha
+  orcid: 0000-0002-8122-9522
+  affiliation: Cluster of Excellence GreenRobust, Heidelberg University
 Magdalena Utko:
 Marina Popleteeva:
   git: marikapop
@@ -108,6 +112,10 @@ Marina Popleteeva:
   affiliation: Luxembourg Institute of Health
   roles:
     - conceptualization
+Martinique Frentrup:
+  git: Martinique-F
+  orcid: 0000-0001-8238-3567
+  affiliation: Forschungszentrum Jülich
 Mijke Jetten:
   git: MijkeJetten
   roles:
@@ -157,3 +165,7 @@ Xenia Perez Sitja:
     - project-administration
     - software
     - visualization
+Luka Kranjc:
+  git: krluka
+  orcid: 0009-0003-3375-6816
+  affiliation: National Institute of Biology, ELIXIR-SI

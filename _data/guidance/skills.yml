@@ -19,15 +19,30 @@
 # or run:  python3 var/esco_skill.py <ESCO skill URI>
 # and paste the output below. Keep entries sorted by label.
 
+- key: data-ethics
+  label: data ethics
+  uri: http://data.europa.eu/esco/skill/e9575f7f-053a-439e-8074-f93df3334e92
+  description: The subfield of ethics that assess whether data practices are considerable ethical. It assesses processes such as collecting, analysing and disseminating structured and unstructured data that might negatively impact the society.
+
 - key: develop-organisational-policies
   label: develop organisational policies
   uri: http://data.europa.eu/esco/skill/3254275d-a1b5-4640-9481-02f38780ac35
   description: Develop and supervise the implementation of policies aimed at documenting and detailing the procedures for the operations of the organisation in the lights of its strategic planning.
 
+- key: develop-professional-network
+  label: develop professional network
+  uri: http://data.europa.eu/esco/skill/bf5d77ad-e18c-48d8-83f0-bc79c011c74a
+  description: Reach out to and meet up with people in a professional context. Find common ground and use your contacts for mutual benefit. Keep track of the people in your personal professional network and stay up to date on their activities.
+
 - key: develop-training-programmes
   label: develop training programmes
   uri: http://data.europa.eu/esco/skill/517f678e-001b-4985-acb4-9edc3500d74c
   description: Design programmes where employees or future employees are taught the necessary skills for the job or to improve and expand skills for new activities or tasks. Select or design activities aimed at introducing the work and systems or improving the performance of individuals and groups in organisational settings.
+
+- key: establish-collaborative-relations
+  label: establish collaborative relations
+  uri: http://data.europa.eu/esco/skill/326809fc-238d-40c2-881e-40042f7f2f0d
+  description: Establish a connection between organisations or individuals which may benefit from communicating with one another in order to facilitate an enduring positive collaborative relationship between both parties.
 
 - key: evaluate-training
   label: evaluate training
@@ -39,6 +54,11 @@
   uri: http://data.europa.eu/esco/skill/4dafe480-f2ae-46b5-bd5e-8d4e538f50c7
   description: Analyse the training problems and identify the training requirements of an organisation or individuals, so as to provide them with instruction tailored to their prior mastery, profile, means and problems.
 
+- key: manage-personal-professional-development
+  label: manage personal professional development
+  uri: http://data.europa.eu/esco/skill/a8d24a95-47b3-4f88-92e7-06600bcd3612
+  description: Take responsibility for lifelong learning and continuous professional development. Engage in learning to support and update professional competence. Identify priority areas for professional development based on reflection about own practice and through contact with peers and stakeholders. Pursue a cycle of self-improvement and develop credible career plans.
+
 - key: strategic-planning
   label: strategic planning
   uri: http://data.europa.eu/esco/skill/949ced5f-7536-4614-ac60-563ffc91a2f2
@@ -48,3 +68,8 @@
   label: track key performance indicators
   uri: http://data.europa.eu/esco/skill/8dcbcabe-09f7-4d11-940d-125af57bbc40
   description: Identify the quantifiable measures that a company or industry uses to gauge or compare performance in terms of meeting their operational and strategic goals, using preset performance indicators.
+
+- key: working-in-teams
+  label: working in teams
+  uri: http://data.europa.eu/esco/skill/e4da156d-a6c4-4b29-935b-eff9c9553cf1
+  description: Working confidently within a group with each doing their part in the service of the whole. Understanding and respecting the roles and competencies of other team members.
