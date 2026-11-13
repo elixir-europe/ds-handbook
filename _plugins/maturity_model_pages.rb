@@ -107,7 +107,17 @@ module DSHandbook
     end
 
     def body(indicator)
-      lines = [indicator["indicatorLongDescription"], ""]
+      lines = []
+
+      # Kept where a shortened indicator name would lose its scope (only Ethics and
+      # Adherence to policies in 2.0.0). Italic, like a level's brief description.
+      if indicator["indicatorBriefDescription"]
+        lines << "*#{indicator['indicatorBriefDescription']}*"
+        lines << ""
+      end
+
+      lines << indicator["indicatorLongDescription"]
+      lines << ""
 
       indicator["maturityLevels"].each do |level|
         lines << "## Level #{level['order']} – #{level['title']}"
