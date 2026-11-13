@@ -7,7 +7,7 @@
 # ============================================================================
 
 title: Making computational workflows FAIR                 # mandatory – short, not a full sentence, specific; align with file name
-layout: page                       # mandatory – leave as-is
+layout: Guidance                       # mandatory – leave as-is
 type: Guidance                     # mandatory – leave as-is
 search_exclude: true               # leave as-is
 contributors: [Luiz Gadelha]          # mandatory – comma separated list, names must match _data/CONTRIBUTORS.yaml; add missing names in your Pull Request; yaml file is located under data > sidebars > file CONTRIBUTORS
