@@ -56,15 +56,14 @@ To run an **interactive self-assessment**, use the RDM Maturity Model knowledge 
             {% for indicator in domain_indicators %}
             {% assign entry_page = indicator.indicatorId %}
             <tr id="{{ entry_page }}">
-                {% if entry_page %}
-                <td><a href="{{ entry_page }}">{{ indicator.indicator }}</a></td>
-                {% else %}
-                <td>{{ indicator.indicator }}</td>
-                {% endif %}
+                <td>
+                  {% if entry_page %}<a href="{{ entry_page }}">{{ indicator.indicator }}</a>{% else %}{{ indicator.indicator }}{% endif %}
+                  {% if indicator.indicatorBriefDescription %}<br><em>{{ indicator.indicatorBriefDescription }}</em>{% endif %}
+                </td>
               <td>
                 <ol>
                   {% for level in indicator.maturityLevels %}
-                  <li>{{ level }}</li>
+                  <li>{{ level.title }}{% if level.briefDescription %} – {{ level.briefDescription }}{% endif %}</li>
                   {% endfor %}
                 </ol>
               </td>
@@ -79,6 +78,13 @@ To run an **interactive self-assessment**, use the RDM Maturity Model knowledge 
   {% endfor %}
 </div>
 
+
+## Contributors
+
+The maturity model is maintained by the RDM Community as a whole, so contributors are
+recorded against the model rather than against individual indicators.
+
+{% include mm-contributors.html %}
 
 ## Version information
 

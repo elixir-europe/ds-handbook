@@ -39,7 +39,7 @@ There's a dedicated [case-study template](https://github.com/elixir-europe/ds-ha
 
 ### 🪶 Plant a Waypoint
 
-Propose or refine a maturity indicator. The maturity model lives in the [rdm-maturity-model](https://github.com/elixir-europe/rdm-maturity-model) repository – contributions there flow into this handbook automatically.
+Propose or refine a maturity indicator. The maturity model lives in the [rdm-maturity-model](https://github.com/elixir-europe/rdm-maturity-model) repository – changes there reach this handbook once it moves to the new model version.
 
 ### 🪶 Just review
 
