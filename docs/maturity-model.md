@@ -18,4 +18,4 @@ cd ../..
 git add _external/rdm-maturity-model
 ```
 
-To change what the model says, open a pull request in rdm-maturity-model, not here. In an existing clone, `git submodule update --init` fetches the model.
+To change what the model says, open a pull request in rdm-maturity-model, not here. In an existing clone, `git submodule update --init` fetches the model; without it, the build stops.

@@ -31,9 +31,12 @@ module DSHandbook
 
     def generate(site)
       model = site.data.dig("shared", "maturity_model")
+      # Without the model, stop instead of empty pages generation
       if model.nil? || model["indicators"].nil?
-        Jekyll.logger.warn "Maturity model:", "no model data, no indicator pages generated"
-        return
+        Jekyll.logger.abort_with "Maturity model:",
+                                 "no model data in _data/shared, so the indicator pages " \
+                                 "cannot be generated. Fetch the model with " \
+                                 "`git submodule update --init`."
       end
 
       unless model["indicators"].first["maturityLevels"].first.is_a?(Hash)
