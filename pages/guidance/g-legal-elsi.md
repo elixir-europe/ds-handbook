@@ -40,7 +40,7 @@ related_pages:
     - g-legal-framework 
     - g-data-protection
     - g-support-rdm-training 
-    - g-support-guidelines
+    - g-support-guidance
 
   Case_Study:
     - ELSI-servicedesk
