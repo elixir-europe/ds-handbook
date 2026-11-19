@@ -36,7 +36,7 @@ takeaways:                         # mandatory – 2–3 short bullets with the 
 related_pages:
   Guidance:
     - g-data-protection
-    - g-rdm-strategy
+    - g-writing-rdm-strategy
   Maturity_Indicator:
     - mm-data-accessibility
     - mm-data-assets
