@@ -73,93 +73,64 @@ resources:
     category: external_resource
 ---
 
-## Context
+Researchers need research data management (RDM) guidance when they write a data management plan (DMP) or decide where to store their data. If they can't find it, or don't trust that it is current, they ask you or a colleague, or they guess. Good written guidance lets researchers work on their own and saves you from answering the same questions again.
 
-Research data management (RDM) guidance forms the backbone of responsible data practice. When such guidance is clear, accessible, and well-maintained, it enables researchers to act autonomously, comply with funder and institutional requirements, and engage with FAIR and open science in a meaningful way. However, in many institutions, RDM information remains fragmented, hard to find, or inconsistently maintained, making even the most motivated researchers dependent on personal contacts or ad hoc support. 
+You can work on the sections below in any order. If you start from scratch, begin with one central place.
 
-The availability and visibility of guidance materials, such as data policies, DMP templates, file naming conventions, or metadata standards, serve as a key signal of institutional maturity. Good guidance is not just published; it is proactively communicated, clearly structured, and kept up to date. Without deliberate maintenance and promotion, outdated documents and buried intranet pages undermine trust and make it harder for staff to deliver consistent support. 
+## Centralise RDM guidance
+Collect your RDM guidance in one place, so researchers know where to look.
 
-This challenge is especially pronounced in federated or decentralised environments, such as ELIXIR Nodes or research institutions with distributed support teams. In these settings, alignment across levels is essential. National tools like RDMkit and FAIRsharing can provide a foundation, but local contextualisation and visibility remain critical. A template or checklist is only useful if researchers can find it, understand it, and trust that it is current. 
+### Create a single access point
+Start by listing the guidance that already exists, often spread over intranet folders, PDFs and old emails. Then bring it together on one platform that covers the whole research lifecycle, for example policies, DMPs, metadata, consent, data sharing and storage. The [waypoint on RDM information](mm-support-guidelines-researchers) describes each maturity level, so you can see where you stand.
 
-Data stewards play a key role in ensuring that guidance is not just written, but usable. They help select appropriate communication channels, embed resources in onboarding or training materials, and keep track of evolving standards and requirements. Institutions that assign clear responsibilities for guidance maintenance, promote content through multiple entry points, and review materials regularly are more likely to build trust, reduce redundant support requests, and foster sustainable RDM practices.
+### Make it public
+If you can, put the guidance on a public website instead of the intranet. Researchers can then reach it from anywhere, also before they start or after they leave, and other organisations can reuse it. The Leibniz Institute on Aging (FLI) goes one step further and publishes its [Guidelines of Good Research Practice](https://zenodo.org/records/11093165/latest) on Zenodo, with a DOI and a version number.
 
-## Guidance
+### Organise by research phase
+Structure the content around the steps researchers take, such as planning, collecting, analysing and sharing data. Don't follow your organisation chart: researchers don't know or care which department owns a topic. The [SciLifeLab RDM Guidelines](https://rdm-guidelines.scilifelab.se/), maintained with NBIS, the Swedish ELIXIR Node, show how this works: the site starts from a wheel with seven research phases, from planning to reuse.
 
-Providing clear and accessible RDM information and guidelines helps data stewards and their institutions strengthen their support for researchers. The following tips are organised around four core areas: **centralisation**, **visibility**, **maintenance**, and **communication**, reflecting organisational experience and established support models.
+### Link to external resources
+You don't have to write everything yourself. Link to resources such as [RDMkit](https://rdmkit.elixir-europe.org/), [FAIRsharing](https://fairsharing.org/) and the [Data Stewardship Wizard](https://ds-wizard.org/), and explain what applies in your organisation. For example, say which storage options researchers can use, or which DMP template their funder requires.
 
-### 1\. Centralise RDM guidance
+In a federated setting, such as an ELIXIR Node, align your local guidance with national services. In the Netherlands, Health-RI and ELIXIR Netherlands maintain the [FAIR Metroline](https://fairmetroline.org/fair_metroline_steps) together, a shared set of steps for making data FAIR that institutions can link to instead of writing their own.
 
-✔ **Create a single access point**  
-Host all RDM guidance in one clearly structured platform (internal or public) covering the full research lifecycle, including policies, DMPs, metadata, consent, sharing, and storage.
+### Offer ready-to-use materials
+Researchers want to get started quickly. Add materials they can download and use straight away, for example:
+- templates
+- example DMPs and consent forms
+- checklists and quick reference guides
 
-✔ **Structure by researcher workflow**  
-Organise content around research phases and user needs, not institutional structures.
+## Make guidance findable
+Make sure researchers come across the guidance, even if they don't know it exists.
 
-✔ **Integrate external resources**   
-Link to trusted materials (e.g. RDMkit, FAIRsharing, DSW) and provide details on local context for applicability.
+### Link from where researchers already look
+Ask colleagues to link to your guidance from the places researchers already visit, such as the library, ethics committee, IT and research office pages, and from onboarding and training platforms. If your organisation has a communications or web team, involve them early: they know which channels researchers use and how the website is structured. Offline, add QR codes to posters in labs and to slides for events and training.
 
-✔ **Offer reusable formats**, for example:
+### Write for quick reading
+Use plain language, short paragraphs, headings and visuals, and avoid jargon from policies and internal procedures. A researcher should understand what to do after a quick scan. Add keywords researchers search for, such as consent or DMP, so they also find your pages through a search engine.
 
-* Downloadable and printable templates  
-* Standardised DMP and consent form examples  
-* Checklists and quick‑reference guides
+### Test whether people find it
+Ask a few researchers to find a specific guideline, such as the DMP template, without help. Where they get stuck shows you what to fix.
 
-### 2\. Make RDM guidance visible and findable
+## Keep guidance up to date
+When researchers find one outdated page, they start to doubt the rest too.
 
-✔ **Link from strategic locations**  
-Ensure guidance is accessible from:
+### Assign ownership and a review schedule
+Name at least two people for each part of the guidance, if your resources allow it. They share the work, and the guidance doesn't get outdated when one of them leaves.
 
-* Library, ethics, IT, and research office portals  
-* Onboarding and training platforms
+Agree on a review cycle, for example every 6 to 12 months, and check whether the content is still correct and the links still work. Don't wait for the next review when funders, laws or institutional policies change.
 
-✔ **Design for quick uptake**  
-Use plain language, short paragraphs, headings, bullet points, and visuals. Avoid institutional or policy jargon.
+### Show update history
+Add a date to each page and keep a version history, so researchers can see that the content is current. CSC, the Finnish ELIXIR Node, versions and timestamps its public documentation, and uses persistent URLs so that links keep working.
 
-✔ **Optimise for search**  
-Tag pages with relevant keywords (e.g. FAIR, consent, metadata, DMP) to improve both internal and external discoverability. 
+## Bring guidance to researchers
+Guidance only helps if researchers know about it and use it.
 
-✔ **Use physical-to-digital connections**  
-Add QR codes on:
+### Announce updates
+Announce new and revised content, and pick the channel that suits the message. A chat channel such as Slack or an email works for a quick update. A newsletter or intranet news item works better for a new section or a changed policy.
 
-* Posters in research spaces  
-* Flyers and slide decks for events and training
+### Add it to onboarding and training
+Refer to the guidance in welcome packs, orientation sessions, PhD programmes and lab inductions. In RDM training, show participants where to find it, and invite them to bookmark the page or subscribe to updates.
 
-### 3\. Maintain content quality and currency
-
-✔ **Assign ownership**  
-According to available resources, appoint at least two named maintainers for each section to ensure continuity and shared accountability.
-
- ✔ **Show update history**  
-Timestamp pages and use version control to build trust in currency. 
-
-✔ **Review regularly**  
-Establish fixed review cycles (e.g. every 6–12 months) to:
-
-* Check accuracy and coverage  
-* Update links and resources
-
-✔ **Align with policy changes**  
-Update content in response to:
-
-* New funder requirements  
-* Legal or institutional changes
-
-### 4\. Communicate and embed guidance
-
-✔ **Promote updates proactively**  
-Announce new or revised content via:
-
-* Newsletters, mailing lists, and Slack  
-* Intranet news items or targeted emails
-
-✔ **Integrate into onboarding and training**  
-Include references in:
-
-* Welcome packs and orientation sessions  
-* PhD programmes and lab induction processes
-
-✔ **Encourage bookmarking and subscriptions**  
-Invite researchers to save the RDM page or subscribe to alerts during onboarding or training.
-
-✔ **Gather and act on feedback**  
-Collect input through forms, surveys, or training follow‑ups, and use it to refine guidance and fill content gaps.
+### Gather and act on feedback
+Collect feedback through forms, surveys and training follow-ups. Keep track of the questions researchers ask you often: they show where guidance is unclear or missing. Institutions in Portugal use questions from training and mentoring sessions to decide what to update, and tell participants afterwards what has changed.
