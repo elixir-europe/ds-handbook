@@ -1,9 +1,76 @@
 ---
 title: RDM guidance
-description: Informing and guiding researchers about RDM
-contributors: [Mijke Jetten, Helena Schnitzer, Jeanne Wilbrandt, Flora D’Anna, Hana Marčetić, Jana Martínková, Heleri Inno]
-page_id: g-support-rdm-guidance
+layout: guidance
 type: Guidance
+search_exclude: true
+contributors: [Mijke Jetten, Helena Schnitzer, Jeanne Wilbrandt, Flora D'Anna, Hana Marčetić, Jana Martínková, Heleri Inno]
+page_id: g-support-rdm-guidance
+
+# ---------------------------------------------------------------------------
+# At a glance box
+# ---------------------------------------------------------------------------
+
+# Tab 1: At a glance
+description: How to set up and maintain written RDM guidance that researchers can find and trust.
+last_update: 2026-11-19
+topics:
+  - RDM guidance
+  - findability
+  - content maintenance
+  - onboarding
+
+# Tab 2: Introduced skills
+skills:                            # ESCO v1.2.1
+  - manage online content          # http://data.europa.eu/esco/skill/c1f29568-f2bb-49d2-b6c2-28748bd1629b
+  - liaise with colleagues         # http://data.europa.eu/esco/skill/9d5521f9-44d7-4db4-b7ac-0ba7d389f44d
+
+# Tab 3: Takeaways
+takeaways:
+  - Put all RDM guidance in one place, organised by research phase, and link to it from where researchers already look.
+  - Name at least two people for each part, and review it every 6 to 12 months.
+  - Point researchers to the guidance in onboarding and training, and use their questions to improve it.
+
+# ---------------------------------------------------------------------------
+# Related pages
+# ---------------------------------------------------------------------------
+related_pages:
+  Guidance:
+    - g-support-communication
+    - g-support-rdm-training
+    - g-writing-rdm-strategy
+  Maturity_Indicator:
+    - mm-support-guidelines-researchers
+    - mm-support-communication
+    - mm-support-services
+
+# ---------------------------------------------------------------------------
+# Resources
+# ---------------------------------------------------------------------------
+resources:
+  - name: RDMkit
+    url: https://rdmkit.elixir-europe.org/
+    description: ELIXIR's open guidance on research data management, organised by task, role and domain, which you can link to and add local context to.
+    category: external_resource
+  - name: FAIRsharing
+    url: https://fairsharing.org/
+    description: Registry of standards, databases and data policies to refer to from your own guidance.
+    category: external_resource
+  - name: Data Stewardship Wizard (DSW)
+    url: https://ds-wizard.org/
+    description: Tool for writing data management plans (DMPs), which you can link to with your own templates and instructions.
+    category: external_resource
+  - name: SciLifeLab Research Data Management Guidelines
+    url: https://rdm-guidelines.scilifelab.se/
+    description: Example of national RDM guidance from SciLifeLab and NBIS (the Swedish ELIXIR Node), organised by research phase.
+    category: external_resource
+  - name: The FAIR Metroline
+    url: https://fairmetroline.org/fair_metroline_steps
+    description: Open, step-by-step guidance on making data FAIR from Health-RI and ELIXIR Netherlands, with steps you can filter by audience and expertise.
+    category: external_resource
+  - name: Guidelines of Good Research Practice, Leibniz Institute on Aging (FLI)
+    url: https://zenodo.org/records/11093165/latest
+    description: Example of institutional guidelines, including RDM, published on Zenodo with a DOI and version number.
+    category: external_resource
 ---
 
 ## Context
