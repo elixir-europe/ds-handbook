@@ -35,7 +35,7 @@ takeaways:
 # ---------------------------------------------------------------------------
 related_pages:
   Guidance:
-    - g-support-rdm-information
+    - g-support-rdm-guidance
     - g-support-communication
     - g-support-rdm-training
   Maturity_Indicator:
