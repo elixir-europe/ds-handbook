@@ -1,8 +1,8 @@
 ---
-title: Informing about RDM
+title: RDM guidance
 description: Informing and guiding researchers about RDM
 contributors: [Mijke Jetten, Helena Schnitzer, Jeanne Wilbrandt, Flora D’Anna, Hana Marčetić, Jana Martínková, Heleri Inno]
-page_id: g-support-rdm-information
+page_id: g-support-rdm-guidance
 type: Guidance
 ---
 
