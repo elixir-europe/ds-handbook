@@ -75,7 +75,7 @@ resources:
 
 Researchers need research data management (RDM) guidance when they write a data management plan (DMP) or decide where to store their data. If they can't find it, or don't trust that it is current, they ask you or a colleague, or they guess. Good written guidance lets researchers work on their own and saves you from answering the same questions again.
 
-You can work on the sections below in any order. If you start from scratch, begin with one central place.
+You can work on the sections below in any order. If your guidance isn’t in one place yet, start with the first section.
 
 ## Centralise RDM guidance
 Collect your RDM guidance in one place, so researchers know where to look.
