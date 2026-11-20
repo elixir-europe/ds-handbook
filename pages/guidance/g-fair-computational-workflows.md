@@ -39,6 +39,11 @@ takeaways:                         # mandatory – 2–3 short bullets with the 
   - Re-running workflows does not prove reproducibility. Enable provenance recording (e.g. nf-prov, Nextflow lineage) so each run records its inputs, parameters, tool versions, and outputs.
   - For long-term preservation, package the workflow, its metadata, and an example run record as an RO-Crate.
 
+related_pages:
+  Maturity_Indicator:
+    - mm-data-resources
+    - mm-data-publication
+    - mm-data-standards-documentation
 
 resources:
   - name: "Applying the FAIR Principles to Computational Workflows"
