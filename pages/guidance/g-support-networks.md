@@ -11,7 +11,7 @@ page_id: g-support-networks
 # ---------------------------------------------------------------------------
 
 # Tab 1: At a glance
-description: How to take part in expert networks and help them grow, with support from your organisation.
+description: How to use expert networks to build expertise, share knowledge and improve RDM support.
 last_update: 2026-11-20  
 topics:                            
   - expert networks
@@ -27,8 +27,8 @@ skills:
 
 # Tab 3: Takeaways
 takeaways:
-  - Ask your organisation for time and budget, and combine local, national and international networks.
-  - Take an active role, and bring what you learn back to your organisation.
+  - Combine local, national and international networks to access expertise, infrastructure and emerging practices.
+  - Contribute actively by sharing experiences, joining working groups and supporting community outputs.
   - Help informal networks last with light structure, such as rotating chairs and shared notes.
 
 # ---------------------------------------------------------------------------
@@ -54,7 +54,7 @@ related_pages:
 resources:
   - name: ELIXIR Research Data Management Community
     url: https://elixir-europe.org/communities/research-data-management
-    description: European community where RDM experts from ELIXIR Nodes share practices and work on joint outputs.
+    description: Connecting RDM experts to share knowledge and best practices, boosting efficiency and confidence in delivering harmonised RDM services to life science researchers.
     category: external_resource
   - name: Research Data Alliance (RDA)
     url: https://www.rd-alliance.org/
@@ -75,23 +75,23 @@ resources:
 
 ---
 
-Data stewards play a central role in enabling FAIR research, yet many work as the only person with research data management (RDM) expertise in their team or organisation. Expert networks give you colleagues to ask, so you don't have to solve every problem alone or rebuild what others have already made. They also keep you up to date on new standards and tools.
+Data stewards play a central role in enabling FAIR research, yet many work as the only person with research data management (RDM) expertise in their team or organisation. Expert networks help you exchange knowledge, avoid duplicating effort and keep up with developments in standards, tools and good practices. They also connect you to local, national and international communities shaping research data management, FAIR and Open Science.
 
-You can read the sections below in any order. If you are new to networking, start with the first section.
+The sections below focus on choosing relevant networks, participating effectively, turning network engagement into practical benefits and helping networks grow. You can read them in any order.
 
 ## Plan and support your network participation
 Building a network takes time, but it becomes much easier when participation is recognised as part of your role.
 
 ### Secure organisational support
-Explain to your manager what network participation brings: better advice for researchers, and early news about standards and tools your organisation will need to follow. Ask for dedicated time and a travel budget. Short updates to your team or management after a meeting help to keep that support in place. Also ask whether network contributions, such as leading a working group, can count in your annual review.
+Explain how network participation improves service quality, supports professional development and helps your organisation stay aligned with developments in research data management. Dedicated time, support for travel or community contributions, and opportunities to share outcomes internally can make participation more sustainable and effective. Short reports or updates to your team or management help to keep that support in place. Also ask whether network contributions, such as leading a working group, can count in your annual review.
 
 ### Engage at different levels
-Local, national and international networks complement each other, and none replaces the others.
+Local, national and international networks complement each other, and none replaces the others. Aim for a balance that fits your role.
 - Local networks connect you to institutional expertise, services and the researchers you support, and help you tailor guidance to local workflows.
 - National networks link data stewardship to national infrastructures, policy makers and funders, with access to training, shared services and policy discussions.
-- International networks help you follow new standards and tools. Many are organised through ELIXIR, the European Open Science Cloud (EOSC) and the Research Data Alliance (RDA), often with groups for a specific domain.
+- International networks help you follow emerging standards, tools and practices. They are often organised through ELIXIR and the Research Data Alliance (RDA), and many offer thematic or domain-specific groups.
 
-Map where you are already active and where there are gaps. You may be well connected locally but isolated nationally, or active internationally without much support from your organisation. Some funding schemes cover international but not national networking, so check what yours can support.
+Map your engagement: note where you are already active and where there are gaps. You may be well connected locally but isolated nationally, or active internationally without much support from your organisation. Some funding schemes cover international but not national networking, so check what yours can support.
 
 ### Prioritise active communities
 Choose networks with regular activities, working groups, shared outputs or coordination roles. They let you learn from others while sharing expertise and building professional connections.
@@ -103,13 +103,13 @@ If you are the only data steward, or your organisation has no data steward struc
 Networks create the most value when you actively engage with the community and apply what you learn in practice.
 
 ### Share your experience
-Bring examples, tools and problems from your own work into discussions. Both successful approaches and difficult experiences can help others avoid repeating the same work.
+Bring practical examples, tools, challenges and lessons learned from your work into discussions. Both successful approaches and difficult experiences can help others avoid repeating the same work.
 
 ### Take initiative
 Go beyond attending meetings. Join a working group, help organise a session, lead a small project or co-author a shared output. This doesn't have to take much time, but do it regularly, so people in the network know you and your work.
 
 ### Bring outcomes back to your organisation
-Use what the network produces, such as recommendations, tools or training materials, in your own organisation. Share relevant news with colleagues in a team meeting or a short update. Then tell the network what you did with it and how it worked. This two-way exchange strengthens both your organisation and the network, and shows your management why your participation matters.
+Use network outputs locally, whether they are recommendations, tools, training materials or new approaches. Share relevant developments with colleagues through team meetings, internal channels or brief updates, and share local experiences back with the community. This two-way exchange strengthens both your organisation and the network, and shows your management why your participation matters.
 
 ## Help networks grow
 Many networks start informally. With a little structure, they last longer and become more useful.
@@ -118,7 +118,7 @@ Many networks start informally. With a little structure, they last longer and be
 If there is no network near you, start one. A monthly breakfast with data stewards from nearby departments, or a shared chat channel, is enough to begin. ELIXIR-UK, for example, runs an informal monthly [UK RDM Club](https://elixiruknode.org/?p=23704).
 
 ### Add light structure
-In an informal network, suggest simple habits: an agenda for each meeting, a chair that rotates, and shared notes. This spreads the work and keeps the network going when one person leaves. In the [Data Steward Interest Group (DSIG)](https://content.iospress.com/articles/fair-connect/fc230503) in the Netherlands, a different organisation organises and chairs each meeting.
+If you participate in a grassroots or informal network, support simple practices such as agendas, rotating chairs and shared notes. Small improvements in coordination can help a community remain active, useful and sustainable over time. In the [Data Steward Interest Group (DSIG)](https://content.iospress.com/articles/fair-connect/fc230503) in the Netherlands, a different organisation organises and chairs each meeting.
 
 ### Use a framework
 A framework helps a network agree on what it is for and who does what. The [Community Canvas](https://community-canvas.org/) and the [CSCCE Community Participation Model](https://doi.org/10.5281/zenodo.3997802) are two you can use.
