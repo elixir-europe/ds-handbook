@@ -12,7 +12,7 @@ page_id: g-support-rdm-training
 
 # Tab 1: At a glance
 description: How to plan, deliver, evaluate and sustain accessible RDM training for researchers and support staff.
-last update: 2026-11-10
+last_update: 2026-11-10
 topics:
   - RDM training
   - FAIR training                  # Terms4FAIRskills T4FS_0000259
