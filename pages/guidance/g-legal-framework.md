@@ -1,7 +1,7 @@
 ---
 title: Legal framework for research data
 description: How to create a legal framework for research data
-contributors: [Heleri Inno, Rudolf Vohnout, Hana Marčetić, Aina Jene, Wolmar Nyberg Åkerström, Jana Martínková, Aída Moure Fernández, Mijke Jetten]
+contributors: [Heleri Inno, Rudolf Vohnout, Hana Marčetić, Aina Jené, Wolmar Nyberg Åkerström, Jana Martínková, Aída Moure Fernández, Mijke Jetten]
 page_id: g-legal-framework
 type: Guidance
 ---
