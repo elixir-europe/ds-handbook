@@ -11,7 +11,7 @@ page_id: g-security
 # ---------------------------------------------------------------------------
 
 # Tab 1: At a glance
-description: Embedding IT security into RDM, workflows and researcher support.  
+description: How to embed IT security into RDM, workflows and researcher support.
 last_update: 2026-11-12         
 topics:                         
   - information security
