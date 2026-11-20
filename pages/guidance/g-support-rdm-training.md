@@ -1,5 +1,5 @@
 ---
-title: RDM Training
+title: RDM training
 layout: guidance
 type: Guidance
 search_exclude: true
