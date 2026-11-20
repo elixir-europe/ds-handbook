@@ -74,6 +74,11 @@
   uri: http://data.europa.eu/esco/skill/4f5c1208-62fd-4e5a-a51e-306c06947e11
   description: Produce, describe, store, preserve and (re) use scientific data based on FAIR (Findable, Accessible, Interoperable, and Reusable) principles, making data as open as possible, and as closed as necessary.
 
+- key: manage-online-content
+  label: manage online content
+  uri: http://data.europa.eu/esco/skill/c1f29568-f2bb-49d2-b6c2-28748bd1629b
+  description: Ensure the website content is up to date, organised, attractive and meets the target audience needs, the requirements of the company and international standards by checking the links, setting the publishing time framework and order.
+
 - key: manage-personal-professional-development
   label: manage personal professional development
   uri: http://data.europa.eu/esco/skill/a8d24a95-47b3-4f88-92e7-06600bcd3612

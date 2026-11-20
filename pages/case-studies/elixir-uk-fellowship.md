@@ -38,7 +38,7 @@ lead_quote:
 related_pages:
   Guidance:
     - g-support-networks
-    - g-support-rdm-information
+    - g-support-rdm-guidance
     - g-support-communication
   Maturity_Indicator:
     - mm-support-training

@@ -38,7 +38,7 @@ takeaways:
 related_pages:
   Guidance:
     - g-support-communication
-    - g-support-rdm-information
+    - g-support-rdm-guidance
     - g-support-rdm-training
   Case_Study:
     - case-study-Data-Support-Network-Finland

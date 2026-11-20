@@ -68,7 +68,7 @@ lead_quote: Working as a transdisciplinary data steward with city and research s
 # Type keys recognised: Guidance, Case_Study, Maturity_Indicator.
 related_pages:
   Guidance:
-    - g-support-rdm-information
+    - g-support-rdm-guidance
 #  Case_Study:
 #    - other-case-shortname
 #  Maturity_Indicator:

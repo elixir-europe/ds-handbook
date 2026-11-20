@@ -60,7 +60,7 @@ related_pages:
   Guidance:
     - g-support-networks
     - g-support-communication
-    - g-support-rdm-information
+    - g-support-rdm-guidance
   Maturity_Indicator:
     - mm-support-network
 
