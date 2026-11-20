@@ -19,7 +19,7 @@ page_id: g-fair-computational-workflows             # mandatory – lowercase, h
 
 # Tab 1: At a glance
 description: How to make computational workflows FAIR, from registration and versioning to provenance capture and archival.        # mandatory – one sentence (10–20 words) on the core outcome of the page; also used in search results
-last update: 2026-11-11          # mandatory – date of the last substantial change or review (ISO 8601), not typo fixes
+last_update: 2026-11-11          # mandatory – date of the last substantial change or review (ISO 8601), not typo fixes
 topics:                            # mandatory – 3–5 short keywords for readers and search engines
   - computational workflows                      
   - FAIR principles
