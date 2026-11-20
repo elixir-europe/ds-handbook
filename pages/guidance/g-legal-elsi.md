@@ -42,8 +42,6 @@ related_pages:
     - g-support-rdm-training 
     - g-support-rdm-guidance
 
-  Case_Study:
-    - ELSI-servicedesk
   Maturity_Indicator:
     - mm-legal-ethics 
     - mm-legal-gdpr
